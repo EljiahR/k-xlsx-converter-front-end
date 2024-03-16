@@ -15,6 +15,8 @@
 
 .double-full-slot{
   grid-row: 1 / 3;
+  justify-content:center;
+  
 }
 
 .slot {
@@ -31,4 +33,11 @@
 
 .dark {
   background-color: #c1bebe !important;
+}
+
+.associate-slot {
+  text-align: left !important;
+  font-size: 14px;
+  padding-left: 10px;
+  font-weight: bold;
 }
