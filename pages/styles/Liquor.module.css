@@ -1,0 +1,9 @@
+.person {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  gap: 5px
+}

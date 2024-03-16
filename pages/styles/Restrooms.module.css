@@ -1,0 +1,34 @@
+.restrooms {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(32, 20px);
+  border: 1px solid black;
+  width: 40%;
+  height: 674px;
+  font-size: 12px;
+}
+
+.restrooms > * {
+  background-color: white;
+  border-bottom: 1px solid black
+}
+
+.double-full-slot{
+  grid-row: 1 / 3;
+}
+
+.slot {
+  display:grid;
+  grid-template-columns: 2fr 3fr;
+  justify-content: center;
+  align-items: center;
+  
+}
+.time {
+  border-right:1px solid black;
+  height: 100%;
+}
+
+.dark {
+  background-color: #c1bebe !important;
+}

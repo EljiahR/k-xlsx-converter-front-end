@@ -1,0 +1,68 @@
+#report{
+  max-height: 100%;
+  
+}
+
+#date {
+  margin-bottom: 2px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.front-end-content {
+  background-color: black;
+  border-left: 1px solid black;
+  margin-top: -1px;
+}
+
+.front-end-content > * {
+  height: 2%;
+  font-size: 2rem;
+}
+
+#labels {
+  width: 430px;
+  height: 2%;
+  background-color: rgb(10, 117, 193);
+  color: white;
+  display: grid;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px;
+  border: 1px solid black;
+  border-bottom: none;
+}
+#labels > * {
+  padding: 2px;
+  margin: 0px;
+}
+
+.front-end-header,
+.front-end-content {
+  width: 430px;
+}
+
+.front-end-header {
+  display: flex;
+  background-color: rgb(217, 217, 217);
+  height: 2%;
+  border: 1px solid black;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+#fuel:last-child {
+  border-bottom: 1px solid black;
+}
+
+
+#side-section{
+  margin-left: 30px;
+}
+
+#liquor-section{
+  display:grid;
+  grid-template-columns: 1;
+  maring: 0px;
+  padding: 0px;
+  justify-content: right;
+}

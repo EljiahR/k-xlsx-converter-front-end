@@ -1,0 +1,26 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#board {
+  display: flex;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(20% - 20px);
+  padding: 20px;
+  gap: 20px;
+  background-color: gainsboro;
+  width: 40%;
+  border-radius: 10px;
+}
+
+#home{
+  
+}
