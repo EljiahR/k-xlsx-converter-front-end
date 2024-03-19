@@ -1,4 +1,6 @@
-import styles from "../styles/Report.module.css";
+'use client'
+
+import styles from "@/_styles/Report.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "../functions/shiftsObject";
 // Importing components

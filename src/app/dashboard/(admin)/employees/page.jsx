@@ -1,3 +1,5 @@
+'use client'
+
 //import "../styles/employees.css";
 import { useState } from "react";
 import Link from "next/link";
