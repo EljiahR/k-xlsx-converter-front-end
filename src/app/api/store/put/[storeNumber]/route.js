@@ -25,10 +25,10 @@ export const config = {
   },
 };
 
-const handler = async (req, res) => {
+const PUT = async (req, { params }) => {
   const requestMethod = req.method;
-  const { storeNumber } = req.query;
-  console.log(mongoose.models);
+  const storeNumber = params.storeNumber
+  
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
   } else {
@@ -71,8 +71,8 @@ const handler = async (req, res) => {
       { new: true },
     );
 
-    res.status(200).json(updatedEmployee);
+    return Response.json(updatedEmployee);
   }
 };
 
-export default handler;
+export { PUT };

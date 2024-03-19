@@ -1,5 +1,5 @@
 'use client'
-
+import '@/styles/globals.css'
 import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "@/lib/shiftsObject";

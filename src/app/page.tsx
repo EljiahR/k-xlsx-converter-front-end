@@ -1,12 +1,12 @@
-import '@/styles/globals.css'
-import type { MetaData, NextPage } from "next";
-import { MetaData } from "next";
+import "@/styles/globals.css";
+import type { NextPage } from "next";
+import { Metadata } from "next;";
 import styles from "./_styles/Home.module.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'K Excel to Table',
-}
+  title: "K Excel to Table",
+};
 
 export default function Home() {
   return (
@@ -24,4 +24,4 @@ export default function Home() {
       </div>
     </>
   );
-};
+}

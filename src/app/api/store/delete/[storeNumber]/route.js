@@ -24,9 +24,10 @@ export const config = {
   },
 };
 
-const handler = async (req, res) => {
+const DELETE = async (req, { params }) => {
   const requestMethod = req.method;
-  const { storeNumber } = req.query;
+  const storeNumber = params.storeNumber
+  
   console.log(mongoose.models);
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
@@ -40,8 +41,8 @@ const handler = async (req, res) => {
     const idToDelete = data.id;
     const result = await EmployeeModel.findByIdAndDelete(idToDelete);
 
-    res.status(200).json({ result: "delete successful" });
+    return Response.json({ result: "delete successful" });
   }
 };
 
-export default handler;
+export { DELETE };

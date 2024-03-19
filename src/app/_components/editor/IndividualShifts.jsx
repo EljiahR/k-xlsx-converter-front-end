@@ -96,12 +96,12 @@ const IndividualShifts = ({
         className={styles["person"]}
         key={positionName + person["first name"] + person["last name"]}
       >
-        <div className="blank-cell"></div>
-        <p className="person-name">
+        <div className={styles["blank-cell"]}></div>
+        <p className={styles["person-name"]}>
           {person["first name"] + " " + person["last name"]}
         </p>
-        <p className="start time">{person.start}</p>
-        <p className="end time">{person.end}</p>
+        <p className={`start ${styles["time"]}`}>{person.start}</p>
+        <p className={`end ${styles["time"]}`}>{person.end}</p>
         <Breaks
           person={person}
           positionName={positionName}

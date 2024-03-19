@@ -25,9 +25,10 @@ export const config = {
   },
 };
 
-const handler = async (req, res) => {
+const POST = async (req, { params }) => {
   const requestMethod = req.method;
-  const { storeNumber } = req.query;
+  const storeNumber = params.storeNumber
+  
   console.log(mongoose.models);
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
@@ -71,14 +72,8 @@ const handler = async (req, res) => {
     });
     newEmployee.save();
 
-    res.status(200).json({ result: "post succesful" });
+    return Response.json({ result: "post succesful" });
   }
 };
 
-const post = async (form) => {
-  //console.log(db);
-
-  return { result: "employee saved" };
-};
-
-export default handler;
+export { POST };

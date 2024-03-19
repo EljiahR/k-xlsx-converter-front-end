@@ -13,7 +13,7 @@
 }
 
 .blank-row{
-  height: 15px
+  height: 15px !important;
 }
 
 .person > * {
@@ -35,7 +35,7 @@
   padding-left: 2px;
   justify-content: left;
   align-items: center;
-  
+  font-size: 0.75rem;
 }
 
 .break,
