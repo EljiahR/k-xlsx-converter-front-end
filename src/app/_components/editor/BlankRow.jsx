@@ -1,4 +1,4 @@
-import styles from "../styles/IndividualShifts.module.css"
+import styles from "@/styles/IndividualShifts.module.css"
 
 const BlankRow = () => {
   return (

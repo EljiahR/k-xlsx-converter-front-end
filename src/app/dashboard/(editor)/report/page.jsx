@@ -1,20 +1,20 @@
 'use client'
 
-import styles from "@/_styles/Report.module.css";
+import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
-import initialShifts from "../functions/shiftsObject";
+import initialShifts from "@/lib/shiftsObject";
 // Importing components
-import Board from "./Board";
-import Carts from "./Carts";
-import Loading from "./Loading";
-import NavBar from "./NavBar";
+import Board from "@/components/editor/Board";
+import Carts from "@/components/editor/Carts";
+import Loading from "@/components/Loading";
+import NavBar from "@/components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from 'html-to-image';
 import { jsPDF } from "jspdf";
 import readXlsxFile from "read-excel-file";
 //import svg2pdf from "svg2pdf"
-import { getEmployees } from "../functions/getNewShifts";
+import { getEmployees } from "@/lib/getNewShifts";
 import { useState, useEffect } from "react";
 
 const Report = () => {

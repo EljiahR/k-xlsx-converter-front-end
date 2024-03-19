@@ -1,3 +1,4 @@
+import '@/styles/globals.css'
 import type { MetaData, NextPage } from "next";
 import { MetaData } from "next";
 import styles from "./_styles/Home.module.css";

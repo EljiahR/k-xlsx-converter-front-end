@@ -1,4 +1,4 @@
-import styles from "../styles/CallUps.module.css"
+import styles from "@/styles/CallUps.module.css"
 
 const CallUps = ({ positionName, people }) => {
   const shifts = people.map((person) => {

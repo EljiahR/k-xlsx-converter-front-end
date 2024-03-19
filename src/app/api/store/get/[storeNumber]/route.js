@@ -1,3 +1,4 @@
+'use server'
 // GET
 import "dotenv/config";
 import mongoose from "mongoose";
@@ -17,9 +18,12 @@ const employeeSchema = new mongoose.Schema({
 
 let EmployeeModel;
 
-const handler = async (req, res) => {
+const GET = async (req, { params }) => {
   const requestMethod = req.method;
-  const { storeNumber } = req.query;
+  
+  const storeNumber = params.storeNumber
+
+  //const { storeNumber } = req.params;
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
   } else {
@@ -30,9 +34,9 @@ const handler = async (req, res) => {
   } else{
     await mongoose.connect(db);
     const allEmployees = await EmployeeModel.find({});
-    res.status(200).json(allEmployees);
+    return Response.json(allEmployees);
   }
 };
 
 
-export default handler;
+export { GET };

@@ -1,11 +1,11 @@
-import styles from "../styles/Board.module.css";
-import BlankRow from "./BlankRow";
-import CallUps from "./CallUps";
-import IndividualShifts from "./IndividualShifts";
-import Liquor from "./Liquor";
+import styles from "@/styles/Board.module.css";
+import BlankRow from "@/components/editor/BlankRow";
+import CallUps from "@/components/editor/CallUps";
+import IndividualShifts from "@/components/editor/IndividualShifts";
+import Liquor from "@/components/editor/Liquor";
 import moment from "moment"
 import { useState } from "react";
-import { addMinutesToBreak, compareTime, getDatesFromBreaks } from "../functions/timeFunctions"
+import { addMinutesToBreak, compareTime, getDatesFromBreaks } from "@/lib/timeFunctions"
 
 const Board = ({ currentDay, shifts, setShifts }) => {
   const [selectedTime, setSelectedTime] = useState({ time: "", section: "", time15:"", timeMinus15: "" });

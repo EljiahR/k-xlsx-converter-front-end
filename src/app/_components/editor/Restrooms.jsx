@@ -1,4 +1,4 @@
-import styles from "../styles/Restrooms.module.css";
+import styles from "@/styles/Restrooms.module.css";
 
 const Restrooms = () => {
   return (

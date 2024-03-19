@@ -3,8 +3,8 @@
 //import "../styles/employees.css";
 import { useState } from "react";
 import Link from "next/link";
-import Add from "./Add";
-import Edit from "./Edit";
+import Add from "@/components/admin/Add";
+import Edit from "@/components/admin/Edit";
 
 const Employees = () => {
   const [section, setSection] = useState("edit");

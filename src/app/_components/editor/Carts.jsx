@@ -1,7 +1,7 @@
-import styles from "../styles/Carts.module.css";
-import lotTimes from "../functions/lotTimes";
-import Restrooms from "./Restrooms";
-import { addMinutesToBreak, compareTime, startToBreakAddMinutes, reformatTimes } from "../functions/timeFunctions";
+import styles from "@/styles/Carts.module.css";
+import lotTimes from "@/lib/lotTimes";
+import Restrooms from "@/components/editor/Restrooms";
+import { addMinutesToBreak, compareTime, startToBreakAddMinutes, reformatTimes } from "@/lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
 
 const componentArray = [0, 1, 2, 3];

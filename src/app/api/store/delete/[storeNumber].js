@@ -1,3 +1,4 @@
+'use server'
 // DELETE method
 import "dotenv/config";
 import mongoose from "mongoose";

@@ -1,3 +1,4 @@
+'use server'
 // POST
 import "dotenv/config";
 import formidable, { errors as formidableErrors } from "formidable";

@@ -1,4 +1,4 @@
-import styles from "../styles/IndividualShifts.module.css";
+import styles from "@/styles/IndividualShifts.module.css";
 import { useRef, useEffect } from "react";
 
 const Breaks = ({

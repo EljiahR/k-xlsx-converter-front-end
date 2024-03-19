@@ -1,4 +1,4 @@
-import styles from "../styles/Edit.module.css";
+import styles from "@/styles/Edit.module.css";
 import { useEffect, useState } from "react";
 
 const Edit = ({ selectedStore, data, setData }) => {
