@@ -29,7 +29,7 @@ export const config = {
 const POST = async (req, { params }) => {
   const requestMethod = req.method;
   const storeNumber = params.storeNumber
-  console.log(params);
+ 
   //console.log(mongoose.models);
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
@@ -43,22 +43,25 @@ const POST = async (req, { params }) => {
 
     //Get form data here
 
+    const fields = await req.json();
+    console.log(fields)
+
     await mongoose.connect(db);
     const lunchOverride = fields.hasOwnProperty("lunch-override")
       ? true
       : false;
     const callUp = fields.hasOwnProperty("call-up") ? true : false;
-    const birthdayFix = fields["birthday"][0].split("-");
-    const birthday = `${birthdayFix[1]}/${birthdayFix[2]}/${birthdayFix[0]}`;
+    const birthdayFix = fields["birthday"].split("-");
+    const birthday = birthdayFix[0] !== '' ? `${birthdayFix[1]}/${birthdayFix[2]}/${birthdayFix[0]}` : '01/01/1900';
 
     let newEmployee = new EmployeeModel({
-      first_name: fields["first-name"][0].trim(),
-      last_name: fields["last-name"][0].trim(),
+      first_name: fields["first-name"].trim(),
+      last_name: fields["last-name"].trim(),
       birthday: birthday,
-      break_preference: Number(fields["break-preference"][0]),
-      first_name_preference: fields["preferred-name"][0].trim(),
+      break_preference: Number(fields["break-preference"]),
+      first_name_preference: fields["preferred-name"].trim(),
       lunch_override: lunchOverride,
-      position_override: fields["position-override"][0],
+      position_override: fields["position-override"],
       call_up: callUp,
     });
     newEmployee.save();
