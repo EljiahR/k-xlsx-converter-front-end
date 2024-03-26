@@ -18,26 +18,20 @@ const employeeSchema = new mongoose.Schema({
 
 let EmployeeModel;
 
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
-
 const DELETE = async (req, { params }) => {
   const requestMethod = req.method;
   const storeNumber = params.storeNumber
   
-  console.log(mongoose.models);
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
   } else {
     EmployeeModel = mongoose.model(storeNumber, employeeSchema);
   }
+  
   if (requestMethod !== "DELETE") {
     Respond.json({ result: "wrong method" });
   } else {
-    const data = JSON.parse(req.body);
+    const data = await req.json();
     const idToDelete = data.id;
     const result = await EmployeeModel.findByIdAndDelete(idToDelete);
 
