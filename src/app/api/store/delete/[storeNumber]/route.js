@@ -35,7 +35,7 @@ const DELETE = async (req, { params }) => {
     EmployeeModel = mongoose.model(storeNumber, employeeSchema);
   }
   if (requestMethod !== "DELETE") {
-    res.json({ result: "wrong method" });
+    Respond.json({ result: "wrong method" });
   } else {
     const data = JSON.parse(req.body);
     const idToDelete = data.id;

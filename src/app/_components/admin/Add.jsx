@@ -4,10 +4,11 @@ const Add = ({ selectedStore }) => {
     const postForm = async () => {
       const form = document.querySelector("#add-employee");
       const formData = new FormData(form);
+      const rawFormData = ;Object.fromEntries(formData)
       try {
         let response = await fetch(`/api/store/post/${selectedStore}`, {
           method: "POST",
-          body: formData,
+          body: rawFormData,
         });
         const data = await response.json();
         console.log(data);

@@ -1,7 +1,6 @@
 'use server'
 // POST
 import "dotenv/config";
-import formidable, { errors as formidableErrors } from "formidable";
 import mongoose from "mongoose";
 const db = process.env.MONGO_DB;
 
@@ -19,17 +18,19 @@ const employeeSchema = new mongoose.Schema({
 
 let EmployeeModel;
 
+/*
 export const config = {
   api: {
     bodyParser: false,
   },
 };
+*/
 
 const POST = async (req, { params }) => {
   const requestMethod = req.method;
   const storeNumber = params.storeNumber
-  
-  console.log(mongoose.models);
+  console.log(params);
+  //console.log(mongoose.models);
   if (mongoose.models[storeNumber]) {
     EmployeeModel = mongoose.model(storeNumber);
   } else {
@@ -39,18 +40,8 @@ const POST = async (req, { params }) => {
   if (requestMethod !== "POST") {
     res.send({ result: "wrong method" });
   } else {
-    const form = formidable({});
-    let fields;
-    let files;
-    try {
-      [fields, files] = await form.parse(req);
-    } catch (err) {
-      if (err.code === formidableErrors.maxFieldsExceeded) {
-      }
-      console.error(err);
-      res.end(String(err));
-      return;
-    }
+
+    //Get form data here
 
     await mongoose.connect(db);
     const lunchOverride = fields.hasOwnProperty("lunch-override")
