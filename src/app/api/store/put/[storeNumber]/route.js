@@ -19,12 +19,6 @@ const employeeSchema = new mongoose.Schema({
 
 let EmployeeModel;
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 const PUT = async (req, { params }) => {
   const requestMethod = req.method;
   const storeNumber = params.storeNumber
@@ -36,37 +30,30 @@ const PUT = async (req, { params }) => {
   }
 
   if (requestMethod !== "PUT") {
-    res.send({ result: "wrong method" });
+      return Response.json({ result: "wrong method" });
   } else {
-    const form = formidable({});
-    let fields;
-    let files;
-    try {
-      [fields, files] = await form.parse(req);
-    } catch (err) {
-      if (err.code === formidableErrors.maxFieldsExceeded) {
-      }
-      console.error(err);
-      res.end(String(err));
-      return;
-    }
+
+    const fields = await req.json();
+    
+    
     let newInfo = {};
     Object.keys(fields).forEach((key) => {
-      if(key == "first-name" || key == "last-name" || key == "prefered-first-name"){
-        newInfo[key] = fields[key][0].trim()
+      if(key == "first_name" || key == "last_name" || key == "first_name_preference"){
+        newInfo[key] = fields[key].trim()
       } else if(key == "birthday"){
-        const birthdayFix = fields["birthday"][0].split("-");
+        const birthdayFix = fields["birthday"].split("-");
         const birthday = `${birthdayFix[1]}/${birthdayFix[2]}/${birthdayFix[0]}`;
         newInfo[key] = birthday
       }
      
     });
     delete newInfo._id;
+    console.log(newInfo)
 
     await mongoose.connect(db);
 
     const updatedEmployee = await EmployeeModel.findByIdAndUpdate(
-      { _id: fields._id[0] },
+      { _id: fields._id },
       newInfo,
       { new: true },
     );

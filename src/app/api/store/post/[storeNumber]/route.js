@@ -38,13 +38,12 @@ const POST = async (req, { params }) => {
   }
 
   if (requestMethod !== "POST") {
-    res.send({ result: "wrong method" });
+    return Response.json({ result: "wrong method" });
   } else {
 
     //Get form data here
 
     const fields = await req.json();
-    console.log(fields)
 
     await mongoose.connect(db);
     const lunchOverride = fields.hasOwnProperty("lunch-override")

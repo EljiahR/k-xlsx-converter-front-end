@@ -59,11 +59,12 @@ const Edit = ({ selectedStore, data, setData }) => {
     Object.keys(employeeToEdit).forEach((key) => {
       formData.append(key, employeeToEdit[key]);
     });
+    const rawFormData = Object.fromEntries(formData)
     const putData = async () => {
       try {
         let response = await fetch(`/api/store/put/${selectedStore}`, {
           method: "PUT",
-          body: formData,
+          body: JSON.stringify(rawFormData),
         });
         const updatedEmployee = await response.json();
 
