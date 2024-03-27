@@ -1,7 +1,7 @@
 import { jobKey, timeKey } from "./indexKey";
 //Used to stop front end jobs being split 
 const frontEndJobKey = ["B", "!", "P", "$", "U"];
-// Liquor clerks(L) don't need split when wine stuards
+// Liquor clerks(L) don't need split when wine stewards
 const liquorKey = ["L", "W"]
 
 // Gets time of day (AM,PM) based on location of first jobkey found in given row
@@ -81,28 +81,17 @@ export const getAmPm = (row, shiftStartCol) => {
 
   let splitShifts = [];
   if (splitShiftIndexes.length > 1) {
-    let previousEnd;
+  
+    console.log(row)
+    console.log(splitShiftIndexes);
     splitShiftIndexes.forEach((pos, index, arr) => {
-      let splitStart;
-      let splitEnd;
+    
       let jobKey = row[pos];
+      
+      let splitStart = !timeKey[pos] ? timeKey[pos - 1] : timeKey[pos]; 
 
-      if (!previousEnd) {
-        splitStart = timeKey[startIndex - 1] ? timeKey[startIndex - 1] : timeKey[startIndex]; // This subtraction shouldnt be necessary
-      } else {
-        splitStart = previousEnd;
-      }
-
-      if (index == arr.length - 1) {
-        splitEnd = timeKey[endIndex];
-      } else {
-        let nextStart = arr[index + 1] - 1;// This -1 shouldnt be necessary but it doesnt work without it
-        splitEnd = timeKey[nextStart]
-          ? timeKey[nextStart]
-          : timeKey[nextStart - 1];
-        previousEnd = splitEnd
-      }
-
+      let splitEnd = arr[index + 1] ? timeKey[arr[index + 1]] : timeKey[endIndex + 1]; //not sure why the + 1 to endIndex is needed
+ 
       splitShifts.push({
         start: splitStart,
         end: splitEnd,
@@ -111,8 +100,8 @@ export const getAmPm = (row, shiftStartCol) => {
     });
     
   }
+  
+  console.log(splitShifts)
   fixedTimes.push(splitShifts)
-  console.log(row)
-  console.log(fixedTimes)
   return fixedTimes;
 };

@@ -18,7 +18,7 @@ export default function Home() {
             <button>Report</button>
           </Link>
           <Link href="/dashboard/employees" passHref>
-            <button>Employees</button>
+            <button>Admin</button>
           </Link>
         </div>
       </div>
