@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <>
       <div id={styles["home"]}>
-        <h2>Kroger .xlsx File Converter</h2>
+        <h2>15minute.xlsx File Converter</h2>
         <div id={styles["navigation"]}>
           <Link href="/dashboard/report" passHref>
             <button>Report</button>
           </Link>
-          <Link href="/dashboard/employees" passHref>
+          <Link href="/login" passHref>
             <button>Admin</button>
           </Link>
         </div>
