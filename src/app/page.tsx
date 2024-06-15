@@ -17,7 +17,7 @@ export default function Home() {
           <Link href="/dashboard/report" passHref>
             <button>Report</button>
           </Link>
-          <Link href="/login" passHref>
+          <Link href="/dashboard/report" passHref>
             <button>Admin</button>
           </Link>
         </div>
