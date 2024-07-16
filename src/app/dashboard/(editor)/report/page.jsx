@@ -1,5 +1,5 @@
-'use client'
-import '@/styles/globals.css'
+"use client";
+import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "@/lib/shiftsObject";
@@ -10,7 +10,7 @@ import Loading from "@/components/Loading";
 import NavBar from "@/components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
-import { toJpeg } from 'html-to-image';
+import { toJpeg } from "html-to-image";
 import { jsPDF } from "jspdf";
 import readXlsxFile from "read-excel-file";
 //import svg2pdf from "svg2pdf"
@@ -18,7 +18,7 @@ import { getEmployees } from "@/lib/getNewShifts";
 import { useState, useEffect } from "react";
 
 const Report = () => {
-  const [data, setData] = useState(null);
+  const [xlsxFile, setXlsxFile] = useState(null);
   const [shifts, setShifts] = useState(null);
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
@@ -27,9 +27,8 @@ const Report = () => {
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
 
-      toJpeg(input,{backgroundColor:"white"}).then((dataUrl) => {
-
-        /*
+    toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
+      /*
         const a = document.createElement('a');
         a.href = dataUrl;
         a.download = "output.png";
@@ -41,9 +40,9 @@ const Report = () => {
 
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
-      
+
       pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-       pdf.output('dataurlnewwindow');
+      pdf.output("dataurlnewwindow");
       //pdf.save("download.pdf");
     });
   };
@@ -53,7 +52,7 @@ const Report = () => {
     try {
       const input = document.getElementById("input");
       const result = await readXlsxFile(input.files[0]);
-      setData(result);
+      setXlsxFile(result);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -80,28 +79,28 @@ const Report = () => {
 
   useEffect(() => {
     const newShiftsFunc = async () => {
-      const newShifts = await getEmployees(data);
+      const newShifts = await getEmployees(xlsxFile);
       console.log(newShifts);
-      setShifts(newShifts);
+      setXlsxFile(newShifts);
     };
-    if (data) {
+    if (xlsxFile) {
       newShiftsFunc();
     }
-  }, [data]);
+  }, [xlsxFile]);
 
   return (
     <div className="App">
       <NavBar
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
-        data={data}
+        xlsxFile={xlsxFile}
         setPage={setPage}
         page={page}
         convertDivToPDF={convertDivToPDF}
       />
 
       <Loading isLoading={isLoading} />
-      {data && page === "Board" && (
+      {xlsxFile && page === "Board" && (
         <div id="board" className={styles.sheet}>
           <Board
             currentDay={currentDay}
@@ -110,7 +109,7 @@ const Report = () => {
           />
         </div>
       )}
-      {data && page === "Carts" && (
+      {xlsxFile && page === "Carts" && (
         <div id="carts" className={styles.sheet}>
           <Carts
             currentDay={currentDay}
