@@ -12,7 +12,6 @@ import NavBar from "@/components/NavBar";
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
 import { jsPDF } from "jspdf";
-import readXlsxFile from "read-excel-file";
 //import svg2pdf from "svg2pdf"
 import { getEmployees } from "@/lib/getNewShifts";
 import { useState, useEffect } from "react";
@@ -51,8 +50,7 @@ const Report = () => {
     setIsLoading(true);
     try {
       const input = document.getElementById("input");
-      const result = await readXlsxFile(input.files[0]);
-      setXlsxFile(result);
+      setXlsxFile(input.files[0]);
     } catch (err) {
       console.log(err.message);
     } finally {
@@ -81,7 +79,7 @@ const Report = () => {
     const newShiftsFunc = async () => {
       const newShifts = await getEmployees(xlsxFile);
       console.log(newShifts);
-      setXlsxFile(newShifts);
+      setShifts(newShifts);
     };
     if (xlsxFile) {
       newShiftsFunc();
