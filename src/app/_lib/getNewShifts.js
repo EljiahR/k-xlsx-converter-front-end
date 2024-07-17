@@ -1,11 +1,8 @@
+import formatWeek from "./dtoToBO.ts";
+
 export const getEmployees = async (xlsxFile) => {
   const data = new FormData();
   data.append("file", xlsxFile);
-
-  // Debugging: Log the FormData keys and values
-  for (const [key, value] of data.entries()) {
-    console.log(`${key}:`, value);
-  }
 
   const response = await fetch(
     "https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/Dailies/16/549",
@@ -23,5 +20,7 @@ export const getEmployees = async (xlsxFile) => {
 
   const newShifts = await response.json();
 
-  return newShifts;
+  const formattedShifts = formatWeek(newShifts);
+
+  return formattedShifts;
 };
