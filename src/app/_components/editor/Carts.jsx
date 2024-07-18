@@ -31,13 +31,13 @@ const CartSlot = ({
   let lunch1 = "";
   let lunch2 = "";
   let break2 = "";
-  const thisBagger = baggerList.people.find(
+  const thisBagger = baggerList.shifts.find(
     (bagger) => bagger.baggerName == name,
   );
   if (thisBagger) {
-    break1 = /:15|:45/.test(thisBagger.break1.time)
+    break1 = /:15|:45/.test(thisBagger.breakOne.time)
       ? addMinutesToBreak(thisBagger.breakOne.time, -15)
-      : thisBagger.break1.time;
+      : thisBagger.breakOne.time;
     lunch1 = /:15|:45/.test(thisBagger.lunch.time)
       ? addMinutesToBreak(thisBagger.lunch.time, -15)
       : thisBagger.lunch.time;
@@ -45,8 +45,8 @@ const CartSlot = ({
       ? addMinutesToBreak(thisBagger.lunch.time, 15)
       : thisBagger.lunch.time;
     break2 = /:15|:45/.test(thisBagger.breakTwo.time)
-      ? addMinutesToBreak(thisBagger.break2.time, -15)
-      : thisBagger.break2.time;
+      ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
+      : thisBagger.breakTwo.time;
   }
   //yes I copied this from individualShifts
   useEffect(() => {
@@ -113,30 +113,31 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     (person) => person.baggerName == selectedBagger,
   );
   if (bagger) {
-    let [start] = reformatTimes(bagger.start);
-    let end = startToBreakAddMinutes(bagger.end, -30);
+    let [start] = reformatTimes(bagger.shiftStart);
+    let end = startToBreakAddMinutes(bagger.shiftEnd, -30);
     baggerInfo.start = start;
     baggerInfo.end = end;
 
-    baggerInfo.break1 = /:15|:45/.test(bagger.break1.time)
-      ? addMinutesToBreak(bagger.break1.time, -15)
-      : bagger.break1.time;
+    baggerInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
+      ? addMinutesToBreak(bagger.breakOne.time, -15)
+      : bagger.breakOne.time;
     baggerInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, -15)
       : bagger.lunch.time;
     baggerInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, 15)
       : bagger.lunch.time;
-    baggerInfo.break2 = /:15|:45/.test(bagger.break2.time)
-      ? addMinutesToBreak(bagger.break2.time, -15)
-      : bagger.break2.time;
+    baggerInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
+      ? addMinutesToBreak(bagger.breakTwo.time, -15)
+      : bagger.breakTwo.time;
   }
 
   const inputReference = useRef(null);
 
   const handleOnClick = (index, pos, onOff, name) => {
     let newShifts = JSON.parse(JSON.stringify(shifts));
-    let carts = newShifts[currentDay].Carts;
+    let carts = newShifts[currentDay].carts;
+
     carts[index][pos].editable = onOff;
 
     setShifts(newShifts);
@@ -145,7 +146,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
 
   const handleOnChange = (e, index, pos) => {
     let newShifts = JSON.parse(JSON.stringify(shifts));
-    let carts = newShifts[currentDay].Carts;
+    let carts = newShifts[currentDay].carts;
     carts[index][pos].name = e.target.value;
     setShifts(newShifts);
   };
@@ -165,7 +166,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.target.id.split(":");
     let newShifts = JSON.parse(JSON.stringify(shifts));
-    let carts = newShifts[currentDay].Carts;
+    let carts = newShifts[currentDay].carts;
     carts[draggedIndex[0]][draggedIndex[1]].name = "";
     let draggedValue = "";
 
@@ -225,15 +226,15 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
                     key={`CartSlot${index}${i}`}
                     index={index}
                     pos={i}
-                    name={shifts[currentDay].Carts[index][i].name}
-                    editable={shifts[currentDay].Carts[index][i].editable}
+                    name={shifts[currentDay].carts[index][i].name}
+                    editable={shifts[currentDay].carts[index][i].editable}
                     handleOnDrag={handleOnDrag}
                     handleOnDragOver={handleOnDragOver}
                     handleOnDrop={handleOnDrop}
                     handleOnClick={handleOnClick}
                     handleOnChange={handleOnChange}
                     inputReference={inputReference}
-                    carts={shifts[currentDay].Carts}
+                    carts={shifts[currentDay].carts}
                     selectedBagger={selectedBagger}
                     time={time}
                     baggerList={baggerList}

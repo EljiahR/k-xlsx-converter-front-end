@@ -38,8 +38,12 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         e.key == "ArrowUp" ? 15 : -15,
       );
       if (
-        compareTime(personToEdit[breakType].time, personToEdit.start) &&
-        compareTime(personToEdit.end, personToEdit[breakType].time)
+        compareTime(
+          personToEdit[breakType].time,
+          personToEdit.shiftStart,
+          true,
+        ) &&
+        compareTime(personToEdit.shiftEnd, personToEdit[breakType].time)
       ) {
         setShifts(newShifts);
         setSelectedTime({
