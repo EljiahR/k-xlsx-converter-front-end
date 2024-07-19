@@ -1,5 +1,10 @@
 import moment from "moment";
 
+interface IBreak {
+  time: string;
+  editable: boolean;
+}
+
 interface IEmployeeDTO {
   firstName: string;
   lastName: string;
@@ -8,11 +13,7 @@ interface IEmployeeDTO {
   breakOne?: Date;
   lunch?: Date;
   breakTwo?: Date;
-}
-
-interface IBreak {
-  time: string;
-  editable: boolean;
+  originalPosition?: string;
 }
 
 interface IEmployeeBO
@@ -78,6 +79,7 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       editable: false,
       time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     },
+    originalPosition: shift.originalPosition ?? "",
   }));
 };
 
