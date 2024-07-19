@@ -261,19 +261,26 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         </div>
       </div>
       <div id={styles["side-section"]}>
-        <div id="call-ups">
-          <h2 className="side-header">Call Ups and Misc</h2>
-          <div id="call-ups-section">
-            <CallUps
-              people={
-                shifts[currentDay].jobPositions.find(
-                  (shift) => shift.name === "Call Ups",
-                ).shifts
-              }
-              positionName="callup"
-            />
-          </div>
-        </div>
+        {shifts[currentDay].jobPositions.find(
+          (shift) => shift.name === "Call Ups",
+        ) && (
+          <>
+            <div id="call-ups">
+              <h2 className="side-header">Call Ups and Misc</h2>
+              <div id="call-ups-section">
+                <CallUps
+                  people={
+                    shifts[currentDay].jobPositions.find(
+                      (shift) => shift.name === "Call Ups",
+                    ).shifts
+                  }
+                  positionName="callup"
+                />
+              </div>
+            </div>
+          </>
+        )}
+
         <div id="liquor">
           <h2 className="side-header">Liquor</h2>
           <div id={styles["liquor-section"]}>
