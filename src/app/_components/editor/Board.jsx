@@ -130,7 +130,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         </div>
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
-        ).shifts.length > 0 && (
+        ) && (
           <>
             <div className={styles["front-end-header"]}>
               <div className="blank-cell"></div>
@@ -267,7 +267,10 @@ const Board = ({ currentDay, shifts, setShifts }) => {
             <CallUps
               people={
                 shifts[currentDay].jobPositions.find(
-                  (shift) => !shift.name.includes("Front") && !shift.name.includes("Liquor") && !shift.name.includes("Fuel"),
+                  (shift) =>
+                    !shift.name.includes("Front") &&
+                    !shift.name.includes("Liquor") &&
+                    !shift.name.includes("Fuel"),
                 ).shifts
               }
               positionName="callup"
