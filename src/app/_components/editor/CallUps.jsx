@@ -7,7 +7,7 @@ const CallUps = ({ positionName, people }) => {
         className={styles["person"]}
         key={positionName + person.firstName + person.lastName}
       >
-        <p className="position">{person.callUpPosition}:</p>
+        <p className="position">{person.originalPosition}:</p>
         <p className="person-name">
           {person.firstName + " " + person.lastName}
         </p>
