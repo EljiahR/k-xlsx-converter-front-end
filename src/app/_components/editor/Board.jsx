@@ -267,7 +267,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
             <CallUps
               people={
                 shifts[currentDay].jobPositions.find(
-                  (shift) => shift.name === "Floral Clerk",
+                  (shift) => !shift.name.contains("Front") && !shift.name.contains("Liquor") && !shift.name.contains("Fuel"),
                 ).shifts
               }
               positionName="callup"
