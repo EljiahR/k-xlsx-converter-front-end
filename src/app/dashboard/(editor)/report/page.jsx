@@ -25,18 +25,7 @@ const Report = () => {
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
 
-  const changeCSSForPrint = () => {
-    const label = document.getElementById(boardStyles["fresh-start-label"]);
-    label.style.marginLeft = "-9px";
-  };
-
-  const changeCSSBack = () => {
-    const label = document.getElementById(boardStyles["fresh-start-label"]);
-    label.style.marginLeft = "0px";
-  };
-
   const convertDivToPDF = (id) => {
-    changeCSSForPrint();
     const input = document.getElementById(id);
     styles["fresh-start"];
     toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
@@ -61,7 +50,6 @@ const Report = () => {
 
       pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
       pdf.output("dataurlnewwindow");
-      changeCSSBack();
       //pdf.save("download.pdf");
     });
   };

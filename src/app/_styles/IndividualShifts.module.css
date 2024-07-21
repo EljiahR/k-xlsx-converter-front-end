@@ -4,7 +4,7 @@
 
 .person {
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px 15px;
   gap: 1px;
   margin-top: 1px;
   border-right: 1px solid black;
@@ -60,11 +60,10 @@ p.lunch:empty {
 }
 
 .fresh-start {
+  background-color: white;
   border: 1px solid black;
   height: 12px;
   width: 12px;
-  grid-column-start: -1;
   align-self: center;
-  margin-left: -5px;
-  z-index: -2;
+  margin-left: 5px;
 }

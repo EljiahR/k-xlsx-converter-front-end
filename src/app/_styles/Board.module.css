@@ -27,7 +27,7 @@
   background-color: rgb(10, 117, 193);
   color: white;
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 15px;
   border: 1px solid black;
   border-bottom: none;
   position: relative;
@@ -72,6 +72,4 @@
 }
 #fresh-start-label{
   color: black;
-  grid-column-start: -1;
-  
 }
