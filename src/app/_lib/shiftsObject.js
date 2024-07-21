@@ -15,37 +15,48 @@ const dayConstructor = (day) => {
     jobPositions: [
       {
         name: "Front End Cashier",
-        
-        shifts: [],
+
+        shifts: [
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          },
+        ],
       },
       {
         name: "Front End Courtesy Clerk",
-        
+
         shifts: [],
       },
       {
         name: "Front End SCO Cashier",
-        
+
         shifts: [],
       },
       {
         name: "Front End Service Desk",
-        
+
         shifts: [],
       },
       {
         name: "Front End Supervisor",
-        
+
         shifts: [],
       },
       {
         name: "Fuel Clerk",
-        
+
         shifts: [],
       },
       {
         name: "Liquor Clerk",
-        
+
         shifts: [],
       },
       {

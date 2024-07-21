@@ -28,6 +28,7 @@
   font-size: 0.75rem;
   text-align: left;
   padding: 2px;
+  
 }
 
 .time {
@@ -54,4 +55,13 @@ p.lunch:empty {
 .blank-row p.break,
 .blank-row p.lunch {
   background-color: white;
+}
+
+.fresh-start {
+  border: 1px solid black;
+  height: 12px;
+  width: 12px;
+  grid-column-start: -1;
+  margin-left: 5px;
+  align-self: center;
 }

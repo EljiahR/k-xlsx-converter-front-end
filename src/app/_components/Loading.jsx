@@ -1,7 +1,6 @@
-const Loading = ({ isLoading }) => {
-  if (isLoading) {
+const Loading = () => {
+ 
     return <p>Loading...</p>;
-  }
-  return null;
+  
 };
 export default Loading;

@@ -53,7 +53,6 @@ const Report = () => {
       setXlsxFile(input.files[0]);
     } catch (err) {
       console.log(err.message);
-    } finally {
       setIsLoading(false);
     }
   };
@@ -68,7 +67,7 @@ const Report = () => {
   */
 
   const resetShifts = () => {
-    setShifts(JSON.parse(JSON.stringify(initialShifts)));
+    setShifts(null);
   };
 
   useEffect(() => {
@@ -77,9 +76,16 @@ const Report = () => {
 
   useEffect(() => {
     const newShiftsFunc = async () => {
-      const newShifts = await getEmployees(xlsxFile);
-      console.log(newShifts);
-      setShifts(newShifts);
+      try {
+        const newShifts = await getEmployees(xlsxFile);
+        console.log(newShifts);
+        setShifts(newShifts);
+      } catch (err) {
+        setShifts(initialShifts);
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
     };
     if (xlsxFile) {
       newShiftsFunc();
@@ -97,8 +103,8 @@ const Report = () => {
         convertDivToPDF={convertDivToPDF}
       />
 
-      <Loading isLoading={isLoading} />
-      {xlsxFile && page === "Board" && (
+      {isLoading && <Loading isLoading={isLoading} />}
+      {shifts && page === "Board" && (
         <div id="board" className={styles.sheet}>
           <Board
             currentDay={currentDay}
@@ -107,7 +113,7 @@ const Report = () => {
           />
         </div>
       )}
-      {xlsxFile && page === "Carts" && (
+      {shifts && page === "Carts" && (
         <div id="carts" className={styles.sheet}>
           <Carts
             currentDay={currentDay}

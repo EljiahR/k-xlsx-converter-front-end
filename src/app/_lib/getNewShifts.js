@@ -19,7 +19,7 @@ export const getEmployees = async (xlsxFile) => {
   }
 
   const newShifts = await response.json();
-
+  console.log(newShifts);
   const formattedShifts = formatWeek(newShifts);
 
   return formattedShifts;
