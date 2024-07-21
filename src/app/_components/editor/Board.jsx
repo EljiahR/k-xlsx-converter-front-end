@@ -127,6 +127,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
           <h6>Break</h6>
           <h6>Lunch</h6>
           <h6>Break</h6>
+          <h6 id={styles["fresh-start-label"]}>FS</h6>
         </div>
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
