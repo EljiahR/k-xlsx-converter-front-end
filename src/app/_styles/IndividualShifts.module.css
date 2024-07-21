@@ -10,6 +10,7 @@
   border-right: 1px solid black;
   font-size: .80rem;
   text-align: left;
+  z-index: 1;
 }
 
 .blank-row{
@@ -45,6 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 p.break:empty,
@@ -62,6 +64,7 @@ p.lunch:empty {
   height: 12px;
   width: 12px;
   grid-column-start: -1;
-  margin-left: 5px;
   align-self: center;
+  margin-left: -5px;
+  z-index: -2;
 }

@@ -1,6 +1,8 @@
 "use client";
 import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
+import boardStyles from "@/styles/Board.module.css";
+import individualStyles from "@/styles/IndividualShifts.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "@/lib/shiftsObject";
 // Importing components
@@ -23,9 +25,20 @@ const Report = () => {
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
 
-  const convertDivToPDF = (id) => {
-    const input = document.getElementById(id);
+  const changeCSSForPrint = () => {
+    const label = document.getElementById(boardStyles["fresh-start-label"]);
+    label.style.marginLeft = "-9px";
+  };
 
+  const changeCSSBack = () => {
+    const label = document.getElementById(boardStyles["fresh-start-label"]);
+    label.style.marginLeft = "0px";
+  };
+
+  const convertDivToPDF = (id) => {
+    changeCSSForPrint();
+    const input = document.getElementById(id);
+    styles["fresh-start"];
     toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
         const a = document.createElement('a');
@@ -35,13 +48,20 @@ const Report = () => {
         a.click();
         document.body.removeChild(a);
         */
-      const pdf = new jsPDF("p", "in", [8.5, 11]);
+      //const pdf = new jsPDF("p", "in", [8.5, 11]);
+      const pdf = new jsPDF({
+        orientation: "p",
+        format: "letter",
+        unit: "px",
+        hotfixes: ["px_scaling"],
+      });
 
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
 
       pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
       pdf.output("dataurlnewwindow");
+      changeCSSBack();
       //pdf.save("download.pdf");
     });
   };
