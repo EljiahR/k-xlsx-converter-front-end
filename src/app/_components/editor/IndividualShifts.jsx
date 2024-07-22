@@ -101,7 +101,12 @@ const IndividualShifts = ({
     return (
       <div
         className={styles["person"]}
-        key={positionName + person["firstName"] + person["lastName"]}
+        key={
+          positionName +
+          person["firstName"] +
+          person["lastName"] +
+          person["shiftStart"]
+        }
       >
         <div className={styles["blank-cell"]}></div>
         <p className={styles["person-name"]}>
@@ -148,7 +153,6 @@ const IndividualShifts = ({
         />
         <div className={styles["fresh-start"]}></div>
       </div>
-      
     );
   });
   return shifts;
