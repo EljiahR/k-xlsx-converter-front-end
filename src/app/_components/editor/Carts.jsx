@@ -96,6 +96,12 @@ const CartSlot = ({
 const Carts = ({ currentDay, shifts, setShifts }) => {
   const [selectedBagger, setSelectedBagger] = useState("");
 
+  const sortEmptyToEnd = (a, b) => {
+    if (a.name === "") return 1;
+    if (b.name === "") return -1;
+    return 0;
+  };
+
   let baggerInfo = {
     start: "",
     end: "",
@@ -139,7 +145,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     let carts = newShifts[currentDay].carts;
 
     carts[index][pos].editable = onOff;
-
+    if (!onOff) carts[index].sort(sortEmptyToEnd);
     setShifts(newShifts);
     setSelectedBagger(name);
   };
@@ -148,6 +154,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     let newShifts = JSON.parse(JSON.stringify(shifts));
     let carts = newShifts[currentDay].carts;
     carts[index][pos].name = e.target.value;
+    if (carts[index][pos].name == "") carts[index].sort(sortEmptyToEnd);
     setShifts(newShifts);
   };
 
@@ -170,11 +177,6 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     carts[draggedIndex[0]][draggedIndex[1]].name = "";
     let draggedValue = "";
 
-    const sortEmptyToEnd = (a, b) => {
-      if (a.name === "") return 1;
-      if (b.name === "") return -1;
-      return 0;
-    };
     carts[draggedIndex[0]].sort(sortEmptyToEnd);
     if (dragged.nodeName == "INPUT") {
       draggedValue = dragged.value;
@@ -190,7 +192,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     <div id={styles["cart-sheet"]}>
       <div id="headers">
         <h2>Parking Lot & Restroom Cleaning Schedule</h2>
-        <h4>{shifts[currentDay].Date}</h4>
+        <h4>{shifts[currentDay].date}</h4>
       </div>
       <div id={styles["main"]}>
         <div id={styles.lot}>

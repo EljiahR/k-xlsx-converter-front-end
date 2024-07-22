@@ -64,7 +64,7 @@ const dayConstructor = (day) => {
         shifts: [],
       },
     ],
-    Carts: Array(36).fill(Array(4).fill("")),
+    carts: Array(36).fill(Array(4).fill({ name: "", editable: false })),
   };
 };
 
