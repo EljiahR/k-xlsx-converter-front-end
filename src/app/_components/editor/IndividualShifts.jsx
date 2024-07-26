@@ -151,7 +151,8 @@ const IndividualShifts = ({
           selectedTime={selectedTime}
           section={section}
         />
-        <div className={styles["fresh-start"]}></div>
+        {!positionName.includes("Fuel") && 
+        <div className={styles["fresh-start"]}></div>}
       </div>
     );
   });
