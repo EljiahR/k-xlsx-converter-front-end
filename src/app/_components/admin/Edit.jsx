@@ -7,10 +7,16 @@ const Edit = ({ selectedStore, data, setData, search }) => {
   
 
   const filteredData = useMemo(() => {
-    console.log("this ran")
+    
     if(data == null || search == "") return data;
     
-    return data.filter(x => x.firstName.toLowerCase().includes(search.toLowerCase()) || x.lastName.toLowerCase().includes(search.toLowerCase()));
+    return data.filter(x => {
+      const names = [x.firstName.toLowerCase(), x.lastName.toLowerCase()];
+      const words = search.split(" ");
+      return words.every(word => {
+        return names.some(name => name.includes(word.toLowerCase()))
+      });
+    })
   }, [search, data]);
 
   const getEmployees = async () => {
