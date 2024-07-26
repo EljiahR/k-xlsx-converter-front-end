@@ -10,8 +10,15 @@ import Edit from "@/components/admin/Edit";
 const Employees = () => {
   const [section, setSection] = useState("edit");
   const [selectedStore, setSelectedStore] = useState("");
+  const [search, setSearch] = useState("");
   const [data, setData] = useState(null);
 
+  
+  
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  }
+  
   const handleSectionChange = (e) => {
     setSection(section == "add" ? "edit" : "add");
   };
@@ -38,11 +45,17 @@ const Employees = () => {
         </button>
       </div>
       {section == "edit" && (
-        <Edit selectedStore={selectedStore} data={data} setData={setData} />
+      <>
+        {data != null && (
+        <input type="text" value={search} onChange={handleSearch} />
+        )}
+        <Edit selectedStore={selectedStore} data={data} setData={setData} search={search}/>
+      </>
       )}
       {section == "add" && (
         <Add selectedStore={selectedStore} data={data} setData={setData} />
       )}
+      
     </>
   );
 };

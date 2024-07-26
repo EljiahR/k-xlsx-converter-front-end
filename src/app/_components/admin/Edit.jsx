@@ -1,9 +1,17 @@
 import styles from "@/styles/Edit.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const Edit = ({ selectedStore, data, setData }) => {
+const Edit = ({ selectedStore, data, setData, search }) => {
   const [loading, setLoading] = useState(false);
   const [editData, setEditData] = useState([]);
+  
+
+  const filteredData = useMemo(() => {
+    console.log("this ran")
+    if(data == null || search == "") return data;
+    
+    return data.filter(x => x.firstName.toLowerCase().includes(search.toLowerCase()) || x.lastName.toLowerCase().includes(search.toLowerCase()));
+  }, [search, data]);
 
   const getEmployees = async () => {
     if (selectedStore != "") {
@@ -28,7 +36,7 @@ const Edit = ({ selectedStore, data, setData }) => {
       setData(null);
     }
   };
-
+  
   const enableEdit = (id, onOff) => {
     let newData = JSON.parse(JSON.stringify(data));
     let employeeToChange = newData.find((employee) => employee.employeeId == id);
@@ -113,7 +121,7 @@ const Edit = ({ selectedStore, data, setData }) => {
         ? "No store selected"
         : loading
           ? "Loading..."
-          : data.map((employee, index) => {
+          : filteredData.map((employee, index) => {
               if (employee.edit) {
                 let employeeEdit = editData.find(
                   (item) => item.employeeId == employee.employeeId,
@@ -130,7 +138,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="text"
                         id="first-name"
-                        name="first-name"
+                        name="firstName"
                         placeholder={employee["firstName"]}
                         value={
                           employeeEdit.hasOwnProperty("firstName")
@@ -147,7 +155,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="text"
                         id="last-name"
-                        name="last-name"
+                        name="lastName"
                         placeholder={employee["lastName"]}
                         value={
                           employeeEdit.hasOwnProperty("lastName")
@@ -164,7 +172,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="text"
                         id="preferred-name"
-                        name="preferred-name"
+                        name="preferredFirstName"
                         placeholder={employee["preferredFirstName"]}
                         value={
                           employeeEdit.hasOwnProperty("preferredFirstName")
@@ -201,7 +209,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="radio"
                         id="break-preference-2"
-                        name="break-preference"
+                        name="preferredNumberOfBreaks"
                         value={2}
                         checked={employee["preferredNumberOfBreaks"] == 2 && "checked"}
                       />
@@ -211,7 +219,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="radio"
                         id="break-preference-1"
-                        name="break-preference"
+                        name="preferredNumberOfBreaks"
                         value={1}
                         checked={employee["preferredNumberOfBreaks"] == 1 && "checked"}
                       />
@@ -223,14 +231,14 @@ const Edit = ({ selectedStore, data, setData }) => {
                       Lunch Override for over 18
                       <input
                         type="checkbox"
-                        name="lunch-override"
+                        name="getsLunchAsAdult"
                         id="lunch-override"
                         checked={employee["getsLunchAsAdult"] && "checked"}
                       />
                     </label>
                     <label htmlFor="position-override">
                       Position Override, leave blank if not needed
-                      <select id="position-override" name="position-override">
+                      <select id="position-override" name="positionOverride">
                         <option value=""></option>
                         <option
                           value="$"
@@ -269,7 +277,7 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="checkbox"
                         id="call-up"
-                        name="call-up"
+                        name="isACallUp"
                         checked={employee["isACallUp"] && "checked"}
                       />
                     </label>
