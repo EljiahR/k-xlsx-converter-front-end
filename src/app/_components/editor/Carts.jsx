@@ -8,6 +8,7 @@ import {
   reformatTimes,
 } from "@/lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
+import checkCartErrors from "@/lib/checkCartErrors";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -27,24 +28,28 @@ const CartSlot = ({
   time,
   baggerList,
 }) => {
-  let break1 = "";
-  let lunch1 = "";
-  let lunch2 = "";
-  let break2 = "";
+  const baggerInfo = {
+    name: name,
+    break1: "",
+    lunch1: "",
+    lunch2: "",
+    break2: "",
+  };
+
   const thisBagger = baggerList.shifts.find(
     (bagger) => bagger.baggerName == name,
   );
   if (thisBagger) {
-    break1 = /:15|:45/.test(thisBagger.breakOne.time)
+    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne.time)
       ? addMinutesToBreak(thisBagger.breakOne.time, -15)
       : thisBagger.breakOne.time;
-    lunch1 = /:15|:45/.test(thisBagger.lunch.time)
+    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch.time)
       ? addMinutesToBreak(thisBagger.lunch.time, -15)
       : thisBagger.lunch.time;
-    lunch2 = /:15|:45/.test(thisBagger.lunch.time)
+    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch.time)
       ? addMinutesToBreak(thisBagger.lunch.time, 15)
       : thisBagger.lunch.time;
-    break2 = /:15|:45/.test(thisBagger.breakTwo.time)
+    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
       ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
       : thisBagger.breakTwo.time;
   }
@@ -78,7 +83,7 @@ const CartSlot = ({
   }
   return (
     <div
-      className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${break1 == time || lunch1 == time || lunch2 == time || break2 == time ? styles.error : ""}`}
+      className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
       draggable="true"
       id={`${index}:${pos}`}
       key={`${index}${pos}`}

@@ -4,12 +4,16 @@ const Add = ({ selectedStore }) => {
     const postForm = async () => {
       const form = document.querySelector("#add-employee");
       const formData = new FormData(form);
-      const rawFormData = Object.fromEntries(formData)
+      const rawFormData = Object.fromEntries(formData);
+      const [division, storeNumber] = selectedStore.split("-");
       try {
-        let response = await fetch(`/api/store/post/${selectedStore}`, {
-          method: "POST",
-          body: JSON.stringify(rawFormData),
-        });
+        let response = await fetch(
+          `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/${division}/${storeNumber}`,
+          {
+            method: "POST",
+            body: JSON.stringify(rawFormData),
+          },
+        );
         const data = await response.json();
         console.log(data);
         form.reset();
