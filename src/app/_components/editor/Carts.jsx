@@ -83,7 +83,7 @@ const CartSlot = ({
   }
   return (
     <div
-      className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
+      className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${selectedBagger == thisBagger ? checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null) : ""}`}
       draggable="true"
       id={`${index}:${pos}`}
       key={`${index}${pos}`}
