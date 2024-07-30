@@ -1,8 +1,6 @@
 "use client";
 import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
-import boardStyles from "@/styles/Board.module.css";
-import individualStyles from "@/styles/IndividualShifts.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "@/lib/shiftsObject";
 // Importing components
