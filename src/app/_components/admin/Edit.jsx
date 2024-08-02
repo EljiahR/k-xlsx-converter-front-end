@@ -87,7 +87,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
         let response = await fetch(
           `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/`,
           {
-            method: "PUT",
+            method: "PATCH",
             body: JSON.stringify(rawFormData),
           },
         );
@@ -112,18 +112,26 @@ const Edit = ({ selectedStore, data, setData, search }) => {
     putData();
   };
 
-  const deleteEmployee = async (id) => {
+  const deleteEmployee = async (employee) => {
     try {
+      const employeeToDelete = JSON.parse(JSON.stringify(employee));
+      delete employeeToDelete.edit;
+      console.log(employeeToDelete);
       const response = await fetch(
         `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/`,
         {
           method: "DELETE",
-          body: JSON.stringify({ id: id }),
+          body: JSON.stringify(employeeToDelete),
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
       );
       const result = await response.json();
       let newData = JSON.parse(JSON.stringify(data));
-      newData = newData.filter((item) => item.employeeId != id);
+      newData = newData.filter(
+        (item) => item.employeeId != employee.employeeId,
+      );
       setData(newData);
     } catch (err) {
       console.log(err);
@@ -332,7 +340,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                     >
                       Edit
                     </button>
-                    <button onClick={() => deleteEmployee(employee.employeeId)}>
+                    <button onClick={() => deleteEmployee(employee)}>
                       Delete
                     </button>
                   </div>
