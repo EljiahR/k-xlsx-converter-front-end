@@ -7,7 +7,6 @@ const Add = ({ selectedStore }) => {
       const rawFormData = Object.fromEntries(formData);
       const [division, storeNumber] = selectedStore.split("-");
       if (rawFormData.birthday == "") rawFormData.birthday = null;
-      else rawFormData.birthday = Date.parse(rawFormData.birthday);
       rawFormData.preferredNumberOfBreaks = parseInt(
         rawFormData.preferredNumberOfBreaks,
       );

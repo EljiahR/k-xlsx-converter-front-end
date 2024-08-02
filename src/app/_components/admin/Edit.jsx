@@ -65,42 +65,48 @@ const Edit = ({ selectedStore, data, setData, search }) => {
     );
 
     employeeToEdit[key] = e.target.value;
-
+    console.log(newEditData);
     setEditData(newEditData);
   };
 
-  const handlePut = (e, id) => {
+  const handlePatch = (e, employee) => {
     e.preventDefault();
     let newData = JSON.parse(JSON.stringify(data));
     let newEditData = JSON.parse(JSON.stringify(editData));
-    let employeeToEdit = newEditData.find(
-      (employee) => (employee.employeeId = id),
+    let updatedData = newEditData.find(
+      (data) => data.employeeId == employee.employeeId,
     );
+    let employeeToEdit = newData.find(
+      (e) => e.employeeId == employee.employeeId,
+    );
+    delete employeeToEdit.edit;
 
-    let formData = new FormData();
-    Object.keys(employeeToEdit).forEach((key) => {
-      formData.append(key, employeeToEdit[key]);
+    Object.keys(updatedData).forEach((key) => {
+      if (key == "birthday") {
+        employeeToEdit[key] = encodeURIComponent(updatedData[key]);
+      } else {
+        employeeToEdit[key] = updatedData[key];
+      }
     });
-    const rawFormData = Object.fromEntries(formData);
+
     const putData = async () => {
       try {
         let response = await fetch(
           `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/`,
           {
             method: "PATCH",
-            body: JSON.stringify(rawFormData),
+            body: JSON.stringify(employeeToEdit),
+            headers: {
+              "Content-Type": "application/json",
+            },
           },
         );
         const updatedEmployee = await response.json();
 
-        let employeeToUpdate = newData.find(
-          (employee) => employee.employeeId == id,
+        employeeToEdit.edit = false;
+        newEditData = newEditData.filter(
+          (item) => item.employeeId != employeeToEdit.employeeId,
         );
-        Object.keys(updatedEmployee).forEach((key) => {
-          employeeToUpdate[key] = updatedEmployee[key];
-        });
-        employeeToUpdate.edit = false;
-        newEditData = newEditData.filter((item) => item.employeeId != id);
 
         setData(newData);
 
@@ -156,10 +162,10 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                   <form
                     className={styles.employees}
                     key={employee.employeeId}
-                    onSubmit={(e) => handlePut(e, employee.employeeId)}
+                    onSubmit={(e) => handlePatch(e, employee)}
                     id={`form-${index}`}
                   >
-                    <label for="first-name">
+                    <label htmlFor="first-name">
                       First Name:
                       <input
                         type="text"
@@ -176,7 +182,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         }
                       />
                     </label>
-                    <label for="last-name">
+                    <label htmlFor="last-name">
                       Last Name:
                       <input
                         type="text"
@@ -193,7 +199,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         }
                       />
                     </label>
-                    <label for="preferred-name">
+                    <label htmlFor="preferred-name">
                       Preferred Name:
                       <input
                         type="text"
@@ -214,7 +220,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         }
                       />
                     </label>
-                    <label for="birthday">
+                    <label htmlFor="birthday">
                       Birthdate:
                       <input
                         type="date"
@@ -240,6 +246,13 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         checked={
                           employee["preferredNumberOfBreaks"] == 2 && "checked"
                         }
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "preferredNumberOfBreaks",
+                          )
+                        }
                       />
                       <label htmlFor="break-preference-2">
                         Two 15 minute breaks
@@ -251,6 +264,13 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         value={1}
                         checked={
                           employee["preferredNumberOfBreaks"] == 1 && "checked"
+                        }
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "preferredNumberOfBreaks",
+                          )
                         }
                       />
                       <label htmlFor="break-preference-1">
@@ -264,11 +284,28 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         name="getsLunchAsAdult"
                         id="lunch-override"
                         checked={employee["getsLunchAsAdult"] && "checked"}
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "getsLunchAsAdult",
+                          )
+                        }
                       />
                     </label>
                     <label htmlFor="position-override">
                       Position Override, leave blank if not needed
-                      <select id="position-override" name="positionOverride">
+                      <select
+                        id="position-override"
+                        name="positionOverride"
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "positionOverride",
+                          )
+                        }
+                      >
                         <option value=""></option>
                         <option
                           value="$"
@@ -309,6 +346,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         id="call-up"
                         name="isACallUp"
                         checked={employee["isACallUp"] && "checked"}
+                        onChange={(e) =>
+                          handleEditChange(e, employee.employeeId, "isACallUp")
+                        }
                       />
                     </label>
                     <button
