@@ -61,10 +61,12 @@ const Edit = ({ selectedStore, data, setData, search }) => {
   const handleEditChange = (e, id, key) => {
     let newEditData = JSON.parse(JSON.stringify(editData));
     let employeeToEdit = newEditData.find(
-      (employee) => (employee.employeeId = id),
+      (employee) => employee.employeeId == id,
     );
 
-    employeeToEdit[key] = e.target.value;
+    employeeToEdit[key] =
+      e.target.value == "on" ? e.target.checked : e.target.value;
+
     console.log(newEditData);
     setEditData(newEditData);
   };
@@ -84,6 +86,8 @@ const Edit = ({ selectedStore, data, setData, search }) => {
     Object.keys(updatedData).forEach((key) => {
       if (key == "birthday") {
         employeeToEdit[key] = encodeURIComponent(updatedData[key]);
+      } else if (key == "preferredNumberOfBreaks") {
+        employeeToEdit[key] = parseInt(updatedData[key]);
       } else {
         employeeToEdit[key] = updatedData[key];
       }
@@ -228,8 +232,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         name="birthday"
                         placeholder={employee["birthday"]}
                         value={
-                          employeeEdit.hasOwnProperty("birthday") &&
-                          employeeEdit["birthday"]
+                          employeeEdit.hasOwnProperty("birthday")
+                            ? employeeEdit["birthday"].split("T")[0]
+                            : employee["birthday"].split("T")[0]
                         }
                         onChange={(e) =>
                           handleEditChange(e, employee.employeeId, "birthday")
@@ -244,7 +249,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         name="preferredNumberOfBreaks"
                         value={2}
                         checked={
-                          employee["preferredNumberOfBreaks"] == 2 && "checked"
+                          employeeEdit.hasOwnProperty("preferredNumberOfBreaks")
+                            ? employeeEdit["preferredNumberOfBreaks"] == "2"
+                            : employee["preferredNumberOfBreaks"] == 2
                         }
                         onChange={(e) =>
                           handleEditChange(
@@ -263,7 +270,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         name="preferredNumberOfBreaks"
                         value={1}
                         checked={
-                          employee["preferredNumberOfBreaks"] == 1 && "checked"
+                          employeeEdit.hasOwnProperty("preferredNumberOfBreaks")
+                            ? employeeEdit["preferredNumberOfBreaks"] == "1"
+                            : employee["preferredNumberOfBreaks"] == 1
                         }
                         onChange={(e) =>
                           handleEditChange(
@@ -283,7 +292,11 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         type="checkbox"
                         name="getsLunchAsAdult"
                         id="lunch-override"
-                        checked={employee["getsLunchAsAdult"] && "checked"}
+                        checked={
+                          employeeEdit.hasOwnProperty("getsLunchAsAdult")
+                            ? employeeEdit["getsLunchAsAdult"]
+                            : employee["getsLunchAsAdult"]
+                        }
                         onChange={(e) =>
                           handleEditChange(
                             e,
@@ -345,7 +358,11 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                         type="checkbox"
                         id="call-up"
                         name="isACallUp"
-                        checked={employee["isACallUp"] && "checked"}
+                        checked={
+                          employeeEdit.hasOwnProperty("isACallUp")
+                            ? employeeEdit["isACallUp"]
+                            : employee["isACallUp"]
+                        }
                         onChange={(e) =>
                           handleEditChange(e, employee.employeeId, "isACallUp")
                         }

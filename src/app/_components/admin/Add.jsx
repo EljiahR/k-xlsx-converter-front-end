@@ -64,7 +64,6 @@ const Add = ({ selectedStore }) => {
             id="break-preference-2"
             name="preferredNumberOfBreaks"
             value={2}
-            checked="checked"
             required
           />
           <label htmlFor="break-preference-2">Two 15 minute breaks</label>
