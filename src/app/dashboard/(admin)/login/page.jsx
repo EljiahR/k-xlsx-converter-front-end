@@ -1,6 +1,6 @@
 "use client";
 import styles from "@/styles/Login.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import AuthService from "@/lib/authService.js";
@@ -11,6 +11,13 @@ const Login = ({ loginStatus = "" }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(loginStatus);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== undefined && AuthService.getCurrentUser() != null) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,13 +32,18 @@ const Login = ({ loginStatus = "" }) => {
     }
   };
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    AuthService.logout();
+  };
+
   return (
     <div id="login-page">
       <Link href="/">
         <button>Return to home</button>
       </Link>
       <h2>Admin Login</h2>
-      {AuthService.getCurrentUser() == null && (
+      {!isLoggedIn && (
         <form id="login-form" className={styles["form"]} onSubmit={handleLogin}>
           <label htmlFor="username">
             Username:{" "}
@@ -54,10 +66,10 @@ const Login = ({ loginStatus = "" }) => {
       )}
 
       {message != "" && <p>Message: {message}</p>}
-      {AuthService.getCurrentUser() && (
+      {isLoggedIn && (
         <div>
           <p>Currently logged in</p>
-          <button onClick={AuthService.logout()}>Logout</button>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       )}
     </div>
