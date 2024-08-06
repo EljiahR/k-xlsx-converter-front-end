@@ -20,6 +20,9 @@ export default function Home() {
           <Link href="/dashboard/employees" passHref>
             <button>Admin</button>
           </Link>
+          <Link href="/login" passHref>
+            <button>Login</button>
+          </Link>
         </div>
       </div>
     </>
