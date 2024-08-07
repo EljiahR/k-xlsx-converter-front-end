@@ -5,7 +5,6 @@ import "@/styles/globals.css";
 import { Metadata } from "next";
 import styles from "./_styles/Home.module.css";
 import Link from "next/link";
-import { useState, useEffect } from "react"
 
 export const metadata: Metadata = {
   title: "K Excel to Table",

@@ -10,6 +10,7 @@ const Add = ({ selectedStore }) => {
       rawFormData.preferredNumberOfBreaks = parseInt(
         rawFormData.preferredNumberOfBreaks,
       );
+      if(rawFormData.preferredFirstName.trim().length == 0) rawFormData.preferredFirstName = null;
       rawFormData.division = parseInt(division);
       rawFormData.storeNumber = parseInt(storeNumber);
       rawFormData.getsLunchAsAdult = rawFormData.getsLunchAsAdult == "true";

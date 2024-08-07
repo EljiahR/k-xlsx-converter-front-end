@@ -88,6 +88,11 @@ const Edit = ({ selectedStore, data, setData, search }) => {
         employeeToEdit[key] = encodeURIComponent(updatedData[key]);
       } else if (key == "preferredNumberOfBreaks") {
         employeeToEdit[key] = parseInt(updatedData[key]);
+      } else if (
+        key == "preferredFirstName" &&
+        employeeToEdit[key].trim().length == 0
+      ) {
+        employeeToEdit[key] = null;
       } else {
         employeeToEdit[key] = updatedData[key];
       }
@@ -123,6 +128,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
   };
 
   const deleteEmployee = async (employee) => {
+    if(confirm(`Are you sure you wish to delete ${employee.firstName}`))
     try {
       const employeeToDelete = JSON.parse(JSON.stringify(employee));
       delete employeeToDelete.edit;
