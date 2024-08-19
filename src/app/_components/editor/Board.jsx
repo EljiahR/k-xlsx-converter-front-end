@@ -30,7 +30,8 @@ const Board = ({ currentDay, shifts, setShifts }) => {
       let personToEdit = shiftToEdit.shifts.find(
         (person) =>
           person.firstName === thisPerson.firstName &&
-          person.lastName === thisPerson.lastName,
+          person.lastName === thisPerson.lastName &&
+          person.shiftStart == thisPerson.shiftStart,
       );
 
       personToEdit[breakType].time = addMinutesToBreak(
@@ -72,6 +73,8 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         person.firstName === thisPerson.firstName &&
         person.lastName === thisPerson.lastName,
     );
+    console.log(thisPerson);
+    console.log(personToEdit);
 
     personToEdit[breakType].time = e.target.value;
 
@@ -95,7 +98,8 @@ const Board = ({ currentDay, shifts, setShifts }) => {
     let personToEdit = shiftToEdit.shifts.find(
       (person) =>
         person.firstName === thisPerson.firstName &&
-        person.lastName === thisPerson.lastName,
+        person.lastName === thisPerson.lastName &&
+        person.shiftStart == thisPerson.shiftStart,
     );
     if (!personToEdit[breakType].hasOwnProperty("time")) {
       personToEdit[breakType].time = "";

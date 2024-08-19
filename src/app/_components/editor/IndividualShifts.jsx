@@ -9,14 +9,16 @@ const Breaks = ({
   handleKeyUpDown,
   breakClass,
   breakType,
-  inputReference,
   selectedTime,
   section,
+
 }) => {
+  const inputReference = useRef(null);
   // Might need to fix performance issue with this
   useEffect(() => {
     if (person[breakType].editable) {
       inputReference.current.select();
+      
     }
   }, [person[breakType].editable]);
 
@@ -95,9 +97,7 @@ const IndividualShifts = ({
   selectedTime,
   section,
 }) => {
-  const inputReference = useRef(null);
-
-  const shifts = people.map((person) => {
+  const shifts = people.map((person, index) => {
     return (
       <div
         className={styles["person"]}
@@ -122,9 +122,9 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakOne"
-          inputReference={inputReference}
           selectedTime={selectedTime}
           section={section}
+         
         />
 
         <Breaks
@@ -135,9 +135,9 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="lunch"
           breakType="lunch"
-          inputReference={inputReference}
           selectedTime={selectedTime}
           section={section}
+         
         />
         <Breaks
           person={person}
@@ -147,12 +147,13 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakTwo"
-          inputReference={inputReference}
           selectedTime={selectedTime}
           section={section}
+         
         />
-        {!positionName.includes("Fuel") && 
-        <div className={styles["fresh-start"]}></div>}
+        {!positionName.includes("Fuel") && (
+          <div className={styles["fresh-start"]}></div>
+        )}
       </div>
     );
   });
