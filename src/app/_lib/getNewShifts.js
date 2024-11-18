@@ -5,7 +5,7 @@ export const getEmployees = async (xlsxFile) => {
   data.append("file", xlsxFile);
 
   const response = await fetch(
-    "https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/Dailies/16/549",
+    "https://kxlsxconverterapi.onrender.com/Employee/Dailies/16/549",
     {
       method: "POST",
       body: data,
