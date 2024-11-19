@@ -23,7 +23,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       const [division, storeNumber] = selectedStore.split("-");
       try {
         let response = await fetch(
-          `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/${division}/${storeNumber}`,
+          `https://kxlsxconverterapi.onrender.com/Employee/${division}/${storeNumber}`,
         );
         let employees = await response.json();
         console.log(employees);
