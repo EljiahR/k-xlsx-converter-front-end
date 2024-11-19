@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL =
-  "https://kxlsxconverterapi20240713102707.azurewebsites.net/auth/";
+  "https://kxlsxconverterapi.onrender.com/auth/";
 
 class AuthService {
   login(username, password) {
