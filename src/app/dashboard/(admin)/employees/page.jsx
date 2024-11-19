@@ -18,6 +18,8 @@ const Employees = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  /*
+  // Temporarily disabling for testing purposes
   useEffect(() => {
     if (typeof window !== undefined) {
       if (AuthService.getCurrentUser() == null) {
@@ -30,7 +32,7 @@ const Employees = () => {
       }
     }
   },[])
-
+  */
 
 
   const handleLogout = (e) => {
