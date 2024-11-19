@@ -101,7 +101,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
     const putData = async () => {
       try {
         let response = await fetch(
-          `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/`,
+          `https://kxlsxconverterapi.onrender.com/Employee/`,
           {
             method: "PATCH",
             body: JSON.stringify(employeeToEdit),
@@ -134,7 +134,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       delete employeeToDelete.edit;
       console.log(employeeToDelete);
       const response = await fetch(
-        `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee/`,
+        `https://kxlsxconverterapi.onrender.com/Employee/`,
         {
           method: "DELETE",
           body: JSON.stringify(employeeToDelete),
