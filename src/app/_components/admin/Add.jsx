@@ -18,7 +18,7 @@ const Add = ({ selectedStore }) => {
       console.log(rawFormData);
       try {
         let response = await fetch(
-          `https://kxlsxconverterapi20240713102707.azurewebsites.net/Employee`,
+          `https://kxlsxconverterapi.onrender.com/Employee`,
           {
             method: "POST",
             body: JSON.stringify(rawFormData),
