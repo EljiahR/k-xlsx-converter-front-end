@@ -1,20 +1,22 @@
 import Link from "next/link";
-import styles from "@/styles/NavBar.module.css"
+import styles from "@/styles/NavBar.module.css";
 
 const NavBar = ({
   convertDivToPDF,
   handleCurrentDay,
   handleFileInput,
-  data,
+  xlsxFile,
   page,
   setPage,
 }) => {
   return (
     <div id={styles["navbar"]}>
-      <Link href="/" passHref><button>Go Back</button></Link>
+      <Link href="/" passHref>
+        <button>Go Back</button>
+      </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
       <div>
-        {data && (
+        {xlsxFile && (
           <>
             <select name="weekdays" id="weekdays" onChange={handleCurrentDay}>
               <option value={0}>Sunday</option>

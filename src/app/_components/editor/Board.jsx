@@ -3,52 +3,81 @@ import BlankRow from "@/components/editor/BlankRow";
 import CallUps from "@/components/editor/CallUps";
 import IndividualShifts from "@/components/editor/IndividualShifts";
 import Liquor from "@/components/editor/Liquor";
-import moment from "moment"
+import moment from "moment";
 import { useState } from "react";
-import { addMinutesToBreak, compareTime, getDatesFromBreaks } from "@/lib/timeFunctions"
+import {
+  addMinutesToBreak,
+  compareTime,
+  getDatesFromBreaks,
+} from "@/lib/timeFunctions";
 
 const Board = ({ currentDay, shifts, setShifts }) => {
-  const [selectedTime, setSelectedTime] = useState({ time: "", section: "", time15:"", timeMinus15: "" });
+  const [selectedTime, setSelectedTime] = useState({
+    time: "",
+    section: "",
+    time15: "",
+    timeMinus15: "",
+  });
 
   const handleKeyUpDown = (e, thisPerson, positionName, breakType, section) => {
-    if((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != ""){
-      e.preventDefault()
+    if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != "") {
+      e.preventDefault();
       let newShifts = JSON.parse(JSON.stringify(shifts));
-      let shiftToEdit = newShifts[currentDay].Shifts.find(
+      let shiftToEdit = newShifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
 
-      let personToEdit = shiftToEdit.people.find(
+      let personToEdit = shiftToEdit.shifts.find(
         (person) =>
-          person["first name"] === thisPerson["first name"] &&
-          person["last name"] === thisPerson["last name"],
+          person.firstName === thisPerson.firstName &&
+          person.lastName === thisPerson.lastName &&
+          person.shiftStart == thisPerson.shiftStart,
       );
 
-      personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, e.key == "ArrowUp" ? 15 : -15);
-      if(compareTime(personToEdit[breakType].time, personToEdit.start) && compareTime(personToEdit.end, personToEdit[breakType].time)){
+      personToEdit[breakType].time = addMinutesToBreak(
+        personToEdit[breakType].time,
+        e.key == "ArrowUp" ? 15 : -15,
+      );
+      if (
+        compareTime(
+          personToEdit[breakType].time,
+          personToEdit.shiftStart,
+          true,
+        ) &&
+        compareTime(personToEdit.shiftEnd, personToEdit[breakType].time)
+      ) {
         setShifts(newShifts);
-        setSelectedTime({ time: personToEdit[breakType].time, section, time15: addMinutesToBreak(personToEdit[breakType].time, breakType == "lunch" ? 15 : 0), timeMinus15: addMinutesToBreak(personToEdit[breakType].time, -15) })
+        setSelectedTime({
+          time: personToEdit[breakType].time,
+          section,
+          time15: addMinutesToBreak(
+            personToEdit[breakType].time,
+            breakType == "lunch" ? 15 : 0,
+          ),
+          timeMinus15: addMinutesToBreak(personToEdit[breakType].time, -15),
+        });
       } else {
-        return null
+        return null;
       }
-      
     }
-  }
-  
+  };
+
   const handleBreakChange = (e, thisPerson, positionName, breakType) => {
     let newShifts = JSON.parse(JSON.stringify(shifts));
-    let shiftToEdit = newShifts[currentDay].Shifts.find(
+    let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
 
-    let personToEdit = shiftToEdit.people.find(
+    let personToEdit = shiftToEdit.shifts.find(
       (person) =>
-        person["first name"] === thisPerson["first name"] &&
-        person["last name"] === thisPerson["last name"],
+        person.firstName === thisPerson.firstName &&
+        person.lastName === thisPerson.lastName,
     );
-    
+    console.log(thisPerson);
+    console.log(personToEdit);
+
     personToEdit[breakType].time = e.target.value;
-    
+
     setShifts(newShifts);
   };
 
@@ -62,37 +91,38 @@ const Board = ({ currentDay, shifts, setShifts }) => {
     time,
   ) => {
     let newShifts = JSON.parse(JSON.stringify(shifts));
-    let shiftToEdit = newShifts[currentDay].Shifts.find(
+    let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
 
-    let personToEdit = shiftToEdit.people.find(
+    let personToEdit = shiftToEdit.shifts.find(
       (person) =>
-        person["first name"] === thisPerson["first name"] &&
-        person["last name"] === thisPerson["last name"],
+        person.firstName === thisPerson.firstName &&
+        person.lastName === thisPerson.lastName &&
+        person.shiftStart == thisPerson.shiftStart,
     );
-    if(!personToEdit[breakType].hasOwnProperty("time")){
-      personToEdit[breakType].time = ""
-      time = ""
+    if (!personToEdit[breakType].hasOwnProperty("time")) {
+      personToEdit[breakType].time = "";
+      time = "";
     }
     personToEdit[breakType].editable = onOff;
 
     let time15;
-    if(breakType == "lunch"){
-      time15 = moment(getDatesFromBreaks(time, 15)).format("LT")
+    if (breakType == "lunch") {
+      time15 = moment(getDatesFromBreaks(time, 15)).format("LT");
     } else {
-      time15 = time
+      time15 = time;
     }
-    const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT")
-    
+    const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
+
     setShifts(newShifts);
-    setSelectedTime({time, section, time15, timeMinus15});
+    setSelectedTime({ time, section, time15, timeMinus15 });
   };
 
   return (
     <>
       <div id={styles["report"]}>
-        <h5 id={styles["date"]}>{shifts[currentDay].Date}</h5>
+        <h5 id={styles["date"]}>{shifts[currentDay].date}</h5>
         <div id={styles["labels"]}>
           <h6>Tasks</h6>
           <h6>Name</h6>
@@ -101,10 +131,11 @@ const Board = ({ currentDay, shifts, setShifts }) => {
           <h6>Break</h6>
           <h6>Lunch</h6>
           <h6>Break</h6>
+          <h6 id={styles["fresh-start-label"]}>FS</h6>
         </div>
-        {shifts[currentDay].Shifts.find(
+        {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
-        ).people.length > 0 && (
+        ) && (
           <>
             <div className={styles["front-end-header"]}>
               <div className="blank-cell"></div>
@@ -113,9 +144,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
             <div className={styles["front-end-content"]}>
               <IndividualShifts
                 people={
-                  shifts[currentDay].Shifts.find(
+                  shifts[currentDay].jobPositions.find(
                     (shift) => shift.name === "Front End Supervisor",
-                  ).people
+                  ).shifts
                 }
                 positionName="Front End Supervisor"
                 handleBreakClick={handleBreakClick}
@@ -137,9 +168,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         <div className={styles["front-end-content"]}>
           <IndividualShifts
             people={
-              shifts[currentDay].Shifts.find(
+              shifts[currentDay].jobPositions.find(
                 (shift) => shift.name === "Front End Cashier",
-              ).people
+              ).shifts
             }
             positionName="Front End Cashier"
             handleBreakClick={handleBreakClick}
@@ -158,9 +189,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         <div className={styles["front-end-content"]}>
           <IndividualShifts
             people={
-              shifts[currentDay].Shifts.find(
+              shifts[currentDay].jobPositions.find(
                 (shift) => shift.name === "Front End SCO Cashier",
-              ).people
+              ).shifts
             }
             positionName="Front End SCO Cashier"
             handleBreakClick={handleBreakClick}
@@ -179,9 +210,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         <div className={styles["front-end-content"]}>
           <IndividualShifts
             people={
-              shifts[currentDay].Shifts.find(
+              shifts[currentDay].jobPositions.find(
                 (shift) => shift.name === "Front End Courtesy Clerk",
-              ).people
+              ).shifts
             }
             positionName="Front End Courtesy Clerk"
             handleBreakClick={handleBreakClick}
@@ -200,9 +231,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         <div className={styles["front-end-content"]}>
           <IndividualShifts
             people={
-              shifts[currentDay].Shifts.find(
+              shifts[currentDay].jobPositions.find(
                 (shift) => shift.name === "Front End Service Desk",
-              ).people
+              ).shifts
             }
             positionName="Front End Service Desk"
             handleBreakClick={handleBreakClick}
@@ -221,9 +252,9 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         <div id={styles["fuel"]} className={styles["front-end-content"]}>
           <IndividualShifts
             people={
-              shifts[currentDay].Shifts.find(
+              shifts[currentDay].jobPositions.find(
                 (shift) => shift.name === "Fuel Clerk",
-              ).people
+              ).shifts
             }
             positionName="Fuel Clerk"
             handleBreakClick={handleBreakClick}
@@ -235,27 +266,34 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         </div>
       </div>
       <div id={styles["side-section"]}>
-        <div id="call-ups">
-          <h2 className="side-header">Call Ups and Misc</h2>
-          <div id="call-ups-section">
-            <CallUps
-              people={
-                shifts[currentDay].Shifts.find(
-                  (shift) => shift.name === "Call Up",
-                ).people
-              }
-              positionName="callup"
-            />
-          </div>
-        </div>
+        {shifts[currentDay].jobPositions.find(
+          (shift) => shift.name === "Call Ups",
+        ) && (
+          <>
+            <div id="call-ups">
+              <h2 className="side-header">Call Ups and Misc</h2>
+              <div id="call-ups-section">
+                <CallUps
+                  people={
+                    shifts[currentDay].jobPositions.find(
+                      (shift) => shift.name === "Call Ups",
+                    ).shifts
+                  }
+                  positionName="callup"
+                />
+              </div>
+            </div>
+          </>
+        )}
+
         <div id="liquor">
           <h2 className="side-header">Liquor</h2>
           <div id={styles["liquor-section"]}>
             <Liquor
               people={
-                shifts[currentDay].Shifts.find(
+                shifts[currentDay].jobPositions.find(
                   (shift) => shift.name === "Liquor Clerk",
-                ).people
+                ).shifts
               }
               positionName="liquor"
             />

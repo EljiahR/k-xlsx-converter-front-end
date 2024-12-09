@@ -9,15 +9,16 @@ const Breaks = ({
   handleKeyUpDown,
   breakClass,
   breakType,
-  inputReference,
   selectedTime,
   section,
+
 }) => {
-  
+  const inputReference = useRef(null);
   // Might need to fix performance issue with this
   useEffect(() => {
     if (person[breakType].editable) {
       inputReference.current.select();
+      
     }
   }, [person[breakType].editable]);
 
@@ -26,8 +27,10 @@ const Breaks = ({
       <input
         type="text"
         className={`${styles[breakClass]} ${
-          selectedTime.time !== "" && selectedTime.section == section &&
-          (selectedTime.time == person[breakType].time || selectedTime.time15 == person[breakType].time)
+          selectedTime.time !== "" &&
+          selectedTime.section == section &&
+          (selectedTime.time == person[breakType].time ||
+            selectedTime.time15 == person[breakType].time)
             ? styles.highlight
             : ""
         }`}
@@ -43,7 +46,9 @@ const Breaks = ({
           )
         }
         onChange={(e) => handleBreakChange(e, person, positionName, breakType)}
-        onKeyDown={(e) => handleKeyUpDown(e, person, positionName, breakType, section)}
+        onKeyDown={(e) =>
+          handleKeyUpDown(e, person, positionName, breakType, section)
+        }
         ref={inputReference}
       />
     );
@@ -61,8 +66,12 @@ const Breaks = ({
           )
         }
         className={`${styles[breakClass]} ${
-          selectedTime.time !== "" && selectedTime.section == section &&
-          ((selectedTime.time == person[breakType].time || selectedTime.time15 == person[breakType].time) || (breakType == "lunch" && person[breakType].time == selectedTime.timeMinus15))
+          selectedTime.time !== "" &&
+          selectedTime.section == section &&
+          (selectedTime.time == person[breakType].time ||
+            selectedTime.time15 == person[breakType].time ||
+            (breakType == "lunch" &&
+              person[breakType].time == selectedTime.timeMinus15))
             ? styles.highlight
             : ""
         }`}
@@ -88,20 +97,23 @@ const IndividualShifts = ({
   selectedTime,
   section,
 }) => {
-  const inputReference = useRef(null);
-
-  const shifts = people.map((person) => {
+  const shifts = people.map((person, index) => {
     return (
       <div
         className={styles["person"]}
-        key={positionName + person["first name"] + person["last name"]}
+        key={
+          positionName +
+          person["firstName"] +
+          person["lastName"] +
+          person["shiftStart"]
+        }
       >
         <div className={styles["blank-cell"]}></div>
         <p className={styles["person-name"]}>
-          {person["first name"] + " " + person["last name"]}
+          {person["firstName"] + " " + person["lastName"]}
         </p>
-        <p className={`start ${styles["time"]}`}>{person.start}</p>
-        <p className={`end ${styles["time"]}`}>{person.end}</p>
+        <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
+        <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks
           person={person}
           positionName={positionName}
@@ -109,10 +121,10 @@ const IndividualShifts = ({
           handleBreakChange={handleBreakChange}
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
-          breakType="break1"
-          inputReference={inputReference}
+          breakType="breakOne"
           selectedTime={selectedTime}
           section={section}
+         
         />
 
         <Breaks
@@ -123,9 +135,9 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="lunch"
           breakType="lunch"
-          inputReference={inputReference}
           selectedTime={selectedTime}
           section={section}
+         
         />
         <Breaks
           person={person}
@@ -134,11 +146,14 @@ const IndividualShifts = ({
           handleBreakChange={handleBreakChange}
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
-          breakType="break2"
-          inputReference={inputReference}
+          breakType="breakTwo"
           selectedTime={selectedTime}
           section={section}
+         
         />
+        {!positionName.includes("Fuel") && (
+          <div className={styles["fresh-start"]}></div>
+        )}
       </div>
     );
   });

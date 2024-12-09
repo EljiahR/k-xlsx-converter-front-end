@@ -1,16 +1,32 @@
 import styles from "@/styles/Edit.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-const Edit = ({ selectedStore, data, setData }) => {
+const Edit = ({ selectedStore, data, setData, search }) => {
   const [loading, setLoading] = useState(false);
   const [editData, setEditData] = useState([]);
+
+  const filteredData = useMemo(() => {
+    if (data == null || search == "") return data;
+
+    return data.filter((x) => {
+      const names = [x.firstName.toLowerCase(), x.lastName.toLowerCase()];
+      const words = search.split(" ");
+      return words.every((word) => {
+        return names.some((name) => name.includes(word.toLowerCase()));
+      });
+    });
+  }, [search, data]);
 
   const getEmployees = async () => {
     if (selectedStore != "") {
       setLoading(true);
+      const [division, storeNumber] = selectedStore.split("-");
       try {
-        let response = await fetch(`/api/store/get/${selectedStore}`);
+        let response = await fetch(
+          `https://kxlsxconverterapi.onrender.com/Employee/${division}/${storeNumber}`,
+        );
         let employees = await response.json();
+        console.log(employees);
         employees.forEach((employee) => {
           employee.edit = false;
         });
@@ -27,13 +43,15 @@ const Edit = ({ selectedStore, data, setData }) => {
 
   const enableEdit = (id, onOff) => {
     let newData = JSON.parse(JSON.stringify(data));
-    let employeeToChange = newData.find((employee) => employee._id == id);
+    let employeeToChange = newData.find(
+      (employee) => employee.employeeId == id,
+    );
     employeeToChange.edit = onOff;
     let newEditData = JSON.parse(JSON.stringify(editData));
     if (onOff) {
-      newEditData.push({ _id: id });
+      newEditData.push({ employeeId: id });
     } else {
-      newEditData = newEditData.filter((item) => item._id !== id);
+      newEditData = newEditData.filter((item) => item.employeeId !== id);
     }
 
     setData(newData);
@@ -42,38 +60,62 @@ const Edit = ({ selectedStore, data, setData }) => {
 
   const handleEditChange = (e, id, key) => {
     let newEditData = JSON.parse(JSON.stringify(editData));
-    let employeeToEdit = newEditData.find((employee) => (employee._id = id));
+    let employeeToEdit = newEditData.find(
+      (employee) => employee.employeeId == id,
+    );
 
-    employeeToEdit[key] = e.target.value;
+    employeeToEdit[key] =
+      e.target.value == "on" ? e.target.checked : e.target.value;
 
+    console.log(newEditData);
     setEditData(newEditData);
   };
 
-  const handlePut = (e, id) => {
+  const handlePatch = (e, employee) => {
     e.preventDefault();
     let newData = JSON.parse(JSON.stringify(data));
     let newEditData = JSON.parse(JSON.stringify(editData));
-    let employeeToEdit = newEditData.find((employee) => (employee._id = id));
+    let updatedData = newEditData.find(
+      (data) => data.employeeId == employee.employeeId,
+    );
+    let employeeToEdit = newData.find(
+      (e) => e.employeeId == employee.employeeId,
+    );
+    delete employeeToEdit.edit;
 
-    let formData = new FormData();
-    Object.keys(employeeToEdit).forEach((key) => {
-      formData.append(key, employeeToEdit[key]);
+    Object.keys(updatedData).forEach((key) => {
+      if (key == "birthday") {
+        employeeToEdit[key] = encodeURIComponent(updatedData[key]);
+      } else if (key == "preferredNumberOfBreaks") {
+        employeeToEdit[key] = parseInt(updatedData[key]);
+      } else if (
+        key == "preferredFirstName" &&
+        employeeToEdit[key].trim().length == 0
+      ) {
+        employeeToEdit[key] = null;
+      } else {
+        employeeToEdit[key] = updatedData[key];
+      }
     });
-    const rawFormData = Object.fromEntries(formData)
+
     const putData = async () => {
       try {
-        let response = await fetch(`/api/store/put/${selectedStore}`, {
-          method: "PUT",
-          body: JSON.stringify(rawFormData),
-        });
+        let response = await fetch(
+          `https://kxlsxconverterapi.onrender.com/Employee/`,
+          {
+            method: "PATCH",
+            body: JSON.stringify(employeeToEdit),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          },
+        );
         const updatedEmployee = await response.json();
 
-        let employeeToUpdate = newData.find((employee) => employee._id == id);
-        Object.keys(updatedEmployee).forEach((key) => {
-          employeeToUpdate[key] = updatedEmployee[key];
-        });
-        employeeToUpdate.edit = false;
-        newEditData = newEditData.filter((item) => item._id != id);
+        employeeToEdit.edit = false;
+        newEditData = newEditData.filter(
+          (item) => item.employeeId != employeeToEdit.employeeId,
+        );
 
         setData(newData);
 
@@ -85,15 +127,27 @@ const Edit = ({ selectedStore, data, setData }) => {
     putData();
   };
 
-  const deleteEmployee = async (id) => {
+  const deleteEmployee = async (employee) => {
+    if(confirm(`Are you sure you wish to delete ${employee.firstName}`))
     try {
-      const response = await fetch(`/api/store/delete/${selectedStore}`, {
-        method: "DELETE",
-        body: JSON.stringify({ id: id }),
-      });
+      const employeeToDelete = JSON.parse(JSON.stringify(employee));
+      delete employeeToDelete.edit;
+      console.log(employeeToDelete);
+      const response = await fetch(
+        `https://kxlsxconverterapi.onrender.com/Employee/`,
+        {
+          method: "DELETE",
+          body: JSON.stringify(employeeToDelete),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
       const result = await response.json();
       let newData = JSON.parse(JSON.stringify(data));
-      newData = newData.filter((item) => item._id != id);
+      newData = newData.filter(
+        (item) => item.employeeId != employee.employeeId,
+      );
       setData(newData);
     } catch (err) {
       console.log(err);
@@ -109,74 +163,74 @@ const Edit = ({ selectedStore, data, setData }) => {
         ? "No store selected"
         : loading
           ? "Loading..."
-          : data.map((employee, index) => {
+          : filteredData.map((employee, index) => {
               if (employee.edit) {
                 let employeeEdit = editData.find(
-                  (item) => item._id == employee._id,
+                  (item) => item.employeeId == employee.employeeId,
                 );
                 return (
                   <form
                     className={styles.employees}
-                    key={employee._id}
-                    onSubmit={(e) => handlePut(e, employee._id)}
+                    key={employee.employeeId}
+                    onSubmit={(e) => handlePatch(e, employee)}
                     id={`form-${index}`}
                   >
-                    <label for="first-name">
+                    <label htmlFor="first-name">
                       First Name:
                       <input
                         type="text"
                         id="first-name"
-                        name="first-name"
-                        placeholder={employee["first_name"]}
+                        name="firstName"
+                        placeholder={employee["firstName"]}
                         value={
-                          employeeEdit.hasOwnProperty("first_name")
-                            ? employeeEdit["first_name"]
+                          employeeEdit.hasOwnProperty("firstName")
+                            ? employeeEdit["firstName"]
                             : ""
                         }
                         onChange={(e) =>
-                          handleEditChange(e, employee._id, "first_name")
+                          handleEditChange(e, employee.employeeId, "firstName")
                         }
                       />
                     </label>
-                    <label for="last-name">
+                    <label htmlFor="last-name">
                       Last Name:
                       <input
                         type="text"
                         id="last-name"
-                        name="last-name"
-                        placeholder={employee["last_name"]}
+                        name="lastName"
+                        placeholder={employee["lastName"]}
                         value={
-                          employeeEdit.hasOwnProperty("last_name")
-                            ? employeeEdit["last_name"]
+                          employeeEdit.hasOwnProperty("lastName")
+                            ? employeeEdit["lastName"]
                             : ""
                         }
                         onChange={(e) =>
-                          handleEditChange(e, employee._id, "last_name")
+                          handleEditChange(e, employee.employeeId, "lastName")
                         }
                       />
                     </label>
-                    <label for="preferred-name">
+                    <label htmlFor="preferred-name">
                       Preferred Name:
                       <input
                         type="text"
                         id="preferred-name"
-                        name="preferred-name"
-                        placeholder={employee["first_name_preference"]}
+                        name="preferredFirstName"
+                        placeholder={employee["preferredFirstName"]}
                         value={
-                          employeeEdit.hasOwnProperty("first_name_preference")
-                            ? employeeEdit["first_name_preference"]
+                          employeeEdit.hasOwnProperty("preferredFirstName")
+                            ? employeeEdit["preferredFirstName"]
                             : ""
                         }
                         onChange={(e) =>
                           handleEditChange(
                             e,
-                            employee._id,
-                            "first_name_preference",
+                            employee.employeeId,
+                            "preferredFirstName",
                           )
                         }
                       />
                     </label>
-                    <label for="birthday">
+                    <label htmlFor="birthday">
                       Birthdate:
                       <input
                         type="date"
@@ -184,11 +238,12 @@ const Edit = ({ selectedStore, data, setData }) => {
                         name="birthday"
                         placeholder={employee["birthday"]}
                         value={
-                          employeeEdit.hasOwnProperty("birthday") &&
-                          employeeEdit["birthday"]
+                          employeeEdit.hasOwnProperty("birthday")
+                            ? employeeEdit["birthday"].split("T")[0]
+                            : employee["birthday"].split("T")[0]
                         }
                         onChange={(e) =>
-                          handleEditChange(e, employee._id, "birthday")
+                          handleEditChange(e, employee.employeeId, "birthday")
                         }
                       />
                     </label>
@@ -197,9 +252,20 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="radio"
                         id="break-preference-2"
-                        name="break-preference"
+                        name="preferredNumberOfBreaks"
                         value={2}
-                        checked={employee["break_preference"] == 2 && "checked"}
+                        checked={
+                          employeeEdit.hasOwnProperty("preferredNumberOfBreaks")
+                            ? employeeEdit["preferredNumberOfBreaks"] == "2"
+                            : employee["preferredNumberOfBreaks"] == 2
+                        }
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "preferredNumberOfBreaks",
+                          )
+                        }
                       />
                       <label htmlFor="break-preference-2">
                         Two 15 minute breaks
@@ -207,9 +273,20 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="radio"
                         id="break-preference-1"
-                        name="break-preference"
+                        name="preferredNumberOfBreaks"
                         value={1}
-                        checked={employee["break_preference"] == 1 && "checked"}
+                        checked={
+                          employeeEdit.hasOwnProperty("preferredNumberOfBreaks")
+                            ? employeeEdit["preferredNumberOfBreaks"] == "1"
+                            : employee["preferredNumberOfBreaks"] == 1
+                        }
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "preferredNumberOfBreaks",
+                          )
+                        }
                       />
                       <label htmlFor="break-preference-1">
                         One 30 minute break
@@ -219,35 +296,66 @@ const Edit = ({ selectedStore, data, setData }) => {
                       Lunch Override for over 18
                       <input
                         type="checkbox"
-                        name="lunch-override"
+                        name="getsLunchAsAdult"
                         id="lunch-override"
-                        checked={employee["lunch_override"] && "checked"}
+                        checked={
+                          employeeEdit.hasOwnProperty("getsLunchAsAdult")
+                            ? employeeEdit["getsLunchAsAdult"]
+                            : employee["getsLunchAsAdult"]
+                        }
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "getsLunchAsAdult",
+                          )
+                        }
                       />
                     </label>
                     <label htmlFor="position-override">
                       Position Override, leave blank if not needed
-                      <select id="position-override" name="position-override">
+                      <select
+                        id="position-override"
+                        name="positionOverride"
+                        onChange={(e) =>
+                          handleEditChange(
+                            e,
+                            employee.employeeId,
+                            "positionOverride",
+                          )
+                        }
+                      >
                         <option value=""></option>
                         <option
                           value="$"
                           selected={
-                            employee["position_override"] == "$"
+                            employee["positionOverride"] == "$"
                               ? "selected"
                               : null
                           }
                         >
                           Cashier
                         </option>
-                        <option value="B" selected={
-                            employee["position_override"] == "B"
+                        <option
+                          value="B"
+                          selected={
+                            employee["positionOverride"] == "B"
                               ? "selected"
                               : null
-                          }>Bagger</option>
-                        <option value="DELETE" selected={
-                            employee["position_override"] == "DELETE"
+                          }
+                        >
+                          Bagger
+                        </option>
+                        <option
+                          value="DELETE"
+                          selected={
+                            employee["positionOverride"] == "DELETE"
                               ? "selected"
                               : null
-                          }>Remove</option>
+                          }
+                        >
+                          Remove
+                        </option>
                       </select>
                     </label>
                     <label htmlFor="call-up">
@@ -255,13 +363,20 @@ const Edit = ({ selectedStore, data, setData }) => {
                       <input
                         type="checkbox"
                         id="call-up"
-                        name="call-up"
-                        checked={employee["call_up"] && "checked"}
+                        name="isACallUp"
+                        checked={
+                          employeeEdit.hasOwnProperty("isACallUp")
+                            ? employeeEdit["isACallUp"]
+                            : employee["isACallUp"]
+                        }
+                        onChange={(e) =>
+                          handleEditChange(e, employee.employeeId, "isACallUp")
+                        }
                       />
                     </label>
                     <button
                       type="button"
-                      onClick={() => enableEdit(employee._id, false)}
+                      onClick={() => enableEdit(employee.employeeId, false)}
                     >
                       Cancel
                     </button>
@@ -270,21 +385,25 @@ const Edit = ({ selectedStore, data, setData }) => {
                 );
               } else {
                 return (
-                  <div className={styles.employees} key={employee._id}>
+                  <div className={styles.employees} key={employee.employeeId}>
                     <p>
-                      {employee["first_name"]} {employee["last_name"]}
+                      {employee["firstName"]} {employee["lastName"]}
                     </p>
-                    <p>Preferred Name: {employee["first_name_prefernce"]}</p>
+                    <p>Preferred Name: {employee["preferredFirstName"]}</p>
                     <p>Birthdate: {employee["birthday"]}</p>
-                    <p>Break Preference: {employee["break_preference"]}</p>
-                    <p>Lunch Override: {employee["lunch_override"]}</p>
-                    <p>Position Override: {employee["position_override"]}</p>
-                    <p>Bathroom Order: {employee["bathroom_order"]}</p>
-                    <p>Call Up: {employee["call_up"]}</p>
-                    <button onClick={() => enableEdit(employee._id, true)}>
+                    <p>
+                      Break Preference: {employee["preferredNumberOfBreaks"]}
+                    </p>
+                    <p>Lunch Override: {employee["getsLunchAsAdult"]}</p>
+                    <p>Position Override: {employee["positionOverride"]}</p>
+                    <p>Bathroom Order: {employee["bathroomOrder"]}</p>
+                    <p>Call Up: {employee["isACallUp"]}</p>
+                    <button
+                      onClick={() => enableEdit(employee.employeeId, true)}
+                    >
                       Edit
                     </button>
-                    <button onClick={() => deleteEmployee(employee._id)}>
+                    <button onClick={() => deleteEmployee(employee)}>
                       Delete
                     </button>
                   </div>

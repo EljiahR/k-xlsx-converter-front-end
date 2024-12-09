@@ -8,52 +8,63 @@ const WEEKDAYS = [
   "Saturday",
 ];
 
-const dayConstructor = (Weekday) => {
+const dayConstructor = (day) => {
   return {
-    Weekday,
-    Date: "",
-    Shifts: [
+    day,
+    date: "",
+    jobPositions: [
       {
         name: "Front End Cashier",
-        code: "$",
-        people: [],
+
+        shifts: [
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          },
+        ],
       },
       {
         name: "Front End Courtesy Clerk",
-        code: "B",
-        people: [],
+
+        shifts: [],
       },
       {
         name: "Front End SCO Cashier",
-        code: "U",
-        people: [],
+
+        shifts: [],
       },
       {
         name: "Front End Service Desk",
-        code: "!",
-        people: [],
+
+        shifts: [],
       },
       {
         name: "Front End Supervisor",
-        code: "P",
-        people: [],
+
+        shifts: [],
       },
       {
         name: "Fuel Clerk",
-        code: "Z",
-        people: [],
+
+        shifts: [],
       },
       {
         name: "Liquor Clerk",
-        code: "L",
-        people: [],
+
+        shifts: [],
       },
       {
-        name: "Call Up",
-        people: [],
+        name: "Floral Clerk",
+        shifts: [],
       },
     ],
-    Carts: Array(36).fill(Array(4).fill("")),
+    carts: Array(36).fill(Array(4).fill({ name: "", editable: false })),
   };
 };
 

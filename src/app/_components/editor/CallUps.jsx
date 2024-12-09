@@ -1,19 +1,20 @@
-import styles from "@/styles/CallUps.module.css"
+import styles from "@/styles/CallUps.module.css";
 
 const CallUps = ({ positionName, people }) => {
   const shifts = people.map((person) => {
-
     return (
       <div
         className={styles["person"]}
-        key={positionName + person["first name"] + person["last name"]}
+        key={positionName + person.firstName + person.lastName}
       >
-        <p className="position">{person.callUpPosition}:</p>
-        <p className="person-name">
-          {person["first name"] + " " + person["last name"]}
+        <p className="position">
+          {person.originalPosition.split(" ")[0].replace("Front", "File")}:
         </p>
-        <p className="start time">{person.start}</p>
-        <p className="end time">{person.end}</p>
+        <p className="person-name">
+          {person.firstName + " " + person.lastName}
+        </p>
+        <p className="start time">{person.shiftStart}</p>
+        <p className="end time">{person.shiftEnd}</p>
       </div>
     );
   });

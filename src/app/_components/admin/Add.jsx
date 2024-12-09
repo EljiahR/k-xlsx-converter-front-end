@@ -4,12 +4,29 @@ const Add = ({ selectedStore }) => {
     const postForm = async () => {
       const form = document.querySelector("#add-employee");
       const formData = new FormData(form);
-      const rawFormData = Object.fromEntries(formData)
+      const rawFormData = Object.fromEntries(formData);
+      const [division, storeNumber] = selectedStore.split("-");
+      if (rawFormData.birthday == "") rawFormData.birthday = null;
+      rawFormData.preferredNumberOfBreaks = parseInt(
+        rawFormData.preferredNumberOfBreaks,
+      );
+      if(rawFormData.preferredFirstName.trim().length == 0) rawFormData.preferredFirstName = null;
+      rawFormData.division = parseInt(division);
+      rawFormData.storeNumber = parseInt(storeNumber);
+      rawFormData.getsLunchAsAdult = rawFormData.getsLunchAsAdult == "true";
+      rawFormData.isACallUp = rawFormData.isACallUp == "true";
+      console.log(rawFormData);
       try {
-        let response = await fetch(`/api/store/post/${selectedStore}`, {
-          method: "POST",
-          body: JSON.stringify(rawFormData),
-        });
+        let response = await fetch(
+          `https://kxlsxconverterapi.onrender.com/Employee`,
+          {
+            method: "POST",
+            body: JSON.stringify(rawFormData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          },
+        );
         const data = await response.json();
         console.log(data);
         form.reset();
@@ -27,15 +44,15 @@ const Add = ({ selectedStore }) => {
       <form onSubmit={handleSubmit} id="add-employee">
         <label htmlFor="first-name">
           First Name:
-          <input type="text" name="first-name" id="first-name" required />
+          <input type="text" name="firstName" id="first-name" required />
         </label>
         <label htmlFor="last-name">
           Last Name:
-          <input type="text" name="last-name" id="last-name" required />
+          <input type="text" name="lastName" id="last-name" required />
         </label>
         <label htmlFor="preferred-name">
           Preferred Name:
-          <input type="text" name="preferred-name" id="preferred-name" />
+          <input type="text" name="preferredFirstName" id="preferred-name" />
         </label>
         <label htmlFor="birthday">
           Birthday:
@@ -46,16 +63,15 @@ const Add = ({ selectedStore }) => {
           <input
             type="radio"
             id="break-preference-2"
-            name="break-preference"
+            name="preferredNumberOfBreaks"
             value={2}
-            checked="checked"
             required
           />
           <label htmlFor="break-preference-2">Two 15 minute breaks</label>
           <input
             type="radio"
             id="break-preference-1"
-            name="break-preference"
+            name="preferredNumberOfBreaks"
             value={1}
             required
           />
@@ -63,11 +79,11 @@ const Add = ({ selectedStore }) => {
         </div>
         <label htmlFor="lunch-override">
           Lunch Override for over 18
-          <input type="checkbox" name="lunch-override" id="lunch-override" />
+          <input type="checkbox" name="getsLunchAsAdult" id="lunch-override" />
         </label>
         <label htmlFor="position-override">
           Position Override, leave blank if not needed
-          <select id="position-override" name="position-override">
+          <select id="position-override" name="positionOverride">
             <option value=""></option>
             <option value="$">Cashier</option>
             <option value="B">Bagger</option>
@@ -75,7 +91,7 @@ const Add = ({ selectedStore }) => {
         </label>
         <label htmlFor="call-up">
           Call Up?
-          <input type="checkbox" id="call-up" name="call-up" />
+          <input type="checkbox" id="call-up" name="isCallUp" />
         </label>
         <input type="submit" id="submit" />
       </form>

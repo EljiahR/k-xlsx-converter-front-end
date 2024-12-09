@@ -1,3 +1,5 @@
+
+
 import "@/styles/globals.css";
 // import type { NextPage } from "next";
 import { Metadata } from "next";
@@ -9,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  
+  
   return (
     <>
       <div id={styles["home"]}>

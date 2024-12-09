@@ -1,6 +1,5 @@
 #report{
   max-height: 100%;
-  
 }
 
 #date {
@@ -13,6 +12,8 @@
   background-color: black;
   border-left: 1px solid black;
   margin-top: -1px;
+  position: relative;
+  z-index: 1;
 }
 
 .front-end-content > * {
@@ -26,13 +27,16 @@
   background-color: rgb(10, 117, 193);
   color: white;
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 15px;
   border: 1px solid black;
   border-bottom: none;
+  position: relative;
+  z-index: 1;
 }
 #labels > * {
   padding: 2px;
   margin: 0px;
+  z-index: 2;
 }
 
 .front-end-header,
@@ -65,4 +69,7 @@
   maring: 0px;
   padding: 0px;
   justify-content: right;
+}
+#fresh-start-label{
+  color: black;
 }
