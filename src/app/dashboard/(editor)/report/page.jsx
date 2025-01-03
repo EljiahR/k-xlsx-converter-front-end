@@ -103,10 +103,10 @@ const Report = () => {
       <NavBar
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
-        xlsxFile={xlsxFile}
         setPage={setPage}
         page={page}
         convertDivToPDF={convertDivToPDF}
+        shifts={shifts}
       />
 
       {isLoading && <Loading isLoading={isLoading} />}

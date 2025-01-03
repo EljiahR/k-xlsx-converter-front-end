@@ -5,9 +5,9 @@ const NavBar = ({
   convertDivToPDF,
   handleCurrentDay,
   handleFileInput,
-  xlsxFile,
   page,
   setPage,
+  shifts
 }) => {
   return (
     <div id={styles["navbar"]}>
@@ -16,16 +16,12 @@ const NavBar = ({
       </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
       <div>
-        {xlsxFile && (
+        {shifts && (
           <>
             <select name="weekdays" id="weekdays" onChange={handleCurrentDay}>
-              <option value={0}>Sunday</option>
-              <option value={1}>Monday</option>
-              <option value={2}>Tuesday</option>
-              <option value={3}>Wednesday</option>
-              <option value={4}>Thursday</option>
-              <option value={5}>Friday</option>
-              <option value={6}>Saturday</option>
+              {shifts.map((day, index) => {
+                <option value={index}>{day.day}</option>
+              })}
             </select>
             {page === "Board" && (
               <>
