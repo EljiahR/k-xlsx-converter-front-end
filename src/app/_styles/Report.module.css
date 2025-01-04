@@ -2,8 +2,7 @@
   display: flex;
   /* 1in. = 96px, letter = 8.5x11in. */
   width: 816px;
-  height: 1056px;
+  min-height: 1056px;
   padding: 20px;
   padding-top: 5px;
-  
 }

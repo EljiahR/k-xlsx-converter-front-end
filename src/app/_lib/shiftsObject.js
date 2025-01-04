@@ -16,7 +16,7 @@ const dayConstructor = (day) => {
       {
         name: "Front End Cashier",
 
-        shifts: [
+        shifts: Array(5).fill(
           {
             firstName: "Error",
             lastName: "Occured",
@@ -26,42 +26,119 @@ const dayConstructor = (day) => {
             lunch: { time: "", editable: false },
             breakTwo: { time: "", editable: false },
             originalPosition: "Error",
-          },
-        ],
+          }
+        )
       },
       {
         name: "Front End Courtesy Clerk",
 
-        shifts: [],
+        shifts: Array(2).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Front End SCO Cashier",
 
-        shifts: [],
+        shifts: Array(8).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Front End Service Desk",
 
-        shifts: [],
+        shifts: Array(6).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Front End Supervisor",
 
-        shifts: [],
+        shifts: Array(2).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Fuel Clerk",
 
-        shifts: [],
+        shifts: Array(2).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Liquor Clerk",
 
-        shifts: [],
+        shifts: Array(5).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
       {
         name: "Floral Clerk",
-        shifts: [],
+        shifts: Array(8).fill(
+          {
+            firstName: "Error",
+            lastName: "Occured",
+            shiftStart: "12:00p",
+            shiftEnd: "1:00p",
+            breakOne: { time: "", editable: false },
+            lunch: { time: "", editable: false },
+            breakTwo: { time: "", editable: false },
+            originalPosition: "Error",
+          }
+        ),
       },
     ],
     carts: Array(36).fill(Array(4).fill({ name: "", editable: false })),
