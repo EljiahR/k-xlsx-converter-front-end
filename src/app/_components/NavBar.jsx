@@ -21,7 +21,7 @@ const NavBar = ({
             <select name="weekdays" id="weekdays" onChange={handleCurrentDay}>
               {shifts.map((day, index) => {
                 return (
-                  <option value={index}>{day.day}</option>
+                  <option key={day.date} value={index}>{day.day}</option>
                 )
               })}
             </select>
