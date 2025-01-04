@@ -78,6 +78,7 @@ const Report = () => {
 
   useEffect(() => {
     resetShifts();
+    document.title = "Report";
   }, []);
 
   useEffect(() => {
@@ -89,6 +90,7 @@ const Report = () => {
       } catch (err) {
         setShifts(initialShifts);
         console.log(err);
+        console.log(initialShifts)
       } finally {
         setIsLoading(false);
       }

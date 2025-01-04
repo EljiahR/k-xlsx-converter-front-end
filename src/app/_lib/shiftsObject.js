@@ -70,5 +70,5 @@ const dayConstructor = (day) => {
 
 let initialShifts = [];
 
-WEEKDAYS.forEach((weekday) => initialShifts.push(dayConstructor(weekday)));
+["Error"].forEach((weekday) => initialShifts.push(dayConstructor(weekday)));
 export default initialShifts;
