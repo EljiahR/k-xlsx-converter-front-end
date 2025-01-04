@@ -11,7 +11,7 @@ const WEEKDAYS = [
 const dayConstructor = (day) => {
   return {
     day,
-    date: "",
+    date: "Error has occured",
     jobPositions: [
       {
         name: "Front End Cashier",
