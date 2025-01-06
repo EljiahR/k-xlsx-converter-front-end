@@ -1,3 +1,4 @@
+import moment from "moment";
 import styles from "@/styles/Edit.module.css";
 import { useEffect, useMemo, useState } from "react";
 
@@ -387,17 +388,20 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                 return (
                   <div className={styles.employees} key={employee.employeeId}>
                     <p>
-                      {employee["firstName"]} {employee["lastName"]}
+                      {employee["preferredFirstName"] ? 
+                      employee["preferredFirstName"] 
+                      : employee["firstName"]} {employee["lastName"]}
                     </p>
-                    <p>Preferred Name: {employee["preferredFirstName"]}</p>
-                    <p>Birthdate: {employee["birthday"]}</p>
+                    <p>Birthdate: {moment(employee["birthday"]).format("ll")}</p>
                     <p>
                       Break Preference: {employee["preferredNumberOfBreaks"]}
                     </p>
                     <p>Lunch Override: {employee["getsLunchAsAdult"]}</p>
                     <p>Position Override: {employee["positionOverride"]}</p>
                     <p>Bathroom Order: {employee["bathroomOrder"]}</p>
-                    <p>Call Up: {employee["isACallUp"]}</p>
+                    (
+                      {employee["isACallUp"]} ? <p>Call Up</p> : null
+                    )
                     <button
                       onClick={() => enableEdit(employee.employeeId, true)}
                     >
