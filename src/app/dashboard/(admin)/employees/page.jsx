@@ -61,6 +61,7 @@ const Employees = () => {
           <button onClick={handleLogout}>Logout</button>
           <select name="stores" id="stores" onChange={handleSelectedStore}>
             <option value={""}></option>
+            <option value={"0-0"}>Test</option>
             <option value={"16-549"}>016-549</option>
           </select>
           <button

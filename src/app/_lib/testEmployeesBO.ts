@@ -24,3 +24,5 @@ class EmployeeBO {
 const guy = new EmployeeBO("Tim", "Guy");
 const guy2 = new EmployeeBO("Tam", "Giy");
 const testEmployees : EmployeeBO[] = [guy, guy2];
+
+export default testEmployees;

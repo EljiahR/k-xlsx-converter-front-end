@@ -1,5 +1,6 @@
 import moment from "moment";
 import styles from "@/styles/Edit.module.css";
+import testEmployees from "@/lib/testEmployeesBO.ts"
 import { useEffect, useMemo, useState } from "react";
 
 const Edit = ({ selectedStore, data, setData, search }) => {
@@ -19,7 +20,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
   }, [search, data]);
 
   const getEmployees = async () => {
-    if (selectedStore != "") {
+    if (selectedStore == "0-0") {
+      setData(testEmployees);
+    } else if (selectedStore != "") {
       setLoading(true);
       const [division, storeNumber] = selectedStore.split("-");
       try {
@@ -74,6 +77,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
 
   const handlePatch = (e, employee) => {
     e.preventDefault();
+    
     let newData = JSON.parse(JSON.stringify(data));
     let newEditData = JSON.parse(JSON.stringify(editData));
     let updatedData = newEditData.find(
@@ -100,18 +104,22 @@ const Edit = ({ selectedStore, data, setData, search }) => {
     });
 
     const putData = async () => {
+      
       try {
-        let response = await fetch(
-          `https://kxlsxconverterapi.onrender.com/Employee/`,
-          {
-            method: "PATCH",
-            body: JSON.stringify(employeeToEdit),
-            headers: {
-              "Content-Type": "application/json",
+        if (selectedStore != "0-0") {
+          let response = await fetch(
+            `https://kxlsxconverterapi.onrender.com/Employee/`,
+            {
+              method: "PATCH",
+              body: JSON.stringify(employeeToEdit),
+              headers: {
+                "Content-Type": "application/json",
+              },
             },
-          },
-        );
-        const updatedEmployee = await response.json();
+          );
+          const updatedEmployee = await response.json();
+        }
+        
 
         employeeToEdit.edit = false;
         newEditData = newEditData.filter(
@@ -134,17 +142,20 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       const employeeToDelete = JSON.parse(JSON.stringify(employee));
       delete employeeToDelete.edit;
       console.log(employeeToDelete);
-      const response = await fetch(
-        `https://kxlsxconverterapi.onrender.com/Employee/`,
-        {
-          method: "DELETE",
-          body: JSON.stringify(employeeToDelete),
-          headers: {
-            "Content-Type": "application/json",
+      if (storeNumber != "0-0") {
+        const response = await fetch(
+          `https://kxlsxconverterapi.onrender.com/Employee/`,
+          {
+            method: "DELETE",
+            body: JSON.stringify(employeeToDelete),
+            headers: {
+              "Content-Type": "application/json",
+            },
           },
-        },
-      );
-      const result = await response.json();
+        );
+        const result = await response.json();
+      }
+      
       let newData = JSON.parse(JSON.stringify(data));
       newData = newData.filter(
         (item) => item.employeeId != employee.employeeId,
