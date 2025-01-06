@@ -17,6 +17,7 @@ const Login = ({ loginStatus = "" }) => {
     if (typeof window !== undefined && AuthService.getCurrentUser() != null) {
       setIsLoggedIn(true);
     }
+    document.title = "Login";
   }, []);
 
   const handleLogin = async (e) => {

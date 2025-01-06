@@ -27,6 +27,7 @@ const Employees = () => {
       } else {
         console.log(AuthService.getCurrentUser());
         setIsLoggedIn(true);
+        document.title = "Edit";
       }
     }
   },[])
