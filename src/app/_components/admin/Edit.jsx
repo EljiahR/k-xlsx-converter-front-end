@@ -142,7 +142,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       const employeeToDelete = JSON.parse(JSON.stringify(employee));
       delete employeeToDelete.edit;
       console.log(employeeToDelete);
-      if (storeNumber != "0-0") {
+      if (selectedStore != "0-0") {
         const response = await fetch(
           `https://kxlsxconverterapi.onrender.com/Employee/`,
           {
@@ -410,9 +410,9 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                     <p>Lunch Override: {employee["getsLunchAsAdult"]}</p>
                     <p>Position Override: {employee["positionOverride"]}</p>
                     <p>Bathroom Order: {employee["bathroomOrder"]}</p>
-                    (
-                      {employee["isACallUp"]} ? <p>Call Up</p> : null
-                    )
+                    {employee["isACallUp"] ? 
+                      <p>Call Up</p>
+                    : null}
                     <button
                       onClick={() => enableEdit(employee.employeeId, true)}
                     >

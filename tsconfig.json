@@ -16,7 +16,8 @@
     "paths": {
       "@/components/*": ["/src/app/_components/*"],
       "@/lib/*": ["/src/app/_lib/*"],
-      "@/styles/*": ["/src/app/_styles/*"]
+      "@/styles/*": ["/src/app/_styles/*"],
+      "@/admin/*": ["/src/app/dashboard/(admin)/*"]
     },
     "plugins": [
       {

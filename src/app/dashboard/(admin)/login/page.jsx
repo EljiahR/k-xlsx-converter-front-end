@@ -38,6 +38,10 @@ const Login = ({ loginStatus = "" }) => {
     AuthService.logout();
   };
 
+  const handleTestSection = () => {
+    router.push("/dashboard/test");
+  }
+
   return (
     <div id="login-page">
       <Link href="/">
@@ -45,25 +49,28 @@ const Login = ({ loginStatus = "" }) => {
       </Link>
       <h2>Admin Login</h2>
       {!isLoggedIn && (
-        <form id="login-form" className={styles["form"]} onSubmit={handleLogin}>
-          <label htmlFor="username">
-            Username:{" "}
-            <input
-              type="text"
-              id="username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
-          <label htmlFor="password">
-            Password:{" "}
-            <input
-              type="password"
-              id="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-          <button type="submit">Login</button>
-        </form>
+        <>
+          <form id="login-form" className={styles["form"]} onSubmit={handleLogin}>
+            <label htmlFor="username">
+              Username:{" "}
+              <input
+                type="text"
+                id="username"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </label>
+            <label htmlFor="password">
+              Password:{" "}
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <button type="submit">Login</button>
+          </form>
+          <button type="button" onClick={handleTestSection}>Test</button>
+        </>
       )}
 
       {message != "" && <p>Message: {message}</p>}

@@ -27,7 +27,6 @@ const Employees = () => {
       } else {
         console.log(AuthService.getCurrentUser());
         setIsLoggedIn(true);
-        document.title = "Edit";
       }
     }
   },[])
@@ -63,7 +62,7 @@ const Employees = () => {
           <select name="stores" id="stores" onChange={handleSelectedStore}>
             <option value={""}></option>
             <option value={"0-0"}>Test</option>
-            <option value={"16-549"}>016-549</option>
+            <option value={"16-549"}>016-549</option>  
           </select>
           <button
             onClick={handleSectionChange}
