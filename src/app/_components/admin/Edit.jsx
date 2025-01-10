@@ -403,7 +403,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
                       employee["preferredFirstName"] 
                       : employee["firstName"]} {employee["lastName"]}
                     </p>
-                    <p>Birthdate: {moment(employee["birthday"]).add(1, 'day').format("ll")}</p>
+                    <p>Birthdate: {employee["birthday"].includes("Z") ? moment(employee["birthday"]).add(1, 'day').format("ll") : moment(employee["birthday"]).format("ll")}</p>
                     <p>
                       Break Preference: {employee["preferredNumberOfBreaks"]}
                     </p>
