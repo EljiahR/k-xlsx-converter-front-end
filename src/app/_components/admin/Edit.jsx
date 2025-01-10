@@ -3,7 +3,7 @@ import styles from "@/styles/Edit.module.css";
 import testEmployees from "@/lib/testEmployeesBO.ts"
 import { useEffect, useMemo, useState } from "react";
 
-const Edit = ({ selectedStore, data, setData, search }) => {
+const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
   const [loading, setLoading] = useState(false);
   const [editData, setEditData] = useState([]);
 
@@ -22,7 +22,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
   const getEmployees = async () => {
     if (selectedStore == "0-0") {
       setData(testEmployees);
-    } else if (selectedStore != "") {
+    } else if (selectedStore != "" && loggedIn) {
       setLoading(true);
       const [division, storeNumber] = selectedStore.split("-");
       try {

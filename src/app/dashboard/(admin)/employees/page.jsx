@@ -81,6 +81,7 @@ const Employees = () => {
               data={data}
               setData={setData}
               search={search}
+              loggedIn={isLoggedIn}
             />
           </>
         )}
