@@ -1,8 +1,8 @@
 import moment from "moment";
 import styles from "@/styles/Edit.module.css";
+import instance from "@/lib/axiosBase.ts";
 import testEmployees from "@/lib/testEmployeesBO.ts"
 import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
 
 const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
       const [division, storeNumber] = selectedStore.split("-");
       
       try {
-        const response = await axios.get(`https://kxlsxconverterapi.onrender.com/Employee/${division}/${storeNumber}`, { withCredentials: true });
+        const response = await instance.get(`/Employee/${division}/${storeNumber}`, { withCredentials: true });
         
         let employees = await response.json();
         console.log(employees);
@@ -110,7 +110,7 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
       
       try {
         if (selectedStore != "0-0") {
-          let response = await axios.patch(`https://kxlsxconverterapi.onrender.com/Employee/`, JSON.stringify(employeeToEdit), { withCredentials: true });
+          let response = await instance.patch("/Employee", JSON.stringify(employeeToEdit), { withCredentials: true });
           const updatedEmployee = await response.json();
         }
         
@@ -136,7 +136,7 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
       delete employeeToDelete.edit;
       console.log(employeeToDelete);
       if (selectedStore != "0-0") {
-        const response = await axios.delete(`https://kxlsxconverterapi.onrender.com/Employee/`, JSON.stringify(employeeToDelete), { withCredentials: true });
+        const response = await instance.delete("/Employee", JSON.stringify(employeeToDelete), { withCredentials: true });
         const result = await response.json();
       }
       

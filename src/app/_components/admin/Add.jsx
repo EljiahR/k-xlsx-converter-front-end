@@ -22,7 +22,7 @@ const Add = ({ selectedStore }) => {
       console.log(rawFormData);
 
       try {
-        const response = await axios.post(`https://kxlsxconverterapi.onrender.com/Employee`, JSON.stringify(rawFormData), { withCredentials: true })
+        const response = await instance.post(`/Employee`, JSON.stringify(rawFormData), { withCredentials: true })
         
         const data = await response.json();
         console.log(data);
