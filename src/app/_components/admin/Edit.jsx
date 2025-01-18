@@ -2,6 +2,8 @@ import moment from "moment";
 import styles from "@/styles/Edit.module.css";
 import testEmployees from "@/lib/testEmployeesBO.ts"
 import { useEffect, useMemo, useState } from "react";
+import axios from "axios";
+import { json } from "stream/consumers";
 
 const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
   const [loading, setLoading] = useState(false);
@@ -25,16 +27,18 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
     } else if (selectedStore != "" && loggedIn) {
       setLoading(true);
       const [division, storeNumber] = selectedStore.split("-");
+      
       try {
-        let response = await fetch(
-          `https://kxlsxconverterapi.onrender.com/Employee/${division}/${storeNumber}`,
-        );
+        const response = await axios.get(`https://kxlsxconverterapi.onrender.com/Employee/${division}/${storeNumber}`, { withCredentials: true });
+        
         let employees = await response.json();
         console.log(employees);
         employees.forEach((employee) => {
           employee.edit = false;
         });
+        
         setData(employees);
+
       } catch (err) {
         console.log(err);
       } finally {
@@ -107,20 +111,10 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
       
       try {
         if (selectedStore != "0-0") {
-          let response = await fetch(
-            `https://kxlsxconverterapi.onrender.com/Employee/`,
-            {
-              method: "PATCH",
-              body: JSON.stringify(employeeToEdit),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            },
-          );
+          let response = await axios.patch(`https://kxlsxconverterapi.onrender.com/Employee/`, JSON.stringify(employeeToEdit), { withCredentials: true });
           const updatedEmployee = await response.json();
         }
         
-
         employeeToEdit.edit = false;
         newEditData = newEditData.filter(
           (item) => item.employeeId != employeeToEdit.employeeId,
@@ -143,16 +137,7 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
       delete employeeToDelete.edit;
       console.log(employeeToDelete);
       if (selectedStore != "0-0") {
-        const response = await fetch(
-          `https://kxlsxconverterapi.onrender.com/Employee/`,
-          {
-            method: "DELETE",
-            body: JSON.stringify(employeeToDelete),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          },
-        );
+        const response = await axios.delete(`https://kxlsxconverterapi.onrender.com/Employee/`, JSON.stringify(employeeToDelete), { withCredentials: true });
         const result = await response.json();
       }
       
