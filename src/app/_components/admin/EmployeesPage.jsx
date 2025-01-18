@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import Add from "@/components/admin/Add";
 import Edit from "@/components/admin/Edit";
 
-const Employees = () => {
+const EmployeesPage = () => {
   const router = useRouter();
   const [section, setSection] = useState("edit");
   const [selectedStore, setSelectedStore] = useState("");
@@ -96,4 +96,4 @@ const Employees = () => {
 
 };
 
-export default Employees;
+export default EmployeesPage;
