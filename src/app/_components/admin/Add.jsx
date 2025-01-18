@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Add = ({ selectedStore }) => {
   const handleSubmit = (e) => {
     //e.preventDefault();
@@ -6,27 +8,22 @@ const Add = ({ selectedStore }) => {
       const formData = new FormData(form);
       const rawFormData = Object.fromEntries(formData);
       const [division, storeNumber] = selectedStore.split("-");
+      
       if (rawFormData.birthday == "") rawFormData.birthday = null;
       rawFormData.preferredNumberOfBreaks = parseInt(
         rawFormData.preferredNumberOfBreaks,
       );
+
       if(rawFormData.preferredFirstName.trim().length == 0) rawFormData.preferredFirstName = null;
       rawFormData.division = parseInt(division);
       rawFormData.storeNumber = parseInt(storeNumber);
       rawFormData.getsLunchAsAdult = rawFormData.getsLunchAsAdult == "true";
       rawFormData.isACallUp = rawFormData.isACallUp == "true";
       console.log(rawFormData);
+
       try {
-        let response = await fetch(
-          `https://kxlsxconverterapi.onrender.com/Employee`,
-          {
-            method: "POST",
-            body: JSON.stringify(rawFormData),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          },
-        );
+        const response = await axios.post(`https://kxlsxconverterapi.onrender.com/Employee`, JSON.stringify(rawFormData), { withCredentials: true })
+        
         const data = await response.json();
         console.log(data);
         form.reset();
