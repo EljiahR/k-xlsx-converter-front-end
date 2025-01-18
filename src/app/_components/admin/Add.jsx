@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const Add = ({ selectedStore }) => {
   const handleSubmit = (e) => {
     //e.preventDefault();
