@@ -12,6 +12,7 @@ enum AuthenticationStates {
     Unauthorized
 }
 
+// Wraps components in a component that insures user is signed in before moving onto actual component
 const ProtectedRoute: FC<Props> = ({ component }) => {
     const router = useRouter();
     const [authenticationState, setAuthenticationState] = useState(AuthenticationStates.Loading);
@@ -33,10 +34,10 @@ const ProtectedRoute: FC<Props> = ({ component }) => {
     
     return (
         authenticationState == AuthenticationStates.Loading ?
-            <></>
-            : authenticationState == AuthenticationStates.Authorized ?
+            <></> :
+            authenticationState == AuthenticationStates.Authorized ?
                 component :
-                router.push("")
+                router.push("/dashboard/login")
     )
 }
 
