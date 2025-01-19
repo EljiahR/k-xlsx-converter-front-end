@@ -3,13 +3,10 @@ import { ComponentType, useEffect, useState } from "react";
 import instance from "../_lib/axiosBase";
 
 interface AuthorizedRoutes {
-    authorizedStores: Store[]
+    authorizedStores: string[]
 }
 
-interface Store {
-    storeNumber: Number,
-    divisionNumber: Number
-}
+
 
 interface Props {
     component: ComponentType<AuthorizedRoutes>
@@ -22,7 +19,7 @@ enum AuthenticationStates {
 }
 
 const intialStoreAuthorization : AuthorizedRoutes = {
-    authorizedStores: [{storeNumber: 0, divisionNumber: 0}]
+    authorizedStores: ["0-0"]
 }
 
 // Wraps components in a component that insures user is signed in before moving onto actual component
