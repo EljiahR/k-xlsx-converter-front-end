@@ -1,9 +1,18 @@
 import axios from "axios";
 import { useRouter } from "next/router";
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+
+interface AuthorizedRoutes {
+    authorizedStores: Store[]
+}
+
+interface Store {
+    storeNumber: Number,
+    divisionNumber: Number
+}
 
 interface Props {
-    component: JSX.Element
+    component: React.ComponentType<AuthorizedRoutes>
 }
 
 enum AuthenticationStates {
@@ -12,10 +21,15 @@ enum AuthenticationStates {
     Unauthorized
 }
 
+const intialStoreAuthorization : AuthorizedRoutes = {
+    authorizedStores: [{storeNumber: 0, divisionNumber: 0}]
+}
+
 // Wraps components in a component that insures user is signed in before moving onto actual component
-const ProtectedRoute: FC<Props> = ({ component }) => {
+const ProtectedRoute = ({ component: Component } : Props) => {
     const router = useRouter();
     const [authenticationState, setAuthenticationState] = useState(AuthenticationStates.Loading);
+    const [authorizedRoutes, setAuthorizedRoutes] = useState<AuthorizedRoutes>(intialStoreAuthorization);
 
     useEffect(() => {
         const checkAuthStatus = async () => {
@@ -36,7 +50,7 @@ const ProtectedRoute: FC<Props> = ({ component }) => {
         authenticationState == AuthenticationStates.Loading ?
             <></> :
             authenticationState == AuthenticationStates.Authorized ?
-                component :
+                <Component {...authorizedRoutes} /> :
                 router.push("/dashboard/login")
     )
 }
