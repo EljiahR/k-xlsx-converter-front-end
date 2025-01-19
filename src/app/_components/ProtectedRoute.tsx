@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useRouter } from "next/router";
-import React, { FC, useEffect, useState } from "react";
+import { ComponentType, useEffect, useState } from "react";
+import instance from "../_lib/axiosBase";
 
 interface AuthorizedRoutes {
     authorizedStores: Store[]
@@ -12,7 +12,7 @@ interface Store {
 }
 
 interface Props {
-    component: React.ComponentType<AuthorizedRoutes>
+    component: ComponentType<AuthorizedRoutes>
 }
 
 enum AuthenticationStates {
@@ -34,8 +34,9 @@ const ProtectedRoute = ({ component: Component } : Props) => {
     useEffect(() => {
         const checkAuthStatus = async () => {
             try {
-                const response = await axios.get("https://kxlsxconverterapi.onrender.com/User/Status", {withCredentials: true });
+                const response = await instance.get("/User/Status", {withCredentials: true });
                 console.log(response.data);
+                setAuthorizedRoutes(response.data.authorizedRoutes);
                 setAuthenticationState(AuthenticationStates.Authorized);
             } catch (error) {
                 console.error(error);
