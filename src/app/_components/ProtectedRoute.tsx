@@ -31,7 +31,7 @@ const ProtectedRoute = ({ component: Component } : Props) => {
     useEffect(() => {
         const checkAuthStatus = async () => {
             try {
-                const response = await instance.get("User/Status", {withCredentials: true });
+                const response = await instance.get("/User/Status", {withCredentials: true });
                 console.log(response.data);
                 setAuthorizedRoutes(response.data.authorizedRoutes);
                 setAuthenticationState(AuthenticationStates.Authorized);

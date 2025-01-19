@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: process.env.BASE_URL
+    baseURL: "https://kxlsxconverterapi.onrender.com"
 });
 
 export default instance;
