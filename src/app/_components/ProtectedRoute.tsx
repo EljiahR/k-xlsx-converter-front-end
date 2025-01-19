@@ -1,3 +1,5 @@
+'use client'
+
 import { useRouter } from "next/router";
 import { ComponentType, useEffect, useState } from "react";
 import instance from "../_lib/axiosBase";
@@ -5,8 +7,6 @@ import instance from "../_lib/axiosBase";
 interface AuthorizedRoutes {
     authorizedStores: string[]
 }
-
-
 
 interface Props {
     component: ComponentType<AuthorizedRoutes>

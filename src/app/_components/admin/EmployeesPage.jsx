@@ -2,25 +2,36 @@
 
 import "@/styles/globals.css";
 //import "../styles/employees.css";
-import AuthService from "@/lib/authService.js";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Add from "@/components/admin/Add";
 import Edit from "@/components/admin/Edit";
+import instance from "src/app/_lib/axiosBase";
 
-const EmployeesPage = () => {
+const EmployeesPage = ({ authorizedStores }) => {
   const router = useRouter();
   const [section, setSection] = useState("edit");
   const [selectedStore, setSelectedStore] = useState("");
-  const [availableStores, setAvailableStores] = useState([""]);
+  const [availableStores, setAvailableStores] = useState(authorizedStores);
   const [search, setSearch] = useState("");
   const [data, setData] = useState(null);
   
   const handleLogout = (e) => {
     e.preventDefault();
-    AuthService.logout();
-    router.push("/dashboard/login");
+    const logout = async () => {
+      try {
+        const response = instance.post("/User/SignOut", {}, {withCredentials: true});
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        router.push("/dashboard/login");
+      }
+    } 
+
+    logout();
+    
   };
 
   const handleSearch = (e) => {
@@ -54,8 +65,9 @@ const EmployeesPage = () => {
         <button onClick={handleLogout}>Logout</button>
         <select name="stores" id="stores" onChange={handleSelectedStore}>
           <option value={""}></option>
-          <option value={"0-0"}>Test</option>
-          <option value={"16-549"}>016-549</option>  
+          {availableStores.map(storeNumber => {
+            return <option value={storeNumber} key={storeNumber}>{storeNumber}</option>
+          })}
         </select>
         <button
           onClick={handleSectionChange}
