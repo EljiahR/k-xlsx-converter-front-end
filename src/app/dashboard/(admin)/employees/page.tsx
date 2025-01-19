@@ -3,7 +3,7 @@ import EmployeePage from "src/app/_components/admin/EmployeesPage"
 
 const Employees = () => {
     return (
-        <ProtectedRoute component={<EmployeePage />} />
+        <ProtectedRoute component={EmployeePage} />
     )
 }
 
