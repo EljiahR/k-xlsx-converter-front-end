@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/compat/router";
+import { useRouter } from "next/router";
 import { FC, FormEvent, useState } from "react";
 import instance from "src/app/_lib/axiosBase";
 

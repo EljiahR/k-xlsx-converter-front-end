@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from "next/compat/router";
+import { useRouter } from "next/router";
 import { ComponentType, useEffect, useState } from "react";
 import instance from "../_lib/axiosBase";
 
