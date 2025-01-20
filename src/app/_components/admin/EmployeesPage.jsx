@@ -72,8 +72,7 @@ const EmployeesPage = ({ authorizedStores }) => {
       </div>
       {section == "edit" && (
         <>
-          
-          <Edit />
+          <Edit selectedStore={selectedStore} />
         </>
       )}
       {section == "add" && (
