@@ -1,3 +1,5 @@
+import instance from "@/lib/axiosBase.ts";
+
 const Add = ({ selectedStore }) => {
   const handleSubmit = (e) => {
     //e.preventDefault();
@@ -22,7 +24,7 @@ const Add = ({ selectedStore }) => {
       try {
         const response = await instance.post(`/Employee`, JSON.stringify(rawFormData), { withCredentials: true })
         
-        const data = await response.json();
+        const data = await response.data;
         console.log(data);
         form.reset();
         document.querySelector("#first-name").focus();
