@@ -14,7 +14,7 @@ const Edit = ({ selectedStore }) => {
   };
 
   const filteredData = useMemo(() => {
-    if (data == null || search == "" || true) return data;
+    if (data == null || search == "") return data;
 
     return data.filter((x) => {
       const names = [x.firstName.toLowerCase(), x.lastName.toLowerCase()];
