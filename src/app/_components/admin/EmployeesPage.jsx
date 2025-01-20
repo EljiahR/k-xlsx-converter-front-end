@@ -1,7 +1,6 @@
 "use client";
 
 import "@/styles/globals.css";
-//import "../styles/employees.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -13,8 +12,7 @@ const EmployeesPage = ({ authorizedStores }) => {
   const router = useRouter();
   const [section, setSection] = useState("edit");
   const [selectedStore, setSelectedStore] = useState("");
-  const [availableStores, setAvailableStores] = useState(authorizedStores);
-  const [search, setSearch] = useState("");
+
   const [data, setData] = useState(null);
   
   const handleLogout = (e) => {
@@ -32,10 +30,6 @@ const EmployeesPage = ({ authorizedStores }) => {
 
     logout();
     
-  };
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
   };
 
   const handleSectionChange = (e) => {
@@ -65,7 +59,7 @@ const EmployeesPage = ({ authorizedStores }) => {
         <button onClick={handleLogout}>Logout</button>
         <select name="stores" id="stores" onChange={handleSelectedStore}>
           <option value={""}></option>
-          {availableStores.map(storeNumber => {
+          {authorizedStores.map(storeNumber => {
             return <option value={storeNumber} key={storeNumber}>{storeNumber}</option>
           })}
         </select>
@@ -78,15 +72,8 @@ const EmployeesPage = ({ authorizedStores }) => {
       </div>
       {section == "edit" && (
         <>
-          {data != null && (
-            <input type="text" value={search} onChange={handleSearch} />
-          )}
-          <Edit
-            selectedStore={selectedStore}
-            data={data}
-            setData={setData}
-            search={search}
-          />
+          
+          <Edit />
         </>
       )}
       {section == "add" && (

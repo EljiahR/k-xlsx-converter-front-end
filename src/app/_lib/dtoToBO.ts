@@ -1,4 +1,5 @@
 import moment from "moment";
+import internal from "stream";
 
 interface IBreak {
   time: string;
@@ -6,6 +7,7 @@ interface IBreak {
 }
 
 interface IEmployeeDTO {
+  employeeId: Number;
   firstName: string;
   lastName: string;
   shiftStart: Date;
@@ -26,6 +28,7 @@ interface IEmployeeBO
   breakOne: IBreak;
   lunch: IBreak;
   breakTwo: IBreak;
+  edit: boolean;
 }
 
 interface IJobPositionDTO {
@@ -65,6 +68,7 @@ interface IWeekdayBO {
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
   return shifts.map((shift) => ({
     ...shift,
+    edit: false,
     shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
     shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
     breakOne: {
@@ -111,3 +115,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
+export type { IEmployeeBO };
