@@ -44,13 +44,19 @@ const ProtectedRoute = ({ component: Component } : Props) => {
         checkAuthStatus();
     })
     
-    return (
-        authenticationState == AuthenticationStates.Loading ?
-            <></> :
-            authenticationState == AuthenticationStates.Authorized ?
-                <Component {...authorizedRoutes} /> :
-                router.push("/dashboard/login")
-    )
+    if (router.isReady)
+    {
+        return (
+            authenticationState == AuthenticationStates.Loading ?
+                <></> :
+                authenticationState == AuthenticationStates.Authorized ?
+                    <Component {...authorizedRoutes} /> :
+                    router.push("/dashboard/login")
+        )
+    } else {
+        return null;
+    }
+    
 }
 
 export default ProtectedRoute;

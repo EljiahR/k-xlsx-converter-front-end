@@ -21,6 +21,10 @@ const Login: FC = () => {
         try {
             const response = await instance.post("/User/SignIn", credentials, { withCredentials: true });
             console.log(response.data);
+            while (!router.isReady)
+            {
+                setTimeout(() => console.log("NextJS is ass"), 5000);
+            }
             router.push("/dashboard/employees");
         } catch (error) {
             console.error(error);
