@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ComponentType, useEffect, useState } from "react";
 import instance from "../_lib/axiosBase";
 
@@ -44,18 +44,14 @@ const ProtectedRoute = ({ component: Component } : Props) => {
         checkAuthStatus();
     })
     
-    if (router.isReady)
-    {
-        return (
-            authenticationState == AuthenticationStates.Loading ?
-                <></> :
-                authenticationState == AuthenticationStates.Authorized ?
-                    <Component {...authorizedRoutes} /> :
-                    router.push("/dashboard/login")
-        )
-    } else {
-        return null;
-    }
+    return (
+        authenticationState == AuthenticationStates.Loading ?
+            <></> :
+            authenticationState == AuthenticationStates.Authorized ?
+                <Component {...authorizedRoutes} /> :
+                router.push("/dashboard/login")
+    )
+    
     
 }
 
