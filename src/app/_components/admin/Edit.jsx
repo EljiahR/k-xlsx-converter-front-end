@@ -30,7 +30,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       try {
         const response = await instance.get(`/Employee/${division}/${storeNumber}`, { withCredentials: true });
         
-        let employees = await response.json();
+        let employees = response.data;
         console.log(employees);
         employees.forEach((employee) => {
           employee.edit = false;
@@ -111,7 +111,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       try {
         if (selectedStore != "0-0") {
           let response = await instance.patch("/Employee", JSON.stringify(employeeToEdit), { withCredentials: true });
-          const updatedEmployee = await response.json();
+          const updatedEmployee = response.data;
         }
         
         employeeToEdit.edit = false;
@@ -137,7 +137,7 @@ const Edit = ({ selectedStore, data, setData, search }) => {
       console.log(employeeToDelete);
       if (selectedStore != "0-0") {
         const response = await instance.delete("/Employee", JSON.stringify(employeeToDelete), { withCredentials: true });
-        const result = await response.json();
+        const result = response.data;
       }
       
       let newData = JSON.parse(JSON.stringify(data));
