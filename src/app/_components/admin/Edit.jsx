@@ -4,7 +4,7 @@ import instance from "@/lib/axiosBase.ts";
 import testEmployees from "@/lib/testEmployeesBO.ts"
 import { useEffect, useMemo, useState } from "react";
 
-const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
+const Edit = ({ selectedStore, data, setData, search }) => {
   const [loading, setLoading] = useState(false);
   const [editData, setEditData] = useState([]);
 
@@ -23,7 +23,7 @@ const Edit = ({ selectedStore, data, setData, search, loggedIn = false }) => {
   const getEmployees = async () => {
     if (selectedStore == "0-0") {
       setData(testEmployees);
-    } else if (selectedStore != "" && loggedIn) {
+    } else if (selectedStore != "") {
       setLoading(true);
       const [division, storeNumber] = selectedStore.split("-");
       

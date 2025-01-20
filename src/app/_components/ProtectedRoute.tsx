@@ -43,16 +43,20 @@ const ProtectedRoute = ({ component: Component } : Props) => {
 
         checkAuthStatus();
     })
+
+    useEffect(() => {
+        if (authenticationState == AuthenticationStates.Unauthorized) {
+            router.push("/dashboard/login");
+        }
+    }, [authenticationState])
     
     return (
         authenticationState == AuthenticationStates.Loading ?
             <></> :
             authenticationState == AuthenticationStates.Authorized ?
                 <Component {...authorizedRoutes} /> :
-                router.push("/dashboard/login")
+                <div>User is unauthorized for this page.</div>
     )
-    
-    
 }
 
 export default ProtectedRoute;

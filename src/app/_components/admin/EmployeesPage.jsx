@@ -86,7 +86,6 @@ const EmployeesPage = ({ authorizedStores }) => {
             data={data}
             setData={setData}
             search={search}
-            loggedIn={isLoggedIn}
           />
         </>
       )}
