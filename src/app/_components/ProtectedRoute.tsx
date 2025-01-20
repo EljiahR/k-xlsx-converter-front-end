@@ -42,7 +42,7 @@ const ProtectedRoute = ({ component: Component } : Props) => {
         }
 
         checkAuthStatus();
-    })
+    }, []);
 
     useEffect(() => {
         if (authenticationState == AuthenticationStates.Unauthorized) {
