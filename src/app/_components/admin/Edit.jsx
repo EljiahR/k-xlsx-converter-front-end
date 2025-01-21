@@ -137,12 +137,9 @@ const Edit = ({ selectedStore }) => {
   const deleteEmployee = async (employee) => {
     if(confirm(`Are you sure you wish to delete ${employee.firstName}`))
     try {
-      const employeeToDelete = {...employee};
-      delete employeeToDelete.edit;
 
-      console.log(employeeToDelete);
       if (selectedStore != "0-0") {
-        const response = await instance.delete("/Employee", { withCredentials: true, data: employeeToDelete });
+        const response = await instance.delete(`/Employee/${employee.employeeId}`, { withCredentials: true });
         const result = response.data;
       }
       
