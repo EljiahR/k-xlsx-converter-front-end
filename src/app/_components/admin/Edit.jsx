@@ -142,11 +142,11 @@ const Edit = ({ selectedStore }) => {
 
       console.log(employeeToDelete);
       if (selectedStore != "0-0") {
-        const response = await instance.delete("/Employee", { withCredentials: true, data: employeeToDelete} );
+        const response = await instance.delete("/Employee", { withCredentials: true, data: employeeToDelete });
         const result = response.data;
       }
       
-      let newData = {...data};
+      let newData = [...data];
       newData = newData.filter(
         (item) => item.employeeId != employee.employeeId,
       );
