@@ -62,19 +62,41 @@ const Add = ({ selectedStore }) => {
       <form onSubmit={handleSubmit} id="add-employee">
         <label htmlFor="first-name">
           First Name:
-          <input type="text" name="firstName" id="first-name" onChange={(e) => handleFormChange("firstName", e.target.value)} required />
+          <input 
+            type="text" 
+            name="firstName" 
+            id="first-name" 
+            onChange={(e) => handleFormChange("firstName", e.target.value)} 
+            required 
+          />
         </label>
         <label htmlFor="last-name">
           Last Name:
-          <input type="text" name="lastName" id="last-name" required />
+          <input 
+            type="text" 
+            name="lastName" 
+            id="last-name" 
+            onChange={(e) => handleFormChange("lastName", e.target.value)} 
+            required 
+          />
         </label>
         <label htmlFor="preferred-name">
           Preferred Name:
-          <input type="text" name="preferredFirstName" id="preferred-name" />
+          <input 
+            type="text" 
+            name="preferredFirstName" 
+            id="preferred-name" 
+            onChange={(e) => handleFormChange("preferredFirstName", e.target.value)}
+           />
         </label>
         <label htmlFor="birthday">
           Birthday:
-          <input type="date" name="birthday" id="birthday" />
+          <input 
+            type="date" 
+            name="birthday" 
+            id="birthday" 
+            onChange={(e) => handleFormChange("birthday", e.target.value)} 
+          />
         </label>
         <div id="break-preference-div">
           <p>Break Preference:</p>
@@ -83,6 +105,7 @@ const Add = ({ selectedStore }) => {
             id="break-preference-2"
             name="preferredNumberOfBreaks"
             value={2}
+            onChange={(e) => handleFormChange("preferredNumberOfBreaks", e.target.value)}
             required
           />
           <label htmlFor="break-preference-2">Two 15 minute breaks</label>
@@ -91,17 +114,27 @@ const Add = ({ selectedStore }) => {
             id="break-preference-1"
             name="preferredNumberOfBreaks"
             value={1}
+            onChange={(e) => handleFormChange("preferredNumberOfBreaks", e.target.value)}
             required
           />
           <label htmlFor="break-preference-1">One 30 minute break</label>
         </div>
         <label htmlFor="lunch-override">
           Lunch Override for over 18
-          <input type="checkbox" name="getsLunchAsAdult" id="lunch-override" />
+          <input 
+            type="checkbox" 
+            name="getsLunchAsAdult" 
+            id="lunch-override" 
+            onChange={(e) => handleFormChange("getsLunchAsAdult", e.target.value)} 
+          />
         </label>
         <label htmlFor="position-override">
           Position Override, leave blank if not needed
-          <select id="position-override" name="positionOverride">
+          <select 
+            id="position-override" 
+            name="positionOverride" 
+            onChange={(e) => handleFormChange("positionOverride", e.target.value)}
+          >
             <option value=""></option>
             <option value="$">Cashier</option>
             <option value="B">Bagger</option>
@@ -109,7 +142,12 @@ const Add = ({ selectedStore }) => {
         </label>
         <label htmlFor="call-up">
           Call Up?
-          <input type="checkbox" id="call-up" name="isCallUp" />
+          <input 
+            type="checkbox" 
+            id="call-up" 
+            name="isCallUp" 
+            onChange={(e) => handleFormChange("isCallUp", e.target.value)} 
+          />
         </label>
         <input type="submit" id="submit" />
       </form>
