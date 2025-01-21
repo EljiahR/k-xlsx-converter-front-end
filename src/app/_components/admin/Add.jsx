@@ -1,6 +1,18 @@
 import instance from "@/lib/axiosBase.ts";
+import { useState } from "react";
 
 const Add = ({ selectedStore }) => {
+  const [newEmployeeInfo, setNewEmployeeInfo] = useState({
+    firstName: "",
+    lastName: "",
+    preferredFirstName: "",
+    birthday: new Date(),
+    preferredNumberOfBreaks: 2,
+    getsLunchAsAdult: false,
+    positionOverride: "",
+    isCallUp: true
+  })
+  
   const handleSubmit = (e) => {
     //e.preventDefault();
     const postForm = async () => {
