@@ -29,7 +29,10 @@ const Add = ({ selectedStore }) => {
   })
 
   const handleFormChange = (section: string, value: any) => {
-    setNewEmployeeInfo({...newEmployeeInfo}[section] = value);
+    setNewEmployeeInfo((previousInfo) => ({
+      ...previousInfo,
+      [section]: value
+    }));
   }
   
   const handleSubmit = (e) => {
