@@ -49,7 +49,7 @@ const Add = ({ selectedStore }) => {
       console.log(formData);
 
       try {
-        const response = await instance.post(`/Employee`, formData, { withCredentials: true })
+        const response = await instance.post("/Employee", formData, { withCredentials: true })
         
         const data = await response.data;
         console.log("Recieved")
@@ -116,6 +116,7 @@ const Add = ({ selectedStore }) => {
             id="break-preference-2"
             name="preferredNumberOfBreaks"
             value={2}
+            checked={true}
             onChange={(e) => handleFormChange("preferredNumberOfBreaks", e.target.value)}
             required
           />
