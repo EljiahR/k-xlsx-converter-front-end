@@ -92,7 +92,9 @@ const EmployeeDivs = ({
                 value={
                 employeeEdit.hasOwnProperty("birthday")
                     ? employeeEdit["birthday"].split("T")[0]
-                    : employee["birthday"].split("T")[0]
+                    : employee["birthday"] != null ?
+                        employee["birthday"].split("T")[0] :
+                        null
                 }
                 onChange={(e) =>
                 handleEditChange(e, employee.employeeId, "birthday")
