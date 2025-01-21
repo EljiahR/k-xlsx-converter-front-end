@@ -54,12 +54,12 @@ const Edit = ({ selectedStore }) => {
   };
 
   const enableEdit = (id, onOff) => {
-    let newData = JSON.parse(JSON.stringify(data));
+    let newData = [...data];
     let employeeToChange = newData.find(
       (employee) => employee.employeeId == id,
     );
     employeeToChange.edit = onOff;
-    let newEditData = JSON.parse(JSON.stringify(editData));
+    let newEditData = [...editData];
     if (onOff) {
       newEditData.push({ employeeId: id });
     } else {
@@ -71,7 +71,7 @@ const Edit = ({ selectedStore }) => {
   };
 
   const handleEditChange = (e, id, key) => {
-    let newEditData = JSON.parse(JSON.stringify(editData));
+    let newEditData = [...editData];
     let employeeToEdit = newEditData.find(
       (employee) => employee.employeeId == id,
     );
@@ -86,8 +86,8 @@ const Edit = ({ selectedStore }) => {
   const handlePatch = (e, employee) => {
     e.preventDefault();
     
-    let newData = JSON.parse(JSON.stringify(data));
-    let newEditData = JSON.parse(JSON.stringify(editData));
+    let newData = [...data];
+    let newEditData = [...editData];
     let updatedData = newEditData.find(
       (data) => data.employeeId == employee.employeeId,
     );
@@ -115,7 +115,7 @@ const Edit = ({ selectedStore }) => {
       
       try {
         if (selectedStore != "0-0") {
-          let response = await instance.patch("/Employee", JSON.stringify(employeeToEdit), { withCredentials: true });
+          let response = await instance.patch("/Employee", employeeToEdit, { withCredentials: true });
           const updatedEmployee = response.data;
         }
         
@@ -137,15 +137,16 @@ const Edit = ({ selectedStore }) => {
   const deleteEmployee = async (employee) => {
     if(confirm(`Are you sure you wish to delete ${employee.firstName}`))
     try {
-      const employeeToDelete = JSON.parse(JSON.stringify(employee));
+      const employeeToDelete = {...employee};
       delete employeeToDelete.edit;
+
       console.log(employeeToDelete);
       if (selectedStore != "0-0") {
-        const response = await instance.delete("/Employee", JSON.stringify(employeeToDelete), { withCredentials: true });
+        const response = await instance.delete("/Employee", employeeToDelete, { withCredentials: true });
         const result = response.data;
       }
       
-      let newData = JSON.parse(JSON.stringify(data));
+      let newData = {...data};
       newData = newData.filter(
         (item) => item.employeeId != employee.employeeId,
       );
