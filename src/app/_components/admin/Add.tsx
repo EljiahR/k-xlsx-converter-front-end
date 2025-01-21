@@ -37,18 +37,22 @@ const Add = ({ selectedStore }) => {
     
     const postForm = async () => {
       
-      const formData = {...newEmployeeInfo};
-      [formData["division"], formData["storeNumber"]] = selectedStore.split("-");
+      const formData: EmployeeInfo = {...newEmployeeInfo};
+      const [division, storeNumber] = selectedStore.split("-");
+      formData["division"] = division;
+      formData["storeNumber"] = storeNumber;
 
+      console.log("Posted")
       console.log(formData);
 
       try {
         const response = await instance.post(`/Employee`, formData, { withCredentials: true })
         
         const data = await response.data;
+        console.log("Recieved")
         console.log(data);
-        const form = document.querySelector("#add-employee");
-        (form as HTMLFormElement).reset();
+       
+        (document.querySelector("#add-employee") as HTMLFormElement).reset();
         (document.querySelector("#first-name") as HTMLInputElement).focus();
       } catch (err) {
         console.log(err);
