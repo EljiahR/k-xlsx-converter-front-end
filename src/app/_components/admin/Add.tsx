@@ -98,7 +98,6 @@ const Add = ({ selectedStore }) => {
             type="date" 
             name="birthday" 
             id="birthday" 
-            value={newEmployeeInfo["birthday"].toString()} 
             onChange={(e) => handleFormChange("birthday", e.target.value)} 
           />
         </label>
