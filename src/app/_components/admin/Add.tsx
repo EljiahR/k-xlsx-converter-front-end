@@ -1,8 +1,21 @@
-import instance from "@/lib/axiosBase.ts";
+import instance from "src/app/_lib/axiosBase";
 import { useState } from "react";
 
+interface EmployeeInfo {
+  firstName: string;
+    lastName: string;
+    preferredFirstName: string;
+    birthday: Date;
+    preferredNumberOfBreaks: Number;
+    getsLunchAsAdult: boolean;
+    positionOverride: string;
+    isCallUp: boolean;
+    division: string;
+    storeNumber: string;
+}
+
 const Add = ({ selectedStore }) => {
-  const [newEmployeeInfo, setNewEmployeeInfo] = useState({
+  const [newEmployeeInfo, setNewEmployeeInfo] = useState<EmployeeInfo>({
     firstName: "",
     lastName: "",
     preferredFirstName: "",
@@ -10,36 +23,32 @@ const Add = ({ selectedStore }) => {
     preferredNumberOfBreaks: 2,
     getsLunchAsAdult: false,
     positionOverride: "",
-    isCallUp: true
+    isCallUp: true,
+    division: "",
+    storeNumber: ""
   })
+
+  const handleFormChange = (section: string, value: any) => {
+    setNewEmployeeInfo({...newEmployeeInfo}[section] = value);
+  }
   
   const handleSubmit = (e) => {
     //e.preventDefault();
+    
     const postForm = async () => {
-      const form = document.querySelector("#add-employee");
-      const formData = new FormData(form);
-      const rawFormData = Object.fromEntries(formData);
-      const [division, storeNumber] = selectedStore.split("-");
       
-      if (rawFormData.birthday == "") rawFormData.birthday = null;
-      rawFormData.preferredNumberOfBreaks = parseInt(
-        rawFormData.preferredNumberOfBreaks,
-      );
+      [newEmployeeInfo["division"], newEmployeeInfo["storeNumber"]] = selectedStore.split("-");
 
-      if(rawFormData.preferredFirstName.trim().length == 0) rawFormData.preferredFirstName = null;
-      rawFormData.division = parseInt(division);
-      rawFormData.storeNumber = parseInt(storeNumber);
-      rawFormData.getsLunchAsAdult = rawFormData.getsLunchAsAdult == "true";
-      rawFormData.isACallUp = rawFormData.isACallUp == "true";
-      console.log(rawFormData);
+      console.log(newEmployeeInfo);
 
       try {
-        const response = await instance.post(`/Employee`, JSON.stringify(rawFormData), { withCredentials: true })
+        const response = await instance.post(`/Employee`, newEmployeeInfo, { withCredentials: true })
         
         const data = await response.data;
         console.log(data);
-        form.reset();
-        document.querySelector("#first-name").focus();
+        const form = document.querySelector("#add-employee");
+        (form as HTMLFormElement).reset();
+        (document.querySelector("#first-name") as HTMLInputElement).focus();
       } catch (err) {
         console.log(err);
       }
@@ -53,7 +62,7 @@ const Add = ({ selectedStore }) => {
       <form onSubmit={handleSubmit} id="add-employee">
         <label htmlFor="first-name">
           First Name:
-          <input type="text" name="firstName" id="first-name" required />
+          <input type="text" name="firstName" id="first-name" onChange={(e) => handleFormChange("firstName", e.target.value)} required />
         </label>
         <label htmlFor="last-name">
           Last Name:
