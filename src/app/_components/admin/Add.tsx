@@ -37,12 +37,13 @@ const Add = ({ selectedStore }) => {
     
     const postForm = async () => {
       
-      [newEmployeeInfo["division"], newEmployeeInfo["storeNumber"]] = selectedStore.split("-");
+      const formData = {...newEmployeeInfo};
+      [formData["division"], formData["storeNumber"]] = selectedStore.split("-");
 
-      console.log(newEmployeeInfo);
+      console.log(formData);
 
       try {
-        const response = await instance.post(`/Employee`, newEmployeeInfo, { withCredentials: true })
+        const response = await instance.post(`/Employee`, formData, { withCredentials: true })
         
         const data = await response.data;
         console.log(data);
