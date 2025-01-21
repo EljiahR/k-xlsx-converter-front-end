@@ -65,7 +65,8 @@ const Add = ({ selectedStore }) => {
           <input 
             type="text" 
             name="firstName" 
-            id="first-name" 
+            id="first-name"
+            value={newEmployeeInfo["firstName"]} 
             onChange={(e) => handleFormChange("firstName", e.target.value)} 
             required 
           />
@@ -76,6 +77,7 @@ const Add = ({ selectedStore }) => {
             type="text" 
             name="lastName" 
             id="last-name" 
+            value={newEmployeeInfo["lastName"]} 
             onChange={(e) => handleFormChange("lastName", e.target.value)} 
             required 
           />
@@ -85,7 +87,8 @@ const Add = ({ selectedStore }) => {
           <input 
             type="text" 
             name="preferredFirstName" 
-            id="preferred-name" 
+            id="preferred-name"
+            value={newEmployeeInfo["preferredFirstName"]}  
             onChange={(e) => handleFormChange("preferredFirstName", e.target.value)}
            />
         </label>
@@ -95,6 +98,7 @@ const Add = ({ selectedStore }) => {
             type="date" 
             name="birthday" 
             id="birthday" 
+            value={newEmployeeInfo["birthday"].toString()} 
             onChange={(e) => handleFormChange("birthday", e.target.value)} 
           />
         </label>
@@ -125,6 +129,7 @@ const Add = ({ selectedStore }) => {
             type="checkbox" 
             name="getsLunchAsAdult" 
             id="lunch-override" 
+            checked={newEmployeeInfo["getsLunchAsAdult"]} 
             onChange={(e) => handleFormChange("getsLunchAsAdult", e.target.value)} 
           />
         </label>
@@ -145,7 +150,8 @@ const Add = ({ selectedStore }) => {
           <input 
             type="checkbox" 
             id="call-up" 
-            name="isCallUp" 
+            name="isCallUp"
+            checked={newEmployeeInfo["isCallUp"]} 
             onChange={(e) => handleFormChange("isCallUp", e.target.value)} 
           />
         </label>
