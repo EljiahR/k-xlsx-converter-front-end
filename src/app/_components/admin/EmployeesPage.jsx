@@ -71,9 +71,7 @@ const EmployeesPage = ({ authorizedStores }) => {
         </button>
       </div>
       {section == "edit" && (
-        <>
-          <Edit selectedStore={selectedStore} />
-        </>
+        <Edit selectedStore={selectedStore} />
       )}
       {section == "add" && (
         <Add selectedStore={selectedStore} data={data} setData={setData} />

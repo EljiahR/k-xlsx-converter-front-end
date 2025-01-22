@@ -34,7 +34,7 @@ const Test = () => {
           </Link>
           <select name="stores" id="stores" onChange={handleSelectedStore}>
             <option value={""}></option>
-            <option value={"0-0"}>Test</option>
+            <option value={"000-000"}>Test</option>
           </select>
           <button
             onClick={handleSectionChange}
@@ -44,17 +44,7 @@ const Test = () => {
           </button>
         </div>
         {section == "edit" && (
-          <>
-            {data != null && (
-              <input type="text" value={search} onChange={handleSearch} />
-            )}
-            <Edit
-              selectedStore={selectedStore}
-              data={data}
-              setData={setData}
-              search={search}
-            />
-          </>
+          <Edit selectedStore={selectedStore} />
         )}
         {section == "add" && (
           <Add selectedStore={selectedStore} data={data} setData={setData} />

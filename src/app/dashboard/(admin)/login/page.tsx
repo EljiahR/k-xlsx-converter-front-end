@@ -45,6 +45,9 @@ const Login: FC = () => {
                 <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <button type="submit">Login</button>
             </form>
+            <Link href={"/dashboard/test"}>
+                <button>Go to testing area</button>
+            </Link>
         </div>
     )
 }
