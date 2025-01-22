@@ -29,6 +29,8 @@ const ProtectedRoute = ({ component: Component } : Props) => {
     const [authorizedRoutes, setAuthorizedRoutes] = useState<AuthorizedRoutes>(intialStoreAuthorization);
 
     useEffect(() => {
+        document.title = "Checking user";
+        
         const checkAuthStatus = async () => {
             try {
                 const response = await instance.get("/User/Status", {withCredentials: true });
@@ -45,7 +47,9 @@ const ProtectedRoute = ({ component: Component } : Props) => {
     }, []);
 
     useEffect(() => {
+        
         if (authenticationState == AuthenticationStates.Unauthorized) {
+            document.title = "Unauthorized";
             router.push("/dashboard/login");
         }
     }, [authenticationState])

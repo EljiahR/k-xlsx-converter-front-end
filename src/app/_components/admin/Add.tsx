@@ -1,5 +1,6 @@
 import instance from "src/app/_lib/axiosBase";
 import { useState } from "react";
+import useTitle from "src/app/_lib/useTitle";
 
 interface EmployeeInfo {
   firstName: string;
@@ -29,6 +30,8 @@ const EmployeeInfoStarter: EmployeeInfo = {
 
 const Add = ({ selectedStore }) => {
   const [newEmployeeInfo, setNewEmployeeInfo] = useState<EmployeeInfo>({...EmployeeInfoStarter})
+
+  useTitle("New Employee");
 
   const handleFormChange = (section: string, value: any) => {
     setNewEmployeeInfo((previousInfo) => ({

@@ -1,13 +1,16 @@
-import instance from "@/lib/axiosBase.ts";
-import testEmployees from "@/lib/testEmployeesBO.ts"
+import instance from "src/app/_lib/axiosBase";
+import testEmployees from "src/app/_lib/testEmployeesBO";
 import EmployeeDivs from "./EmployeeDivs";
 import { useEffect, useMemo, useState } from "react";
+import useTitle from "src/app/_lib/useTitle";
 
 const Edit = ({ selectedStore }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [editData, setEditData] = useState([]);
   const [search, setSearch] = useState("");
+
+  useTitle("Employees");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
