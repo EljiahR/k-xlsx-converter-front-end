@@ -2,7 +2,7 @@ var i = 0;
 
 class EmployeeBO {
     bathroomOrder: Number = 0;
-    birthday: Date = new Date();
+    birthday: string = new Date().toDateString();
     division: Number = 0;
     edit: Boolean = false;
     employeeId: Number = i++;
