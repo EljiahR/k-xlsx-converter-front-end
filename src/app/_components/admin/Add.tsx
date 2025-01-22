@@ -142,7 +142,7 @@ const Add = ({ selectedStore }) => {
             name="getsLunchAsAdult" 
             id="lunch-override" 
             checked={newEmployeeInfo["getsLunchAsAdult"]} 
-            onChange={(e) => handleFormChange("getsLunchAsAdult", e.target.value)} 
+            onChange={(e) => handleFormChange("getsLunchAsAdult", !newEmployeeInfo["getsLunchAsAdult"])} 
           />
         </label>
         <label htmlFor="position-override">
