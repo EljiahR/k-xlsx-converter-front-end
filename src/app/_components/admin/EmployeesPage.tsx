@@ -4,22 +4,20 @@ import "@/styles/globals.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Add from "@/components/admin/Add";
-import Edit from "@/components/admin/Edit";
+import Add from "./Add";
+import Edit from "./Edit";
 import instance from "src/app/_lib/axiosBase";
 
 const EmployeesPage = ({ authorizedStores }) => {
   const router = useRouter();
   const [section, setSection] = useState("edit");
   const [selectedStore, setSelectedStore] = useState("");
-
-  const [data, setData] = useState(null);
   
   const handleLogout = (e) => {
     e.preventDefault();
     const logout = async () => {
       try {
-        const response = instance.post("/User/SignOut", {}, {withCredentials: true});
+        const response = await instance.post("/User/SignOut", {}, {withCredentials: true});
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -74,7 +72,7 @@ const EmployeesPage = ({ authorizedStores }) => {
         <Edit selectedStore={selectedStore} />
       )}
       {section == "add" && (
-        <Add selectedStore={selectedStore} data={data} setData={setData} />
+        <Add selectedStore={selectedStore} />
       )}
     </>
   );
