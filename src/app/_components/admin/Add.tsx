@@ -14,19 +14,21 @@ interface EmployeeInfo {
     storeNumber: string;
 }
 
+const EmployeeInfoStarter: EmployeeInfo = {
+  firstName: "",
+  lastName: "",
+  preferredFirstName: "",
+  birthday: new Date(),
+  preferredNumberOfBreaks: 2,
+  getsLunchAsAdult: false,
+  positionOverride: "",
+  isCallUp: true,
+  division: "",
+  storeNumber: ""
+}
+
 const Add = ({ selectedStore }) => {
-  const [newEmployeeInfo, setNewEmployeeInfo] = useState<EmployeeInfo>({
-    firstName: "",
-    lastName: "",
-    preferredFirstName: "",
-    birthday: new Date(),
-    preferredNumberOfBreaks: 2,
-    getsLunchAsAdult: false,
-    positionOverride: "",
-    isCallUp: true,
-    division: "",
-    storeNumber: ""
-  })
+  const [newEmployeeInfo, setNewEmployeeInfo] = useState<EmployeeInfo>({...EmployeeInfoStarter})
 
   const handleFormChange = (section: string, value: any) => {
     setNewEmployeeInfo((previousInfo) => ({
@@ -34,9 +36,13 @@ const Add = ({ selectedStore }) => {
       [section]: value
     }));
   }
+
+  const resetForm = () => {
+    setNewEmployeeInfo({...EmployeeInfoStarter});
+  }
   
   const handleSubmit = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     
     const postForm = async () => {
       
@@ -55,14 +61,13 @@ const Add = ({ selectedStore }) => {
         console.log("Recieved")
         console.log(data);
        
-        (document.querySelector("#add-employee") as HTMLFormElement).reset();
+        resetForm();
         (document.querySelector("#first-name") as HTMLInputElement).focus();
       } catch (err) {
         console.log(err);
       }
     };
     postForm();
-    e.preventDefault();
   };
 
   return (
@@ -115,9 +120,8 @@ const Add = ({ selectedStore }) => {
             type="radio"
             id="break-preference-2"
             name="preferredNumberOfBreaks"
-            value={2}
-            checked={true}
-            onChange={(e) => handleFormChange("preferredNumberOfBreaks", e.target.value)}
+            checked={newEmployeeInfo["preferredNumberOfBreaks"] == 2}
+            onChange={(e) => handleFormChange("preferredNumberOfBreaks", 2)}
             required
           />
           <label htmlFor="break-preference-2">Two 15 minute breaks</label>
@@ -125,8 +129,8 @@ const Add = ({ selectedStore }) => {
             type="radio"
             id="break-preference-1"
             name="preferredNumberOfBreaks"
-            value={1}
-            onChange={(e) => handleFormChange("preferredNumberOfBreaks", e.target.value)}
+            checked={newEmployeeInfo["preferredNumberOfBreaks"] == 1}
+            onChange={(e) => handleFormChange("preferredNumberOfBreaks", 1)}
             required
           />
           <label htmlFor="break-preference-1">One 30 minute break</label>
@@ -160,7 +164,7 @@ const Add = ({ selectedStore }) => {
             id="call-up" 
             name="isCallUp"
             checked={newEmployeeInfo["isCallUp"]} 
-            onChange={(e) => handleFormChange("isCallUp", e.target.value)} 
+            onChange={(e) => handleFormChange("isCallUp", !newEmployeeInfo["isCallUp"])} 
           />
         </label>
         <input type="submit" id="submit" />
