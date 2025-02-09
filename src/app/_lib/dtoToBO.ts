@@ -1,9 +1,14 @@
 import moment from "moment";
-import internal from "stream";
 
 interface IBreak {
   time: string;
   editable: boolean;
+}
+
+interface Subshift {
+  shiftStart: Date;
+  shiftEnd: Date;
+  originalPosition: string;
 }
 
 interface IEmployeeDTO {
@@ -16,6 +21,7 @@ interface IEmployeeDTO {
   lunch?: Date;
   breakTwo?: Date;
   originalPosition?: string;
+  subShift?: Subshift;
 }
 
 interface IEmployeeBO
@@ -84,6 +90,7 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     },
     originalPosition: shift.originalPosition ?? "",
+    subShift: shift.subShift
   }));
 };
 
