@@ -79,7 +79,6 @@ interface IWeekdayBO {
 }
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
-  
 
 
   return shifts.map((shift) => ({
@@ -101,8 +100,8 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
     },
     originalPosition: shift.originalPosition ?? "",
     subShift: shift.subShift == null ? null : {
-      shiftStart: moment(shift.subShift.shiftStart).format("h:mma").slice(0, -1),
-      shiftEnd: moment(shift.subShift.shiftEnd).format("h:mma").slice(0, -1),
+      shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
+      shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
       originalPosition: shift.subShift.originalPosition
     }
   }));
@@ -127,6 +126,7 @@ const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
 };
 
 const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
+  console.log()
   return weekdays.map((weekday) => ({
     ...weekday,
     date: moment(weekday.date).format("dddd M/D/YYYY"),
