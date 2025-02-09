@@ -1,14 +1,15 @@
-import styles from "@/styles/Carts.module.css";
-import lotTimes from "@/lib/lotTimes";
-import Restrooms from "@/components/editor/Restrooms";
+import styles from "../../_styles/Carts.module.css";
+import lotTimes from "../../_lib/lotTimes";
+import Restrooms from "./Restrooms";
 import {
   addMinutesToBreak,
   compareTime,
   startToBreakAddMinutes,
   reformatTimes,
-} from "@/lib/timeFunctions";
+} from "../../_lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
-import checkCartErrors from "@/lib/checkCartErrors";
+import checkCartErrors from "../../_lib/checkCartErrors";
+import { IEmployeeBO } from "src/app/_lib/dtoToBO";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -34,9 +35,10 @@ const CartSlot = ({
     lunch1: "",
     lunch2: "",
     break2: "",
+    subShift: null
   };
 
-  const thisBagger = baggerList.shifts.find(
+  const thisBagger: IEmployeeBO= baggerList.shifts.find(
     (bagger) => bagger.baggerName == name,
   );
   if (thisBagger) {
@@ -52,6 +54,7 @@ const CartSlot = ({
     baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
       ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
       : thisBagger.breakTwo.time;
+    baggerInfo.subShift = thisBagger.subShift;
   }
   //yes I copied this from individualShifts
   useEffect(() => {
@@ -175,7 +178,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
   };
 
   const handleOnDrop = (e) => {
-    const dragged = document.getElementById(e.dataTransfer.getData("text"));
+    const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.target.id.split(":");
     let newShifts = JSON.parse(JSON.stringify(shifts));

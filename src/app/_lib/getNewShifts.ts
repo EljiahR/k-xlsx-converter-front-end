@@ -1,5 +1,5 @@
-import instance from "./axiosBase.js";
-import formatWeek from "./dtoToBO.js";
+import instance from "./axiosBase";
+import formatWeek from "./dtoToBO";
 
 export const getEmployees = async (xlsxFile) => {
   const data = new FormData();
