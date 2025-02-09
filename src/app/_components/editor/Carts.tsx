@@ -10,27 +10,9 @@ import {
 import { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
 import { IEmployeeBO, SubshiftBO } from "src/app/_lib/dtoToBO";
+import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
 
 const componentArray = [0, 1, 2, 3];
-
-interface BaggerInfo {
-  name: string,
-  break1: string,
-  lunch1: string,
-  lunch2: string,
-  break2: string,
-  subShift?: SubshiftBO
-}
-
-interface BaggerCartInfo {
-  start: string,
-  end: string,
-  break1: string,
-  lunch1: string,
-  lunch2: string,
-  break2: string,
-  subShift?: SubshiftBO
-}
 
 const CartSlot = ({
   index,
@@ -57,7 +39,7 @@ const CartSlot = ({
     subShift: null
   };
 
-  const thisBagger: IEmployeeBO= baggerList.shifts.find(
+  const thisBagger: IEmployeeBO = baggerList.shifts.find(
     (bagger) => bagger.baggerName == name,
   );
   if (thisBagger) {
