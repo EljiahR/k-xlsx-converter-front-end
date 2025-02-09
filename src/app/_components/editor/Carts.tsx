@@ -55,7 +55,7 @@ const CartSlot = ({
     baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
       ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
       : thisBagger.breakTwo.time;
-    baggerInfo.subShift = thisBagger.subShift;
+    baggerInfo.subShift = thisBagger.subshift;
   }
   //yes I copied this from individualShifts
   useEffect(() => {
@@ -146,7 +146,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
       ? addMinutesToBreak(bagger.breakTwo.time, -15)
       : bagger.breakTwo.time;
-    baggerCartInfo.subShift = bagger.subShift;
+    baggerCartInfo.subShift = bagger.subshift;
   }
 
   const inputReference = useRef(null);

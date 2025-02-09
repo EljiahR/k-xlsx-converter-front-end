@@ -27,13 +27,13 @@ interface IEmployeeDTO {
   lunch?: Date;
   breakTwo?: Date;
   originalPosition?: string;
-  subShift?: SubshiftDTO;
+  subshift?: SubshiftDTO;
 }
 
 interface IEmployeeBO
   extends Omit<
     IEmployeeDTO,
-    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subShift"
+    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
   > {
   shiftStart: string;
   shiftEnd: string;
@@ -41,7 +41,7 @@ interface IEmployeeBO
   lunch: IBreak;
   breakTwo: IBreak;
   edit: boolean;
-  subShift?: SubshiftBO 
+  subshift?: SubshiftBO 
 }
 
 interface IJobPositionDTO {
@@ -99,10 +99,10 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     },
     originalPosition: shift.originalPosition ?? "",
-    subShift: shift.subShift == null ? null : {
+    subshift: shift.subshift == null ? null : {
       shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
       shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
-      originalPosition: shift.subShift.originalPosition
+      originalPosition: shift.subshift.originalPosition
     }
   }));
 };
