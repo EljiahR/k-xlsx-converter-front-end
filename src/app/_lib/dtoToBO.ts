@@ -136,4 +136,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO };
+export type { IEmployeeBO, SubshiftBO };

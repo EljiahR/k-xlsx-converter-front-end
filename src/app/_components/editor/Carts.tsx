@@ -9,9 +9,28 @@ import {
 } from "../../_lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
-import { IEmployeeBO } from "src/app/_lib/dtoToBO";
+import { IEmployeeBO, SubshiftBO } from "src/app/_lib/dtoToBO";
 
 const componentArray = [0, 1, 2, 3];
+
+interface BaggerInfo {
+  name: string,
+  break1: string,
+  lunch1: string,
+  lunch2: string,
+  break2: string,
+  subShift?: SubshiftBO
+}
+
+interface BaggerCartInfo {
+  start: string,
+  end: string,
+  break1: string,
+  lunch1: string,
+  lunch2: string,
+  break2: string,
+  subShift?: SubshiftBO
+}
 
 const CartSlot = ({
   index,
@@ -29,7 +48,7 @@ const CartSlot = ({
   time,
   baggerList,
 }) => {
-  const baggerInfo = {
+  const baggerInfo: BaggerInfo = {
     name: name,
     break1: "",
     lunch1: "",
@@ -110,40 +129,42 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     return 0;
   };
 
-  let baggerInfo = {
+  let baggerCartInfo: BaggerCartInfo = {
     start: "",
     end: "",
     break1: "",
     lunch1: "",
     lunch2: "",
     break2: "",
+    subShift: null
   };
 
   let baggerList = shifts[currentDay].jobPositions.find(
     (shift) => shift.name == "Front End Courtesy Clerk",
   );
 
-  let bagger = baggerList.shifts.find(
+  let bagger: IEmployeeBO = baggerList.shifts.find(
     (person) => person.baggerName == selectedBagger,
   );
   if (bagger) {
     let [start] = reformatTimes(bagger.shiftStart);
     let end = startToBreakAddMinutes(bagger.shiftEnd, -30);
-    baggerInfo.start = start;
-    baggerInfo.end = end;
+    baggerCartInfo.start = start;
+    baggerCartInfo.end = end;
 
-    baggerInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
+    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
       ? addMinutesToBreak(bagger.breakOne.time, -15)
       : bagger.breakOne.time;
-    baggerInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
+    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, -15)
       : bagger.lunch.time;
-    baggerInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
+    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, 15)
       : bagger.lunch.time;
-    baggerInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
+    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
       ? addMinutesToBreak(bagger.breakTwo.time, -15)
       : bagger.breakTwo.time;
+    baggerCartInfo.subShift = bagger.subShift;
   }
 
   const inputReference = useRef(null);
@@ -213,17 +234,19 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
               <>
                 <div
                   className={`${styles["cart-time"]} ${
-                    time == baggerInfo.break1 ||
-                    time == baggerInfo.lunch1 ||
-                    time == baggerInfo.lunch2 ||
-                    time == baggerInfo.break2
+                    time == baggerCartInfo.break1 ||
+                    time == baggerCartInfo.lunch1 ||
+                    time == baggerCartInfo.lunch2 ||
+                    time == baggerCartInfo.break2
                       ? styles["break-highlight"]
                       : ""
                   } ${
-                    time == baggerInfo.start ||
-                    time == baggerInfo.end ||
-                    (compareTime(time, baggerInfo.start) &&
-                      compareTime(baggerInfo.end, time))
+                    (baggerCartInfo.subShift != null && !(compareTime(time, baggerCartInfo.subShift.shiftStart) &&
+                    compareTime(baggerCartInfo.subShift.shiftEnd, time))) &&
+                    (time == baggerCartInfo.start ||
+                    time == baggerCartInfo.end ||
+                    (compareTime(time, baggerCartInfo.start) &&
+                      compareTime(baggerCartInfo.end, time)))
                       ? styles["shift-highlight"]
                       : ""
                   }`}
