@@ -5,9 +5,15 @@ interface IBreak {
   editable: boolean;
 }
 
-interface Subshift {
+interface SubshiftDTO {
   shiftStart: Date;
   shiftEnd: Date;
+  originalPosition: string;
+}
+
+interface SubshiftBO {
+  shiftStart: string;
+  shiftEnd: string;
   originalPosition: string;
 }
 
@@ -21,13 +27,13 @@ interface IEmployeeDTO {
   lunch?: Date;
   breakTwo?: Date;
   originalPosition?: string;
-  subShift?: Subshift;
+  subShift?: SubshiftDTO;
 }
 
 interface IEmployeeBO
   extends Omit<
     IEmployeeDTO,
-    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo"
+    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subShift"
   > {
   shiftStart: string;
   shiftEnd: string;
@@ -35,6 +41,7 @@ interface IEmployeeBO
   lunch: IBreak;
   breakTwo: IBreak;
   edit: boolean;
+  subShift?: SubshiftBO 
 }
 
 interface IJobPositionDTO {
@@ -72,6 +79,9 @@ interface IWeekdayBO {
 }
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
+  
+
+
   return shifts.map((shift) => ({
     ...shift,
     edit: false,
@@ -90,7 +100,11 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     },
     originalPosition: shift.originalPosition ?? "",
-    subShift: shift.subShift
+    subShift: shift.subShift == null ? null : {
+      shiftStart: moment(shift.subShift.shiftStart).format("h:mma").slice(0, -1),
+      shiftEnd: moment(shift.subShift.shiftEnd).format("h:mma").slice(0, -1),
+      originalPosition: shift.subShift.originalPosition
+    }
   }));
 };
 
