@@ -223,8 +223,8 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
                       ? styles["break-highlight"]
                       : ""
                   } ${
-                    (baggerCartInfo.subShift != null && !(compareTime(time, baggerCartInfo.subShift.shiftStart) &&
-                    compareTime(baggerCartInfo.subShift.shiftEnd, time))) &&
+                    (baggerCartInfo.subShift == null || compareTime(baggerCartInfo.subShift.shiftStart, time) ||
+                    compareTime(time, baggerCartInfo.subShift.shiftEnd)) &&
                     (time == baggerCartInfo.start ||
                     time == baggerCartInfo.end ||
                     (compareTime(time, baggerCartInfo.start) &&
