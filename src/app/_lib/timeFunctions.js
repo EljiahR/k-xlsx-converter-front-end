@@ -83,7 +83,7 @@ export const startToBreakAddMinutes = (time, minutesToAdd) => {
   return result;
 };
 
-export const compareTime = (time1, time2, isStartTime = false) => {
+export const timeIsLaterThan = (time1, time2, isStartTime = false) => {
   const date1 = /[AP]M$/.test(time1)
     ? getDatesFromBreaks(time1)
     : getDatesFromTimes(time1)[0];

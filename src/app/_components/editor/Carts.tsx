@@ -3,7 +3,7 @@ import lotTimes from "../../_lib/lotTimes";
 import Restrooms from "./Restrooms";
 import {
   addMinutesToBreak,
-  compareTime,
+  timeIsLaterThan,
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/timeFunctions";
@@ -223,12 +223,12 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
                       ? styles["break-highlight"]
                       : ""
                   } ${
-                    (baggerCartInfo.subShift == null || compareTime(baggerCartInfo.subShift.shiftStart, time) ||
-                    compareTime(time, baggerCartInfo.subShift.shiftEnd)) &&
+                    (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart) &&
+                    timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time))) &&
                     (time == baggerCartInfo.start ||
                     time == baggerCartInfo.end ||
-                    (compareTime(time, baggerCartInfo.start) &&
-                      compareTime(baggerCartInfo.end, time)))
+                    (timeIsLaterThan(time, baggerCartInfo.start) &&
+                    timeIsLaterThan(baggerCartInfo.end, time)))
                       ? styles["shift-highlight"]
                       : ""
                   }`}
