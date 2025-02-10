@@ -1,6 +1,6 @@
 import styles from "@/styles/Carts.module.css";
 import { BaggerInfo } from "./types/cartTypes";
-import { compareTime } from "./timeFunctions";
+import { timeIsLaterThan } from "./timeFunctions";
 
 interface ICartShift {
   name: string;
@@ -35,7 +35,7 @@ export default function (
   ) {
     return styles.error;
   }
-  if (baggerInfo.subShift != null && !compareTime(baggerInfo.subShift.shiftStart, timeToCheck, true) && !compareTime(timeToCheck, baggerInfo.subShift.shiftEnd)) {
+  if (baggerInfo.subShift != null && !timeIsLaterThan(baggerInfo.subShift.shiftStart, timeToCheck, true) && !timeIsLaterThan(timeToCheck, baggerInfo.subShift.shiftEnd)) {
     return styles.error;
   }
 

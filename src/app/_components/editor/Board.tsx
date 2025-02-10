@@ -1,15 +1,15 @@
 import styles from "@/styles/Board.module.css";
-import BlankRow from "@/components/editor/BlankRow";
-import CallUps from "@/components/editor/CallUps";
-import IndividualShifts from "@/components/editor/IndividualShifts";
-import Liquor from "@/components/editor/Liquor";
+import BlankRow from "./BlankRow";
+import CallUps from "./CallUps";
+import IndividualShifts from "./IndividualShifts";
+import Liquor from "./Liquor";
 import moment from "moment";
 import { useState } from "react";
 import {
   addMinutesToBreak,
-  compareTime,
+  timeIsLaterThan,
   getDatesFromBreaks,
-} from "@/lib/timeFunctions";
+} from "../../_lib/timeFunctions";
 
 const Board = ({ currentDay, shifts, setShifts }) => {
   const [selectedTime, setSelectedTime] = useState({
@@ -39,12 +39,12 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         e.key == "ArrowUp" ? 15 : -15,
       );
       if (
-        compareTime(
+        timeIsLaterThan(
           personToEdit[breakType].time,
           personToEdit.shiftStart,
           true,
         ) &&
-        compareTime(personToEdit.shiftEnd, personToEdit[breakType].time)
+        timeIsLaterThan(personToEdit.shiftEnd, personToEdit[breakType].time)
       ) {
         setShifts(newShifts);
         setSelectedTime({

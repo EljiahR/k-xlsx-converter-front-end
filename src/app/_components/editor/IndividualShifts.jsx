@@ -90,7 +90,6 @@ const Breaks = ({
 const IndividualShifts = ({
   people,
   positionName,
-  currentDay,
   handleBreakClick,
   handleBreakChange,
   handleKeyUpDown,
