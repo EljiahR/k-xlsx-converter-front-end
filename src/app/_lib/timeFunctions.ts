@@ -101,6 +101,10 @@ export const timeIsLaterThan = (time1, time2, isStartTime = false) => {
   return date1 > date2;
 };
 
+export const timeIsWithin = (startTime, endTime, targetTime) => {
+    return timeIsLaterThan(targetTime, startTime, true) && timeIsLaterThan(endTime, targetTime);
+}
+
 export const addMinutesToBreak = (thisBreak, minutes) => {
   let date = getDatesFromBreaks(thisBreak, minutes);
   return moment(date).format("LT");

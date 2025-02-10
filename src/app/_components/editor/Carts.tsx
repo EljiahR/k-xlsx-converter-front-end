@@ -1,5 +1,5 @@
 import styles from "../../_styles/Carts.module.css";
-import lotTimes from "../../_lib/lotTimes";
+import {lotTimes} from "../../_lib/lotTimes";
 import Restrooms from "./Restrooms";
 import {
   addMinutesToBreak,
@@ -261,7 +261,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
             );
           })}
         </div>
-        <Restrooms />
+        <Restrooms utilityClerks={baggerList.filter((bagger) => {return bagger.subshift != null})} />
       </div>
       <div id="footer"></div>
     </div>
