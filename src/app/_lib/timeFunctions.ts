@@ -1,7 +1,14 @@
 import moment from "moment";
 
 //converts start and end times to date objects
-Date.prototype.addMinutes = function (m) {
+declare global {
+  interface Date {
+    addMinutes(m: number): Date;
+  }
+}
+
+
+Date.prototype.addMinutes = function (m: number): Date {
   this.setTime(this.getTime() + m * 60 * 1000);
   return this;
 };
