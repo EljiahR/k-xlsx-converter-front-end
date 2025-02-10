@@ -100,8 +100,8 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
     },
     originalPosition: shift.originalPosition ?? "",
     subshift: shift.subshift == null ? null : {
-      shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
-      shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
+      shiftStart: moment(shift.subshift.shiftStart).format("h:mma").slice(0, -1),
+      shiftEnd: moment(shift.subshift.shiftEnd).format("h:mma").slice(0, -1),
       originalPosition: shift.subshift.originalPosition
     }
   }));
