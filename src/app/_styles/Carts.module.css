@@ -58,6 +58,10 @@
   background-color: #a8a8ff !important;
 }
 
+.utility-highlight {
+  background-color: darkolivegreen !important;
+}
+
 .name-highlight {
   background-color: yellow !important;
 }

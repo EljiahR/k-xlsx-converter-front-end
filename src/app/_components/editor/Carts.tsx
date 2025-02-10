@@ -223,13 +223,14 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
                       ? styles["break-highlight"]
                       : ""
                   } ${
-                    (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart) &&
-                    timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time))) &&
-                    (time == baggerCartInfo.start ||
+                    time == baggerCartInfo.start ||
                     time == baggerCartInfo.end ||
                     (timeIsLaterThan(time, baggerCartInfo.start) &&
-                    timeIsLaterThan(baggerCartInfo.end, time)))
-                      ? styles["shift-highlight"]
+                    timeIsLaterThan(baggerCartInfo.end, time))
+                      ? (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart) &&
+                        timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time)))  
+                        ? styles["shift-highlight"]
+                        : styles["utility-highlight"]
                       : ""
                   }`}
                   id={time}
