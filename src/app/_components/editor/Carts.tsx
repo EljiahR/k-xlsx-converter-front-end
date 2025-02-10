@@ -261,7 +261,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
             );
           })}
         </div>
-        <Restrooms />
+        <Restrooms utilityClerks={baggerList.filter((bagger) => {return bagger.subshift != null})} />
       </div>
       <div id="footer"></div>
     </div>

@@ -1,6 +1,11 @@
 import styles from "@/styles/Restrooms.module.css";
+import { IEmployeeBO } from "src/app/_lib/dtoToBO";
 
-const Restrooms = () => {
+interface Props {
+  utilityClerks: IEmployeeBO[]
+}
+
+const Restrooms = ({utilityClerks}: Props) => {
   return (
     <div id="restrooms" className={styles.restrooms}>
       <div className={styles["double-full-slot"]}>
