@@ -1,16 +1,10 @@
 import styles from "@/styles/Carts.module.css";
+import { BaggerInfo } from "./types/cartTypes";
+import { compareTime } from "./timeFunctions";
 
 interface ICartShift {
   name: string;
   editable: boolean;
-}
-
-interface BaggerInfo {
-  name: string;
-  break1: string;
-  lunch1: string;
-  lunch2: string;
-  break2: string;
 }
 
 export default function (
@@ -39,6 +33,9 @@ export default function (
     currentRow.findIndex((slot) => slot.name == baggerInfo.name) !=
     currentRow.findLastIndex((slot) => slot.name == baggerInfo.name)
   ) {
+    return styles.error;
+  }
+  if (baggerInfo.subShift != null && !compareTime(baggerInfo.subShift.shiftStart, timeToCheck, true) && !compareTime(timeToCheck, baggerInfo.subShift.shiftEnd)) {
     return styles.error;
   }
 

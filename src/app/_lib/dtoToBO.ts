@@ -1,9 +1,20 @@
 import moment from "moment";
-import internal from "stream";
 
 interface IBreak {
   time: string;
   editable: boolean;
+}
+
+interface SubshiftDTO {
+  shiftStart: Date;
+  shiftEnd: Date;
+  originalPosition: string;
+}
+
+interface SubshiftBO {
+  shiftStart: string;
+  shiftEnd: string;
+  originalPosition: string;
 }
 
 interface IEmployeeDTO {
@@ -16,12 +27,13 @@ interface IEmployeeDTO {
   lunch?: Date;
   breakTwo?: Date;
   originalPosition?: string;
+  subshift?: SubshiftDTO;
 }
 
 interface IEmployeeBO
   extends Omit<
     IEmployeeDTO,
-    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo"
+    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
   > {
   shiftStart: string;
   shiftEnd: string;
@@ -29,6 +41,7 @@ interface IEmployeeBO
   lunch: IBreak;
   breakTwo: IBreak;
   edit: boolean;
+  subshift?: SubshiftBO 
 }
 
 interface IJobPositionDTO {
@@ -66,6 +79,8 @@ interface IWeekdayBO {
 }
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
+
+
   return shifts.map((shift) => ({
     ...shift,
     edit: false,
@@ -84,6 +99,11 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     },
     originalPosition: shift.originalPosition ?? "",
+    subshift: shift.subshift == null ? null : {
+      shiftStart: moment(shift.subshift.shiftStart).format("h:mma").slice(0, -1),
+      shiftEnd: moment(shift.subshift.shiftEnd).format("h:mma").slice(0, -1),
+      originalPosition: shift.subshift.originalPosition
+    }
   }));
 };
 
@@ -106,6 +126,7 @@ const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
 };
 
 const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
+  console.log()
   return weekdays.map((weekday) => ({
     ...weekday,
     date: moment(weekday.date).format("dddd M/D/YYYY"),
@@ -115,4 +136,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO };
+export type { IEmployeeBO, SubshiftBO };

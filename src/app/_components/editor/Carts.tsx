@@ -1,14 +1,16 @@
-import styles from "@/styles/Carts.module.css";
-import lotTimes from "@/lib/lotTimes";
-import Restrooms from "@/components/editor/Restrooms";
+import styles from "../../_styles/Carts.module.css";
+import lotTimes from "../../_lib/lotTimes";
+import Restrooms from "./Restrooms";
 import {
   addMinutesToBreak,
-  compareTime,
+  timeIsLaterThan,
   startToBreakAddMinutes,
   reformatTimes,
-} from "@/lib/timeFunctions";
+} from "../../_lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
-import checkCartErrors from "@/lib/checkCartErrors";
+import checkCartErrors from "../../_lib/checkCartErrors";
+import { IEmployeeBO, SubshiftBO } from "src/app/_lib/dtoToBO";
+import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -28,15 +30,16 @@ const CartSlot = ({
   time,
   baggerList,
 }) => {
-  const baggerInfo = {
+  const baggerInfo: BaggerInfo = {
     name: name,
     break1: "",
     lunch1: "",
     lunch2: "",
     break2: "",
+    subShift: null
   };
 
-  const thisBagger = baggerList.shifts.find(
+  const thisBagger: IEmployeeBO = baggerList.shifts.find(
     (bagger) => bagger.baggerName == name,
   );
   if (thisBagger) {
@@ -52,6 +55,7 @@ const CartSlot = ({
     baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
       ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
       : thisBagger.breakTwo.time;
+    baggerInfo.subShift = thisBagger.subshift;
   }
   //yes I copied this from individualShifts
   useEffect(() => {
@@ -107,40 +111,42 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     return 0;
   };
 
-  let baggerInfo = {
+  let baggerCartInfo: BaggerCartInfo = {
     start: "",
     end: "",
     break1: "",
     lunch1: "",
     lunch2: "",
     break2: "",
+    subShift: null
   };
 
   let baggerList = shifts[currentDay].jobPositions.find(
     (shift) => shift.name == "Front End Courtesy Clerk",
   );
 
-  let bagger = baggerList.shifts.find(
+  let bagger: IEmployeeBO = baggerList.shifts.find(
     (person) => person.baggerName == selectedBagger,
   );
   if (bagger) {
     let [start] = reformatTimes(bagger.shiftStart);
     let end = startToBreakAddMinutes(bagger.shiftEnd, -30);
-    baggerInfo.start = start;
-    baggerInfo.end = end;
+    baggerCartInfo.start = start;
+    baggerCartInfo.end = end;
 
-    baggerInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
+    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
       ? addMinutesToBreak(bagger.breakOne.time, -15)
       : bagger.breakOne.time;
-    baggerInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
+    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, -15)
       : bagger.lunch.time;
-    baggerInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
+    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
       ? addMinutesToBreak(bagger.lunch.time, 15)
       : bagger.lunch.time;
-    baggerInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
+    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
       ? addMinutesToBreak(bagger.breakTwo.time, -15)
       : bagger.breakTwo.time;
+    baggerCartInfo.subShift = bagger.subshift;
   }
 
   const inputReference = useRef(null);
@@ -175,7 +181,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
   };
 
   const handleOnDrop = (e) => {
-    const dragged = document.getElementById(e.dataTransfer.getData("text"));
+    const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.target.id.split(":");
     let newShifts = JSON.parse(JSON.stringify(shifts));
@@ -210,18 +216,21 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
               <>
                 <div
                   className={`${styles["cart-time"]} ${
-                    time == baggerInfo.break1 ||
-                    time == baggerInfo.lunch1 ||
-                    time == baggerInfo.lunch2 ||
-                    time == baggerInfo.break2
+                    time == baggerCartInfo.break1 ||
+                    time == baggerCartInfo.lunch1 ||
+                    time == baggerCartInfo.lunch2 ||
+                    time == baggerCartInfo.break2
                       ? styles["break-highlight"]
                       : ""
                   } ${
-                    time == baggerInfo.start ||
-                    time == baggerInfo.end ||
-                    (compareTime(time, baggerInfo.start) &&
-                      compareTime(baggerInfo.end, time))
-                      ? styles["shift-highlight"]
+                    time == baggerCartInfo.start ||
+                    time == baggerCartInfo.end ||
+                    (timeIsLaterThan(time, baggerCartInfo.start) &&
+                    timeIsLaterThan(baggerCartInfo.end, time))
+                      ? (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart) &&
+                        timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time)))  
+                        ? styles["shift-highlight"]
+                        : styles["utility-highlight"]
                       : ""
                   }`}
                   id={time}

@@ -1,24 +1,23 @@
-import formatWeek from "./dtoToBO.ts";
+import instance from "./axiosBase";
+import formatWeek from "./dtoToBO";
 
 export const getEmployees = async (xlsxFile) => {
   const data = new FormData();
   data.append("file", xlsxFile);
 
-  const response = await fetch(
-    "https://kxlsxconverterapi.onrender.com/Employee/Dailies/16/549",
-    {
-      method: "POST",
-      body: data,
-    },
-  );
+  const response = await instance.post("/Employee/Dailies/16/549", data, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
 
-  if (!response.ok) {
-    const error = await response.text();
+  if (response.status != 200) {
+    const error = await response.statusText;
     console.error("Error response:", error);
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
 
-  const newShifts = await response.json();
+  const newShifts = response.data;
   console.log(newShifts);
   const formattedShifts = formatWeek(newShifts);
 
