@@ -20,7 +20,7 @@ const Restrooms = ({utilityClerks}: Props) => {
       </div>
       {utilityTimes.map((time) => {
         return (
-          <div className={`${styles.slot}`}>
+          <div key={time} className={`${styles.slot}`}>
             <div className={styles.time}>{time}</div>
             <div className={styles.blank}>{utilityClerks.find((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, time)).firstName}</div>
           </div>
