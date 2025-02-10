@@ -1,5 +1,5 @@
 import styles from "../../_styles/Carts.module.css";
-import lotTimes from "../../_lib/lotTimes";
+import {lotTimes} from "../../_lib/lotTimes";
 import Restrooms from "./Restrooms";
 import {
   addMinutesToBreak,
