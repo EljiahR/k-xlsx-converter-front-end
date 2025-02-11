@@ -10,7 +10,7 @@ interface Props {
 const Restrooms = ({utilityClerks}: Props) => {
   const findBaggers = (timeToCheck: string): string => {
     const baggers = utilityClerks.filter((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, timeToCheck));
-    return baggers.slice(0, 2).map(bagger => bagger.baggerName).join(", ") ?? "";
+    return baggers.slice(0, 2).map(bagger => bagger.baggerName).join(" and ") ?? "";
   }
 
 
