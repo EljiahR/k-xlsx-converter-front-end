@@ -10,8 +10,6 @@ const Edit = ({ selectedStore }) => {
   const [editData, setEditData] = useState([]);
   const [search, setSearch] = useState("");
 
-  useTitle("Employees");
-
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };

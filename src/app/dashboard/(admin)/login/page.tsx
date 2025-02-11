@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 import instance from "src/app/_lib/axiosBase";
 
 const Login: FC = () => {
@@ -32,6 +32,10 @@ const Login: FC = () => {
         setUsername("");
         setPassword("");
     }
+
+    useEffect(() => {
+        document.title = "Login";
+    }, []);
     
     return (
         <div id="login-page">

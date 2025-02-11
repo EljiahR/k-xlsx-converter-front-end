@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import Add from "src/app/_components/admin/Add";
 import Edit from "src/app/_components/admin/Edit";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Test = () => {
     const [selectedStore, setSelectedStore] = useState("");
@@ -17,6 +17,10 @@ const Test = () => {
     const handleSelectedStore = (e) => {
       setSelectedStore(e.target.value);
     };
+
+    useEffect(() => {
+      document.title = "Test";
+    }, []);
 
     return (
         <>
