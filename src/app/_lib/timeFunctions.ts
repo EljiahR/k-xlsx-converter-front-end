@@ -97,7 +97,7 @@ export const timeIsLaterThan = (time1, time2, isStartTime = false) => {
   const date2 = /[AP]M$/.test(time2)
     ? getDatesFromBreaks(time2)
     : getDatesFromTimes(time2)[0];
-  if (isStartTime) date1 >= date2;
+  if (isStartTime) return date1 >= date2;
   return date1 > date2;
 };
 

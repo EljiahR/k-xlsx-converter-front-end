@@ -8,9 +8,9 @@ interface Props {
 }
 
 const Restrooms = ({utilityClerks}: Props) => {
-  const findBagger = (timeToCheck: string): { [baggerName: string]: any } => {
-    const bagger = utilityClerks.find((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, timeToCheck));
-    return bagger ?? {baggerName: ""};
+  const findBaggers = (timeToCheck: string): string => {
+    const baggers = utilityClerks.filter((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, timeToCheck));
+    return baggers.join(", ");
   }
 
 
@@ -28,7 +28,7 @@ const Restrooms = ({utilityClerks}: Props) => {
         return (
           <div key={time} className={`${styles.slot}`}>
             <div className={styles.time}>{time}</div>
-            <div className={styles.blank}>{findBagger(time).baggerName}</div>
+            <div className={styles.blank}>{findBaggers(time)}</div>
           </div>
         );
       })}
