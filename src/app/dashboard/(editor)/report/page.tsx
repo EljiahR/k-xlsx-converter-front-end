@@ -111,7 +111,7 @@ const Report = () => {
         shifts={shifts}
       />
 
-      {isLoading && <Loading isLoading={isLoading} />}
+      {isLoading && <Loading />}
       {shifts && page === "Board" && (
         <div id="board" className={styles.sheet}>
           <Board
