@@ -21,6 +21,7 @@ interface IEmployeeDTO {
   employeeId: Number;
   firstName: string;
   lastName: string;
+  baggerName: string,
   shiftStart: Date;
   shiftEnd: Date;
   breakOne?: Date;
@@ -136,4 +137,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO, SubshiftBO };
+export type { IEmployeeBO, SubshiftBO, IJobPositionBO };

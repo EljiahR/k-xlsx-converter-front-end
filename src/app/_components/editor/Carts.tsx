@@ -9,7 +9,7 @@ import {
 } from "../../_lib/timeFunctions";
 import { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
-import { IEmployeeBO, SubshiftBO } from "src/app/_lib/dtoToBO";
+import { IEmployeeBO, IJobPositionBO, SubshiftBO } from "src/app/_lib/dtoToBO";
 import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
 
 const componentArray = [0, 1, 2, 3];
@@ -121,7 +121,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     subShift: null
   };
 
-  let baggerList = shifts[currentDay].jobPositions.find(
+  let baggerList: IJobPositionBO = shifts[currentDay].jobPositions.find(
     (shift) => shift.name == "Front End Courtesy Clerk",
   );
 
@@ -261,7 +261,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
             );
           })}
         </div>
-        <Restrooms utilityClerks={baggerList.filter((bagger) => {return bagger.subshift != null})} />
+        <Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />
       </div>
       <div id="footer"></div>
     </div>
