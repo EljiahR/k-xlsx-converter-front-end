@@ -8,6 +8,7 @@ interface Props {
 }
 
 const Restrooms = ({utilityClerks}: Props) => {
+  console.log(utilityClerks);
   return (
     <div id="restrooms" className={styles.restrooms}>
       <div className={styles["double-full-slot"]}>
@@ -22,7 +23,7 @@ const Restrooms = ({utilityClerks}: Props) => {
         return (
           <div key={time} className={`${styles.slot}`}>
             <div className={styles.time}>{time}</div>
-            <div className={styles.blank}>{utilityClerks.find((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, time)).firstName}</div>
+            <div className={styles.blank}>{utilityClerks.find((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, time)).baggerName}</div>
           </div>
         );
       })}
