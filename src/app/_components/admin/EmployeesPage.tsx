@@ -39,16 +39,14 @@ const EmployeesPage = ({ authorizedStores }) => {
   };
 
   useEffect(() => {
-    const getAvailableStores = async () => {
+    const previousTitle = document.title;
+    document.title = "Employees";
 
-    };
-
-    getAvailableStores();
-  })
+    return (() => {document.title = previousTitle;});
+  }, []);
   
   return (
       <>
-
         <div id="employee-page-div">
         <h2>Employee Database</h2>
         <Link href="/">
