@@ -2,18 +2,18 @@
 import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
-import initialShifts from "@/lib/shiftsObject";
+import initialShifts from "../../../_lib/shiftsObject";
 // Importing components
-import Board from "@/components/editor/Board";
-import Carts from "@/components/editor/Carts";
-import Loading from "@/components/Loading";
-import NavBar from "@/components/NavBar";
+import Board from "../../../_components/editor/Board";
+import Carts from "../../../_components/editor/Carts";
+import Loading from "../../../_components/Loading";
+import NavBar from "../../../_components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
 import { jsPDF } from "jspdf";
 //import svg2pdf from "svg2pdf"
-import { getEmployees } from "@/lib/getNewShifts";
+import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 
 const Report = () => {
@@ -55,7 +55,7 @@ const Report = () => {
   const handleFileInput = async (e) => {
     setIsLoading(true);
     try {
-      const input = document.getElementById("input");
+      const input = document.getElementById("input") as HTMLInputElement;
       setXlsxFile(input.files[0]);
     } catch (err) {
       console.log(err.message);
@@ -111,7 +111,7 @@ const Report = () => {
         shifts={shifts}
       />
 
-      {isLoading && <Loading isLoading={isLoading} />}
+      {isLoading && <Loading />}
       {shifts && page === "Board" && (
         <div id="board" className={styles.sheet}>
           <Board
