@@ -24,6 +24,9 @@ export default function Home() {
           <Link href="/dashboard/employees" passHref>
             <button>Admin</button>
           </Link>
+          <a href="./_lib/test/Practice_Report_Output.xlsx" download="Practice_Report_Output" target="_blank">
+            <button>Download example .xlsx file</button>
+          </a>
         </div>
       </div>
     </>
