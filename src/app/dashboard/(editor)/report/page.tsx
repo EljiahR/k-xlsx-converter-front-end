@@ -15,6 +15,8 @@ import { jsPDF } from "jspdf";
 //import svg2pdf from "svg2pdf"
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
+import { expectedOutput } from "src/app/_lib/test/expectedOutput";
+
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -67,6 +69,11 @@ const Report = () => {
     setCurrentDay(e.target.value);
   };
 
+
+  const handleTestShifts = () => {
+    setShifts(expectedOutput);
+  }
+
   /* 
     Filling shift object with data weekdays + shift array > 
     kind of shift + people array > individuals
@@ -105,6 +112,7 @@ const Report = () => {
       <NavBar
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
+        handleTestShifts={handleTestShifts}
         setPage={setPage}
         page={page}
         convertDivToPDF={convertDivToPDF}
