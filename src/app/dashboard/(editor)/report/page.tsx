@@ -17,6 +17,7 @@ import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
 
+
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
   const [shifts, setShifts] = useState(null);
@@ -67,6 +68,7 @@ const Report = () => {
   const handleCurrentDay = (e) => {
     setCurrentDay(e.target.value);
   };
+
 
   const handleTestShifts = () => {
     setShifts(expectedOutput);
