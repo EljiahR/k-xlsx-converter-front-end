@@ -5,6 +5,7 @@ const NavBar = ({
   convertDivToPDF,
   handleCurrentDay,
   handleFileInput,
+  handleTestShifts,
   page,
   setPage,
   shifts
@@ -15,6 +16,7 @@ const NavBar = ({
         <button>Go Back</button>
       </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
+      <button onClick={handleTestShifts}>Use Test File</button>
       <div>
         {shifts && (
           <>

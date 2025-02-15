@@ -21,9 +21,6 @@ export default function Home() {
           <Link href="/dashboard/report" passHref>
             <button>Report</button>
           </Link>
-          <Link href="/dashboard/report-test" passHref>
-            <button>Report Test</button>
-          </Link>
           <Link href="/dashboard/employees" passHref>
             <button>Admin</button>
           </Link>
