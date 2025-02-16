@@ -55,21 +55,21 @@
 }
 
 .shift-highlight {
-  background-color: #a8a8ff !important;
+  background-color: #a8a8ff;
 }
 
 .utility-highlight {
-  background-color: #ff572e !important;
+  background-color: #ff572e;
 }
 
 .name-highlight {
-  background-color: yellow !important;
+  background-color: yellow;
 }
 
 .break-highlight {
-  background-color: yellow !important;
+  background-color: yellow;
 }
 
 .error {
-  background-color: red !important;
+  background-color: red;
 }
