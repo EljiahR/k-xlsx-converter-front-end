@@ -27,6 +27,13 @@ const Report = () => {
 
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
+    if (id == "carts") {
+      const errors = document.querySelectorAll("div[class*='error']");
+      if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
+        return;
+      }
+    }
+
     input.classList.add("printable");
     styles["fresh-start"]; // What does this even do?
     toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
