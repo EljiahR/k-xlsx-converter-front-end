@@ -47,9 +47,15 @@ a {
 }
 
 /* Clearing highlights on print */
-.printable > * > * > * > p[class*="highlight"] {
+
+#board.printable > * > * > * > p[class*="highlight"] {
   background-color: white !important;
 }
+
+#carts.printable * {
+  background-color: white !important;
+}
+
 /* End Clearing highlights on print */
 
 
