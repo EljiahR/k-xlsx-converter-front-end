@@ -1,4 +1,4 @@
-export const expectedOutput = [
+[
     {
         "day": "Sunday",
         "date": "Sunday 12/1/2024",
@@ -581,9 +581,9 @@ export const expectedOutput = [
                         "edit": false
                     },
                     {
-                        "firstName": "Able",
+                        "firstName": "Abletonen",
                         "lastName": "Williams",
-                        "baggerName": "Able",
+                        "baggerName": "Abletonen",
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:30p",
                         "breakOne": {
@@ -651,9 +651,9 @@ export const expectedOutput = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leona",
+                        "firstName": "Leonardo",
                         "lastName": "Hoffman",
-                        "baggerName": "Leona",
+                        "baggerName": "Leonardo",
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -743,9 +743,9 @@ export const expectedOutput = [
                         "edit": false
                     },
                     {
-                        "firstName": "Elissa",
+                        "firstName": "Elissameth",
                         "lastName": "Zimmerman",
-                        "baggerName": "Elissa",
+                        "baggerName": "Elissameth",
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -761,7 +761,11 @@ export const expectedOutput = [
                             "time": ""
                         },
                         "originalPosition": "Front End Courtesy Clerk",
-                        "subshift": null,
+                        "subshift": {
+                            "shiftStart": "3:00p",
+                            "shiftEnd": "7:00p",
+                            "originalPosition": "Front End Utility Clerk"
+                        },
                         "edit": false
                     }
                 ]
@@ -1226,7 +1230,7 @@ export const expectedOutput = [
                     "editable": false
                 },
                 {
-                    "name": "Leona",
+                    "name": "Leonardo",
                     "editable": false
                 },
                 {
@@ -1254,7 +1258,7 @@ export const expectedOutput = [
             ],
             [
                 {
-                    "name": "Leona",
+                    "name": "Leonardo",
                     "editable": false
                 },
                 {
@@ -1302,7 +1306,7 @@ export const expectedOutput = [
                     "editable": false
                 },
                 {
-                    "name": "Elissa",
+                    "name": "Elissameth",
                     "editable": false
                 }
             ],
@@ -1338,7 +1342,7 @@ export const expectedOutput = [
                     "editable": false
                 },
                 {
-                    "name": "Elissa",
+                    "name": "Elissameth",
                     "editable": false
                 }
             ],
@@ -1398,7 +1402,7 @@ export const expectedOutput = [
             ],
             [
                 {
-                    "name": "Elissa",
+                    "name": "Elissameth",
                     "editable": false
                 },
                 {
@@ -1434,7 +1438,7 @@ export const expectedOutput = [
             ],
             [
                 {
-                    "name": "Able",
+                    "name": "Abletonen",
                     "editable": false
                 },
                 {
@@ -1488,7 +1492,7 @@ export const expectedOutput = [
             ],
             [
                 {
-                    "name": "Leona",
+                    "name": "Leonardo",
                     "editable": false
                 },
                 {
@@ -10376,4 +10380,4 @@ export const expectedOutput = [
         ],
         "errors": {}
     }
-];
+]
