@@ -46,6 +46,10 @@ a {
   border-radius: 10px;
 }
 
-
+/* Clearing highlights on print */
+.printable > * > * > * > p[class*="highlight"] {
+  background-color: white !important;
+}
+/* End Clearing highlights on print */
 
 
