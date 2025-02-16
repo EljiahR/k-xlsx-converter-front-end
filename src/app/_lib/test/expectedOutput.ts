@@ -1,4 +1,4 @@
-[
+export const expectedOutput = [
     {
         "day": "Sunday",
         "date": "Sunday 12/1/2024",
