@@ -24,6 +24,12 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
+  const [pdf, setPdf] = useState(new jsPDF({
+    orientation: "p",
+    format: "letter",
+    unit: "px",
+    hotfixes: ["px_scaling"],
+  }));
 
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
@@ -45,12 +51,6 @@ const Report = () => {
         document.body.removeChild(a);
         */
       //const pdf = new jsPDF("p", "in", [8.5, 11]);
-      const pdf = new jsPDF({
-        orientation: "p",
-        format: "letter",
-        unit: "px",
-        hotfixes: ["px_scaling"],
-      });
 
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
@@ -60,6 +60,15 @@ const Report = () => {
       input.classList.remove("printable");
       //pdf.save("download.pdf");
     });
+  };
+
+  const clearPdf = () => {
+    setPdf(new jsPDF({
+      orientation: "p",
+      format: "letter",
+      unit: "px",
+      hotfixes: ["px_scaling"],
+    }));
   };
 
   const handleFileInput = async (e) => {
