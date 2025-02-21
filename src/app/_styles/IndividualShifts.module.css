@@ -1,4 +1,4 @@
-p.highlight {
+input.highlight, p.highlight {
   background-color: yellow;
 }
 
