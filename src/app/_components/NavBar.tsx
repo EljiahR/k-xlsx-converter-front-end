@@ -24,7 +24,7 @@ const NavBar = ({
         {shifts && (
           <div id="report-controls">
             <label htmlFor="report-default">Swap to Report?</label>
-            <input id="report-default" type="checkbox" checked={defaultToReport} onClick={() => setDefaultToReport(!defaultToReport)} />
+            <input id="report-default" type="checkbox" checked={defaultToReport} onChange={() => setDefaultToReport(!defaultToReport)} />
             <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e, defaultToReport)}>
               {shifts.map((day, index) => {
                 return (

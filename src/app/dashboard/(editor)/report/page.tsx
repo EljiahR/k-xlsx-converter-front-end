@@ -16,6 +16,7 @@ import { jsPDF } from "jspdf";
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
+import newPdf from "src/app/_lib/defaultPdf";
 
 
 const Report = () => {
@@ -24,17 +25,11 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
-  const [pdf, setPdf] = useState<jsPDF | null>(null);
+  const [pdf, setPdf] = useState<jsPDF>(newPdf);
 
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
-    if (id == "carts") {
-      const errors = document.querySelectorAll("div[class*='error']");
-      if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
-        return;
-      }
-    }
-
+    
     input.classList.add("printable");
     toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
@@ -51,18 +46,19 @@ const Report = () => {
       const height = pdf.internal.pageSize.getHeight();
 
       setPdf(previousPdf => {
-        const newPdf = structuredClone(previousPdf);
+        const udpatedPdf = newPdf;
         if (page == "Board") {
-          newPdf.setPage(1);
-          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          udpatedPdf.setPage(1);
+          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          
         } else {
-          newPdf.setPage(2);
-          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-          newPdf.setPage(3);
-          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          udpatedPdf.setPage(2);
+          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          udpatedPdf.setPage(3);
+          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
         }
 
-        return newPdf;
+        return udpatedPdf;
       });
       
       
@@ -72,21 +68,18 @@ const Report = () => {
   };
 
   const printPdf = (id: string) => {
+    if (id == "carts") {
+      const errors = document.querySelectorAll("div[class*='error']");
+      if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
+        return;
+      }
+    }
     convertDivToPDF(id);
     pdf.output("dataurlnewwindow");
   }
 
   const initializePdf = () => {
-    const newPdf = new jsPDF({
-      orientation: "p",
-      format: "letter",
-      unit: "px",
-      hotfixes: ["px_scaling"],
-    });
-    for (let i = 0; i < 2; i++) {
-      newPdf.addPage();
-    };
-
+  
     setPdf(newPdf);
   };
 
