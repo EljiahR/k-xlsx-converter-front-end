@@ -51,10 +51,18 @@ const Report = () => {
       const height = pdf.internal.pageSize.getHeight();
 
       setPdf(previousPdf => {
+        const newPdf = structuredClone(previousPdf);
         if (page == "Board") {
-          previousPdf.set
-          pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          newPdf.setPage(1);
+          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+        } else {
+          newPdf.setPage(2);
+          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+          newPdf.setPage(3);
+          newPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
         }
+
+        return newPdf;
       });
       
       
@@ -80,6 +88,10 @@ const Report = () => {
 
     setPdf(newPdf);
   };
+
+  const handlePage = (nextPage: string) => {
+    setPage(nextPage);
+  }
 
   const handleFileInput = async (e) => {
     setIsLoading(true);
@@ -142,7 +154,7 @@ const Report = () => {
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
         handleTestShifts={handleTestShifts}
-        setPage={setPage}
+        handlePage={handlePage}
         page={page}
         convertDivToPDF={convertDivToPDF}
         shifts={shifts}

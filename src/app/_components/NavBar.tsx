@@ -8,7 +8,7 @@ const NavBar = ({
   handleFileInput,
   handleTestShifts,
   page,
-  setPage,
+  handlePage,
   shifts
 }) => {
   const [defaultToReport, setDefaultToReport] = useState(true);
@@ -34,13 +34,13 @@ const NavBar = ({
             </select>
             {page === "Board" && (
               <>
-                <button onClick={() => setPage("Carts")}>Carts</button>
+                <button onClick={() => handlePage("Carts")}>Carts</button>
                 <button onClick={() => convertDivToPDF("board")}>Print</button>
               </>
             )}
             {page === "Carts" && (
               <>
-                <button onClick={() => setPage("Board")}>Report</button>
+                <button onClick={() => handlePage("Board")}>Report</button>
                 <button onClick={() => convertDivToPDF("carts")}>Print</button>
               </>
             )}
