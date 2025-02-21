@@ -35,7 +35,6 @@ const Report = () => {
     }
 
     input.classList.add("printable");
-    styles["fresh-start"]; // What does this even do?
     toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
         const a = document.createElement('a');
