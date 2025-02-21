@@ -108,6 +108,7 @@ const Report = () => {
 
   const handleCurrentDay = (e, defaultToReport: boolean) => {
     setCurrentDay(e.target.value);
+    initializePdf();
     if (defaultToReport && page != "Board") setPage("Board");
   };
 
