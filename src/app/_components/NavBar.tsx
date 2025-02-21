@@ -3,7 +3,7 @@ import styles from "@/styles/NavBar.module.css";
 import { useState } from "react";
 
 const NavBar = ({
-  convertDivToPDF,
+  printPdf,
   handleCurrentDay,
   handleFileInput,
   handleTestShifts,
@@ -35,13 +35,13 @@ const NavBar = ({
             {page === "Board" && (
               <>
                 <button onClick={() => handlePage("Carts")}>Carts</button>
-                <button onClick={() => convertDivToPDF("board")}>Print</button>
+                <button onClick={() => printPdf("board")}>Print</button>
               </>
             )}
             {page === "Carts" && (
               <>
                 <button onClick={() => handlePage("Board")}>Report</button>
-                <button onClick={() => convertDivToPDF("carts")}>Print</button>
+                <button onClick={() => printPdf("carts")}>Print</button>
               </>
             )}
           </div>

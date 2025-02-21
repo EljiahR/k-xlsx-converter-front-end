@@ -71,7 +71,8 @@ const Report = () => {
     });
   };
 
-  const printPdf = () => {
+  const printPdf = (id: string) => {
+    convertDivToPDF(id);
     pdf.output("dataurlnewwindow");
   }
 
@@ -90,6 +91,7 @@ const Report = () => {
   };
 
   const handlePage = (nextPage: string) => {
+    convertDivToPDF(nextPage == "Carts" ? "board" : "carts")
     setPage(nextPage);
   }
 
@@ -156,7 +158,7 @@ const Report = () => {
         handleTestShifts={handleTestShifts}
         handlePage={handlePage}
         page={page}
-        convertDivToPDF={convertDivToPDF}
+        printPdf={printPdf}
         shifts={shifts}
       />
 
