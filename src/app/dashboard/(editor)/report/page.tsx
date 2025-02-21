@@ -76,7 +76,7 @@ const Report = () => {
 
   const handleCurrentDay = (e, defaultToReport: boolean) => {
     setCurrentDay(e.target.value);
-    if (page != "Board") setPage("Board");
+    if (defaultToReport && page != "Board") setPage("Board");
   };
 
 
