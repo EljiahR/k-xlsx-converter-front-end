@@ -24,12 +24,7 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
-  const [pdf, setPdf] = useState(new jsPDF({
-    orientation: "p",
-    format: "letter",
-    unit: "px",
-    hotfixes: ["px_scaling"],
-  }));
+  const [pdf, setPdf] = useState<jsPDF | null>(null);
 
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
@@ -55,20 +50,35 @@ const Report = () => {
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
 
-      pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-      pdf.output("dataurlnewwindow");
+      setPdf(previousPdf => {
+        if (page == "Board") {
+          previousPdf.set
+          pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+        }
+      });
+      
+      
       input.classList.remove("printable");
       //pdf.save("download.pdf");
     });
   };
 
-  const clearPdf = () => {
-    setPdf(new jsPDF({
+  const printPdf = () => {
+    pdf.output("dataurlnewwindow");
+  }
+
+  const initializePdf = () => {
+    const newPdf = new jsPDF({
       orientation: "p",
       format: "letter",
       unit: "px",
       hotfixes: ["px_scaling"],
-    }));
+    });
+    for (let i = 0; i < 2; i++) {
+      newPdf.addPage();
+    };
+
+    setPdf(newPdf);
   };
 
   const handleFileInput = async (e) => {
@@ -112,6 +122,7 @@ const Report = () => {
         const newShifts = await getEmployees(xlsxFile);
         console.log(newShifts);
         setShifts(newShifts);
+        initializePdf();
       } catch (err) {
         setShifts(initialShifts);
         console.log(err);
