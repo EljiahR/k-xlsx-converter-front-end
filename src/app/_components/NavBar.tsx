@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "@/styles/NavBar.module.css";
+import { useState } from "react";
 
 const NavBar = ({
   convertDivToPDF,
@@ -10,6 +11,8 @@ const NavBar = ({
   setPage,
   shifts
 }) => {
+  const [defaultToReport, setDefaultToReport] = useState(true);
+  
   return (
     <div id={styles["navbar"]}>
       <Link href="/" passHref>
@@ -19,8 +22,10 @@ const NavBar = ({
       <button onClick={handleTestShifts}>Use Test File</button>
       <div>
         {shifts && (
-          <>
-            <select name="weekdays" id="weekdays" onChange={handleCurrentDay}>
+          <div id="report-controls">
+            <label htmlFor="report-default">Swap to Report?</label>
+            <input id="report-default" type="checkbox" checked={defaultToReport} onClick={() => setDefaultToReport(!defaultToReport)} />
+            <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e, defaultToReport)}>
               {shifts.map((day, index) => {
                 return (
                   <option key={day.date} value={index}>{day.day}</option>
@@ -39,7 +44,7 @@ const NavBar = ({
                 <button onClick={() => convertDivToPDF("carts")}>Print</button>
               </>
             )}
-          </>
+          </div>
         )}
       </div>
     </div>
