@@ -3,12 +3,12 @@ import styles from "@/styles/NavBar.module.css";
 import { useState } from "react";
 
 const NavBar = ({
-  convertDivToPDF,
+  printPdf,
   handleCurrentDay,
   handleFileInput,
   handleTestShifts,
   page,
-  setPage,
+  handlePage,
   shifts
 }) => {
   const [defaultToReport, setDefaultToReport] = useState(true);
@@ -24,7 +24,7 @@ const NavBar = ({
         {shifts && (
           <div id="report-controls">
             <label htmlFor="report-default">Swap to Report?</label>
-            <input id="report-default" type="checkbox" checked={defaultToReport} onClick={() => setDefaultToReport(!defaultToReport)} />
+            <input id="report-default" type="checkbox" checked={defaultToReport} onChange={() => setDefaultToReport(!defaultToReport)} />
             <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e, defaultToReport)}>
               {shifts.map((day, index) => {
                 return (
@@ -34,14 +34,14 @@ const NavBar = ({
             </select>
             {page === "Board" && (
               <>
-                <button onClick={() => setPage("Carts")}>Carts</button>
-                <button onClick={() => convertDivToPDF("board")}>Print</button>
+                <button onClick={() => handlePage("Carts")}>Carts</button>
+                <button onClick={() => printPdf("board")}>Print</button>
               </>
             )}
             {page === "Carts" && (
               <>
-                <button onClick={() => setPage("Board")}>Report</button>
-                <button onClick={() => convertDivToPDF("carts")}>Print</button>
+                <button onClick={() => handlePage("Board")}>Report</button>
+                <button onClick={() => printPdf("carts")}>Print</button>
               </>
             )}
           </div>

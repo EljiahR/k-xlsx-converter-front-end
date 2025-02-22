@@ -11,12 +11,10 @@ import NavBar from "../../../_components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
-import { jsPDF } from "jspdf";
-//import svg2pdf from "svg2pdf"
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
-
+import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -24,19 +22,13 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
+  let pdf = starterPDF;
 
-  const convertDivToPDF = (id) => {
+  const convertDivToPDF = async (id) => {
     const input = document.getElementById(id);
-    if (id == "carts") {
-      const errors = document.querySelectorAll("div[class*='error']");
-      if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
-        return;
-      }
-    }
-
+    
     input.classList.add("printable");
-    styles["fresh-start"]; // What does this even do?
-    toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
+    await toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
         const a = document.createElement('a');
         a.href = dataUrl;
@@ -46,22 +38,44 @@ const Report = () => {
         document.body.removeChild(a);
         */
       //const pdf = new jsPDF("p", "in", [8.5, 11]);
-      const pdf = new jsPDF({
-        orientation: "p",
-        format: "letter",
-        unit: "px",
-        hotfixes: ["px_scaling"],
-      });
 
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
 
-      pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-      pdf.output("dataurlnewwindow");
+      if (page == "Board") {
+        pdf.setPage(1);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+      } else {
+        pdf.setPage(3);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+        pdf.setPage(5);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+      }
+
       input.classList.remove("printable");
       //pdf.save("download.pdf");
     });
   };
+
+  const printPdf = async (id: string) => {
+    if (id == "carts") {
+      const errors = document.querySelectorAll("div[class*='error']");
+      if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
+        return;
+      }
+    }
+    await convertDivToPDF(id);
+    pdf.output("dataurlnewwindow");
+  }
+
+  const initializePdf = () => {
+    refreshPDF();
+  };
+
+  const handlePage = async (nextPage: string) => {
+    await convertDivToPDF(nextPage == "Carts" ? "board" : "carts")
+    setPage(nextPage);
+  }
 
   const handleFileInput = async (e) => {
     setIsLoading(true);
@@ -76,6 +90,7 @@ const Report = () => {
 
   const handleCurrentDay = (e, defaultToReport: boolean) => {
     setCurrentDay(e.target.value);
+    initializePdf();
     if (defaultToReport && page != "Board") setPage("Board");
   };
 
@@ -104,6 +119,7 @@ const Report = () => {
         const newShifts = await getEmployees(xlsxFile);
         console.log(newShifts);
         setShifts(newShifts);
+        initializePdf();
       } catch (err) {
         setShifts(initialShifts);
         console.log(err);
@@ -123,9 +139,9 @@ const Report = () => {
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
         handleTestShifts={handleTestShifts}
-        setPage={setPage}
+        handlePage={handlePage}
         page={page}
-        convertDivToPDF={convertDivToPDF}
+        printPdf={printPdf}
         shifts={shifts}
       />
 
