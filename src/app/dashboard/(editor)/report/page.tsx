@@ -16,7 +16,7 @@ import { jsPDF } from "jspdf";
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
-import newPdf from "src/app/_lib/defaultPdf";
+import newPdf from "src/app/_lib/defaultPDF";
 
 
 const Report = () => {
