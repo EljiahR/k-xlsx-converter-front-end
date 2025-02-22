@@ -11,8 +11,6 @@ import NavBar from "../../../_components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
-import { jsPDF } from "jspdf";
-//import svg2pdf from "svg2pdf"
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
