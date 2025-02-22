@@ -16,8 +16,7 @@ import { jsPDF } from "jspdf";
 import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
-import newPdf from "src/app/_lib/defaultPDF";
-
+import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -25,7 +24,7 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
-  let pdf = newPdf;
+  let pdf = starterPDF;
 
   const convertDivToPDF = async (id) => {
     const input = document.getElementById(id);
@@ -49,9 +48,9 @@ const Report = () => {
         pdf.setPage(1);
         pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
       } else {
-        pdf.setPage(2);
-        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
         pdf.setPage(3);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+        pdf.setPage(5);
         pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
       }
 
@@ -72,7 +71,7 @@ const Report = () => {
   }
 
   const initializePdf = () => {
-    pdf = newPdf;
+    refreshPDF();
   };
 
   const handlePage = async (nextPage: string) => {
