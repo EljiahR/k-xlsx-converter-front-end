@@ -7,7 +7,7 @@ import {
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/timeFunctions";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
 import { IEmployeeBO, IJobPositionBO, SubshiftBO } from "src/app/_lib/dtoToBO";
 import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
@@ -74,7 +74,6 @@ const CartSlot = ({
       <input
         draggable="true"
         id={`${index}:${pos}`}
-        key={`${index}${pos}`}
         value={name}
         onDragStart={(e) => handleOnDrag(e)}
         onDragOver={(e) => handleOnDragOver(e)}
@@ -90,7 +89,6 @@ const CartSlot = ({
       className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
       draggable="true"
       id={`${index}:${pos}`}
-      key={`${index}${pos}`}
       onDragStart={(e) => handleOnDrag(e, name)}
       onDragOver={(e) => handleOnDragOver(e)}
       onDrop={(e) => handleOnDrop(e)}
@@ -213,7 +211,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
           <div id={styles["lot-associate-label"]}>Associate Name</div>
           {lotTimes.map((time, index) => {
             return (
-              <>
+              <React.Fragment key={`${time}${index}`}>
                 <div
                   className={`${styles["cart-time"]} ${
                     time == baggerCartInfo.break1 ||
@@ -234,30 +232,31 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
                       : ""
                   }`}
                   id={time}
-                  key={index}
                 >
                   <p>{time}</p>
                 </div>
                 {componentArray.map((i) => (
-                  <CartSlot
-                    key={`CartSlot${index}${i}`}
-                    index={index}
-                    pos={i}
-                    name={shifts[currentDay].carts[index][i].name}
-                    editable={shifts[currentDay].carts[index][i].editable}
-                    handleOnDrag={handleOnDrag}
-                    handleOnDragOver={handleOnDragOver}
-                    handleOnDrop={handleOnDrop}
-                    handleOnClick={handleOnClick}
-                    handleOnChange={handleOnChange}
-                    inputReference={inputReference}
-                    carts={shifts[currentDay].carts}
-                    selectedBagger={selectedBagger}
-                    time={time}
-                    baggerList={baggerList}
-                  />
+                  <React.Fragment key={`CartSlot${index}${i}`}>
+                    <CartSlot
+                      index={index}
+                      pos={i}
+                      name={shifts[currentDay].carts[index][i].name}
+                      editable={shifts[currentDay].carts[index][i].editable}
+                      handleOnDrag={handleOnDrag}
+                      handleOnDragOver={handleOnDragOver}
+                      handleOnDrop={handleOnDrop}
+                      handleOnClick={handleOnClick}
+                      handleOnChange={handleOnChange}
+                      inputReference={inputReference}
+                      carts={shifts[currentDay].carts}
+                      selectedBagger={selectedBagger}
+                      time={time}
+                      baggerList={baggerList}
+                    />
+                  </React.Fragment>
+                  
                 ))}
-              </>
+              </React.Fragment>
             );
           })}
         </div>
