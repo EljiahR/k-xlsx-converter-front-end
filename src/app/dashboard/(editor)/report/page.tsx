@@ -27,11 +27,11 @@ const Report = () => {
   const [page, setPage] = useState("Board"); //Swap between board and carts
   let pdf = newPdf;
 
-  const convertDivToPDF = (id) => {
+  const convertDivToPDF = async (id) => {
     const input = document.getElementById(id);
     
     input.classList.add("printable");
-    toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
+    await toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
         const a = document.createElement('a');
         a.href = dataUrl;
@@ -55,21 +55,19 @@ const Report = () => {
         pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
       }
 
-      
-      
       input.classList.remove("printable");
       //pdf.save("download.pdf");
     });
   };
 
-  const printPdf = (id: string) => {
+  const printPdf = async (id: string) => {
     if (id == "carts") {
       const errors = document.querySelectorAll("div[class*='error']");
       if (errors.length > 0 && !confirm("There are currently errors. Are you sure you would like the print?")) {
         return;
       }
     }
-    convertDivToPDF(id);
+    await convertDivToPDF(id);
     pdf.output("dataurlnewwindow");
   }
 
@@ -77,8 +75,8 @@ const Report = () => {
     pdf = newPdf;
   };
 
-  const handlePage = (nextPage: string) => {
-    convertDivToPDF(nextPage == "Carts" ? "board" : "carts")
+  const handlePage = async (nextPage: string) => {
+    await convertDivToPDF(nextPage == "Carts" ? "board" : "carts")
     setPage(nextPage);
   }
 
