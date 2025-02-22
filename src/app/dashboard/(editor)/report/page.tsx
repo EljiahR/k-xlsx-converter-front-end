@@ -25,7 +25,7 @@ const Report = () => {
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
-  const [pdf, setPdf] = useState<jsPDF>(newPdf);
+  let pdf = newPdf;
 
   const convertDivToPDF = (id) => {
     const input = document.getElementById(id);
@@ -45,21 +45,16 @@ const Report = () => {
       const width = pdf.internal.pageSize.getWidth();
       const height = pdf.internal.pageSize.getHeight();
 
-      setPdf(previousPdf => {
-        const udpatedPdf = newPdf;
-        if (page == "Board") {
-          udpatedPdf.setPage(1);
-          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-          
-        } else {
-          udpatedPdf.setPage(2);
-          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-          udpatedPdf.setPage(3);
-          udpatedPdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
-        }
+      if (page == "Board") {
+        pdf.setPage(1);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+      } else {
+        pdf.setPage(2);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+        pdf.setPage(3);
+        pdf.addImage(dataUrl, "JPEG", 0, 0, width, height);
+      }
 
-        return udpatedPdf;
-      });
       
       
       input.classList.remove("printable");
@@ -79,8 +74,7 @@ const Report = () => {
   }
 
   const initializePdf = () => {
-  
-    setPdf(newPdf);
+    pdf = newPdf;
   };
 
   const handlePage = (nextPage: string) => {
