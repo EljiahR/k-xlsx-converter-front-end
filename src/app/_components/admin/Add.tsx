@@ -117,8 +117,9 @@ const Add = ({ selectedStore }) => {
           <input 
             type="date" 
             name="birthday" 
-            id="birthday" 
-            onChange={(e) => handleFormChange("birthday", e.target.value)} 
+            id="birthday"
+            value={newEmployeeInfo["birthday"].toISOString().slice(0, 10)} 
+            onChange={(e) => handleFormChange("birthday", new Date(e.target.value))} 
           />
         </label>
         <div id="break-preference-div">
