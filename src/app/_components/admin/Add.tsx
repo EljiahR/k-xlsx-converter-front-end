@@ -45,6 +45,8 @@ const Add = ({ selectedStore }) => {
   }
 
   const resetForm = () => {
+    const birthdayDiv = document.getElementById("birthday") as HTMLInputElement;
+    birthdayDiv.value = ""
     setNewEmployeeInfo({...EmployeeInfoStarter});
   }
   
@@ -118,7 +120,6 @@ const Add = ({ selectedStore }) => {
             type="date" 
             name="birthday" 
             id="birthday"
-            value={newEmployeeInfo["birthday"].toISOString().slice(0, 10)} 
             onChange={(e) => handleFormChange("birthday", new Date(e.target.value))} 
           />
         </label>
@@ -129,7 +130,7 @@ const Add = ({ selectedStore }) => {
             id="break-preference-2"
             name="preferredNumberOfBreaks"
             checked={newEmployeeInfo["preferredNumberOfBreaks"] == 2}
-            onChange={(e) => handleFormChange("preferredNumberOfBreaks", 2)}
+            onChange={() => handleFormChange("preferredNumberOfBreaks", 2)}
             required
           />
           <label htmlFor="break-preference-2">Two 15 minute breaks</label>
@@ -159,6 +160,7 @@ const Add = ({ selectedStore }) => {
             id="position-override" 
             name="positionOverride" 
             onChange={(e) => handleFormChange("positionOverride", e.target.value)}
+            value={newEmployeeInfo["positionOverride"]}
           >
             <option value=""></option>
             <option value="$">Cashier</option>
