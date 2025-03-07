@@ -35,9 +35,9 @@ export default function (
   ) {
     return styles.error;
   }
-  if (baggerInfo.subShift != null && timeIsWithin(baggerInfo.subShift.shiftStart, baggerInfo.subShift.shiftEnd, timeToCheck)) {
+  /*if (baggerInfo.subShift != null && timeIsWithin(baggerInfo.subShift.shiftStart, baggerInfo.subShift.shiftEnd, timeToCheck)) {
     return styles.error;
-  }
+  }*/
 
   return "";
 }
