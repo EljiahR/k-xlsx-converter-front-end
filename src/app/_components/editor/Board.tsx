@@ -10,8 +10,15 @@ import {
   timeIsLaterThan,
   getDatesFromBreaks,
 } from "../../_lib/timeFunctions";
+import { IWeekdayBO } from "src/app/_lib/dtoToBO";
 
-const Board = ({ currentDay, shifts, setShifts }) => {
+interface BoardProps {
+  currentDay: number;
+  shifts: IWeekdayBO[];
+  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
+}
+
+const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   const [selectedTime, setSelectedTime] = useState({
     time: "",
     section: "",
