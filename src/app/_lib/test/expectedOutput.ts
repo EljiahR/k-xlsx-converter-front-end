@@ -4,8 +4,8 @@ export const expectedOutput: IWeekdayBO[] = [
     {
         "day": "Sunday",
         "date": "Sunday 12/1/2024",
-        "holidays" : [],
-        "birthdays": [],
+        "holidays" : ["Not-A-Real-Holiday"],
+        "birthdays": ["Rohan Beltran", "Archie Austin"],
         "jobPositions": [
             {
                 "name": "Call Ups",
