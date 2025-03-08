@@ -9,8 +9,9 @@ import {
 } from "../../_lib/timeFunctions";
 import React, { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
-import { IEmployeeBO, IJobPositionBO, SubshiftBO } from "src/app/_lib/dtoToBO";
+import { IEmployeeBO, IJobPositionBO, IWeekdayBO, SubshiftBO } from "src/app/_lib/dtoToBO";
 import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
+import { cloneDeep } from "lodash"
 
 const componentArray = [0, 1, 2, 3];
 
@@ -100,7 +101,13 @@ const CartSlot = ({
   );
 };
 
-const Carts = ({ currentDay, shifts, setShifts }) => {
+interface CartProps {
+  currentDay: number;
+  shifts: IWeekdayBO[];
+  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
+}
+
+const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
   const [selectedBagger, setSelectedBagger] = useState("");
 
   const sortEmptyToEnd = (a, b) => {
@@ -150,7 +157,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
   const inputReference = useRef(null);
 
   const handleOnClick = (index, pos, onOff, name) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
 
     carts[index][pos].editable = onOff;
@@ -160,7 +167,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
   };
 
   const handleOnChange = (e, index, pos) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
     carts[index][pos].name = e.target.value;
     if (carts[index][pos].name == "") carts[index].sort(sortEmptyToEnd);
@@ -182,7 +189,7 @@ const Carts = ({ currentDay, shifts, setShifts }) => {
     const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.target.id.split(":");
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
     carts[draggedIndex[0]][draggedIndex[1]].name = "";
     let draggedValue = "";

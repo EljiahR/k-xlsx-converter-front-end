@@ -12,6 +12,7 @@ import {
 } from "../../_lib/timeFunctions";
 import { IWeekdayBO } from "src/app/_lib/dtoToBO";
 import { joinWithLast } from "src/app/_lib/formatFunctions";
+import { cloneDeep } from "lodash"
 
 interface BoardProps {
   currentDay: number;
@@ -30,7 +31,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   const handleKeyUpDown = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != "") {
       e.preventDefault();
-      let newShifts = JSON.parse(JSON.stringify(shifts));
+      let newShifts = cloneDeep(shifts);
       let shiftToEdit = newShifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
@@ -71,7 +72,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   };
 
   const handleBreakChange = (e, thisPerson, positionName, breakType) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
@@ -98,7 +99,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     section,
     time,
   ) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
