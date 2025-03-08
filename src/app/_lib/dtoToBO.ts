@@ -18,7 +18,6 @@ interface SubshiftBO {
 }
 
 interface IEmployeeDTO {
-  employeeId: Number;
   firstName: string;
   lastName: string;
   baggerName: string,
@@ -86,8 +85,6 @@ interface IWeekdayBO {
 }
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
-
-
   return shifts.map((shift) => ({
     ...shift,
     edit: false,
@@ -143,4 +140,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO, SubshiftBO, IJobPositionBO, IWeekdayDTO };
+export type { IEmployeeBO, SubshiftBO, IJobPositionBO, IWeekdayDTO, IWeekdayBO };
