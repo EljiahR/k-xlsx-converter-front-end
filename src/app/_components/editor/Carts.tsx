@@ -235,8 +235,8 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
                       /* ? (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart, true) &&
                         timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time)))  */
                         ? styles["shift-highlight"]
-                        : styles["utility-highlight"]
-                     /* : "" */
+                        /* : styles["utility-highlight"] */
+                      : "" 
                   }`}
                   id={time}
                 >
