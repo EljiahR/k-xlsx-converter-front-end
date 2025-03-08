@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
 import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
 import { IWeekdayBO } from "src/app/_lib/dtoToBO";
+import { cloneDeep } from "lodash";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -97,7 +98,7 @@ const Report = () => {
 
 
   const handleTestShifts = () => {
-    setShifts(expectedOutput);
+    setShifts(cloneDeep(expectedOutput));
   }
 
   /* 
@@ -156,7 +157,7 @@ const Report = () => {
           />
         </div>
       )}
-      {shifts && page === "Carts" && (
+      {shifts && page === "Cart" && (
         <div id="carts" className={styles.sheet}>
           <Carts
             currentDay={currentDay}

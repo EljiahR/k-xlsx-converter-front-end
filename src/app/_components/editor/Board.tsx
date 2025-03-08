@@ -31,7 +31,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   const handleKeyUpDown = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != "") {
       e.preventDefault();
-      let newShifts = cloneDeep(shifts);
+      let newShifts: IWeekdayBO[] = cloneDeep(shifts);
       let shiftToEdit = newShifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
@@ -277,12 +277,12 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
       <div id={styles["side-section"]}>
         {shifts[currentDay].birthdays.length > 0 && (
           <div id="birthdays">
-            <h2>Happy Birthday {joinWithLast(shifts[currentDay].birthdays,", ", " and ")}!</h2>
+            <h2>Happy Birthday {joinWithLast([...shifts[currentDay].birthdays],", ", " and ")}!</h2>
           </div>
         )}
         {shifts[currentDay].holidays.length > 0 && (
           <div id="holidays">
-            <h2>Happy {joinWithLast(shifts[currentDay].holidays,", ", " and ")}!</h2>
+            <h2>Happy {joinWithLast([...shifts[currentDay].holidays],", ", " and ")}!</h2>
           </div>
         )}
         {shifts[currentDay].jobPositions.find(
