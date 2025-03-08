@@ -10,8 +10,17 @@ import {
   timeIsLaterThan,
   getDatesFromBreaks,
 } from "../../_lib/timeFunctions";
+import { IWeekdayBO } from "src/app/_lib/dtoToBO";
+import { joinWithLast } from "src/app/_lib/formatFunctions";
+import { cloneDeep } from "lodash"
 
-const Board = ({ currentDay, shifts, setShifts }) => {
+interface BoardProps {
+  currentDay: number;
+  shifts: IWeekdayBO[];
+  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
+}
+
+const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   const [selectedTime, setSelectedTime] = useState({
     time: "",
     section: "",
@@ -22,7 +31,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
   const handleKeyUpDown = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != "") {
       e.preventDefault();
-      let newShifts = JSON.parse(JSON.stringify(shifts));
+      let newShifts: IWeekdayBO[] = cloneDeep(shifts);
       let shiftToEdit = newShifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
@@ -63,7 +72,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
   };
 
   const handleBreakChange = (e, thisPerson, positionName, breakType) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
@@ -90,7 +99,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
     section,
     time,
   ) => {
-    let newShifts = JSON.parse(JSON.stringify(shifts));
+    let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
     );
@@ -266,10 +275,20 @@ const Board = ({ currentDay, shifts, setShifts }) => {
         </div>
       </div>
       <div id={styles["side-section"]}>
+        {shifts[currentDay].birthdays.length > 0 && (
+          <div id={styles["birthdays"]}>
+            <h2>Happy Birthday {joinWithLast([...shifts[currentDay].birthdays],", ", " and ")}!</h2>
+          </div>
+        )}
+        {shifts[currentDay].holidays.length > 0 && (
+          <div id={styles["holidays"]}>
+            <h2>Happy {joinWithLast([...shifts[currentDay].holidays],", ", " and ")}!</h2>
+          </div>
+        )}
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Call Ups",
         ) && (
-          <>
+          
             <div id="call-ups">
               <h2 className="side-header">Call Ups and Misc</h2>
               <div id="call-ups-section">
@@ -283,7 +302,7 @@ const Board = ({ currentDay, shifts, setShifts }) => {
                 />
               </div>
             </div>
-          </>
+         
         )}
 
         <div id="liquor">

@@ -1,11 +1,11 @@
 import instance from "./axiosBase";
-import formatWeek from "./dtoToBO";
+import formatWeek, { IWeekdayDTO } from "./dtoToBO";
 
 export const getEmployees = async (xlsxFile) => {
   const data = new FormData();
   data.append("file", xlsxFile);
 
-  const response = await instance.post("/Employee/Dailies/16/549", data, {
+  const response = await instance.post<IWeekdayDTO[]>("/Employee/Dailies/16/549", data, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }

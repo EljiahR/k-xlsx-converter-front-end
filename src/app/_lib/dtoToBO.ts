@@ -18,7 +18,6 @@ interface SubshiftBO {
 }
 
 interface IEmployeeDTO {
-  employeeId: Number;
   firstName: string;
   lastName: string;
   baggerName: string,
@@ -68,20 +67,24 @@ interface ICartShift {
 interface IWeekdayDTO {
   day: string;
   date: Date;
+  holidays: string[];
+  birthdays: string[];
   jobPositions: IJobPositionDTO[];
   carts: ICartsDTO[];
+  errors: Record<string, string[]>;
 }
 
 interface IWeekdayBO {
   day: string;
   date: string;
+  holidays: string[];
+  birthdays: string[];
   jobPositions: IJobPositionBO[];
   carts: ICartShift[][];
+  errors: Record<string, string[]>;
 }
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
-
-
   return shifts.map((shift) => ({
     ...shift,
     edit: false,
@@ -137,4 +140,4 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO, SubshiftBO, IJobPositionBO };
+export type { IEmployeeBO, SubshiftBO, IJobPositionBO, IWeekdayDTO, IWeekdayBO };

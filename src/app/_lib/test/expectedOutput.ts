@@ -1,7 +1,11 @@
-export const expectedOutput = [
+import { IWeekdayBO } from "../dtoToBO";
+
+export const expectedOutput: IWeekdayBO[] = [
     {
         "day": "Sunday",
         "date": "Sunday 12/1/2024",
+        "holidays" : ["Not-A-Real-Holiday"],
+        "birthdays": ["Rohan Beltran", "Archie Austin"],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -1622,6 +1626,8 @@ export const expectedOutput = [
     {
         "day": "Monday",
         "date": "Monday 12/2/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -3133,6 +3139,8 @@ export const expectedOutput = [
     {
         "day": "Tuesday",
         "date": "Tuesday 12/3/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -4517,6 +4525,8 @@ export const expectedOutput = [
     {
         "day": "Wednesday",
         "date": "Wednesday 12/4/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -5945,6 +5955,8 @@ export const expectedOutput = [
     {
         "day": "Thursday",
         "date": "Thursday 12/5/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -7395,6 +7407,8 @@ export const expectedOutput = [
     {
         "day": "Friday",
         "date": "Friday 12/6/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",
@@ -8911,6 +8925,8 @@ export const expectedOutput = [
     {
         "day": "Saturday",
         "date": "Saturday 12/7/2024",
+        "holidays" : [],
+        "birthdays": [],
         "jobPositions": [
             {
                 "name": "Call Ups",

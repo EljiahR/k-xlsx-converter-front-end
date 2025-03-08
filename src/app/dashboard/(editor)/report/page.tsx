@@ -15,10 +15,12 @@ import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
 import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
+import { IWeekdayBO } from "src/app/_lib/dtoToBO";
+import { cloneDeep } from "lodash";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
-  const [shifts, setShifts] = useState(null);
+  const [shifts, setShifts] = useState<IWeekdayBO[]>(null);
   const [currentDay, setCurrentDay] = useState(0);
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
@@ -96,7 +98,7 @@ const Report = () => {
 
 
   const handleTestShifts = () => {
-    setShifts(expectedOutput);
+    setShifts(cloneDeep(expectedOutput));
   }
 
   /* 
