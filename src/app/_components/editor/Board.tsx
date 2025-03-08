@@ -11,6 +11,7 @@ import {
   getDatesFromBreaks,
 } from "../../_lib/timeFunctions";
 import { IWeekdayBO } from "src/app/_lib/dtoToBO";
+import { joinWithLast } from "src/app/_lib/formatFunctions";
 
 interface BoardProps {
   currentDay: number;
@@ -273,10 +274,20 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
         </div>
       </div>
       <div id={styles["side-section"]}>
+        {shifts[currentDay].birthdays.length > 0 && (
+          <div id="birthdays">
+            <h2>Happy Birthday {joinWithLast(shifts[currentDay].birthdays,", ", " and ")}!</h2>
+          </div>
+        )}
+        {shifts[currentDay].holidays.length > 0 && (
+          <div id="holidays">
+            <h2>Happy {joinWithLast(shifts[currentDay].holidays,", ", " and ")}!</h2>
+          </div>
+        )}
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Call Ups",
         ) && (
-          <>
+          
             <div id="call-ups">
               <h2 className="side-header">Call Ups and Misc</h2>
               <div id="call-ups-section">
@@ -290,7 +301,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
                 />
               </div>
             </div>
-          </>
+         
         )}
 
         <div id="liquor">
