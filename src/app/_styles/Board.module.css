@@ -63,6 +63,10 @@
   margin-left: 30px;
 }
 
+#birthdays, #holidays {
+  max-width: 238px;
+}
+
 #liquor-section{
   display:grid;
   grid-template-columns: 1;

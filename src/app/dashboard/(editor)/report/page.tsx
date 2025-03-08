@@ -157,7 +157,7 @@ const Report = () => {
           />
         </div>
       )}
-      {shifts && page === "Cart" && (
+      {shifts && page === "Carts" && (
         <div id="carts" className={styles.sheet}>
           <Carts
             currentDay={currentDay}

@@ -276,12 +276,12 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
       </div>
       <div id={styles["side-section"]}>
         {shifts[currentDay].birthdays.length > 0 && (
-          <div id="birthdays">
+          <div id={styles["birthdays"]}>
             <h2>Happy Birthday {joinWithLast([...shifts[currentDay].birthdays],", ", " and ")}!</h2>
           </div>
         )}
         {shifts[currentDay].holidays.length > 0 && (
-          <div id="holidays">
+          <div id={styles["holidays"]}>
             <h2>Happy {joinWithLast([...shifts[currentDay].holidays],", ", " and ")}!</h2>
           </div>
         )}
