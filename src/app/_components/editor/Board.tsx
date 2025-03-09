@@ -1,8 +1,8 @@
 import styles from "@/styles/Board.module.css";
-import BlankRow from "./BlankRow";
-import CallUps from "./CallUps";
-import IndividualShifts from "./IndividualShifts";
-import Liquor from "./Liquor";
+import BlankRow from "./BoardSubComponents/BlankRow";
+import CallUps from "./BoardSubComponents/CallUps";
+import IndividualShifts from "./BoardSubComponents/IndividualShifts";
+import Liquor from "./BoardSubComponents/Liquor";
 import moment from "moment";
 import { useState } from "react";
 import {
@@ -10,26 +10,21 @@ import {
   timeIsLaterThan,
   getDatesFromBreaks,
 } from "../../_lib/timeFunctions";
-import { IWeekdayBO } from "src/app/_lib/dtoToBO";
 import { joinWithLast } from "src/app/_lib/formatFunctions";
 import { cloneDeep } from "lodash"
-
-interface BoardProps {
-  currentDay: number;
-  shifts: IWeekdayBO[];
-  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
-}
+import { BoardProps, BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
 
 const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
-  const [selectedTime, setSelectedTime] = useState({
+  const [selectedTime, setSelectedTime] = useState<ISelectedTime>({
     time: "",
     section: "",
     time15: "",
     timeMinus15: "",
   });
 
-  const handleKeyUpDown = (e, thisPerson, positionName, breakType, section) => {
-    if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.target.value != "") {
+  const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
+    if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
       let newShifts: IWeekdayBO[] = cloneDeep(shifts);
       let shiftToEdit = newShifts[currentDay].jobPositions.find(
@@ -71,7 +66,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     }
   };
 
-  const handleBreakChange = (e, thisPerson, positionName, breakType) => {
+  const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
     let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
       (shift) => shift.name === positionName,
@@ -91,7 +86,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   };
 
   // Toggles breaks and lunches into input elements
-  const handleBreakClick = (
+  const handleBreakClick: BreakClickType = (
     thisPerson,
     positionName,
     breakType,

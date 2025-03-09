@@ -1,111 +1,19 @@
 import styles from "../../_styles/Carts.module.css";
-import {lotTimes} from "../../_lib/lotTimes";
-import Restrooms from "./Restrooms";
+import { lotTimes } from "../../_lib/lotTimes";
+import Restrooms from "./CartsSubComponents/Restrooms";
 import {
   addMinutesToBreak,
   timeIsLaterThan,
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/timeFunctions";
-import React, { useEffect, useRef, useState } from "react";
-import checkCartErrors from "../../_lib/checkCartErrors";
-import { IEmployeeBO, IJobPositionBO, IWeekdayBO, SubshiftBO } from "src/app/_lib/dtoToBO";
-import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
+import React, { useRef, useState } from "react";
+import { BaggerCartInfo, CartProps, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { cloneDeep } from "lodash"
+import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
+import CartSlot from "./CartsSubComponents/CartSlot";
 
 const componentArray = [0, 1, 2, 3];
-
-const CartSlot = ({
-  index,
-  pos,
-  name,
-  editable,
-  handleOnDrag,
-  handleOnDragOver,
-  handleOnDrop,
-  handleOnClick,
-  handleOnChange,
-  inputReference,
-  carts,
-  selectedBagger,
-  time,
-  baggerList,
-}) => {
-  const baggerInfo: BaggerInfo = {
-    name: name,
-    break1: "",
-    lunch1: "",
-    lunch2: "",
-    break2: "",
-    subShift: null
-  };
-
-  const thisBagger: IEmployeeBO = baggerList.shifts.find(
-    (bagger) => bagger.baggerName == name,
-  );
-  if (thisBagger) {
-    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne.time)
-      ? addMinutesToBreak(thisBagger.breakOne.time, -15)
-      : thisBagger.breakOne.time;
-    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch.time)
-      ? addMinutesToBreak(thisBagger.lunch.time, -15)
-      : thisBagger.lunch.time;
-    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch.time)
-      ? addMinutesToBreak(thisBagger.lunch.time, 15)
-      : thisBagger.lunch.time;
-    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
-      ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
-      : thisBagger.breakTwo.time;
-    baggerInfo.subShift = thisBagger.subshift;
-  }
-  //yes I copied this from individualShifts
-  useEffect(() => {
-    if (carts[index][pos].editable) {
-      inputReference.current.select();
-    }
-  }, [carts[index][pos].editable]);
-  if (editable) {
-    {
-      /* 
-      Want to make transform into input on tab and
-      draggable divs accessable coexist, current only 1 can
-    */
-    }
-    return (
-      <input
-        draggable="true"
-        id={`${index}:${pos}`}
-        value={name}
-        onDragStart={(e) => handleOnDrag(e)}
-        onDragOver={(e) => handleOnDragOver(e)}
-        onDrop={(e) => handleOnDrop(e)}
-        onBlur={() => handleOnClick(index, pos, false, name)}
-        onChange={(e) => handleOnChange(e, index, pos)}
-        ref={inputReference}
-      />
-    );
-  }
-  return (
-    <div
-      className={`${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
-      draggable="true"
-      id={`${index}:${pos}`}
-      onDragStart={(e) => handleOnDrag(e, name)}
-      onDragOver={(e) => handleOnDragOver(e)}
-      onDrop={(e) => handleOnDrop(e)}
-      onClick={() => handleOnClick(index, pos, true, name)}
-      tabIndex={0}
-    >
-      {name}
-    </div>
-  );
-};
-
-interface CartProps {
-  currentDay: number;
-  shifts: IWeekdayBO[];
-  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
-}
 
 const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
   const [selectedBagger, setSelectedBagger] = useState("");
@@ -156,7 +64,7 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
 
   const inputReference = useRef(null);
 
-  const handleOnClick = (index, pos, onOff, name) => {
+  const handleOnClick: OnClickType = (index, pos, onOff, name) => {
     let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
 
@@ -166,7 +74,7 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
     setSelectedBagger(name);
   };
 
-  const handleOnChange = (e, index, pos) => {
+  const handleOnChange: OnChangeType = (e, index, pos) => {
     let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
     carts[index][pos].name = e.target.value;
@@ -174,21 +82,21 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
     setShifts(newShifts);
   };
 
-  const handleOnDrag = (e, name) => {
-    e.dataTransfer.setData("text", e.target.id);
+  const handleOnDrag: OnDragType = (e, name) => {
+    e.dataTransfer.setData("text", e.currentTarget.id);
     
     setSelectedBagger(name);
   };
 
   // Prevents some issue caused by default dragging behaviors
-  const handleOnDragOver = (e) => {
+  const handleOnDragOver: OnDragOverType = (e) => {
     e.preventDefault();
   };
 
-  const handleOnDrop = (e) => {
+  const handleOnDrop: OnDropType = (e) => {
     const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
-    let targetIndex = e.target.id.split(":");
+    let targetIndex = e.currentTarget.id.split(":");
     let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
     carts[draggedIndex[0]][draggedIndex[1]].name = "";
