@@ -1,7 +1,7 @@
 import styles from "@/styles/Restrooms.module.css";
-import { joinWithLast } from "src/app/_lib/formatFunctions";
+import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { utilityTimes } from "src/app/_lib/lotTimes";
-import { timeIsWithin } from "src/app/_lib/timeFunctions";
+import { timeIsWithin } from "src/app/_lib/helpers/timeFunctions";
 import { RestroomProps } from "src/app/_lib/types/cartTypes";
 
 const Restrooms = ({utilityClerks}: RestroomProps) => {

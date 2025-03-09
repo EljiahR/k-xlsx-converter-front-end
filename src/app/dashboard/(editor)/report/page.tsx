@@ -2,7 +2,7 @@
 import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
-import initialShifts from "../../../_lib/shiftsObject";
+import initialShifts from "../../../_lib/test/shiftsObject";
 // Importing components
 import Board from "../../../_components/editor/Board";
 import Carts from "../../../_components/editor/Carts";
@@ -11,10 +11,10 @@ import NavBar from "../../../_components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
-import { getEmployees } from "../../../_lib/getNewShifts";
+import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
-import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
+import {starterPDF, refreshPDF} from "src/app/_lib/helpers/defaultPDF";
 
 import { cloneDeep } from "lodash";
 import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";

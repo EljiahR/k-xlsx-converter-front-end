@@ -1,5 +1,5 @@
 import moment from "moment";
-import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobPositionDTO, IWeekdayBO, IWeekdayDTO } from "./types/shiftTypes";
+import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobPositionDTO, IWeekdayBO, IWeekdayDTO } from "../types/shiftTypes";
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
   return shifts.map((shift) => ({

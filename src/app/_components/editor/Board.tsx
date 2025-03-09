@@ -9,8 +9,8 @@ import {
   addMinutesToBreak,
   timeIsLaterThan,
   getDatesFromBreaks,
-} from "../../_lib/timeFunctions";
-import { joinWithLast } from "src/app/_lib/formatFunctions";
+} from "../../_lib/helpers/timeFunctions";
+import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { cloneDeep } from "lodash"
 import { BoardProps, BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";

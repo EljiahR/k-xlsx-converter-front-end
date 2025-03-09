@@ -1,7 +1,7 @@
-import checkCartErrors from "src/app/_lib/checkCartErrors";
+import checkCartErrors from "src/app/_lib/helpers/checkCartErrors";
 import styles from "@/styles/Carts.module.css";
 import { useEffect } from "react";
-import { addMinutesToBreak } from "src/app/_lib/timeFunctions";
+import { addMinutesToBreak } from "src/app/_lib/helpers/timeFunctions";
 import { BaggerInfo, CartSlotProps } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
 
