@@ -1,5 +1,6 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useRef, useEffect } from "react";
+import { BreaksProps, IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
 
 const Breaks = ({
   person,
@@ -11,8 +12,7 @@ const Breaks = ({
   breakType,
   selectedTime,
   section,
-
-}) => {
+}: BreaksProps) => {
   const inputReference = useRef(null);
   // Might need to fix performance issue with this
   useEffect(() => {
@@ -87,6 +87,8 @@ const Breaks = ({
   }
 };
 
+
+
 const IndividualShifts = ({
   people,
   positionName,
@@ -95,7 +97,7 @@ const IndividualShifts = ({
   handleKeyUpDown,
   selectedTime,
   section,
-}) => {
+}: IndividualShiftsProps) => {
   const shifts = people.map((person, index) => {
     return (
       <div

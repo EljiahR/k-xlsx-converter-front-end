@@ -9,9 +9,9 @@ import {
 } from "../../_lib/timeFunctions";
 import React, { useEffect, useRef, useState } from "react";
 import checkCartErrors from "../../_lib/checkCartErrors";
-import { IEmployeeBO, IJobPositionBO, IWeekdayBO, SubshiftBO } from "src/app/_lib/dtoToBO";
 import { BaggerCartInfo, BaggerInfo } from "src/app/_lib/types/cartTypes";
 import { cloneDeep } from "lodash"
+import { IEmployeeBO, IJobPositionBO, IWeekdayBO } from "src/app/_lib/types/shiftTypes";
 
 const componentArray = [0, 1, 2, 3];
 

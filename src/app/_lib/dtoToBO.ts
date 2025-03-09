@@ -1,88 +1,5 @@
 import moment from "moment";
-
-interface IBreak {
-  time: string;
-  editable: boolean;
-}
-
-interface SubshiftDTO {
-  shiftStart: Date;
-  shiftEnd: Date;
-  originalPosition: string;
-}
-
-interface SubshiftBO {
-  shiftStart: string;
-  shiftEnd: string;
-  originalPosition: string;
-}
-
-interface IEmployeeDTO {
-  firstName: string;
-  lastName: string;
-  baggerName: string,
-  shiftStart: Date;
-  shiftEnd: Date;
-  breakOne?: Date;
-  lunch?: Date;
-  breakTwo?: Date;
-  originalPosition?: string;
-  subshift?: SubshiftDTO;
-}
-
-interface IEmployeeBO
-  extends Omit<
-    IEmployeeDTO,
-    "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
-  > {
-  shiftStart: string;
-  shiftEnd: string;
-  breakOne: IBreak;
-  lunch: IBreak;
-  breakTwo: IBreak;
-  edit: boolean;
-  subshift?: SubshiftBO 
-}
-
-interface IJobPositionDTO {
-  name: string;
-  shifts: IEmployeeDTO[];
-}
-
-interface IJobPositionBO {
-  name: string;
-  shifts: IEmployeeBO[];
-}
-
-interface ICartsDTO {
-  time: Date;
-  baggers: string[4];
-}
-
-interface ICartShift {
-  name: string;
-  editable: boolean;
-}
-
-interface IWeekdayDTO {
-  day: string;
-  date: Date;
-  holidays: string[];
-  birthdays: string[];
-  jobPositions: IJobPositionDTO[];
-  carts: ICartsDTO[];
-  errors: Record<string, string[]>;
-}
-
-interface IWeekdayBO {
-  day: string;
-  date: string;
-  holidays: string[];
-  birthdays: string[];
-  jobPositions: IJobPositionBO[];
-  carts: ICartShift[][];
-  errors: Record<string, string[]>;
-}
+import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobPositionDTO, IWeekdayBO, IWeekdayDTO } from "./types/shiftTypes";
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
   return shifts.map((shift) => ({
@@ -140,4 +57,3 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
 };
 
 export default formatWeek;
-export type { IEmployeeBO, SubshiftBO, IJobPositionBO, IWeekdayDTO, IWeekdayBO };
