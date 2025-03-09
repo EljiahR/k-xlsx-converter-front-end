@@ -11,9 +11,9 @@ export interface BoardProps {
 export interface IndividualShiftsProps {
   people: IEmployeeBO[];
   positionName: string;
-  handleBreakClick: BreakClick;
-  handleBreakChange: BreakChange;
-  handleKeyUpDown: KeyUpDown;
+  handleBreakClick: BreakClickType;
+  handleBreakChange: BreakChangeType;
+  handleKeyUpDown: KeyUpDownType;
   selectedTime: ISelectedTime;
   section: string;
 }
@@ -34,6 +34,6 @@ export interface ISelectedTime {
 
 // Types
 
-export type BreakClick = (thisPerson: IEmployeeBO, positionName: string, breakType: string, onOff: boolean, section: string, time: any) => void;
-export type KeyUpDown = (e: KeyboardEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string) => void;
-export type BreakChange = (e: ChangeEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string) => void;
+export type BreakClickType = (thisPerson: IEmployeeBO, positionName: string, breakType: string, onOff: boolean, section: string, time: any) => void;
+export type KeyUpDownType = (e: KeyboardEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string) => void;
+export type BreakChangeType = (e: ChangeEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string) => void;

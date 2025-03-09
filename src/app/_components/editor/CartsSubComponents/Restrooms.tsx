@@ -1,14 +1,10 @@
 import styles from "@/styles/Restrooms.module.css";
-import { IEmployeeBO } from "src/app/_lib/dtoToBO";
 import { joinWithLast } from "src/app/_lib/formatFunctions";
 import { utilityTimes } from "src/app/_lib/lotTimes";
 import { timeIsWithin } from "src/app/_lib/timeFunctions";
+import { RestroomProps } from "src/app/_lib/types/cartTypes";
 
-interface Props {
-  utilityClerks: IEmployeeBO[]
-}
-
-const Restrooms = ({utilityClerks}: Props) => {
+const Restrooms = ({utilityClerks}: RestroomProps) => {
   const findBaggers = (timeToCheck: string): string => {
     const baggers = utilityClerks.filter((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, timeToCheck));
     return joinWithLast(baggers.slice(0, 3).map(bagger => bagger.baggerName), ", ", " and ");

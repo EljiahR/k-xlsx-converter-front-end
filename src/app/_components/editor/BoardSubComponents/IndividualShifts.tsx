@@ -1,6 +1,6 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
-import { Breaks } from "./BoardSubComponents/Breaks";
+import { Breaks } from "./Breaks";
 
 const IndividualShifts = ({
   people,
