@@ -16,6 +16,7 @@ export interface SubshiftBO {
 }
 
 export interface IEmployeeDTO {
+    employeeId?: number;
     firstName: string;
     lastName: string;
     baggerName: string,
@@ -33,7 +34,6 @@ export interface IEmployeeBO
         IEmployeeDTO,
         "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
     > {
-    employeeId: number;
     shiftStart: string;
     shiftEnd: string;
     breakOne: IBreak;
