@@ -29,7 +29,7 @@ export interface ISelectedTime {
   time: string;
   section: string;
   time15: string;
-  timeMinus15;
+  timeMinus15: string;
 }
 
 // Types
