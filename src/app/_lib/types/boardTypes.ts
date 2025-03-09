@@ -24,6 +24,10 @@ export interface BreaksProps extends Omit<IndividualShiftsProps, "people"> {
   breakType: string;
 }
 
+export interface IndividualNameProps {
+  person: IEmployeeBO;
+}
+
 // Interfaces
 export interface ISelectedTime {
   time: string;
