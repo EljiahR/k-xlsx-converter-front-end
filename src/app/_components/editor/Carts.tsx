@@ -1,4 +1,4 @@
-import styles from "../../_styles/Carts.module.css";
+import styles from "@/styles/Carts.module.css";
 import { lotTimes } from "../../_lib/lotTimes";
 import Restrooms from "./CartsSubComponents/Restrooms";
 import {
