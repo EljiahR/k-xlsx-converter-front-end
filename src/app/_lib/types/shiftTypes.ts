@@ -33,6 +33,7 @@ export interface IEmployeeBO
         IEmployeeDTO,
         "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
     > {
+    employeeId: number;
     shiftStart: string;
     shiftEnd: string;
     breakOne: IBreak;
