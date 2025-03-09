@@ -15,8 +15,9 @@ import { getEmployees } from "../../../_lib/getNewShifts";
 import { useState, useEffect } from "react";
 import { expectedOutput } from "src/app/_lib/test/expectedOutput";
 import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
-import { IWeekdayBO } from "src/app/_lib/dtoToBO";
+
 import { cloneDeep } from "lodash";
+import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);

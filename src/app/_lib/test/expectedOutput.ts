@@ -1,4 +1,4 @@
-import { IWeekdayBO } from "../dtoToBO";
+import { IWeekdayBO } from "../types/shiftTypes";
 
 export const expectedOutput: IWeekdayBO[] = [
     {

@@ -16,6 +16,7 @@ export interface SubshiftBO {
 }
 
 export interface IEmployeeDTO {
+    employeeId?: number;
     firstName: string;
     lastName: string;
     baggerName: string,

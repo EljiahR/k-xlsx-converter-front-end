@@ -1,6 +1,7 @@
 import moment from "moment";
 import styles from "@/styles/Edit.module.css";
-import type { IEmployeeBO } from "../../_lib/dtoToBO";
+import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
+
 
 interface Props {
     filteredData: IEmployeeBO[],

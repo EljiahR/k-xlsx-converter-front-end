@@ -1,4 +1,5 @@
 import styles from "@/styles/Liquor.module.css";
+
 const Liquor = ({ people, positionName }) => {
   const shifts = people.map((person) => {
     return (
