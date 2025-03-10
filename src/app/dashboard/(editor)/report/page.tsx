@@ -97,7 +97,7 @@ const Report = () => {
     if (defaultToReport && page != "Board") setPage("Board");
   };
 
-
+  // REDUX: setAsTest
   const handleTestShifts = () => {
     setShifts(cloneDeep(expectedOutput));
   }
@@ -107,6 +107,7 @@ const Report = () => {
     kind of shift + people array > individuals
   */
 
+  // REDUX: reset
   const resetShifts = () => {
     setShifts(null);
   };
@@ -116,6 +117,7 @@ const Report = () => {
     document.title = "Report";
   }, []);
 
+  // REDUX: setNewShifts
   useEffect(() => {
     const newShiftsFunc = async () => {
       try {

@@ -23,6 +23,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     timeMinus15: "",
   });
 
+  // REDUX: addMinutesToBreak
   const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
@@ -66,6 +67,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     }
   };
 
+  // REDUX: changeBreak
   const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
     let newShifts = cloneDeep(shifts);
     let shiftToEdit = newShifts[currentDay].jobPositions.find(
