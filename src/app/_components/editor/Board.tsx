@@ -87,6 +87,7 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     setShifts(newShifts);
   };
 
+  // REDUX: toggleBreakEdit
   // Toggles breaks and lunches into input elements
   const handleBreakClick: BreakClickType = (
     thisPerson,

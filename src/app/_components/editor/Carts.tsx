@@ -12,17 +12,12 @@ import { BaggerCartInfo, CartProps, OnChangeType, OnClickType, OnDragOverType, O
 import { cloneDeep } from "lodash"
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
+import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
 
 const componentArray = [0, 1, 2, 3];
 
 const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
   const [selectedBagger, setSelectedBagger] = useState("");
-
-  const sortEmptyToEnd = (a, b) => {
-    if (a.name === "") return 1;
-    if (b.name === "") return -1;
-    return 0;
-  };
 
   let baggerCartInfo: BaggerCartInfo = {
     start: "",
@@ -64,6 +59,7 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
 
   const inputReference = useRef(null);
 
+  // REDUX: toggleCartSlotEdit
   const handleOnClick: OnClickType = (index, pos, onOff, name) => {
     let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
@@ -74,6 +70,7 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
     setSelectedBagger(name);
   };
 
+  // REDUX: editCartSlot
   const handleOnChange: OnChangeType = (e, index, pos) => {
     let newShifts = cloneDeep(shifts);
     let carts = newShifts[currentDay].carts;
@@ -93,6 +90,7 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
     e.preventDefault();
   };
 
+  //REDUX: dragCartSlot
   const handleOnDrop: OnDropType = (e) => {
     const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");

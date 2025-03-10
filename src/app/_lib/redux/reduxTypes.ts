@@ -27,3 +27,18 @@ export interface SetMinutesToBreakAction extends GetEmployeeBreakAction {
 export interface MinutesToBreakAction extends GetEmployeeBreakAction {
     minutesToAdd: number;
 } 
+
+export interface CartSlotAction {
+    day: number;
+    index: number;
+    pos: number;
+}
+
+export interface CarSlotValueAction extends CartSlotAction {
+    newValue: string;
+}
+
+export interface CartSlotDragAction extends CarSlotValueAction {
+    targetIndex: number;
+    targetPos: number;
+}
