@@ -45,7 +45,15 @@ export const shiftsSlice = createSlice({
             personToEdit[breakType].time = minutesToChangeTo;
         },
         toggleBreakEdit: (state, action: PayloadAction<GetEmployeeBreakAction>) => {
-            
+            const { day, jobPosition, breakType } = action.payload;
+
+            const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
+            if (!job) return
+
+            const personToEdit = job.shifts.find(s => s.employeeId);
+            if (!personToEdit) return;
+
+            personToEdit[breakType].editable = !personToEdit[breakType].editable
         }
     }
 });
