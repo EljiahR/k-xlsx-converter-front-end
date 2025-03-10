@@ -107,18 +107,17 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
         person.lastName === thisPerson.lastName &&
         person.shiftStart == thisPerson.shiftStart,
     );
+    /*
+    // Why
     if (!personToEdit[breakType].hasOwnProperty("time")) {
       personToEdit[breakType].time = "";
       time = "";
     }
+    */
     personToEdit[breakType].editable = onOff;
 
-    let time15;
-    if (breakType == "lunch") {
-      time15 = moment(getDatesFromBreaks(time, 15)).format("LT");
-    } else {
-      time15 = time;
-    }
+    let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
+    
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
 
     setShifts(newShifts);

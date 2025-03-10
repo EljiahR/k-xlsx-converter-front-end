@@ -10,14 +10,20 @@ export interface DaysState {
 }
 
 // Action Interfaces
-export interface SetMinutesToBreakAction {
+export interface GetEmployeeAction {
     day: number;
     employeeId: string;
     jobPosition: string;
+}
+
+export interface GetEmployeeBreakAction extends GetEmployeeAction {
     breakType: string;
+}
+
+export interface SetMinutesToBreakAction extends GetEmployeeBreakAction {
     minutesToChangeTo: string;
 }
 
-export interface MinutesToBreakAction extends Omit<SetMinutesToBreakAction, "minutesToChange"> {
+export interface MinutesToBreakAction extends GetEmployeeBreakAction {
     minutesToAdd: number;
 } 

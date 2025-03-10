@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
-import { MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState } from "./reduxTypes";
+import { GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState } from "./reduxTypes";
 import { addMinutesToBreak } from "../helpers/timeFunctions";
 
 const initialState: ShiftsState = {
@@ -43,6 +43,9 @@ export const shiftsSlice = createSlice({
             if (!personToEdit) return;
             
             personToEdit[breakType].time = minutesToChangeTo;
+        },
+        toggleBreakEdit: (state, action: PayloadAction<GetEmployeeBreakAction>) => {
+            
         }
     }
 });
