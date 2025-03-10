@@ -13,20 +13,16 @@ import NavBar from "../../../_components/NavBar";
 import { toJpeg } from "html-to-image";
 import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
-import { expectedOutput } from "src/app/_lib/test/expectedOutput";
 import {starterPDF, refreshPDF} from "src/app/_lib/helpers/defaultPDF";
 
-import { cloneDeep } from "lodash";
-import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { useDispatch } from "react-redux";
 import { setAsTest, setNewShifts, setShiftsNull } from "src/app/_lib/redux/shiftsSlice";
 import { setDay } from "src/app/_lib/redux/daySlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
   const shifts = useAppSelector((state) => state.shifts.value);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
   let pdf = starterPDF;
