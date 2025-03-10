@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import shiftsReducer from "./shiftsSlice"
+import shiftsReducer from "./shiftsSlice";
+import dayReducer from "./daySlice";
 
 const store = configureStore({
     reducer: {
-        shifts: shiftsReducer
+        shifts: shiftsReducer,
+        day: dayReducer
     },
 });
 

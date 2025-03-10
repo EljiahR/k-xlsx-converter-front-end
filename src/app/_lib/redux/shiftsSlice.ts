@@ -17,13 +17,13 @@ export const shiftsSlice = createSlice({
         setAsTest: (state) => {
             state.value = cloneDeep(expectedOutput);
         },
-        reset: (state) => {
+        setShiftsNull: (state) => {
             state.value = null;
         },
         setNewShifts: (state, action: PayloadAction<IWeekdayBO[]>) => {
             state.value = action.payload;
         },
-        addMinutesToBreak: (state, action: PayloadAction<MinutesToBreakAction>) => {
+        addToBreak: (state, action: PayloadAction<MinutesToBreakAction>) => {
             const { day, jobPosition, breakType, minutesToAdd } = action.payload;
             
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
@@ -82,6 +82,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;
