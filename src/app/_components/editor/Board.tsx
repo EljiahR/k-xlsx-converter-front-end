@@ -14,8 +14,8 @@ import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { cloneDeep } from "lodash"
 import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { MinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
-import { addToBreak } from "src/app/_lib/redux/shiftsSlice";
+import { MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { addToBreak, changeBreak } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
@@ -29,7 +29,6 @@ const Board = () => {
     timeMinus15: "",
   });
 
-  // REDUX: addToBreak
   const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
@@ -37,8 +36,8 @@ const Board = () => {
         day: currentDay,
         employeeId: thisPerson.employeeId,
         jobPosition: positionName,
-        minutesToAdd: e.key == "ArrowUp" ? 15 : -15,
-        breakType
+        breakType,
+        minutesToAdd: e.key == "ArrowUp" ? 15 : -15
       }
       
       let shiftToEdit = shifts[currentDay].jobPositions.find(
@@ -72,24 +71,15 @@ const Board = () => {
     }
   };
 
-  // REDUX: changeBreak
   const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
-    let newShifts = cloneDeep(shifts);
-    let shiftToEdit = newShifts[currentDay].jobPositions.find(
-      (shift) => shift.name === positionName,
-    );
-
-    let personToEdit = shiftToEdit.shifts.find(
-      (person) =>
-        person.firstName === thisPerson.firstName &&
-        person.lastName === thisPerson.lastName,
-    );
-    console.log(thisPerson);
-    console.log(personToEdit);
-
-    personToEdit[breakType].time = e.target.value;
-
-    setShifts(newShifts);
+      const action: SetMinutesToBreakAction = {
+        day: currentDay,
+        employeeId: thisPerson.employeeId,
+        jobPosition: positionName,
+        breakType,
+        minutesToChangeTo: e.target.value
+      }
+      dispatch(changeBreak(action));
   };
 
   // REDUX: toggleBreakEdit
