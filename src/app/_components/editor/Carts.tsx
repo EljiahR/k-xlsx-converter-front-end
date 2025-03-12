@@ -8,16 +8,22 @@ import {
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
 import React, { useRef, useState } from "react";
-import { BaggerCartInfo, CartProps, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
+import { BaggerCartInfo, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { cloneDeep } from "lodash"
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
-const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
+const Carts = () => {
   const [selectedBagger, setSelectedBagger] = useState("");
+  const shifts = useAppSelector((state) => state.shifts.value);
+  const currentDay = useAppSelector((state) => state.day.value);
+  const dispatch = useAppDispatch();
 
   let baggerCartInfo: BaggerCartInfo = {
     start: "",
@@ -59,14 +65,13 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
 
   const inputReference = useRef(null);
 
-  // REDUX: toggleCartSlotEdit
-  const handleOnClick: OnClickType = (index, pos, onOff, name) => {
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-
-    carts[index][pos].editable = onOff;
-    if (!onOff) carts[index].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+  const handleOnClick: OnClickType = (index, pos, name) => {
+    const action: CartSlotAction = {
+      day: currentDay,
+      index,
+      pos
+    }
+    dispatch(toggleCartSlotEdit(action));
     setSelectedBagger(name);
   };
 
