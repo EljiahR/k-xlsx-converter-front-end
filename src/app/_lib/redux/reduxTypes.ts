@@ -34,7 +34,7 @@ export interface CartSlotAction {
     pos: number;
 }
 
-export interface CarSlotValueAction extends CartSlotAction {
+export interface CartSlotValueAction extends CartSlotAction {
     newValue: string;
 }
 

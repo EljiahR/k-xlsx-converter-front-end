@@ -14,8 +14,8 @@ import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
-import { CartSlotAction } from "src/app/_lib/redux/reduxTypes";
+import { editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotValueAction, CartSlotAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -75,13 +75,14 @@ const Carts = () => {
     setSelectedBagger(name);
   };
 
-  // REDUX: editCartSlot
   const handleOnChange: OnChangeType = (e, index, pos) => {
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-    carts[index][pos].name = e.target.value;
-    if (carts[index][pos].name == "") carts[index].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+    const action: CartSlotValueAction = {
+      day: currentDay,
+      index,
+      pos,
+      newValue: e.target.value
+    }
+    dispatch(editCartSlot(action));
   };
 
   const handleOnDrag: OnDragType = (e, name) => {
