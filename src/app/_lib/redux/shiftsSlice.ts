@@ -27,15 +27,17 @@ export const shiftsSlice = createSlice({
             const { day, employeeIdentifier, jobPosition, breakType, minutesToAdd } = action.payload;
             
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) return
+            if (!job) return;
 
             const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
                 job.shifts.find(s => s.employeeId == employeeIdentifier.id)
                 : job.shifts.find(s => s.firstName == employeeIdentifier.firstName && s.lastName == employeeIdentifier.lastName)
             if (!personToEdit){
                 console.log("No person")
-                return
+                return;
             }
+
+            
             
             personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, minutesToAdd)
         },
@@ -43,14 +45,14 @@ export const shiftsSlice = createSlice({
             const { day, employeeIdentifier, jobPosition, breakType, minutesToChangeTo } = action.payload;
             
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) return
+            if (!job) return;
 
             const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
                 job.shifts.find(s => s.employeeId == employeeIdentifier.id)
                 : job.shifts.find(s => s.firstName == employeeIdentifier.firstName && s.lastName == employeeIdentifier.lastName)
             if (!personToEdit){
                 console.log("No person")
-                return
+                return;
             }
             
             personToEdit[breakType].time = minutesToChangeTo;
@@ -61,7 +63,7 @@ export const shiftsSlice = createSlice({
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) {
                 console.log("No job")
-                return
+                return;
             }
 
             const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
