@@ -2,12 +2,6 @@ import { ChangeEvent, KeyboardEvent } from "react";
 import { IEmployeeBO, IWeekdayBO } from "./shiftTypes";
 
 // Props
-export interface BoardProps {
-  currentDay: number;
-  shifts: IWeekdayBO[];
-  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
-}
-
 export interface IndividualShiftsProps {
   people: IEmployeeBO[];
   positionName: string;

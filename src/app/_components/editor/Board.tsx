@@ -12,10 +12,16 @@ import {
 } from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { cloneDeep } from "lodash"
-import { BoardProps, BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
-import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
+import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { MinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { addToBreak } from "src/app/_lib/redux/shiftsSlice";
 
-const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
+const Board = () => {
+  const shifts = useAppSelector((state) => state.shifts.value);
+  const currentDay = useAppSelector((state) => state.day.value);
+  const dispatch = useAppDispatch();
+
   const [selectedTime, setSelectedTime] = useState<ISelectedTime>({
     time: "",
     section: "",
@@ -23,12 +29,19 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
     timeMinus15: "",
   });
 
-  // REDUX: addMinutesToBreak
+  // REDUX: addToBreak
   const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
-      let newShifts: IWeekdayBO[] = cloneDeep(shifts);
-      let shiftToEdit = newShifts[currentDay].jobPositions.find(
+      const action: MinutesToBreakAction = {
+        day: currentDay,
+        employeeId: thisPerson.employeeId,
+        jobPosition: positionName,
+        minutesToAdd: e.key == "ArrowUp" ? 15 : -15,
+        breakType
+      }
+      
+      let shiftToEdit = shifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
 
@@ -39,19 +52,11 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
           person.shiftStart == thisPerson.shiftStart,
       );
 
-      personToEdit[breakType].time = addMinutesToBreak(
-        personToEdit[breakType].time,
-        e.key == "ArrowUp" ? 15 : -15,
-      );
-      if (
-        timeIsLaterThan(
-          personToEdit[breakType].time,
-          personToEdit.shiftStart,
-          true,
-        ) &&
+      if (timeIsLaterThan(personToEdit[breakType].time, personToEdit.shiftStart, true) &&
         timeIsLaterThan(personToEdit.shiftEnd, personToEdit[breakType].time)
       ) {
-        setShifts(newShifts);
+        dispatch(addToBreak(action));
+
         setSelectedTime({
           time: personToEdit[breakType].time,
           section,
