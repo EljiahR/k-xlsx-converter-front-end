@@ -69,7 +69,7 @@ const CartSlot = ({
         onDragStart={(e) => handleOnDrag(e, name)}
         onDragOver={(e) => handleOnDragOver(e)}
         onDrop={(e) => handleOnDrop(e)}
-        onBlur={() => handleOnClick(index, pos, false, name)}
+        onBlur={() => handleOnClick(index, pos, name)}
         onChange={(e) => handleOnChange(e, index, pos)}
         ref={inputReference}
       />
@@ -83,7 +83,7 @@ const CartSlot = ({
       onDragStart={(e) => handleOnDrag(e, name)}
       onDragOver={(e) => handleOnDragOver(e)}
       onDrop={(e) => handleOnDrop(e)}
-      onClick={() => handleOnClick(index, pos, true, name)}
+      onClick={() => handleOnClick(index, pos, name)}
       tabIndex={0}
     >
       {name}

@@ -107,7 +107,7 @@ const Carts = () => {
       targetPos: parseInt(targetIndex[1]),
       index: parseInt(draggedIndex[0]),
       pos: parseInt(draggedIndex[1]),
-      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML;
+      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML
     }
     dispatch(dragCartSlot(action));
   };
