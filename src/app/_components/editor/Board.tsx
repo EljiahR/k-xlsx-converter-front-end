@@ -14,8 +14,8 @@ import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { cloneDeep } from "lodash"
 import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
-import { addToBreak, changeBreak } from "src/app/_lib/redux/shiftsSlice";
+import { GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
@@ -82,7 +82,6 @@ const Board = () => {
       dispatch(changeBreak(action));
   };
 
-  // REDUX: toggleBreakEdit
   // Toggles breaks and lunches into input elements
   const handleBreakClick: BreakClickType = (
     thisPerson,
@@ -92,31 +91,18 @@ const Board = () => {
     section,
     time,
   ) => {
-    let newShifts = cloneDeep(shifts);
-    let shiftToEdit = newShifts[currentDay].jobPositions.find(
-      (shift) => shift.name === positionName,
-    );
-
-    let personToEdit = shiftToEdit.shifts.find(
-      (person) =>
-        person.firstName === thisPerson.firstName &&
-        person.lastName === thisPerson.lastName &&
-        person.shiftStart == thisPerson.shiftStart,
-    );
-    /*
-    // Why
-    if (!personToEdit[breakType].hasOwnProperty("time")) {
-      personToEdit[breakType].time = "";
-      time = "";
+    const action: GetEmployeeBreakAction = {
+      day: currentDay,
+      jobPosition: positionName,
+      employeeId: thisPerson.employeeId,
+      breakType
     }
-    */
-    personToEdit[breakType].editable = onOff;
 
     let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
     
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
 
-    setShifts(newShifts);
+    dispatch(toggleBreakEdit(action));
     setSelectedTime({ time, section, time15, timeMinus15 });
   };
 
