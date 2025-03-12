@@ -11,7 +11,6 @@ import {
   getDatesFromBreaks,
 } from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { cloneDeep } from "lodash"
 import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
 import { GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
@@ -83,13 +82,7 @@ const Board = () => {
   };
 
   // Toggles breaks and lunches into input elements
-  const handleBreakClick: BreakClickType = (
-    thisPerson,
-    positionName,
-    breakType,
-    onOff,
-    section,
-    time,
+  const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time,
   ) => {
     const action: GetEmployeeBreakAction = {
       day: currentDay,

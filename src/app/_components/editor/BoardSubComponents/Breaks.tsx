@@ -40,7 +40,6 @@ export const Breaks = ({
               person,
               positionName,
               breakType,
-              false,
               section,
               person[breakType].time,
             )
@@ -60,7 +59,6 @@ export const Breaks = ({
               person,
               positionName,
               breakType,
-              true,
               section,
               person[breakType].time,
             )
