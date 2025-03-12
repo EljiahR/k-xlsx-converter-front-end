@@ -14,8 +14,8 @@ import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
-import { CartSlotValueAction, CartSlotAction } from "src/app/_lib/redux/reduxTypes";
+import { dragCartSlot, editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotValueAction, CartSlotAction, CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -96,25 +96,20 @@ const Carts = () => {
     e.preventDefault();
   };
 
-  //REDUX: dragCartSlot
   const handleOnDrop: OnDropType = (e) => {
     const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.currentTarget.id.split(":");
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-    carts[draggedIndex[0]][draggedIndex[1]].name = "";
-    let draggedValue = "";
-
-    carts[draggedIndex[0]].sort(sortEmptyToEnd);
-    if (dragged.nodeName == "INPUT") {
-      draggedValue = dragged.value;
-    } else {
-      draggedValue = dragged.innerHTML;
+   
+    const action: CartSlotDragAction = {
+      day: currentDay,
+      targetIndex: parseInt(targetIndex[0]),
+      targetPos: parseInt(targetIndex[1]),
+      index: parseInt(draggedIndex[0]),
+      pos: parseInt(draggedIndex[1]),
+      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML;
     }
-    carts[targetIndex[0]][targetIndex[1]].name = draggedValue;
-    carts[targetIndex[0]].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+    dispatch(dragCartSlot(action));
   };
 
   return (

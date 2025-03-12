@@ -38,7 +38,7 @@ export interface CartSlotValueAction extends CartSlotAction {
     newValue: string;
 }
 
-export interface CartSlotDragAction extends CarSlotValueAction {
+export interface CartSlotDragAction extends CartSlotValueAction {
     targetIndex: number;
     targetPos: number;
 }
