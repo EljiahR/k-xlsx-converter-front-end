@@ -9,10 +9,16 @@ export interface DaysState {
     value: number;
 }
 
+interface EmployeeIdentifier {
+    id: string;
+    firstName: string;
+    lastName: string;
+}
+
 // Action Interfaces
 export interface GetEmployeeAction {
     day: number;
-    employeeId: string;
+    employeeIdentifier: EmployeeIdentifier;
     jobPosition: string;
 }
 

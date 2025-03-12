@@ -24,35 +24,53 @@ export const shiftsSlice = createSlice({
             state.value = action.payload;
         },
         addToBreak: (state, action: PayloadAction<MinutesToBreakAction>) => {
-            const { day, jobPosition, breakType, minutesToAdd } = action.payload;
+            const { day, employeeIdentifier, jobPosition, breakType, minutesToAdd } = action.payload;
             
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) return
 
-            const personToEdit = job.shifts.find(s => s.employeeId);
-            if (!personToEdit) return;
+            const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
+                job.shifts.find(s => s.employeeId == employeeIdentifier.id)
+                : job.shifts.find(s => s.firstName == employeeIdentifier.firstName && s.lastName == employeeIdentifier.lastName)
+            if (!personToEdit){
+                console.log("No person")
+                return
+            }
             
             personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, minutesToAdd)
         },
         changeBreak: (state, action: PayloadAction<SetMinutesToBreakAction>) => {
-            const { day, jobPosition, breakType, minutesToChangeTo } = action.payload;
+            const { day, employeeIdentifier, jobPosition, breakType, minutesToChangeTo } = action.payload;
             
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) return
 
-            const personToEdit = job.shifts.find(s => s.employeeId);
-            if (!personToEdit) return;
+            const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
+                job.shifts.find(s => s.employeeId == employeeIdentifier.id)
+                : job.shifts.find(s => s.firstName == employeeIdentifier.firstName && s.lastName == employeeIdentifier.lastName)
+            if (!personToEdit){
+                console.log("No person")
+                return
+            }
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
         toggleBreakEdit: (state, action: PayloadAction<GetEmployeeBreakToggleAction>) => {
-            const { day, jobPosition, breakType, isEditable } = action.payload;
-
+            const { day, employeeIdentifier, jobPosition, breakType, isEditable } = action.payload;
+            
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) return
+            if (!job) {
+                console.log("No job")
+                return
+            }
 
-            const personToEdit = job.shifts.find(s => s.employeeId);
-            if (!personToEdit) return;
+            const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
+                job.shifts.find(s => s.employeeId == employeeIdentifier.id)
+                : job.shifts.find(s => s.firstName == employeeIdentifier.firstName && s.lastName == employeeIdentifier.lastName)
+            if (!personToEdit){
+                console.log("No person")
+                return
+            }
 
             personToEdit[breakType].editable = isEditable;
         },

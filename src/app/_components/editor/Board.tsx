@@ -33,7 +33,7 @@ const Board = () => {
       e.preventDefault();
       const action: MinutesToBreakAction = {
         day: currentDay,
-        employeeId: thisPerson.employeeId,
+        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
         jobPosition: positionName,
         breakType,
         minutesToAdd: e.key == "ArrowUp" ? 15 : -15
@@ -73,12 +73,13 @@ const Board = () => {
   const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
       const action: SetMinutesToBreakAction = {
         day: currentDay,
-        employeeId: thisPerson.employeeId,
+        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
         jobPosition: positionName,
         breakType,
         minutesToChangeTo: e.target.value
       }
       dispatch(changeBreak(action));
+      
   };
 
   // Toggles breaks and lunches into input elements
@@ -87,11 +88,11 @@ const Board = () => {
     const action: GetEmployeeBreakToggleAction = {
       day: currentDay,
       jobPosition: positionName,
-      employeeId: thisPerson.employeeId,
+      employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
       breakType,
       isEditable
     }
-
+    console.log(action.employeeIdentifier)
     let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
     
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
