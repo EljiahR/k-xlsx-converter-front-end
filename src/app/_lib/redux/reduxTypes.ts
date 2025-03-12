@@ -20,6 +20,10 @@ export interface GetEmployeeBreakAction extends GetEmployeeAction {
     breakType: string;
 }
 
+export interface GetEmployeeBreakToggleAction extends GetEmployeeBreakAction {
+    isEditable: boolean;
+}
+
 export interface SetMinutesToBreakAction extends GetEmployeeBreakAction {
     minutesToChangeTo: string;
 }

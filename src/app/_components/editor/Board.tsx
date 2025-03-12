@@ -13,7 +13,7 @@ import {
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { GetEmployeeBreakAction, GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
 import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
@@ -82,19 +82,19 @@ const Board = () => {
   };
 
   // Toggles breaks and lunches into input elements
-  const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time,
+  const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time, isEditable
   ) => {
-    const action: GetEmployeeBreakAction = {
+    const action: GetEmployeeBreakToggleAction = {
       day: currentDay,
       jobPosition: positionName,
       employeeId: thisPerson.employeeId,
-      breakType
+      breakType,
+      isEditable
     }
 
     let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
     
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
-
     dispatch(toggleBreakEdit(action));
     setSelectedTime({ time, section, time15, timeMinus15 });
   };

@@ -42,6 +42,7 @@ export const Breaks = ({
               breakType,
               section,
               person[breakType].time,
+              false
             )
           }
           onChange={(e) => handleBreakChange(e, person, positionName, breakType)}
@@ -61,6 +62,7 @@ export const Breaks = ({
               breakType,
               section,
               person[breakType].time,
+              true
             )
           }
           className={`${styles[breakClass]} ${

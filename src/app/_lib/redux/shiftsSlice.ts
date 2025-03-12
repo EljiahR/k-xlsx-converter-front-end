@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
-import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState } from "./reduxTypes";
+import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeBreakToggleAction } from "./reduxTypes";
 import { addMinutesToBreak } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 
@@ -45,8 +45,8 @@ export const shiftsSlice = createSlice({
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
-        toggleBreakEdit: (state, action: PayloadAction<GetEmployeeBreakAction>) => {
-            const { day, jobPosition, breakType } = action.payload;
+        toggleBreakEdit: (state, action: PayloadAction<GetEmployeeBreakToggleAction>) => {
+            const { day, jobPosition, breakType, isEditable } = action.payload;
 
             const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) return
@@ -54,7 +54,7 @@ export const shiftsSlice = createSlice({
             const personToEdit = job.shifts.find(s => s.employeeId);
             if (!personToEdit) return;
 
-            personToEdit[breakType].editable = !personToEdit[breakType].editable
+            personToEdit[breakType].editable = isEditable;
         },
         toggleCartSlotEdit: (state, action: PayloadAction<CartSlotAction>) => {
             const { day, pos, index } = action.payload;
