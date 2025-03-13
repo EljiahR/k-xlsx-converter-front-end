@@ -31,13 +31,7 @@ const Board = () => {
   const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
-      const action: MinutesToBreakAction = {
-        day: currentDay,
-        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
-        jobPosition: positionName,
-        breakType,
-        minutesToAdd: e.key == "ArrowUp" ? 15 : -15
-      }
+      
       
       let shiftToEdit = shifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
@@ -50,19 +44,29 @@ const Board = () => {
           person.shiftStart == thisPerson.shiftStart,
       );
 
-      if (timeIsLaterThan(personToEdit[breakType].time, personToEdit.shiftStart, true) &&
-        timeIsLaterThan(personToEdit.shiftEnd, personToEdit[breakType].time)
+      const minutes = e.key == "ArrowUp" ? 15 : -15;
+      const newTime = addMinutesToBreak(personToEdit[breakType].time, minutes);
+
+      if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) &&
+        timeIsLaterThan(personToEdit.shiftEnd, newTime)
       ) {
+        const action: MinutesToBreakAction = {
+          day: currentDay,
+          employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+          jobPosition: positionName,
+          breakType,
+          minutesToAdd: minutes
+        }
         dispatch(addToBreak(action));
 
         setSelectedTime({
-          time: personToEdit[breakType].time,
+          time: newTime,
           section,
           time15: addMinutesToBreak(
-            personToEdit[breakType].time,
+            newTime,
             breakType == "lunch" ? 15 : 0,
           ),
-          timeMinus15: addMinutesToBreak(personToEdit[breakType].time, -15),
+          timeMinus15: addMinutesToBreak(newTime, -15),
         });
       } else {
         return null;
@@ -92,7 +96,6 @@ const Board = () => {
       breakType,
       isEditable
     }
-    console.log(action.employeeIdentifier)
     let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
     
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
