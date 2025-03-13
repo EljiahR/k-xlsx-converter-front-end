@@ -9,13 +9,18 @@ import {
   addMinutesToBreak,
   timeIsLaterThan,
   getDatesFromBreaks,
-} from "../../_lib/timeFunctions";
-import { joinWithLast } from "src/app/_lib/formatFunctions";
-import { cloneDeep } from "lodash"
-import { BoardProps, BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
-import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
+} from "../../_lib/helpers/timeFunctions";
+import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
+import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { GetEmployeeBreakAction, GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 
-const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
+const Board = () => {
+  const shifts = useAppSelector((state) => state.shifts.value);
+  const currentDay = useAppSelector((state) => state.day.value);
+  const dispatch = useAppDispatch();
+
   const [selectedTime, setSelectedTime] = useState<ISelectedTime>({
     time: "",
     section: "",
@@ -26,8 +31,9 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
     if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
       e.preventDefault();
-      let newShifts: IWeekdayBO[] = cloneDeep(shifts);
-      let shiftToEdit = newShifts[currentDay].jobPositions.find(
+      
+      
+      let shiftToEdit = shifts[currentDay].jobPositions.find(
         (shift) => shift.name === positionName,
       );
 
@@ -38,27 +44,29 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
           person.shiftStart == thisPerson.shiftStart,
       );
 
-      personToEdit[breakType].time = addMinutesToBreak(
-        personToEdit[breakType].time,
-        e.key == "ArrowUp" ? 15 : -15,
-      );
-      if (
-        timeIsLaterThan(
-          personToEdit[breakType].time,
-          personToEdit.shiftStart,
-          true,
-        ) &&
-        timeIsLaterThan(personToEdit.shiftEnd, personToEdit[breakType].time)
+      const minutes = e.key == "ArrowUp" ? 15 : -15;
+      const newTime = addMinutesToBreak(personToEdit[breakType].time, minutes);
+
+      if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) &&
+        timeIsLaterThan(personToEdit.shiftEnd, newTime)
       ) {
-        setShifts(newShifts);
+        const action: MinutesToBreakAction = {
+          day: currentDay,
+          employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+          jobPosition: positionName,
+          breakType,
+          minutesToAdd: minutes
+        }
+        dispatch(addToBreak(action));
+
         setSelectedTime({
-          time: personToEdit[breakType].time,
+          time: newTime,
           section,
           time15: addMinutesToBreak(
-            personToEdit[breakType].time,
+            newTime,
             breakType == "lunch" ? 15 : 0,
           ),
-          timeMinus15: addMinutesToBreak(personToEdit[breakType].time, -15),
+          timeMinus15: addMinutesToBreak(newTime, -15),
         });
       } else {
         return null;
@@ -67,59 +75,31 @@ const Board = ({ currentDay, shifts, setShifts }: BoardProps) => {
   };
 
   const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
-    let newShifts = cloneDeep(shifts);
-    let shiftToEdit = newShifts[currentDay].jobPositions.find(
-      (shift) => shift.name === positionName,
-    );
-
-    let personToEdit = shiftToEdit.shifts.find(
-      (person) =>
-        person.firstName === thisPerson.firstName &&
-        person.lastName === thisPerson.lastName,
-    );
-    console.log(thisPerson);
-    console.log(personToEdit);
-
-    personToEdit[breakType].time = e.target.value;
-
-    setShifts(newShifts);
+      const action: SetMinutesToBreakAction = {
+        day: currentDay,
+        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+        jobPosition: positionName,
+        breakType,
+        minutesToChangeTo: e.target.value
+      }
+      dispatch(changeBreak(action));
+      
   };
 
   // Toggles breaks and lunches into input elements
-  const handleBreakClick: BreakClickType = (
-    thisPerson,
-    positionName,
-    breakType,
-    onOff,
-    section,
-    time,
+  const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time, isEditable
   ) => {
-    let newShifts = cloneDeep(shifts);
-    let shiftToEdit = newShifts[currentDay].jobPositions.find(
-      (shift) => shift.name === positionName,
-    );
-
-    let personToEdit = shiftToEdit.shifts.find(
-      (person) =>
-        person.firstName === thisPerson.firstName &&
-        person.lastName === thisPerson.lastName &&
-        person.shiftStart == thisPerson.shiftStart,
-    );
-    if (!personToEdit[breakType].hasOwnProperty("time")) {
-      personToEdit[breakType].time = "";
-      time = "";
+    const action: GetEmployeeBreakToggleAction = {
+      day: currentDay,
+      jobPosition: positionName,
+      employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+      breakType,
+      isEditable
     }
-    personToEdit[breakType].editable = onOff;
-
-    let time15;
-    if (breakType == "lunch") {
-      time15 = moment(getDatesFromBreaks(time, 15)).format("LT");
-    } else {
-      time15 = time;
-    }
+    let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
+    
     const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
-
-    setShifts(newShifts);
+    dispatch(toggleBreakEdit(action));
     setSelectedTime({ time, section, time15, timeMinus15 });
   };
 

@@ -6,23 +6,24 @@ import {
   timeIsLaterThan,
   startToBreakAddMinutes,
   reformatTimes,
-} from "../../_lib/timeFunctions";
+} from "../../_lib/helpers/timeFunctions";
 import React, { useRef, useState } from "react";
-import { BaggerCartInfo, CartProps, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
+import { BaggerCartInfo, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { cloneDeep } from "lodash"
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
+import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { dragCartSlot, editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotValueAction, CartSlotAction, CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
-const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
+const Carts = () => {
   const [selectedBagger, setSelectedBagger] = useState("");
-
-  const sortEmptyToEnd = (a, b) => {
-    if (a.name === "") return 1;
-    if (b.name === "") return -1;
-    return 0;
-  };
+  const shifts = useAppSelector((state) => state.shifts.value);
+  const currentDay = useAppSelector((state) => state.day.value);
+  const dispatch = useAppDispatch();
 
   let baggerCartInfo: BaggerCartInfo = {
     start: "",
@@ -64,22 +65,24 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
 
   const inputReference = useRef(null);
 
-  const handleOnClick: OnClickType = (index, pos, onOff, name) => {
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-
-    carts[index][pos].editable = onOff;
-    if (!onOff) carts[index].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+  const handleOnClick: OnClickType = (index, pos, name) => {
+    const action: CartSlotAction = {
+      day: currentDay,
+      index,
+      pos
+    }
+    dispatch(toggleCartSlotEdit(action));
     setSelectedBagger(name);
   };
 
   const handleOnChange: OnChangeType = (e, index, pos) => {
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-    carts[index][pos].name = e.target.value;
-    if (carts[index][pos].name == "") carts[index].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+    const action: CartSlotValueAction = {
+      day: currentDay,
+      index,
+      pos,
+      newValue: e.target.value
+    }
+    dispatch(editCartSlot(action));
   };
 
   const handleOnDrag: OnDragType = (e, name) => {
@@ -97,20 +100,16 @@ const Carts = ({ currentDay, shifts, setShifts }: CartProps) => {
     const dragged = document.getElementById(e.dataTransfer.getData("text")) as HTMLInputElement;
     let draggedIndex = dragged.id.split(":");
     let targetIndex = e.currentTarget.id.split(":");
-    let newShifts = cloneDeep(shifts);
-    let carts = newShifts[currentDay].carts;
-    carts[draggedIndex[0]][draggedIndex[1]].name = "";
-    let draggedValue = "";
-
-    carts[draggedIndex[0]].sort(sortEmptyToEnd);
-    if (dragged.nodeName == "INPUT") {
-      draggedValue = dragged.value;
-    } else {
-      draggedValue = dragged.innerHTML;
+   
+    const action: CartSlotDragAction = {
+      day: currentDay,
+      targetIndex: parseInt(targetIndex[0]),
+      targetPos: parseInt(targetIndex[1]),
+      index: parseInt(draggedIndex[0]),
+      pos: parseInt(draggedIndex[1]),
+      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML
     }
-    carts[targetIndex[0]][targetIndex[1]].name = draggedValue;
-    carts[targetIndex[0]].sort(sortEmptyToEnd);
-    setShifts(newShifts);
+    dispatch(dragCartSlot(action));
   };
 
   return (

@@ -2,12 +2,6 @@ import { ChangeEvent, DragEvent } from "react";
 import { ICartShift, IEmployeeBO, IJobPositionBO, IWeekdayBO, SubshiftBO } from "./shiftTypes";
 
 // Props
-export interface CartProps {
-  currentDay: number;
-  shifts: IWeekdayBO[];
-  setShifts: React.Dispatch<React.SetStateAction<IWeekdayBO[]>>
-}
-
 export interface CartSlotProps {
   index: number;
   pos: number;
@@ -53,5 +47,5 @@ export interface BaggerCartInfo {
 export type OnDragType = (e: DragEvent<HTMLInputElement | HTMLDivElement>, name: string) => void;
 export type OnDragOverType = (e: DragEvent<HTMLInputElement | HTMLDivElement>) => void;
 export type OnDropType = (e: DragEvent<HTMLInputElement | HTMLDivElement>) => void;
-export type OnClickType = (index: number, pos: number, onOff: boolean, name: string) => void;
+export type OnClickType = (index: number, pos: number, name: string) => void;
 export type OnChangeType = (e: ChangeEvent<HTMLInputElement>, index: number, pos: number) => void;

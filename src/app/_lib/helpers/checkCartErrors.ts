@@ -1,5 +1,5 @@
 import styles from "@/styles/Carts.module.css";
-import { BaggerInfo } from "./types/cartTypes";
+import { BaggerInfo } from "../types/cartTypes";
 import { timeIsWithin } from "./timeFunctions";
 
 interface ICartShift {

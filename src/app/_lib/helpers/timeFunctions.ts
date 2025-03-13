@@ -32,7 +32,13 @@ export const getDatesFromTimes = (...timesToChange) => {
       } else {
         timeHours = parseInt(timeHours);
       }
-      timeMinutes = parseInt(timeMinutes.charAt(0) + timeMinutes.charAt(1));
+
+      try {
+        timeMinutes = parseInt(timeMinutes.charAt(0) + timeMinutes.charAt(1));
+      } catch (e) {
+        console.log("Wrong time format, should be (H:MM AM/PM)")
+        return;
+      }
 
       let timeToDate = new Date(null, null, null, timeHours, timeMinutes);
       fixedTimes.push(timeToDate);

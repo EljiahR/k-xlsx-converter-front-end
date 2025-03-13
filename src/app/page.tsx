@@ -1,7 +1,4 @@
-
-
 import "@/styles/globals.css";
-// import type { NextPage } from "next";
 import { Metadata } from "next";
 import styles from "./_styles/Home.module.css";
 import Link from "next/link";
