@@ -2,7 +2,7 @@
 import "@/styles/globals.css";
 import styles from "@/styles/Report.module.css";
 // Template object for reseting the shifts state
-import initialShifts from "../../../_lib/shiftsObject";
+import initialShifts from "../../../_lib/test/shiftsObject";
 // Importing components
 import Board from "../../../_components/editor/Board";
 import Carts from "../../../_components/editor/Carts";
@@ -11,18 +11,18 @@ import NavBar from "../../../_components/NavBar";
 // Importing functions and hooks
 //import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
-import { getEmployees } from "../../../_lib/getNewShifts";
+import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
-import { expectedOutput } from "src/app/_lib/test/expectedOutput";
-import {starterPDF, refreshPDF} from "src/app/_lib/defaultPDF";
+import {starterPDF, refreshPDF} from "src/app/_lib/helpers/defaultPDF";
 
-import { cloneDeep } from "lodash";
-import { IWeekdayBO } from "src/app/_lib/types/shiftTypes";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { setAsTest, setNewShifts, setShiftsNull } from "src/app/_lib/redux/shiftsSlice";
+import { setDay } from "src/app/_lib/redux/daySlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
-  const [shifts, setShifts] = useState<IWeekdayBO[]>(null);
-  const [currentDay, setCurrentDay] = useState(0);
+  const shifts = useAppSelector((state) => state.shifts.value);
+  const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(null);
   const [page, setPage] = useState("Board"); //Swap between board and carts
   let pdf = starterPDF;
@@ -92,14 +92,13 @@ const Report = () => {
   };
 
   const handleCurrentDay = (e, defaultToReport: boolean) => {
-    setCurrentDay(e.target.value);
+    dispatch(setDay(e.target.value));
     initializePdf();
     if (defaultToReport && page != "Board") setPage("Board");
   };
 
-
   const handleTestShifts = () => {
-    setShifts(cloneDeep(expectedOutput));
+    dispatch(setAsTest());
   }
 
   /* 
@@ -108,7 +107,7 @@ const Report = () => {
   */
 
   const resetShifts = () => {
-    setShifts(null);
+    dispatch(setShiftsNull());
   };
 
   useEffect(() => {
@@ -116,15 +115,16 @@ const Report = () => {
     document.title = "Report";
   }, []);
 
+  // REDUX: setNewShifts
   useEffect(() => {
     const newShiftsFunc = async () => {
       try {
         const newShifts = await getEmployees(xlsxFile);
         console.log(newShifts);
-        setShifts(newShifts);
+        dispatch(setNewShifts(newShifts));
         initializePdf();
       } catch (err) {
-        setShifts(initialShifts);
+        dispatch(setNewShifts(initialShifts));
         console.log(err);
         console.log(initialShifts)
       } finally {
@@ -151,20 +151,12 @@ const Report = () => {
       {isLoading && <Loading />}
       {shifts && page === "Board" && (
         <div id="board" className={styles.sheet}>
-          <Board
-            currentDay={currentDay}
-            shifts={shifts}
-            setShifts={setShifts}
-          />
+          <Board />
         </div>
       )}
       {shifts && page === "Carts" && (
         <div id="carts" className={styles.sheet}>
-          <Carts
-            currentDay={currentDay}
-            shifts={shifts}
-            setShifts={setShifts}
-          />
+          <Carts />
         </div>
       )}
     </div>
