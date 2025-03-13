@@ -94,9 +94,13 @@ export const shiftsSlice = createSlice({
         dragCartSlot: (state, action: PayloadAction<CartSlotDragAction>) => {
             const { day, pos, index, newValue, targetPos, targetIndex } = action.payload;
             let carts = state.value[day]?.carts;
-
+            
             carts[targetIndex][targetPos].name = newValue;
             carts[index][pos].name = "";
+            if (carts[index][pos].editable) {
+                carts[index][pos].editable = false;
+                carts[index].sort(sortEmptyToEnd);
+            }
             carts[targetIndex].sort(sortEmptyToEnd);
         }
     }
