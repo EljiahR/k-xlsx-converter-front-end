@@ -4,7 +4,7 @@ import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobP
 const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
   return shifts.map((shift) => ({
     ...shift,
-    name: {firstName: shift.firstName, lastName: shift.lastName, editable: false},
+    name: {firstName: shift.firstName, lastName: shift.lastName, baggerName: shift.baggerName, editable: false},
     edit: false,
     shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
     shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),

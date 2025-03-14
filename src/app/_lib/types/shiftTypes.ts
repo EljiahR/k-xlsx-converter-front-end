@@ -32,13 +32,14 @@ export interface IEmployeeDTO {
 export interface IEmployeeNameBO {
     firstName: string;
     lastName: string;
+    baggerName: string;
     editable: boolean;
 }
 
 export interface IEmployeeBO
     extends Omit<
         IEmployeeDTO,
-        "firstName" | "lastName" |"shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
+        "firstName" | "lastName" | "baggerName" |"shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
     > {
     name: IEmployeeNameBO;
     shiftStart: string;

@@ -39,8 +39,8 @@ const Board = () => {
 
       let personToEdit = shiftToEdit.shifts.find(
         (person) =>
-          person.firstName === thisPerson.firstName &&
-          person.lastName === thisPerson.lastName &&
+          person.name.firstName === thisPerson.name.firstName &&
+          person.name.lastName === thisPerson.name.lastName &&
           person.shiftStart == thisPerson.shiftStart,
       );
 
@@ -52,7 +52,7 @@ const Board = () => {
       ) {
         const action: MinutesToBreakAction = {
           day: currentDay,
-          employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+          employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.name.firstName, lastName: thisPerson.name.lastName},
           jobPosition: positionName,
           breakType,
           minutesToAdd: minutes
@@ -77,7 +77,7 @@ const Board = () => {
   const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
       const action: SetMinutesToBreakAction = {
         day: currentDay,
-        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.name.firstName, lastName: thisPerson.name.lastName},
         jobPosition: positionName,
         breakType,
         minutesToChangeTo: e.target.value
@@ -92,7 +92,7 @@ const Board = () => {
     const action: GetEmployeeBreakToggleAction = {
       day: currentDay,
       jobPosition: positionName,
-      employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
+      employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.name.firstName, lastName: thisPerson.name.lastName},
       breakType,
       isEditable
     }
