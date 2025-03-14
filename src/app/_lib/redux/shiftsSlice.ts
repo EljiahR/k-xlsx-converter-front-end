@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IWeekdayBO } from "../types/shiftTypes";
+import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
-import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeBreakToggleAction } from "./reduxTypes";
+import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeToggleAction, GetEmployeeBreakToggleAction } from "./reduxTypes";
 import { addMinutesToBreak } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 
@@ -102,10 +102,29 @@ export const shiftsSlice = createSlice({
                 carts[index].sort(sortEmptyToEnd);
             }
             carts[targetIndex].sort(sortEmptyToEnd);
+        },
+        toggleNameEdit: (state, action: PayloadAction<GetEmployeeToggleAction>) => {
+            const { day, employeeIdentifier, jobPosition, isEditable } = action.payload;
+            
+            const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
+            if (!job) {
+                console.log("No job")
+                return;
+            }
+
+            const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
+                job.shifts.find(s => s.employeeId == employeeIdentifier.id)
+                : job.shifts.find(s => s.name.firstName == employeeIdentifier.firstName && s.name.lastName == employeeIdentifier.lastName)
+            if (!personToEdit){
+                console.log("No person")
+                return
+            }
+
+            personToEdit.name.editable = isEditable;
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, toggleNameEdit } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

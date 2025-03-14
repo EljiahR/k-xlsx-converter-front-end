@@ -1,4 +1,4 @@
-import { IWeekdayBO } from "../types/shiftTypes";
+import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 
 // Interface
 export interface ShiftsState {
@@ -20,6 +20,10 @@ export interface GetEmployeeAction {
     day: number;
     employeeIdentifier: EmployeeIdentifier;
     jobPosition: string;
+}
+
+export interface GetEmployeeToggleAction extends GetEmployeeAction {
+    isEditable: boolean;
 }
 
 export interface GetEmployeeBreakAction extends GetEmployeeAction {

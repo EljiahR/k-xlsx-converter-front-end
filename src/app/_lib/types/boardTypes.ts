@@ -1,5 +1,5 @@
 import { ChangeEvent, KeyboardEvent } from "react";
-import { IEmployeeBO, IWeekdayBO } from "./shiftTypes";
+import { IEmployeeBO } from "./shiftTypes";
 
 // Props
 export interface IndividualShiftsProps {
@@ -19,6 +19,8 @@ export interface BreaksProps extends Omit<IndividualShiftsProps, "people"> {
 }
 
 export interface IndividualNameProps {
+  day: number;
+  jobPosition: string;
   person: IEmployeeBO;
 }
 
