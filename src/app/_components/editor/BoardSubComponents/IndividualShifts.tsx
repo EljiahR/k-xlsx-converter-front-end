@@ -9,6 +9,7 @@ const IndividualShifts = ({
   handleBreakClick,
   handleBreakChange,
   handleKeyUpDown,
+  handleNameToggle,
   selectedTime,
   section,
 }: IndividualShiftsProps) => {
@@ -18,13 +19,13 @@ const IndividualShifts = ({
         className={styles["person"]}
         key={
           positionName +
-          person["firstName"] +
-          person["lastName"] +
+          person.name.firstName +
+          person.name.lastName +
           person["shiftStart"]
         }
       >
         <div className={styles["blank-cell"]}></div>
-        <IndividualName person={person} />
+        <IndividualName person={person} handleNameToggle={handleNameToggle} jobPosition={positionName} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks

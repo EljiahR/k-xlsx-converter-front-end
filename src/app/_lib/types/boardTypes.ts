@@ -8,20 +8,21 @@ export interface IndividualShiftsProps {
   handleBreakClick: BreakClickType;
   handleBreakChange: BreakChangeType;
   handleKeyUpDown: KeyUpDownType;
+  handleNameToggle: EmployeeToggleType;
   selectedTime: ISelectedTime;
   section: string;
 }
 
-export interface BreaksProps extends Omit<IndividualShiftsProps, "people"> {
+export interface BreaksProps extends Omit<IndividualShiftsProps, "people" | "handleNameToggle"> {
   person: IEmployeeBO;
   breakClass: string;
   breakType: string;
 }
 
 export interface IndividualNameProps {
-  day: number;
   jobPosition: string;
   person: IEmployeeBO;
+  handleNameToggle: EmployeeToggleType;
 }
 
 // Interfaces
@@ -37,3 +38,4 @@ export interface ISelectedTime {
 export type BreakClickType = (thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string, time: any, isEditable: boolean) => void;
 export type KeyUpDownType = (e: KeyboardEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string) => void;
 export type BreakChangeType = (e: ChangeEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string) => void;
+export type EmployeeToggleType = (thisPerson: IEmployeeBO, positionName: string, isEditable: boolean) => void;
