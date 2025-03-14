@@ -29,11 +29,18 @@ export interface IEmployeeDTO {
     subshift?: SubshiftDTO;
 }
 
+export interface IEmployeeNameBO {
+    firstName: string;
+    lastName: string;
+    editable: boolean;
+}
+
 export interface IEmployeeBO
     extends Omit<
         IEmployeeDTO,
-        "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
+        "firstName" | "lastName" |"shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
     > {
+    name: IEmployeeNameBO;
     shiftStart: string;
     shiftEnd: string;
     breakOne: IBreak;
