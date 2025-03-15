@@ -141,11 +141,20 @@ export const shiftsSlice = createSlice({
                 return
             }
 
-            if (state.newFirstName != "") {
-                personToEdit.name.firstName = state.newFirstName;
-            } 
-            if (state.newLastName != "") {
-                personToEdit.name.lastName = state.newLastName;
+            if (state.newFirstName != "" || state.newLastName) {
+                if (state.newFirstName != "") {
+                    personToEdit.name.firstName = state.newFirstName;
+                } 
+                if (state.newLastName != "") {
+                    personToEdit.name.lastName = state.newLastName;
+                }
+
+                if (job.name == "Front End Courtesy Clerks") {
+                    const matchedFirstName = job.shifts.find(s => s.name.firstName == personToEdit.name.firstName);
+                    personToEdit.name.baggerName = !matchedFirstName ? 
+                        personToEdit.name.firstName :
+                        personToEdit.name.firstName + " " + (personToEdit.name.lastName != "" ? personToEdit.name.lastName[0] : "")
+                }
             }
 
             state.newFirstName = "";
