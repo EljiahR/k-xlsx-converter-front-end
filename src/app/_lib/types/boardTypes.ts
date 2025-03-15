@@ -1,12 +1,10 @@
-import { ChangeEvent, KeyboardEvent } from "react";
-import { IEmployeeBO, IWeekdayBO } from "./shiftTypes";
+import { KeyboardEvent } from "react";
+import { IEmployeeBO } from "./shiftTypes";
 
 // Props
 export interface IndividualShiftsProps {
   people: IEmployeeBO[];
   positionName: string;
-  handleBreakClick: BreakClickType;
-  handleKeyUpDown: KeyUpDownType;
   section: string;
 }
 
@@ -23,8 +21,3 @@ export interface ISelectedTime {
   time15: string;
   timeMinus15: string;
 }
-
-// Types
-
-export type BreakClickType = (thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string, time: any, isEditable: boolean) => void;
-export type KeyUpDownType = (e: KeyboardEvent<HTMLInputElement>, thisPerson: IEmployeeBO, positionName: string, breakType: string, section: string) => void;

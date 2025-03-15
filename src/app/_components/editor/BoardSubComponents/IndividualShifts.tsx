@@ -5,9 +5,6 @@ import { Breaks } from "./Breaks";
 const IndividualShifts = ({
   people,
   positionName,
-  handleBreakClick,
-  handleBreakChange,
-  handleKeyUpDown,
   section,
 }: IndividualShiftsProps) => {
   const shifts = people.map((person, index) => {
@@ -30,9 +27,6 @@ const IndividualShifts = ({
         <Breaks
           person={person}
           positionName={positionName}
-          handleBreakClick={handleBreakClick}
-          handleBreakChange={handleBreakChange}
-          handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakOne"
           section={section}
@@ -42,9 +36,6 @@ const IndividualShifts = ({
         <Breaks
           person={person}
           positionName={positionName}
-          handleBreakClick={handleBreakClick}
-          handleBreakChange={handleBreakChange}
-          handleKeyUpDown={handleKeyUpDown}
           breakClass="lunch"
           breakType="lunch"
           section={section}
@@ -53,9 +44,6 @@ const IndividualShifts = ({
         <Breaks
           person={person}
           positionName={positionName}
-          handleBreakClick={handleBreakClick}
-          handleBreakChange={handleBreakChange}
-          handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakTwo"
           section={section}

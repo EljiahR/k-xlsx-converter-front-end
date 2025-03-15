@@ -3,9 +3,11 @@ import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
 import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, ShiftsState, GetEmployeeBreakToggleAction, ChangeBreakAction } from "./reduxTypes";
-import { addMinutesToBreak } from "../helpers/timeFunctions";
+import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
+import moment from "moment";
+import { KeyboardEvent } from "react";
 
 const initialState: ShiftsState = {
     value: null,
@@ -31,8 +33,11 @@ export const shiftsSlice = createSlice({
         setNewShifts: (state, action: PayloadAction<IWeekdayBO[]>) => {
             state.value = action.payload;
         },
-        addToBreak: (state, action: PayloadAction<MinutesToBreakAction>) => {
-            const { employee, jobPosition, breakType, minutesToAdd } = action.payload;
+        addToBreak: (state, action: PayloadAction<{ e: KeyboardEvent<HTMLInputElement>, employee: IEmployeeBO, jobPosition: string, breakType: string, section: string }>) => {
+            const { e, employee, jobPosition, breakType, section } = action.payload;
+            if ((e.key != "ArrowUp" && e.key != "ArrowDown") && e.currentTarget.value == "") {
+                return;
+            }
             
             const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) return;
@@ -45,9 +50,21 @@ export const shiftsSlice = createSlice({
                 return;
             }
 
+            const newTime = addMinutesToBreak(personToEdit[breakType].time, e.key == "ArrowUp" ? 15 : -15);
             
-            
-            personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, minutesToAdd)
+            if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) && timeIsLaterThan(personToEdit.shiftEnd, newTime)) {
+                personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, newTime)
+                state.selectedTime = {
+                    time: newTime,
+                    section,
+                    time15: addMinutesToBreak(
+                      newTime,
+                      breakType == "lunch" ? 15 : 0,
+                    ),
+                    timeMinus15: addMinutesToBreak(newTime, -15),
+                }
+            }
+
         },
         changeBreak: (state, action: PayloadAction<{ employee: IEmployeeBO, jobPosition: string, breakType: string, minutesToChangeTo: string }>) => {
             const { employee, jobPosition, breakType, minutesToChangeTo } = action.payload;
@@ -65,8 +82,8 @@ export const shiftsSlice = createSlice({
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
-        toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, isEditable: boolean}>) => {
-            const { employee, jobPosition, breakType, isEditable } = action.payload;
+        toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, section: string, isEditable: boolean}>) => {
+            const { employee, jobPosition, breakType, section, isEditable } = action.payload;
             
             const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
             if (!job) {
@@ -81,8 +98,13 @@ export const shiftsSlice = createSlice({
                 console.log("No person")
                 return
             }
+            const time = employee[breakType].time;
+            const time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
+                
+            const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
 
             personToEdit[breakType].editable = isEditable;
+            state.selectedTime = { time, section, time15, timeMinus15 };
         },
         toggleCartSlotEdit: (state, action: PayloadAction<CartSlotAction>) => {
             const { pos, index } = action.payload;

@@ -3,86 +3,12 @@ import BlankRow from "./BoardSubComponents/BlankRow";
 import CallUps from "./BoardSubComponents/CallUps";
 import IndividualShifts from "./BoardSubComponents/IndividualShifts";
 import Liquor from "./BoardSubComponents/Liquor";
-import moment from "moment";
-import {
-  addMinutesToBreak,
-  timeIsLaterThan,
-  getDatesFromBreaks,
-} from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { BreakClickType, KeyUpDownType } from "src/app/_lib/types/boardTypes";
-import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { GetEmployeeBreakToggleAction, MinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
-import { addToBreak, changeBreak, setSelectedTime, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
+import { useAppSelector } from "src/app/_lib/redux/hooks";
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
   const currentDay = useAppSelector((state) => state.shifts.day);
-  const dispatch = useAppDispatch();
-
-
-  const handleKeyUpDown: KeyUpDownType = (e, thisPerson, positionName, breakType, section) => {
-    if ((e.key == "ArrowUp" || e.key == "ArrowDown") && e.currentTarget.value != "") {
-      e.preventDefault();
-      
-      
-      let shiftToEdit = shifts[currentDay].jobPositions.find(
-        (shift) => shift.name === positionName,
-      );
-
-      let personToEdit = shiftToEdit.shifts.find(
-        (person) =>
-          person.firstName === thisPerson.firstName &&
-          person.lastName === thisPerson.lastName &&
-          person.shiftStart == thisPerson.shiftStart,
-      );
-
-      const minutes = e.key == "ArrowUp" ? 15 : -15;
-      const newTime = addMinutesToBreak(personToEdit[breakType].time, minutes);
-
-      if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) &&
-        timeIsLaterThan(personToEdit.shiftEnd, newTime)
-      ) {
-        const action: MinutesToBreakAction = {
-          day: currentDay,
-          employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
-          jobPosition: positionName,
-          breakType,
-          minutesToAdd: minutes
-        }
-        dispatch(addToBreak(action));
-
-        dispatch(setSelectedTime({
-          time: newTime,
-          section,
-          time15: addMinutesToBreak(
-            newTime,
-            breakType == "lunch" ? 15 : 0,
-          ),
-          timeMinus15: addMinutesToBreak(newTime, -15),
-        }));
-      } else {
-        return null;
-      }
-    }
-  };
-
-  // Toggles breaks and lunches into input elements
-  const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time, isEditable
-  ) => {
-    const action: GetEmployeeBreakToggleAction = {
-      day: currentDay,
-      jobPosition: positionName,
-      employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
-      breakType,
-      isEditable
-    }
-    let time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
-    
-    const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
-    dispatch(toggleBreakEdit(action));
-    setSelectedTime({ time, section, time15, timeMinus15 });
-  };
 
   return (
     <>
@@ -114,8 +40,6 @@ const Board = () => {
                   ).shifts
                 }
                 positionName="Front End Supervisor"
-                handleBreakClick={handleBreakClick}
-                handleKeyUpDown={handleKeyUpDown}
                 section="desk"
               />
               <BlankRow />
@@ -136,8 +60,6 @@ const Board = () => {
               ).shifts
             }
             positionName="Front End Cashier"
-            handleBreakClick={handleBreakClick}
-            handleKeyUpDown={handleKeyUpDown}
             section="cashier"
           />
           <BlankRow />
@@ -155,8 +77,6 @@ const Board = () => {
               ).shifts
             }
             positionName="Front End SCO Cashier"
-            handleBreakClick={handleBreakClick}
-            handleKeyUpDown={handleKeyUpDown}
             section="cashier"
           />
           <BlankRow />
@@ -174,8 +94,6 @@ const Board = () => {
               ).shifts
             }
             positionName="Front End Courtesy Clerk"
-            handleBreakClick={handleBreakClick}
-            handleKeyUpDown={handleKeyUpDown}
             section="bagger"
           />
           <BlankRow />
@@ -193,8 +111,6 @@ const Board = () => {
               ).shifts
             }
             positionName="Front End Service Desk"
-            handleBreakClick={handleBreakClick}
-            handleKeyUpDown={handleKeyUpDown}
             section="desk"
           />
           <BlankRow />
@@ -212,8 +128,6 @@ const Board = () => {
               ).shifts
             }
             positionName="Fuel Clerk"
-            handleBreakClick={handleBreakClick}
-            handleKeyUpDown={handleKeyUpDown}
             section="desk"
           />
         </div>
