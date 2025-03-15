@@ -7,7 +7,7 @@ import { RestroomProps } from "src/app/_lib/types/cartTypes";
 const Restrooms = ({utilityClerks}: RestroomProps) => {
   const findBaggers = (timeToCheck: string): string => {
     const baggers = utilityClerks.filter((clerk) => timeIsWithin(clerk.subshift.shiftStart, clerk.subshift.shiftEnd, timeToCheck));
-    return joinWithLast(baggers.slice(0, 3).map(bagger => bagger.baggerName), ", ", " and ");
+    return joinWithLast(baggers.slice(0, 3).map(bagger => bagger.name.baggerName), ", ", " and ");
   }
 
 

@@ -31,7 +31,7 @@ const CartSlot = ({
   };
 
   const thisBagger: IEmployeeBO = baggerList.shifts.find(
-    (bagger) => bagger.baggerName == name,
+    (bagger) => bagger.name.baggerName == name,
   );
   if (thisBagger) {
     baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne.time)

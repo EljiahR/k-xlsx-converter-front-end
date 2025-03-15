@@ -1,6 +1,7 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
-import { Breaks } from "./Breaks";
+import { Breaks } from "./IndividualShiftsSubComponents/Breaks";
+import IndividualName from "./IndividualShiftsSubComponents/IndividualName";
 
 const IndividualShifts = ({
   people,
@@ -8,24 +9,25 @@ const IndividualShifts = ({
   handleBreakClick,
   handleBreakChange,
   handleKeyUpDown,
+  handleNameToggle,
+  handleNameChange,
+  handleNameToggleBlur,
   selectedTime,
   section,
 }: IndividualShiftsProps) => {
-  const shifts = people.map((person, index) => {
+  return people.map((person) => {
     return (
       <div
         className={styles["person"]}
         key={
           positionName +
-          person["firstName"] +
-          person["lastName"] +
+          person.name.firstName +
+          person.name.lastName +
           person["shiftStart"]
         }
       >
         <div className={styles["blank-cell"]}></div>
-        <p className={styles["person-name"]}>
-          {person["firstName"] + " " + person["lastName"]}
-        </p>
+        <IndividualName person={person} handleNameToggle={handleNameToggle} handleNameChange={handleNameChange} handleNameToggleBlur={handleNameToggleBlur} jobPosition={positionName} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks
@@ -71,7 +73,6 @@ const IndividualShifts = ({
       </div>
     );
   });
-  return shifts;
 };
 
 export default IndividualShifts;

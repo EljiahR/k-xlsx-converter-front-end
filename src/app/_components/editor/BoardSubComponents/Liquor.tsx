@@ -5,10 +5,10 @@ const Liquor = ({ people, positionName }) => {
     return (
       <div
         className={styles.person}
-        key={positionName + person.firstName + person.lastName}
+        key={positionName + person.name.firstName + person.name.lastName}
       >
         <p className="person-name">
-          {person.firstName + " " + person.lastName}
+          {person.name.firstName + " " + person.name.lastName}
         </p>
         <p className="start time">{person.shiftStart}</p>
         <p className="end time">{person.shiftEnd}</p>
