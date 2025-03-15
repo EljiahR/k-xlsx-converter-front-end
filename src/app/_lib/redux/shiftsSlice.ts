@@ -2,12 +2,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
-import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeToggleAction, GetEmployeeBreakToggleAction } from "./reduxTypes";
+import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeToggleAction, GetEmployeeBreakToggleAction, GetEmployeeChangeAction, GetEmployeeAction } from "./reduxTypes";
 import { addMinutesToBreak } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 
 const initialState: ShiftsState = {
-    value: null
+    value: null,
+    newFirstName: "",
+    newLastName: ""
 };
 
 export const shiftsSlice = createSlice({
@@ -121,10 +123,48 @@ export const shiftsSlice = createSlice({
             }
 
             personToEdit.name.editable = isEditable;
+        },
+        nameChange: (state, action: PayloadAction<GetEmployeeAction>) => {
+            const { day, employeeIdentifier, jobPosition } = action.payload;
+            
+            const job = state.value[day]?.jobPositions.find(j => j.name == jobPosition)
+            if (!job) {
+                console.log("No job")
+                return;
+            }
+
+            const personToEdit = employeeIdentifier.id != "" && employeeIdentifier.id != null ?
+                job.shifts.find(s => s.employeeId == employeeIdentifier.id)
+                : job.shifts.find(s => s.name.firstName == employeeIdentifier.firstName && s.name.lastName == employeeIdentifier.lastName)
+            if (!personToEdit){
+                console.log("No person")
+                return
+            }
+
+            if (state.newFirstName != "") {
+                personToEdit.name.firstName = state.newFirstName;
+            } 
+            if (state.newLastName != "") {
+                personToEdit.name.lastName = state.newLastName;
+            }
+
+            state.newFirstName = "";
+            state.newLastName = "";
+            personToEdit.name.editable = false
+        },
+        changeNewFirstName: (state, action: PayloadAction<string>) => {
+            state.newFirstName = action.payload
+        }, 
+        changeNewLastName: (state, action: PayloadAction<string>) => {
+            state.newLastName = action.payload
+        },
+        clearNewNames: (state) => {
+            state.newFirstName = "";
+            state.newLastName = "";
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, toggleNameEdit } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, toggleNameEdit, nameChange, changeNewFirstName, changeNewLastName, clearNewNames } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

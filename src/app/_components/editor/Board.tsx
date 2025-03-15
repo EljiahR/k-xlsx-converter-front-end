@@ -11,10 +11,10 @@ import {
   getDatesFromBreaks,
 } from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { BreakChangeType, BreakClickType, EmployeeToggleType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { BreakChangeType, BreakClickType, EmployeeChangeType, EmployeeToggleBlurType, EmployeeToggleType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
 import { GetEmployeeBreakAction, GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
-import { addToBreak, changeBreak, toggleBreakEdit, toggleNameEdit } from "src/app/_lib/redux/shiftsSlice";
+import { addToBreak, changeBreak, nameChange, toggleBreakEdit, toggleNameEdit } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
@@ -103,7 +103,7 @@ const Board = () => {
     setSelectedTime({ time, section, time15, timeMinus15 });
   };
 
-  const handleNameToggle: EmployeeToggleType = (thisPerson, positionName, isEditable) => {
+  const handleNameToggle: EmployeeToggleType = (thisPerson, positionName, isEditable) => { 
     const action = {
       day: currentDay,
       jobPosition: positionName,
@@ -115,6 +115,33 @@ const Board = () => {
     }
 
     dispatch(toggleNameEdit({...action, isEditable}));
+  }
+
+  const handleNameToggleBlur: EmployeeToggleBlurType = (e, thisPerson, positionName) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      const action = {
+        day: currentDay,
+        jobPosition: positionName,
+        employeeIdentifier: {
+          id: thisPerson.employeeId,
+          firstName: thisPerson.name.firstName,
+          lastName: thisPerson.name.lastName
+        }
+      }
+      dispatch(nameChange({...action}));
+    }
+  }
+
+  const handleNameChange: EmployeeChangeType = (e, thisPerson, positionName, nameToChange) => {
+    const action = {
+      day: currentDay,
+      jobPosition: positionName,
+      employeeIdentifier: {
+        id: thisPerson.employeeId,
+        firstName: thisPerson.name.firstName,
+        lastName: thisPerson.name.lastName
+      }
+    }
   }
 
   return (
@@ -151,6 +178,8 @@ const Board = () => {
                 handleBreakChange={handleBreakChange}
                 handleKeyUpDown={handleKeyUpDown}
                 handleNameToggle={handleNameToggle}
+                handleNameToggleBlur={handleNameToggleBlur}
+                handleNameChange={handleNameChange}
                 selectedTime={selectedTime}
                 section="desk"
               />
@@ -176,6 +205,8 @@ const Board = () => {
             handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             handleNameToggle={handleNameToggle}
+            handleNameToggleBlur={handleNameToggleBlur}
+            handleNameChange={handleNameChange}
             selectedTime={selectedTime}
             section="cashier"
           />
@@ -198,6 +229,8 @@ const Board = () => {
             handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             handleNameToggle={handleNameToggle}
+            handleNameToggleBlur={handleNameToggleBlur}
+            handleNameChange={handleNameChange}
             selectedTime={selectedTime}
             section="cashier"
           />
@@ -220,6 +253,8 @@ const Board = () => {
             handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             handleNameToggle={handleNameToggle}
+            handleNameToggleBlur={handleNameToggleBlur}
+            handleNameChange={handleNameChange}
             selectedTime={selectedTime}
             section="bagger"
           />
@@ -242,6 +277,8 @@ const Board = () => {
             handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             handleNameToggle={handleNameToggle}
+            handleNameToggleBlur={handleNameToggleBlur}
+            handleNameChange={handleNameChange}
             selectedTime={selectedTime}
             section="desk"
           />
@@ -264,6 +301,8 @@ const Board = () => {
             handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             handleNameToggle={handleNameToggle}
+            handleNameToggleBlur={handleNameToggleBlur}
+            handleNameChange={handleNameChange}
             selectedTime={selectedTime}
             section="desk"
           />

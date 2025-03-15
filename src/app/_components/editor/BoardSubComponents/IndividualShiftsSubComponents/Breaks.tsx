@@ -18,7 +18,6 @@ export const Breaks = ({
     useEffect(() => {
       if (person[breakType].editable) {
         inputReference.current.select();
-        
       }
     }, [person[breakType].editable]);
   
