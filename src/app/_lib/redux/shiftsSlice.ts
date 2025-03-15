@@ -98,9 +98,9 @@ export const shiftsSlice = createSlice({
             carts[targetIndex][targetPos].name = newValue;
             carts[index][pos].name = "";
             if (carts[index][pos].editable) {
-                carts[index][pos].editable = false;
-                carts[index].sort(sortEmptyToEnd);
+                carts[index][pos].editable = false; 
             }
+            carts[index].sort(sortEmptyToEnd);
             carts[targetIndex].sort(sortEmptyToEnd);
         }
     }
