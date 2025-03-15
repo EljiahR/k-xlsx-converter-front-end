@@ -20,7 +20,6 @@ interface EmployeeIdentifier {
 
 // Action Interfaces
 export interface GetEmployeeAction {
-    day: number;
     employeeIdentifier: EmployeeIdentifier;
     jobPosition: string;
 }
@@ -33,7 +32,7 @@ export interface GetEmployeeBreakToggleAction extends GetEmployeeBreakAction {
     isEditable: boolean;
 }
 
-export interface SetMinutesToBreakAction extends GetEmployeeBreakAction {
+export interface ChangeBreakAction extends GetEmployeeBreakAction {
     minutesToChangeTo: string;
 }
 
@@ -42,7 +41,6 @@ export interface MinutesToBreakAction extends GetEmployeeBreakAction {
 } 
 
 export interface CartSlotAction {
-    day: number;
     index: number;
     pos: number;
 }

@@ -4,16 +4,15 @@ import CallUps from "./BoardSubComponents/CallUps";
 import IndividualShifts from "./BoardSubComponents/IndividualShifts";
 import Liquor from "./BoardSubComponents/Liquor";
 import moment from "moment";
-import { useState } from "react";
 import {
   addMinutesToBreak,
   timeIsLaterThan,
   getDatesFromBreaks,
 } from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { BreakChangeType, BreakClickType, ISelectedTime, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { BreakChangeType, BreakClickType, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { GetEmployeeBreakAction, GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
 import { addToBreak, changeBreak, setSelectedTime, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
