@@ -8,7 +8,6 @@ export interface IndividualShiftsProps {
   handleBreakClick: BreakClickType;
   handleBreakChange: BreakChangeType;
   handleKeyUpDown: KeyUpDownType;
-  selectedTime: ISelectedTime;
   section: string;
 }
 

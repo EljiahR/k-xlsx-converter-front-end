@@ -1,5 +1,6 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useEffect, useRef } from "react";
+import { useAppSelector } from "src/app/_lib/redux/hooks";
 import { BreaksProps } from "src/app/_lib/types/boardTypes";
 
 export const Breaks = ({
@@ -10,9 +11,9 @@ export const Breaks = ({
     handleKeyUpDown,
     breakClass,
     breakType,
-    selectedTime,
     section,
   }: BreaksProps) => {
+    const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
     const inputReference = useRef(null);
     // Might need to fix performance issue with this
     useEffect(() => {

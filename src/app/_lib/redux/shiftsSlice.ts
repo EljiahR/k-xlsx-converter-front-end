@@ -5,6 +5,7 @@ import { expectedOutput } from "../test/expectedOutput";
 import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, SetMinutesToBreakAction, ShiftsState, GetEmployeeBreakToggleAction } from "./reduxTypes";
 import { addMinutesToBreak } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
+import { ISelectedTime } from "../types/boardTypes";
 
 const initialState: ShiftsState = {
     value: null,
@@ -112,10 +113,13 @@ export const shiftsSlice = createSlice({
         },
         setDay: (state, action :PayloadAction<number>) => {
             state.day = action.payload;
+        },
+        setSelectedTime: (state, action: PayloadAction<ISelectedTime>) => {
+            state.selectedTime = action.payload;
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

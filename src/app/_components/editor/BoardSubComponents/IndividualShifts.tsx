@@ -8,7 +8,6 @@ const IndividualShifts = ({
   handleBreakClick,
   handleBreakChange,
   handleKeyUpDown,
-  selectedTime,
   section,
 }: IndividualShiftsProps) => {
   const shifts = people.map((person, index) => {
@@ -36,7 +35,6 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakOne"
-          selectedTime={selectedTime}
           section={section}
          
         />
@@ -49,7 +47,6 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="lunch"
           breakType="lunch"
-          selectedTime={selectedTime}
           section={section}
          
         />
@@ -61,7 +58,6 @@ const IndividualShifts = ({
           handleKeyUpDown={handleKeyUpDown}
           breakClass="break"
           breakType="breakTwo"
-          selectedTime={selectedTime}
           section={section}
          
         />
