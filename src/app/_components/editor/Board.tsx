@@ -18,7 +18,7 @@ import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shi
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
-  const currentDay = useAppSelector((state) => state.day.value);
+  const currentDay = useAppSelector((state) => state.shifts.day);
   const dispatch = useAppDispatch();
 
   const [selectedTime, setSelectedTime] = useState<ISelectedTime>({

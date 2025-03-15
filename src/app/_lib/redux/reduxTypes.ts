@@ -1,8 +1,11 @@
+import { ISelectedTime } from "../types/boardTypes";
 import { IWeekdayBO } from "../types/shiftTypes";
 
 // Interface
 export interface ShiftsState {
-    value: IWeekdayBO[]
+    value: IWeekdayBO[],
+    selectedTime: ISelectedTime,
+    day: number
 }
 
 export interface DaysState {

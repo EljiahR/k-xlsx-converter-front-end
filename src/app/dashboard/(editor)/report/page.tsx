@@ -16,8 +16,7 @@ import { useState, useEffect } from "react";
 import {starterPDF, refreshPDF} from "src/app/_lib/helpers/defaultPDF";
 
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { setAsTest, setNewShifts, setShiftsNull } from "src/app/_lib/redux/shiftsSlice";
-import { setDay } from "src/app/_lib/redux/daySlice";
+import { setAsTest, setNewShifts, setShiftsNull, setDay } from "src/app/_lib/redux/shiftsSlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);

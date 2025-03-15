@@ -7,7 +7,14 @@ import { addMinutesToBreak } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 
 const initialState: ShiftsState = {
-    value: null
+    value: null,
+    selectedTime: {
+        time: "",
+        section: "",
+        time15: "",
+        timeMinus15: "",
+    },
+    day: 0
 };
 
 export const shiftsSlice = createSlice({
@@ -102,10 +109,13 @@ export const shiftsSlice = createSlice({
             }
             carts[index].sort(sortEmptyToEnd);
             carts[targetIndex].sort(sortEmptyToEnd);
+        },
+        setDay: (state, action :PayloadAction<number>) => {
+            state.day = action.payload;
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;
