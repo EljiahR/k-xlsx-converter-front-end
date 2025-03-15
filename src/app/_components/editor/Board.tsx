@@ -10,9 +10,9 @@ import {
   getDatesFromBreaks,
 } from "../../_lib/helpers/timeFunctions";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { BreakChangeType, BreakClickType, KeyUpDownType } from "src/app/_lib/types/boardTypes";
+import { BreakClickType, KeyUpDownType } from "src/app/_lib/types/boardTypes";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { GetEmployeeBreakToggleAction, MinutesToBreakAction, SetMinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
+import { GetEmployeeBreakToggleAction, MinutesToBreakAction } from "src/app/_lib/redux/reduxTypes";
 import { addToBreak, changeBreak, setSelectedTime, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 
 const Board = () => {
@@ -67,18 +67,6 @@ const Board = () => {
     }
   };
 
-  const handleBreakChange: BreakChangeType = (e, thisPerson, positionName, breakType) => {
-      const action: SetMinutesToBreakAction = {
-        day: currentDay,
-        employeeIdentifier: {id: thisPerson.employeeId, firstName: thisPerson.firstName, lastName: thisPerson.lastName},
-        jobPosition: positionName,
-        breakType,
-        minutesToChangeTo: e.target.value
-      }
-      dispatch(changeBreak(action));
-      
-  };
-
   // Toggles breaks and lunches into input elements
   const handleBreakClick: BreakClickType = (thisPerson, positionName, breakType, section, time, isEditable
   ) => {
@@ -127,7 +115,6 @@ const Board = () => {
                 }
                 positionName="Front End Supervisor"
                 handleBreakClick={handleBreakClick}
-                handleBreakChange={handleBreakChange}
                 handleKeyUpDown={handleKeyUpDown}
                 section="desk"
               />
@@ -150,7 +137,6 @@ const Board = () => {
             }
             positionName="Front End Cashier"
             handleBreakClick={handleBreakClick}
-            handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             section="cashier"
           />
@@ -170,7 +156,6 @@ const Board = () => {
             }
             positionName="Front End SCO Cashier"
             handleBreakClick={handleBreakClick}
-            handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             section="cashier"
           />
@@ -190,7 +175,6 @@ const Board = () => {
             }
             positionName="Front End Courtesy Clerk"
             handleBreakClick={handleBreakClick}
-            handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             section="bagger"
           />
@@ -210,7 +194,6 @@ const Board = () => {
             }
             positionName="Front End Service Desk"
             handleBreakClick={handleBreakClick}
-            handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             section="desk"
           />
@@ -230,7 +213,6 @@ const Board = () => {
             }
             positionName="Fuel Clerk"
             handleBreakClick={handleBreakClick}
-            handleBreakChange={handleBreakChange}
             handleKeyUpDown={handleKeyUpDown}
             section="desk"
           />

@@ -1,19 +1,20 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useEffect, useRef } from "react";
-import { useAppSelector } from "src/app/_lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { changeBreak } from "src/app/_lib/redux/shiftsSlice";
 import { BreaksProps } from "src/app/_lib/types/boardTypes";
 
 export const Breaks = ({
     person,
     positionName,
     handleBreakClick,
-    handleBreakChange,
     handleKeyUpDown,
     breakClass,
     breakType,
     section,
   }: BreaksProps) => {
     const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
+    const dispatch = useAppDispatch();
     const inputReference = useRef(null);
     // Might need to fix performance issue with this
     useEffect(() => {
@@ -46,7 +47,7 @@ export const Breaks = ({
               false
             )
           }
-          onChange={(e) => handleBreakChange(e, person, positionName, breakType)}
+          onChange={(e) => dispatch(changeBreak({employee: person, jobPosition: positionName, breakType, minutesToChangeTo: e.target.value}))}
           onKeyDown={(e) =>
             handleKeyUpDown(e, person, positionName, breakType, section)
           }

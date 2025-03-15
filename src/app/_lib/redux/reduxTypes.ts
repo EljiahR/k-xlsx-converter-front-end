@@ -1,5 +1,5 @@
 import { ISelectedTime } from "../types/boardTypes";
-import { IWeekdayBO } from "../types/shiftTypes";
+import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 
 // Interface
 export interface ShiftsState {
@@ -20,7 +20,7 @@ interface EmployeeIdentifier {
 
 // Action Interfaces
 export interface GetEmployeeAction {
-    employeeIdentifier: EmployeeIdentifier;
+    employee: IEmployeeBO;
     jobPosition: string;
 }
 
