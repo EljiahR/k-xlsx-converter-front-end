@@ -1,6 +1,6 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useAppDispatch } from "src/app/_lib/redux/hooks";
-import { toggleNameEdit } from "src/app/_lib/redux/shiftsSlice";
+import { toggleNameEdit, toggleNameEditBlur } from "src/app/_lib/redux/shiftsSlice";
 import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
 
 interface Props {
@@ -13,7 +13,7 @@ const IndividualName = ({person, jobPosition}: Props) => {
     return (
         person.name.isEditable ?
             <div className={styles["person-name"]}
-            onBlur={() => dispatch(toggleNameEdit({employee: person, jobPosition, isEditable: false}))}
+                onBlur={(e) => dispatch(toggleNameEditBlur({e, employee: person, jobPosition, isEditable: false}))}
             >
                 <input
                     value={person.name.firstName} 

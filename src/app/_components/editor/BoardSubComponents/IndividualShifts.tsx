@@ -7,6 +7,7 @@ const IndividualShifts = ({
   people,
   positionName,
   section,
+  inputReference
 }: IndividualShiftsProps) => {
   const shifts = people.map((person) => {
     return (
@@ -29,7 +30,7 @@ const IndividualShifts = ({
           breakClass="break"
           breakType="breakOne"
           section={section}
-         
+          inputReference={inputReference}
         />
 
         <Breaks
@@ -38,7 +39,7 @@ const IndividualShifts = ({
           breakClass="lunch"
           breakType="lunch"
           section={section}
-         
+          inputReference={inputReference}
         />
         <Breaks
           person={person}
@@ -46,7 +47,7 @@ const IndividualShifts = ({
           breakClass="break"
           breakType="breakTwo"
           section={section}
-         
+          inputReference={inputReference}
         />
         {!positionName.includes("Fuel") && (
           <div className={styles["fresh-start"]}></div>

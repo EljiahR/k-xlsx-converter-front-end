@@ -5,10 +5,12 @@ import IndividualShifts from "./BoardSubComponents/IndividualShifts";
 import Liquor from "./BoardSubComponents/Liquor";
 import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
 import { useAppSelector } from "src/app/_lib/redux/hooks";
+import { useRef } from "react";
 
 const Board = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
   const currentDay = useAppSelector((state) => state.shifts.day);
+  const inputReference = useRef(null);
 
   return (
     <>
@@ -41,6 +43,7 @@ const Board = () => {
                 }
                 positionName="Front End Supervisor"
                 section="desk"
+                inputReference={inputReference}
               />
               <BlankRow />
               <BlankRow />
@@ -61,6 +64,7 @@ const Board = () => {
             }
             positionName="Front End Cashier"
             section="cashier"
+            inputReference={inputReference}
           />
           <BlankRow />
           <BlankRow />
@@ -78,6 +82,7 @@ const Board = () => {
             }
             positionName="Front End SCO Cashier"
             section="cashier"
+            inputReference={inputReference}
           />
           <BlankRow />
           <BlankRow />
@@ -95,6 +100,7 @@ const Board = () => {
             }
             positionName="Front End Courtesy Clerk"
             section="bagger"
+            inputReference={inputReference}
           />
           <BlankRow />
           <BlankRow />
@@ -112,6 +118,7 @@ const Board = () => {
             }
             positionName="Front End Service Desk"
             section="desk"
+            inputReference={inputReference}
           />
           <BlankRow />
           <BlankRow />
@@ -129,6 +136,7 @@ const Board = () => {
             }
             positionName="Fuel Clerk"
             section="desk"
+            inputReference={inputReference}
           />
         </div>
       </div>

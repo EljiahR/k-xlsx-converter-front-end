@@ -7,7 +7,7 @@ import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpe
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
-import { KeyboardEvent } from "react";
+import { FocusEvent, KeyboardEvent } from "react";
 
 const initialState: ShiftsState = {
     value: null,
@@ -97,6 +97,21 @@ export const shiftsSlice = createSlice({
             personToEdit.name.isEditable = isEditable;
             
         },
+        toggleNameEditBlur: (state, action: PayloadAction<{e: FocusEvent, employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
+            const {e, employee, jobPosition, isEditable } = action.payload;
+            if (e.currentTarget.contains(e.relatedTarget)) return;
+
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
+            if (!job) return;
+
+            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
+                job.shifts.find(s => s.employeeId == employee.employeeId) :
+                job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName);
+            if (!personToEdit) return;
+
+            personToEdit.name.isEditable = isEditable;
+            
+        },
         toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, section: string, isEditable: boolean}>) => {
             const { employee, jobPosition, breakType, section, isEditable } = action.payload;
             
@@ -119,6 +134,7 @@ export const shiftsSlice = createSlice({
             const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
 
             personToEdit[breakType].editable = isEditable;
+            console.log(personToEdit[breakType].editable)
             state.selectedTime = { time, section, time15, timeMinus15 };
         },
         toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string }>) => {
@@ -165,6 +181,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleNameEdit, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

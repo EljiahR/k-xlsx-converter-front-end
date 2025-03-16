@@ -63,7 +63,7 @@ export const Breaks = ({
                 jobPosition: positionName,
                 breakType,
                 section,
-                isEditable: false
+                isEditable: true
               }
             ))
           }
