@@ -1,6 +1,7 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
 import { Breaks } from "./Breaks";
+import IndividualName from "./IndividualShiftsSubComponents/IndividualName";
 
 const IndividualShifts = ({
   people,
@@ -19,9 +20,7 @@ const IndividualShifts = ({
         }
       >
         <div className={styles["blank-cell"]}></div>
-        <p className={styles["person-name"]}>
-          {person["firstName"] + " " + person["lastName"]}
-        </p>
+        <IndividualName person={person} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks
