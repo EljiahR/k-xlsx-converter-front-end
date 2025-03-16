@@ -13,7 +13,6 @@ const CartSlot = ({
   name,
   editable,
   handleOnDrag,
-  handleOnDragOver,
   handleOnDrop,
   inputReference,
   carts,
@@ -56,19 +55,19 @@ const CartSlot = ({
     }
   }, [carts[index][pos].editable]);
   if (editable) {
-    {
+    
       /* 
       Want to make transform into input on tab and
       draggable divs accessable coexist, current only 1 can
     */
-    }
+    
     return (
       <input
         draggable="true"
         id={`${index}:${pos}`}
         value={name}
         onDragStart={(e) => handleOnDrag(e, name)}
-        onDragOver={(e) => handleOnDragOver(e)}
+        onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => handleOnDrop(e)}
         onBlur={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
         onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
@@ -82,7 +81,7 @@ const CartSlot = ({
       draggable="true"
       id={`${index}:${pos}`}
       onDragStart={(e) => handleOnDrag(e, name)}
-      onDragOver={(e) => handleOnDragOver(e)}
+      onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => handleOnDrop(e)}
       onClick={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
       tabIndex={0}

@@ -8,12 +8,12 @@ import {
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
 import React, { useRef } from "react";
-import { BaggerCartInfo, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
+import { BaggerCartInfo, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { dragCartSlot, editCartSlot, setSelectedBagger, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
-import { CartSlotValueAction, CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
+import { dragCartSlot, setSelectedBagger } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
@@ -67,11 +67,6 @@ const Carts = () => {
     e.dataTransfer.setData("text", e.currentTarget.id);
     
     dispatch(setSelectedBagger(name));
-  };
-
-  // Prevents some issue caused by default dragging behaviors
-  const handleOnDragOver: OnDragOverType = (e) => {
-    e.preventDefault();
   };
 
   const handleOnDrop: OnDropType = (e) => {
@@ -134,7 +129,6 @@ const Carts = () => {
                       name={shifts[currentDay].carts[index][i].name}
                       editable={shifts[currentDay].carts[index][i].editable}
                       handleOnDrag={handleOnDrag}
-                      handleOnDragOver={handleOnDragOver}
                       handleOnDrop={handleOnDrop}
                       inputReference={inputReference}
                       carts={shifts[currentDay].carts}
