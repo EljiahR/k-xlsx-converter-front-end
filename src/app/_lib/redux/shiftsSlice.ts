@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
-import { CartSlotValueAction, CartSlotAction, CartSlotDragAction, GetEmployeeBreakAction, MinutesToBreakAction, ShiftsState, GetEmployeeBreakToggleAction, ChangeBreakAction } from "./reduxTypes";
+import { ShiftsState } from "./reduxTypes";
 import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
@@ -124,7 +124,7 @@ export const shiftsSlice = createSlice({
             carts[index][pos].name = newValue;
             if (newValue == "") carts[index].sort(sortEmptyToEnd);
         },
-        dragCartSlot: (state, action: PayloadAction<CartSlotDragAction>) => {
+        dragCartSlot: (state, action: PayloadAction<{index: number, pos: number, newValue: string, targetIndex: number, targetPos: number}>) => {
             const { pos, index, newValue, targetPos, targetIndex } = action.payload;
             let carts = state.value[state.day]?.carts;
             
