@@ -83,6 +83,20 @@ export const shiftsSlice = createSlice({
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
+        toggleNameEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
+            const {employee, jobPosition, isEditable } = action.payload;
+
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
+            if (!job) return;
+
+            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
+                job.shifts.find(s => s.employeeId == employee.employeeId) :
+                job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName);
+            if (!personToEdit) return;
+
+            personToEdit.name.isEditable = isEditable;
+            
+        },
         toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, section: string, isEditable: boolean}>) => {
             const { employee, jobPosition, breakType, section, isEditable } = action.payload;
             
@@ -151,6 +165,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleNameEdit, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

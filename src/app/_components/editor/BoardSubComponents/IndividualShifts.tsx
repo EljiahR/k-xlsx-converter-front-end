@@ -20,7 +20,7 @@ const IndividualShifts = ({
         }
       >
         <div className={styles["blank-cell"]}></div>
-        <IndividualName person={person} />
+        <IndividualName person={person} jobPosition={positionName} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks
