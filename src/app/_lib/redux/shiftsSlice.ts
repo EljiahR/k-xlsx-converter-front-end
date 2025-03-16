@@ -45,7 +45,7 @@ export const shiftsSlice = createSlice({
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
                 job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.firstName == employee.firstName && s.lastName == employee.lastName)
+                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
             if (!personToEdit){
                 console.log("No person")
                 return;
@@ -75,7 +75,7 @@ export const shiftsSlice = createSlice({
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
                 job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.firstName == employee.firstName && s.lastName == employee.lastName)
+                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
             if (!personToEdit){
                 console.log("No person")
                 return;
@@ -94,7 +94,7 @@ export const shiftsSlice = createSlice({
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
                 job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.firstName == employee.firstName && s.lastName == employee.lastName)
+                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
             if (!personToEdit){
                 console.log("No person")
                 return

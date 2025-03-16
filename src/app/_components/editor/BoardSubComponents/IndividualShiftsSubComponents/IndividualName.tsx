@@ -8,7 +8,7 @@ interface Props {
 const IndividualName = ({person}: Props) => {
     return (
         <p className={styles["person-name"]}>
-          {person["firstName"] + " " + person["lastName"]}
+          {person.name.firstName + " " + person.name.lastName}
         </p>
     )
 }

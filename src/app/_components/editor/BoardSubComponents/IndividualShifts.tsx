@@ -14,8 +14,8 @@ const IndividualShifts = ({
         className={styles["person"]}
         key={
           positionName +
-          person["firstName"] +
-          person["lastName"] +
+          person.name.firstName +
+          person.employeeId +
           person["shiftStart"]
         }
       >
