@@ -117,7 +117,7 @@ export const shiftsSlice = createSlice({
 
             state.selectedBagger = name;
         },
-        editCartSlot: (state, action: PayloadAction<CartSlotValueAction>) => {
+        editCartSlot: (state, action: PayloadAction<{pos: number, index: number, newValue: string}>) => {
             const { pos, index, newValue } = action.payload;
             let carts = state.value[state.day]?.carts;
 

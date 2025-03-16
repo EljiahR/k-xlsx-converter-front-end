@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { addMinutesToBreak } from "src/app/_lib/helpers/timeFunctions";
 import { BaggerInfo, CartSlotProps } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
-import { toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
 import { useAppDispatch } from "src/app/_lib/redux/hooks";
 
 const CartSlot = ({
@@ -15,7 +15,6 @@ const CartSlot = ({
   handleOnDrag,
   handleOnDragOver,
   handleOnDrop,
-  handleOnChange,
   inputReference,
   carts,
   selectedBagger,
@@ -72,7 +71,7 @@ const CartSlot = ({
         onDragOver={(e) => handleOnDragOver(e)}
         onDrop={(e) => handleOnDrop(e)}
         onBlur={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
-        onChange={(e) => handleOnChange(e, index, pos)}
+        onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
         ref={inputReference}
       />
     );

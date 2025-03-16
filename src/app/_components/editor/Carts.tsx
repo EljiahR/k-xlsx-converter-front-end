@@ -7,8 +7,8 @@ import {
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
-import React, { useRef, useState } from "react";
-import { BaggerCartInfo, OnChangeType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
+import React, { useRef } from "react";
+import { BaggerCartInfo, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
@@ -62,15 +62,6 @@ const Carts = () => {
   }
 
   const inputReference = useRef(null);
-
-  const handleOnChange: OnChangeType = (e, index, pos) => {
-    const action: CartSlotValueAction = {
-      index,
-      pos,
-      newValue: e.target.value
-    }
-    dispatch(editCartSlot(action));
-  };
 
   const handleOnDrag: OnDragType = (e, name) => {
     e.dataTransfer.setData("text", e.currentTarget.id);
@@ -145,7 +136,6 @@ const Carts = () => {
                       handleOnDrag={handleOnDrag}
                       handleOnDragOver={handleOnDragOver}
                       handleOnDrop={handleOnDrop}
-                      handleOnChange={handleOnChange}
                       inputReference={inputReference}
                       carts={shifts[currentDay].carts}
                       selectedBagger={selectedBagger}
