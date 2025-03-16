@@ -1,18 +1,18 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useEffect, useRef } from "react";
+import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
+import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 import { BreaksProps } from "src/app/_lib/types/boardTypes";
 
 export const Breaks = ({
     person,
     positionName,
-    handleBreakClick,
-    handleBreakChange,
-    handleKeyUpDown,
     breakClass,
     breakType,
-    selectedTime,
     section,
   }: BreaksProps) => {
+    const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
+    const dispatch = useAppDispatch();
     const inputReference = useRef(null);
     // Might need to fix performance issue with this
     useEffect(() => {
@@ -36,18 +36,19 @@ export const Breaks = ({
           }`}
           value={person[breakType].time}
           onBlur={() =>
-            handleBreakClick(
-              person,
-              positionName,
-              breakType,
-              section,
-              person[breakType].time,
-              false
-            )
+            dispatch(toggleBreakEdit(
+              {
+                employee: person,
+                jobPosition: positionName,
+                breakType,
+                section,
+                isEditable: false
+              }
+            ))
           }
-          onChange={(e) => handleBreakChange(e, person, positionName, breakType)}
+          onChange={(e) => dispatch(changeBreak({employee: person, jobPosition: positionName, breakType, minutesToChangeTo: e.target.value}))}
           onKeyDown={(e) =>
-            handleKeyUpDown(e, person, positionName, breakType, section)
+            dispatch(addToBreak({e, employee: person, jobPosition: positionName, breakType, section}))
           }
           ref={inputReference}
         />
@@ -56,14 +57,15 @@ export const Breaks = ({
       return (
         <p
           onFocus={() =>
-            handleBreakClick(
-              person,
-              positionName,
-              breakType,
-              section,
-              person[breakType].time,
-              true
-            )
+            dispatch(toggleBreakEdit(
+              {
+                employee: person,
+                jobPosition: positionName,
+                breakType,
+                section,
+                isEditable: false
+              }
+            ))
           }
           className={`${styles[breakClass]} ${
             selectedTime.time !== "" &&

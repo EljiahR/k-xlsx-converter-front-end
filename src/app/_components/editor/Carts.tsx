@@ -7,22 +7,20 @@ import {
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
-import React, { useRef, useState } from "react";
-import { BaggerCartInfo, OnChangeType, OnClickType, OnDragOverType, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
-import { cloneDeep } from "lodash"
+import React, { useRef } from "react";
+import { BaggerCartInfo, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
-import sortEmptyToEnd from "src/app/_lib/helpers/sortEmptyToEnd";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { dragCartSlot, editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
-import { CartSlotValueAction, CartSlotAction, CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
+import { dragCartSlot, setSelectedBagger } from "src/app/_lib/redux/shiftsSlice";
+import { CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 
 const Carts = () => {
-  const [selectedBagger, setSelectedBagger] = useState("");
   const shifts = useAppSelector((state) => state.shifts.value);
-  const currentDay = useAppSelector((state) => state.day.value);
+  const currentDay = useAppSelector((state) => state.shifts.day);
+  const selectedBagger = useAppSelector((state) => state.shifts.selectedBagger)
   const dispatch = useAppDispatch();
 
   let baggerCartInfo: BaggerCartInfo = {
@@ -65,35 +63,10 @@ const Carts = () => {
 
   const inputReference = useRef(null);
 
-  const handleOnClick: OnClickType = (index, pos, name) => {
-    const action: CartSlotAction = {
-      day: currentDay,
-      index,
-      pos
-    }
-    dispatch(toggleCartSlotEdit(action));
-    setSelectedBagger(name);
-  };
-
-  const handleOnChange: OnChangeType = (e, index, pos) => {
-    const action: CartSlotValueAction = {
-      day: currentDay,
-      index,
-      pos,
-      newValue: e.target.value
-    }
-    dispatch(editCartSlot(action));
-  };
-
   const handleOnDrag: OnDragType = (e, name) => {
     e.dataTransfer.setData("text", e.currentTarget.id);
     
-    setSelectedBagger(name);
-  };
-
-  // Prevents some issue caused by default dragging behaviors
-  const handleOnDragOver: OnDragOverType = (e) => {
-    e.preventDefault();
+    dispatch(setSelectedBagger(name));
   };
 
   const handleOnDrop: OnDropType = (e) => {
@@ -102,7 +75,6 @@ const Carts = () => {
     let targetIndex = e.currentTarget.id.split(":");
    
     const action: CartSlotDragAction = {
-      day: currentDay,
       targetIndex: parseInt(targetIndex[0]),
       targetPos: parseInt(targetIndex[1]),
       index: parseInt(draggedIndex[0]),
@@ -157,10 +129,7 @@ const Carts = () => {
                       name={shifts[currentDay].carts[index][i].name}
                       editable={shifts[currentDay].carts[index][i].editable}
                       handleOnDrag={handleOnDrag}
-                      handleOnDragOver={handleOnDragOver}
                       handleOnDrop={handleOnDrop}
-                      handleOnClick={handleOnClick}
-                      handleOnChange={handleOnChange}
                       inputReference={inputReference}
                       carts={shifts[currentDay].carts}
                       selectedBagger={selectedBagger}

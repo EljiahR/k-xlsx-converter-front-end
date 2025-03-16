@@ -1,8 +1,12 @@
-import { IWeekdayBO } from "../types/shiftTypes";
+import { ISelectedTime } from "../types/boardTypes";
+import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 
 // Interface
 export interface ShiftsState {
-    value: IWeekdayBO[]
+    value: IWeekdayBO[],
+    selectedTime: ISelectedTime,
+    day: number,
+    selectedBagger: string
 }
 
 export interface DaysState {
@@ -17,8 +21,7 @@ interface EmployeeIdentifier {
 
 // Action Interfaces
 export interface GetEmployeeAction {
-    day: number;
-    employeeIdentifier: EmployeeIdentifier;
+    employee: IEmployeeBO;
     jobPosition: string;
 }
 
@@ -30,7 +33,7 @@ export interface GetEmployeeBreakToggleAction extends GetEmployeeBreakAction {
     isEditable: boolean;
 }
 
-export interface SetMinutesToBreakAction extends GetEmployeeBreakAction {
+export interface ChangeBreakAction extends GetEmployeeBreakAction {
     minutesToChangeTo: string;
 }
 
@@ -39,7 +42,6 @@ export interface MinutesToBreakAction extends GetEmployeeBreakAction {
 } 
 
 export interface CartSlotAction {
-    day: number;
     index: number;
     pos: number;
 }
