@@ -17,7 +17,8 @@ const initialState: ShiftsState = {
         time15: "",
         timeMinus15: "",
     },
-    day: 0
+    day: 0,
+    selectedBagger: ""
 };
 
 export const shiftsSlice = createSlice({
@@ -106,13 +107,15 @@ export const shiftsSlice = createSlice({
             personToEdit[breakType].editable = isEditable;
             state.selectedTime = { time, section, time15, timeMinus15 };
         },
-        toggleCartSlotEdit: (state, action: PayloadAction<CartSlotAction>) => {
-            const { pos, index } = action.payload;
+        toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string }>) => {
+            const { pos, index, name } = action.payload;
             let carts = state.value[state.day]?.carts;
             
             const wasEditable = carts[index][pos].editable;
             carts[index][pos].editable = !wasEditable;
             if (wasEditable) carts[index].sort(sortEmptyToEnd);
+
+            state.selectedBagger = name;
         },
         editCartSlot: (state, action: PayloadAction<CartSlotValueAction>) => {
             const { pos, index, newValue } = action.payload;
@@ -138,10 +141,16 @@ export const shiftsSlice = createSlice({
         },
         setSelectedTime: (state, action: PayloadAction<ISelectedTime>) => {
             state.selectedTime = action.payload;
+        },
+        setSelectedBagger: (state, action: PayloadAction<string>) => {
+            state.selectedBagger = action.payload;
+        },
+        clearSelectedBagger: (state) => {
+            state.selectedBagger = "";
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { addMinutesToBreak } from "src/app/_lib/helpers/timeFunctions";
 import { BaggerInfo, CartSlotProps } from "src/app/_lib/types/cartTypes";
 import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
+import { toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
+import { useAppDispatch } from "src/app/_lib/redux/hooks";
 
 const CartSlot = ({
   index,
@@ -13,7 +15,6 @@ const CartSlot = ({
   handleOnDrag,
   handleOnDragOver,
   handleOnDrop,
-  handleOnClick,
   handleOnChange,
   inputReference,
   carts,
@@ -21,6 +22,7 @@ const CartSlot = ({
   time,
   baggerList,
 }: CartSlotProps) => {
+  const dispatch = useAppDispatch();
   const baggerInfo: BaggerInfo = {
     name: name,
     break1: "",
@@ -69,7 +71,7 @@ const CartSlot = ({
         onDragStart={(e) => handleOnDrag(e, name)}
         onDragOver={(e) => handleOnDragOver(e)}
         onDrop={(e) => handleOnDrop(e)}
-        onBlur={() => handleOnClick(index, pos, name)}
+        onBlur={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
         onChange={(e) => handleOnChange(e, index, pos)}
         ref={inputReference}
       />
@@ -83,7 +85,7 @@ const CartSlot = ({
       onDragStart={(e) => handleOnDrag(e, name)}
       onDragOver={(e) => handleOnDragOver(e)}
       onDrop={(e) => handleOnDrop(e)}
-      onClick={() => handleOnClick(index, pos, name)}
+      onClick={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
       tabIndex={0}
     >
       {name}

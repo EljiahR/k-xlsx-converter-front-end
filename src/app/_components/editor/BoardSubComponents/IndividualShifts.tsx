@@ -7,7 +7,7 @@ const IndividualShifts = ({
   positionName,
   section,
 }: IndividualShiftsProps) => {
-  const shifts = people.map((person, index) => {
+  const shifts = people.map((person) => {
     return (
       <div
         className={styles["person"]}

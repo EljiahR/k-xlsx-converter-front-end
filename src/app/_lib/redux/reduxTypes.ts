@@ -5,7 +5,8 @@ import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 export interface ShiftsState {
     value: IWeekdayBO[],
     selectedTime: ISelectedTime,
-    day: number
+    day: number,
+    selectedBagger: string
 }
 
 export interface DaysState {
