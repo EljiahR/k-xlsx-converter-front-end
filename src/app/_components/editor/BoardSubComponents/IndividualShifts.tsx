@@ -21,7 +21,7 @@ const IndividualShifts = ({
         }
       >
         <div className={styles["blank-cell"]}></div>
-        <IndividualName person={person} jobPosition={positionName} />
+        <IndividualName person={person} jobPosition={positionName} inputReference={inputReference} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
         <Breaks

@@ -52,7 +52,6 @@ export const shiftsSlice = createSlice({
             }
             
             const newTime = addMinutesToBreak(personToEdit[breakType].time, keyDown == "ArrowUp" ? 15 : -15);
-            console.log(newTime);
 
             if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) && timeIsLaterThan(personToEdit.shiftEnd, newTime)) {
                 personToEdit[breakType].time = newTime;
@@ -98,9 +97,9 @@ export const shiftsSlice = createSlice({
             personToEdit.name.isEditable = isEditable;
             
         },
-        toggleNameEditBlur: (state, action: PayloadAction<{e: FocusEvent, employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
-            const {e, employee, jobPosition, isEditable } = action.payload;
-            if (e.currentTarget.contains(e.relatedTarget)) return;
+        toggleNameEditBlur: (state, action: PayloadAction<{isChild: boolean, employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
+            const {isChild, employee, jobPosition, isEditable } = action.payload;
+            if (isChild) return;
 
             const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
             if (!job) return;

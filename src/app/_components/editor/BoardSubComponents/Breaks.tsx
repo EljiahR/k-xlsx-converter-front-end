@@ -1,5 +1,5 @@
 import styles from "@/styles/IndividualShifts.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
 import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
 import { BreaksProps } from "src/app/_lib/types/boardTypes";
@@ -10,10 +10,11 @@ export const Breaks = ({
     breakClass,
     breakType,
     section,
+    inputReference
   }: BreaksProps) => {
     const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
     const dispatch = useAppDispatch();
-    const inputReference = useRef(null);
+    // const inputReference = useRef(null);
     // Might need to fix performance issue with this
     useEffect(() => {
       if (person[breakType].editable) {
