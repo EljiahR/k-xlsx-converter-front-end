@@ -5,6 +5,7 @@ const store = configureStore({
     reducer: {
         shifts: shiftsReducer,
     },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 });
 
 export type RootState = ReturnType<typeof store.getState>;

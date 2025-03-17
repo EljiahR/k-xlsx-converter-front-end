@@ -11,9 +11,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Rohan",
-                        "lastName": "Beltran",
-                        "baggerName": "Rohan",
+                        "name": {
+							"firstName": "Rohan",
+							"lastName": "Beltran",
+							"baggerName": "Rohan",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -33,9 +36,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Archie",
-                        "lastName": "Austin",
-                        "baggerName": "Archie",
+                        "name": {
+							"firstName": "Archie",
+							"lastName": "Austin",
+							"baggerName": "Archie",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -55,9 +61,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Eliza",
-                        "lastName": "England",
-                        "baggerName": "Eliza",
+                        "name": {
+							"firstName": "Eliza",
+							"lastName": "England",
+							"baggerName": "Eliza",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -77,9 +86,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Valeria",
-                        "lastName": "Morales",
-                        "baggerName": "Valeria",
+                        "name": {
+							"firstName": "Valeria",
+							"lastName": "Morales",
+							"baggerName": "Valeria",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -104,9 +116,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Hugh",
-                        "lastName": "Stevens",
-                        "baggerName": "Hugh",
+                        "name": {
+							"firstName": "Hugh",
+							"lastName": "Stevens",
+							"baggerName": "Hugh",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -126,9 +141,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Janet",
-                        "lastName": "Peterson",
-                        "baggerName": "Janet",
+                        "name": {
+							"firstName": "Janet",
+							"lastName": "Peterson",
+							"baggerName": "Janet",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -148,9 +166,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jude",
-                        "lastName": "Lazano",
-                        "baggerName": "Jude",
+                        "name": {
+							"firstName": "Jude",
+							"lastName": "Lazano",
+							"baggerName": "Jude",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -170,9 +191,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -192,9 +216,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garreth",
-                        "lastName": "Kemp",
-                        "baggerName": "Garreth",
+                        "name": {
+							"firstName": "Garreth",
+							"lastName": "Kemp",
+							"baggerName": "Garreth",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -219,9 +246,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "Lucia",
-                        "lastName": "McCana",
-                        "baggerName": "Lucia",
+                        "name": {
+							"firstName": "Lucia",
+							"lastName": "McCana",
+							"baggerName": "Lucia",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -241,9 +271,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Adal",
-                        "lastName": "Mack",
-                        "baggerName": "Adal",
+                        "name": {
+							"firstName": "Adal",
+							"lastName": "Mack",
+							"baggerName": "Adal",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -263,9 +296,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Perry",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Perry",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -285,9 +321,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maariah",
-                        "lastName": "Everett",
-                        "baggerName": "Maariah",
+                        "name": {
+							"firstName": "Maariah",
+							"lastName": "Everett",
+							"baggerName": "Maariah",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -307,9 +346,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Uzair",
-                        "lastName": "Olsen",
-                        "baggerName": "Uzair",
+                        "name": {
+							"firstName": "Uzair",
+							"lastName": "Olsen",
+							"baggerName": "Uzair",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -329,9 +371,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Walter",
-                        "lastName": "Boyer",
-                        "baggerName": "Walter",
+                        "name": {
+							"firstName": "Walter",
+							"lastName": "Boyer",
+							"baggerName": "Walter",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -351,9 +396,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Maldonado",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Maldonado",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "11:30a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -373,9 +421,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jack",
-                        "lastName": "Nicholson",
-                        "baggerName": "Jack",
+                        "name": {
+							"firstName": "Jack",
+							"lastName": "Nicholson",
+							"baggerName": "Jack",
+							"isEditable": false
+						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "6:30p",
                         "breakOne": {
@@ -395,9 +446,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Victoria",
-                        "lastName": "Beckham",
-                        "baggerName": "Victoria",
+                        "name": {
+							"firstName": "Victoria",
+							"lastName": "Beckham",
+							"baggerName": "Victoria",
+							"isEditable": false
+						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -417,9 +471,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Wolfgang",
-                        "lastName": "Puck",
-                        "baggerName": "Wolfgang",
+                        "name": {
+							"firstName": "Wolfgang",
+							"lastName": "Puck",
+							"baggerName": "Wolfgang",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:30p",
                         "breakOne": {
@@ -439,9 +496,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kenny",
-                        "lastName": "Palmer",
-                        "baggerName": "Kenny",
+                        "name": {
+							"firstName": "Kenny",
+							"lastName": "Palmer",
+							"baggerName": "Kenny",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -466,9 +526,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Raheem",
-                        "lastName": "Rosales",
-                        "baggerName": "Raheem",
+                        "name": {
+							"firstName": "Raheem",
+							"lastName": "Rosales",
+							"baggerName": "Raheem",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -488,9 +551,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Josh",
-                        "lastName": "Homme",
-                        "baggerName": "Josh",
+                        "name": {
+							"firstName": "Josh",
+							"lastName": "Homme",
+							"baggerName": "Josh",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -515,9 +581,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Aneesa",
-                        "lastName": "Roach",
-                        "baggerName": "Aneesa",
+                        "name": {
+							"firstName": "Aneesa",
+							"lastName": "Roach",
+							"baggerName": "Aneesa",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -537,9 +606,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Juliette",
-                        "lastName": "Bean",
-                        "baggerName": "Juliette",
+                        "name": {
+							"firstName": "Juliette",
+							"lastName": "Bean",
+							"baggerName": "Juliette",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -563,9 +635,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Sadie",
-                        "lastName": "Gregory",
-                        "baggerName": "Sadie",
+                        "name": {
+							"firstName": "Sadie",
+							"lastName": "Gregory",
+							"baggerName": "Sadie",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -585,9 +660,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Abletonen",
-                        "lastName": "Williams",
-                        "baggerName": "Abletonen",
+                        "name": {
+							"firstName": "Abletonen",
+							"lastName": "Williams",
+							"baggerName": "Abletonen",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:30p",
                         "breakOne": {
@@ -611,9 +689,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Karol",
-                        "lastName": "Blakenship",
-                        "baggerName": "Karol",
+                        "name": {
+							"firstName": "Karol",
+							"lastName": "Blakenship",
+							"baggerName": "Karol",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -633,9 +714,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mayer",
-                        "lastName": "Howel",
-                        "baggerName": "Mayer",
+                        "name": {
+							"firstName": "Mayer",
+							"lastName": "Howel",
+							"baggerName": "Mayer",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -655,9 +739,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leonardo",
-                        "lastName": "Hoffman",
-                        "baggerName": "Leonardo",
+                        "name": {
+							"firstName": "Leonardo",
+							"lastName": "Hoffman",
+							"baggerName": "Leonardo",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -681,9 +768,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maximus",
-                        "lastName": "Johns",
-                        "baggerName": "Maximus",
+                        "name": {
+							"firstName": "Maximus",
+							"lastName": "Johns",
+							"baggerName": "Maximus",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -703,9 +793,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Metroid",
-                        "lastName": "Crawl",
-                        "baggerName": "Metroid",
+                        "name": {
+							"firstName": "Metroid",
+							"lastName": "Crawl",
+							"baggerName": "Metroid",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -725,9 +818,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Garza",
-                        "baggerName": "Diane",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Garza",
+							"baggerName": "Diane",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -747,9 +843,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Elissameth",
-                        "lastName": "Zimmerman",
-                        "baggerName": "Elissameth",
+                        "name": {
+							"firstName": "Elissameth",
+							"lastName": "Zimmerman",
+							"baggerName": "Elissameth",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -778,9 +877,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Preston",
-                        "lastName": "Clark",
-                        "baggerName": "Preston",
+                        "name": {
+							"firstName": "Preston",
+							"lastName": "Clark",
+							"baggerName": "Preston",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -805,9 +907,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Tyler",
-                        "lastName": "Okonma",
-                        "baggerName": "Tyler",
+                        "name": {
+							"firstName": "Tyler",
+							"lastName": "Okonma",
+							"baggerName": "Tyler",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -827,9 +932,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garfield",
-                        "lastName": "Acosta",
-                        "baggerName": "Garfield",
+                        "name": {
+							"firstName": "Garfield",
+							"lastName": "Acosta",
+							"baggerName": "Garfield",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -849,9 +957,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ophelia",
-                        "lastName": "Oneill",
-                        "baggerName": "Ophelia",
+                        "name": {
+							"firstName": "Ophelia",
+							"lastName": "Oneill",
+							"baggerName": "Ophelia",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -871,9 +982,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -898,9 +1012,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Sauna",
-                        "lastName": "Campbell",
-                        "baggerName": "Sauna",
+                        "name": {
+							"firstName": "Sauna",
+							"lastName": "Campbell",
+							"baggerName": "Sauna",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -925,9 +1042,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Daniel",
-                        "lastName": "Kessler",
-                        "baggerName": "Daniel",
+                        "name": {
+							"firstName": "Daniel",
+							"lastName": "Kessler",
+							"baggerName": "Daniel",
+							"isEditable": false
+						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -947,9 +1067,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Samuel",
-                        "lastName": "Fogerino",
-                        "baggerName": "Samuel",
+                        "name": {
+							"firstName": "Samuel",
+							"lastName": "Fogerino",
+							"baggerName": "Samuel",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -1633,9 +1756,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Rohan",
-                        "lastName": "Beltran",
-                        "baggerName": "Rohan",
+                        "name": {
+							"firstName": "Rohan",
+							"lastName": "Beltran",
+							"baggerName": "Rohan",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -1655,9 +1781,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Valeria",
-                        "lastName": "Morales",
-                        "baggerName": "Valeria",
+                        "name": {
+							"firstName": "Valeria",
+							"lastName": "Morales",
+							"baggerName": "Valeria",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -1682,9 +1811,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Dean",
-                        "lastName": "Fertita",
-                        "baggerName": "Dean",
+                        "name": {
+							"firstName": "Dean",
+							"lastName": "Fertita",
+							"baggerName": "Dean",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -1704,9 +1836,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Sebastian",
-                        "lastName": "Grainger",
-                        "baggerName": "Sebastian",
+                        "name": {
+							"firstName": "Sebastian",
+							"lastName": "Grainger",
+							"baggerName": "Sebastian",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -1726,9 +1861,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -1753,9 +1891,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "Hugh",
-                        "lastName": "Stevens",
-                        "baggerName": "Hugh",
+                        "name": {
+							"firstName": "Hugh",
+							"lastName": "Stevens",
+							"baggerName": "Hugh",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -1775,9 +1916,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "John",
-                        "lastName": "Theodore",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Theodore",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -1797,9 +1941,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alfredo",
-                        "lastName": "Hernandez",
-                        "baggerName": "Alfredo",
+                        "name": {
+							"firstName": "Alfredo",
+							"lastName": "Hernandez",
+							"baggerName": "Alfredo",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -1819,9 +1966,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Raheem",
-                        "lastName": "Rosales",
-                        "baggerName": "Raheem",
+                        "name": {
+							"firstName": "Raheem",
+							"lastName": "Rosales",
+							"baggerName": "Raheem",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -1841,9 +1991,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Nick",
-                        "lastName": "Oliveri",
-                        "baggerName": "Nick",
+                        "name": {
+							"firstName": "Nick",
+							"lastName": "Oliveri",
+							"baggerName": "Nick",
+							"isEditable": false
+						},
                         "shiftStart": "2:15p",
                         "shiftEnd": "5:30p",
                         "breakOne": {
@@ -1863,9 +2016,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mark",
-                        "lastName": "Lanegan",
-                        "baggerName": "Mark",
+                        "name": {
+							"firstName": "Mark",
+							"lastName": "Lanegan",
+							"baggerName": "Mark",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "6:30p",
                         "breakOne": {
@@ -1885,9 +2041,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Gene",
-                        "lastName": "Trautmann",
-                        "baggerName": "Gene",
+                        "name": {
+							"firstName": "Gene",
+							"lastName": "Trautmann",
+							"baggerName": "Gene",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -1907,9 +2066,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Dave",
-                        "lastName": "Grohl",
-                        "baggerName": "Dave",
+                        "name": {
+							"firstName": "Dave",
+							"lastName": "Grohl",
+							"baggerName": "Dave",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -1929,9 +2091,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Joey",
-                        "lastName": "Castillo",
-                        "baggerName": "Joey",
+                        "name": {
+							"firstName": "Joey",
+							"lastName": "Castillo",
+							"baggerName": "Joey",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:30p",
                         "breakOne": {
@@ -1951,9 +2116,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Perry",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Perry",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -1978,9 +2146,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Alain",
-                        "lastName": "Mociulski",
-                        "baggerName": "Alain",
+                        "name": {
+							"firstName": "Alain",
+							"lastName": "Mociulski",
+							"baggerName": "Alain",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -2000,9 +2171,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Craig",
-                        "baggerName": "Diane C",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Craig",
+							"baggerName": "Diane C",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -2022,9 +2196,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Juliette",
-                        "lastName": "Bean",
-                        "baggerName": "Juliette",
+                        "name": {
+							"firstName": "Juliette",
+							"lastName": "Bean",
+							"baggerName": "Juliette",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -2044,9 +2221,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Shneider",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Shneider",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -2066,9 +2246,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Donald",
-                        "lastName": "Glover",
-                        "baggerName": "Donald",
+                        "name": {
+							"firstName": "Donald",
+							"lastName": "Glover",
+							"baggerName": "Donald",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -2088,9 +2271,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kanye",
-                        "lastName": "West",
-                        "baggerName": "Kanye",
+                        "name": {
+							"firstName": "Kanye",
+							"lastName": "West",
+							"baggerName": "Kanye",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -2110,9 +2296,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Metroid",
-                        "lastName": "Crawl",
-                        "baggerName": "Metroid",
+                        "name": {
+							"firstName": "Metroid",
+							"lastName": "Crawl",
+							"baggerName": "Metroid",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -2132,9 +2321,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Garza",
-                        "baggerName": "Diane G",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Garza",
+							"baggerName": "Diane G",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -2154,9 +2346,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Able",
-                        "lastName": "Williams",
-                        "baggerName": "Able",
+                        "name": {
+							"firstName": "Able",
+							"lastName": "Williams",
+							"baggerName": "Able",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -2176,9 +2371,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Turner",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Turner",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -2203,9 +2401,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Keeler",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Keeler",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -2225,9 +2426,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Preston",
-                        "lastName": "Clark",
-                        "baggerName": "Preston",
+                        "name": {
+							"firstName": "Preston",
+							"lastName": "Clark",
+							"baggerName": "Preston",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -2252,9 +2456,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Tyler",
-                        "lastName": "Okonma",
-                        "baggerName": "Tyler",
+                        "name": {
+							"firstName": "Tyler",
+							"lastName": "Okonma",
+							"baggerName": "Tyler",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -2274,9 +2481,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -2296,9 +2506,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mike",
-                        "lastName": "Kerr",
-                        "baggerName": "Mike",
+                        "name": {
+							"firstName": "Mike",
+							"lastName": "Kerr",
+							"baggerName": "Mike",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -2318,9 +2531,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garfield",
-                        "lastName": "Acosta",
-                        "baggerName": "Garfield",
+                        "name": {
+							"firstName": "Garfield",
+							"lastName": "Acosta",
+							"baggerName": "Garfield",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -2340,9 +2556,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Sauna",
-                        "lastName": "Campbell",
-                        "baggerName": "Sauna",
+                        "name": {
+							"firstName": "Sauna",
+							"lastName": "Campbell",
+							"baggerName": "Sauna",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -2367,9 +2586,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Matt",
-                        "lastName": "Helders",
-                        "baggerName": "Matt",
+                        "name": {
+							"firstName": "Matt",
+							"lastName": "Helders",
+							"baggerName": "Matt",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -2389,9 +2611,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ben",
-                        "lastName": "Thatcher",
-                        "baggerName": "Ben",
+                        "name": {
+							"firstName": "Ben",
+							"lastName": "Thatcher",
+							"baggerName": "Ben",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -2416,9 +2641,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Elliott",
-                        "lastName": "Smith",
-                        "baggerName": "Elliott",
+                        "name": {
+							"firstName": "Elliott",
+							"lastName": "Smith",
+							"baggerName": "Elliott",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -2438,9 +2666,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Franz",
-                        "lastName": "Ferdinand",
-                        "baggerName": "Franz",
+                        "name": {
+							"firstName": "Franz",
+							"lastName": "Ferdinand",
+							"baggerName": "Franz",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -2460,9 +2691,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Kapranos",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Kapranos",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -3146,9 +3380,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Rohan",
-                        "lastName": "Beltran",
-                        "baggerName": "Rohan",
+                        "name": {
+							"firstName": "Rohan",
+							"lastName": "Beltran",
+							"baggerName": "Rohan",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -3168,9 +3405,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Archie",
-                        "lastName": "Austin",
-                        "baggerName": "Archie",
+                        "name": {
+							"firstName": "Archie",
+							"lastName": "Austin",
+							"baggerName": "Archie",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -3190,9 +3430,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Valeria",
-                        "lastName": "Morales",
-                        "baggerName": "Valeria",
+                        "name": {
+							"firstName": "Valeria",
+							"lastName": "Morales",
+							"baggerName": "Valeria",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -3217,9 +3460,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Dean",
-                        "lastName": "Fertita",
-                        "baggerName": "Dean",
+                        "name": {
+							"firstName": "Dean",
+							"lastName": "Fertita",
+							"baggerName": "Dean",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3239,9 +3485,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -3261,9 +3510,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garreth",
-                        "lastName": "Kemp",
-                        "baggerName": "Garreth",
+                        "name": {
+							"firstName": "Garreth",
+							"lastName": "Kemp",
+							"baggerName": "Garreth",
+							"isEditable": false
+						},
                         "shiftStart": "5:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -3288,9 +3540,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "Hugh",
-                        "lastName": "Stevens",
-                        "baggerName": "Hugh",
+                        "name": {
+							"firstName": "Hugh",
+							"lastName": "Stevens",
+							"baggerName": "Hugh",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -3310,9 +3565,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Dave",
-                        "lastName": "Grohl",
-                        "baggerName": "Dave",
+                        "name": {
+							"firstName": "Dave",
+							"lastName": "Grohl",
+							"baggerName": "Dave",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -3332,9 +3590,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Wolfgang",
-                        "lastName": "Puck",
-                        "baggerName": "Wolfgang",
+                        "name": {
+							"firstName": "Wolfgang",
+							"lastName": "Puck",
+							"baggerName": "Wolfgang",
+							"isEditable": false
+						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -3354,9 +3615,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maariah",
-                        "lastName": "Everett",
-                        "baggerName": "Maariah",
+                        "name": {
+							"firstName": "Maariah",
+							"lastName": "Everett",
+							"baggerName": "Maariah",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -3376,9 +3640,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Perry",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Perry",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -3403,9 +3670,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Alain",
-                        "lastName": "Mociulski",
-                        "baggerName": "Alain",
+                        "name": {
+							"firstName": "Alain",
+							"lastName": "Mociulski",
+							"baggerName": "Alain",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3425,9 +3695,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Craig",
-                        "baggerName": "Diane",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Craig",
+							"baggerName": "Diane",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3447,9 +3720,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Bob",
-                        "lastName": "Hardy",
-                        "baggerName": "Bob",
+                        "name": {
+							"firstName": "Bob",
+							"lastName": "Hardy",
+							"baggerName": "Bob",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
                         "breakOne": {
@@ -3469,9 +3745,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Shneider",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Shneider",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -3491,9 +3770,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leona",
-                        "lastName": "Hoffman",
-                        "baggerName": "Leona",
+                        "name": {
+							"firstName": "Leona",
+							"lastName": "Hoffman",
+							"baggerName": "Leona",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -3513,9 +3795,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kanye",
-                        "lastName": "West",
-                        "baggerName": "Kanye",
+                        "name": {
+							"firstName": "Kanye",
+							"lastName": "West",
+							"baggerName": "Kanye",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -3535,9 +3820,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Metroid",
-                        "lastName": "Crawl",
-                        "baggerName": "Metroid",
+                        "name": {
+							"firstName": "Metroid",
+							"lastName": "Crawl",
+							"baggerName": "Metroid",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -3557,9 +3845,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Turner",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Turner",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -3584,9 +3875,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Keeler",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Keeler",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -3611,9 +3905,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Zach",
-                        "lastName": "Rocha",
-                        "baggerName": "Zach",
+                        "name": {
+							"firstName": "Zach",
+							"lastName": "Rocha",
+							"baggerName": "Zach",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3633,9 +3930,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -3655,9 +3955,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ophelia",
-                        "lastName": "Oneill",
-                        "baggerName": "Ophelia",
+                        "name": {
+							"firstName": "Ophelia",
+							"lastName": "Oneill",
+							"baggerName": "Ophelia",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -3677,9 +3980,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Matt",
-                        "lastName": "Helders",
-                        "baggerName": "Matt",
+                        "name": {
+							"firstName": "Matt",
+							"lastName": "Helders",
+							"baggerName": "Matt",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -3704,9 +4010,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Mike",
-                        "lastName": "Kerr",
-                        "baggerName": "Mike",
+                        "name": {
+							"firstName": "Mike",
+							"lastName": "Kerr",
+							"baggerName": "Mike",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3726,9 +4035,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ben",
-                        "lastName": "Thatcher",
-                        "baggerName": "Ben",
+                        "name": {
+							"firstName": "Ben",
+							"lastName": "Thatcher",
+							"baggerName": "Ben",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -3753,9 +4065,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Tyler",
-                        "lastName": "Okonma",
-                        "baggerName": "Tyler",
+                        "name": {
+							"firstName": "Tyler",
+							"lastName": "Okonma",
+							"baggerName": "Tyler",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -3780,9 +4095,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Michael",
-                        "lastName": "Balzary",
-                        "baggerName": "Michael",
+                        "name": {
+							"firstName": "Michael",
+							"lastName": "Balzary",
+							"baggerName": "Michael",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -3802,9 +4120,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Franz",
-                        "lastName": "Ferdinand",
-                        "baggerName": "Franz",
+                        "name": {
+							"firstName": "Franz",
+							"lastName": "Ferdinand",
+							"baggerName": "Franz",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -3824,9 +4145,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Josh",
-                        "lastName": "Homme",
-                        "baggerName": "Josh",
+                        "name": {
+							"firstName": "Josh",
+							"lastName": "Homme",
+							"baggerName": "Josh",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -3846,9 +4170,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Kapranos",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Kapranos",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -4532,9 +4859,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Archie",
-                        "lastName": "Austin",
-                        "baggerName": "Archie",
+                        "name": {
+							"firstName": "Archie",
+							"lastName": "Austin",
+							"baggerName": "Archie",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -4554,9 +4884,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Sara",
-                        "lastName": "Hayer",
-                        "baggerName": "Sara",
+                        "name": {
+							"firstName": "Sara",
+							"lastName": "Hayer",
+							"baggerName": "Sara",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -4581,9 +4914,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Hugh",
-                        "lastName": "Stevens",
-                        "baggerName": "Hugh",
+                        "name": {
+							"firstName": "Hugh",
+							"lastName": "Stevens",
+							"baggerName": "Hugh",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -4603,9 +4939,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Adal",
-                        "lastName": "Mack",
-                        "baggerName": "Adal",
+                        "name": {
+							"firstName": "Adal",
+							"lastName": "Mack",
+							"baggerName": "Adal",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -4625,9 +4964,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -4647,9 +4989,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Chad",
-                        "lastName": "Smith",
-                        "baggerName": "Chad",
+                        "name": {
+							"firstName": "Chad",
+							"lastName": "Smith",
+							"baggerName": "Chad",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -4674,9 +5019,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "John",
-                        "lastName": "Theodore",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Theodore",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -4696,9 +5044,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alfredo",
-                        "lastName": "Hernandez",
-                        "baggerName": "Alfredo",
+                        "name": {
+							"firstName": "Alfredo",
+							"lastName": "Hernandez",
+							"baggerName": "Alfredo",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -4718,9 +5069,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Wolfgang",
-                        "lastName": "Puck",
-                        "baggerName": "Wolfgang",
+                        "name": {
+							"firstName": "Wolfgang",
+							"lastName": "Puck",
+							"baggerName": "Wolfgang",
+							"isEditable": false
+						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -4740,9 +5094,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Victoria",
-                        "lastName": "Beckham",
-                        "baggerName": "Victoria",
+                        "name": {
+							"firstName": "Victoria",
+							"lastName": "Beckham",
+							"baggerName": "Victoria",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -4762,9 +5119,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Gene",
-                        "lastName": "Trautmann",
-                        "baggerName": "Gene",
+                        "name": {
+							"firstName": "Gene",
+							"lastName": "Trautmann",
+							"baggerName": "Gene",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -4784,9 +5144,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kenny",
-                        "lastName": "Palmer",
-                        "baggerName": "Kenny",
+                        "name": {
+							"firstName": "Kenny",
+							"lastName": "Palmer",
+							"baggerName": "Kenny",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -4811,9 +5174,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Aneesa",
-                        "lastName": "Roach",
-                        "baggerName": "Aneesa",
+                        "name": {
+							"firstName": "Aneesa",
+							"lastName": "Roach",
+							"baggerName": "Aneesa",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -4833,9 +5199,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alain",
-                        "lastName": "Mociulski",
-                        "baggerName": "Alain",
+                        "name": {
+							"firstName": "Alain",
+							"lastName": "Mociulski",
+							"baggerName": "Alain",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -4855,9 +5224,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Shneider",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Shneider",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -4877,9 +5249,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Donald",
-                        "lastName": "Glover",
-                        "baggerName": "Donald",
+                        "name": {
+							"firstName": "Donald",
+							"lastName": "Glover",
+							"baggerName": "Donald",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -4899,9 +5274,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Craig",
-                        "baggerName": "Diane C",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Craig",
+							"baggerName": "Diane C",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -4921,9 +5299,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leona",
-                        "lastName": "Hoffman",
-                        "baggerName": "Leona",
+                        "name": {
+							"firstName": "Leona",
+							"lastName": "Hoffman",
+							"baggerName": "Leona",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -4943,9 +5324,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Garza",
-                        "baggerName": "Diane G",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Garza",
+							"baggerName": "Diane G",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -4965,9 +5349,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Able",
-                        "lastName": "Williams",
-                        "baggerName": "Able",
+                        "name": {
+							"firstName": "Able",
+							"lastName": "Williams",
+							"baggerName": "Able",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -4987,9 +5374,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ezra",
-                        "lastName": "Koenig",
-                        "baggerName": "Ezra",
+                        "name": {
+							"firstName": "Ezra",
+							"lastName": "Koenig",
+							"baggerName": "Ezra",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -5014,9 +5404,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Keeler",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Keeler",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -5036,9 +5429,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Preston",
-                        "lastName": "Clark",
-                        "baggerName": "Preston",
+                        "name": {
+							"firstName": "Preston",
+							"lastName": "Clark",
+							"baggerName": "Preston",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -5063,9 +5459,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -5085,9 +5484,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garfield",
-                        "lastName": "Acosta",
-                        "baggerName": "Garfield",
+                        "name": {
+							"firstName": "Garfield",
+							"lastName": "Acosta",
+							"baggerName": "Garfield",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -5107,9 +5509,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Chris",
-                        "lastName": "Baio",
-                        "baggerName": "Chris",
+                        "name": {
+							"firstName": "Chris",
+							"lastName": "Baio",
+							"baggerName": "Chris",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -5129,9 +5534,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mike",
-                        "lastName": "Kerr",
-                        "baggerName": "Mike",
+                        "name": {
+							"firstName": "Mike",
+							"lastName": "Kerr",
+							"baggerName": "Mike",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -5156,9 +5564,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Matt",
-                        "lastName": "Helders",
-                        "baggerName": "Matt",
+                        "name": {
+							"firstName": "Matt",
+							"lastName": "Helders",
+							"baggerName": "Matt",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -5183,9 +5594,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Daniel",
-                        "lastName": "Kessler",
-                        "baggerName": "Daniel",
+                        "name": {
+							"firstName": "Daniel",
+							"lastName": "Kessler",
+							"baggerName": "Daniel",
+							"isEditable": false
+						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -5205,9 +5619,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Samuel",
-                        "lastName": "Fogerino",
-                        "baggerName": "Samuel",
+                        "name": {
+							"firstName": "Samuel",
+							"lastName": "Fogerino",
+							"baggerName": "Samuel",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -5232,9 +5649,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Michael",
-                        "lastName": "Balzary",
-                        "baggerName": "Michael",
+                        "name": {
+							"firstName": "Michael",
+							"lastName": "Balzary",
+							"baggerName": "Michael",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -5254,9 +5674,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Elliott",
-                        "lastName": "Smith",
-                        "baggerName": "Elliott",
+                        "name": {
+							"firstName": "Elliott",
+							"lastName": "Smith",
+							"baggerName": "Elliott",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -5276,9 +5699,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Josh",
-                        "lastName": "Homme",
-                        "baggerName": "Josh",
+                        "name": {
+							"firstName": "Josh",
+							"lastName": "Homme",
+							"baggerName": "Josh",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -5962,9 +6388,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Rohan",
-                        "lastName": "Beltran",
-                        "baggerName": "Rohan",
+                        "name": {
+							"firstName": "Rohan",
+							"lastName": "Beltran",
+							"baggerName": "Rohan",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -5984,9 +6413,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Archie",
-                        "lastName": "Austin",
-                        "baggerName": "Archie",
+                        "name": {
+							"firstName": "Archie",
+							"lastName": "Austin",
+							"baggerName": "Archie",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -6006,9 +6438,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Valeria",
-                        "lastName": "Morales",
-                        "baggerName": "Valeria",
+                        "name": {
+							"firstName": "Valeria",
+							"lastName": "Morales",
+							"baggerName": "Valeria",
+							"isEditable": false
+						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -6033,9 +6468,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Dean",
-                        "lastName": "Fertita",
-                        "baggerName": "Dean",
+                        "name": {
+							"firstName": "Dean",
+							"lastName": "Fertita",
+							"baggerName": "Dean",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -6055,9 +6493,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Justin",
-                        "lastName": "Trudeau",
-                        "baggerName": "Justin",
+                        "name": {
+							"firstName": "Justin",
+							"lastName": "Trudeau",
+							"baggerName": "Justin",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -6077,9 +6518,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Adal",
-                        "lastName": "Mack",
-                        "baggerName": "Adal",
+                        "name": {
+							"firstName": "Adal",
+							"lastName": "Mack",
+							"baggerName": "Adal",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -6099,9 +6543,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -6126,9 +6573,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "John",
-                        "lastName": "Theodore",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Theodore",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -6148,9 +6598,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alfredo",
-                        "lastName": "Hernandez",
-                        "baggerName": "Alfredo",
+                        "name": {
+							"firstName": "Alfredo",
+							"lastName": "Hernandez",
+							"baggerName": "Alfredo",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -6170,9 +6623,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Nick",
-                        "lastName": "Oliveri",
-                        "baggerName": "Nick",
+                        "name": {
+							"firstName": "Nick",
+							"lastName": "Oliveri",
+							"baggerName": "Nick",
+							"isEditable": false
+						},
                         "shiftStart": "2:15p",
                         "shiftEnd": "5:30p",
                         "breakOne": {
@@ -6192,9 +6648,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maariah",
-                        "lastName": "Everett",
-                        "baggerName": "Maariah",
+                        "name": {
+							"firstName": "Maariah",
+							"lastName": "Everett",
+							"baggerName": "Maariah",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -6214,9 +6673,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Gene",
-                        "lastName": "Trautmann",
-                        "baggerName": "Gene",
+                        "name": {
+							"firstName": "Gene",
+							"lastName": "Trautmann",
+							"baggerName": "Gene",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -6236,9 +6698,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Troy",
-                        "lastName": "Harvey",
-                        "baggerName": "Troy",
+                        "name": {
+							"firstName": "Troy",
+							"lastName": "Harvey",
+							"baggerName": "Troy",
+							"isEditable": false
+						},
                         "shiftStart": "5:30p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6258,9 +6723,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Perry",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Perry",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -6285,9 +6753,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Aneesa",
-                        "lastName": "Roach",
-                        "baggerName": "Aneesa",
+                        "name": {
+							"firstName": "Aneesa",
+							"lastName": "Roach",
+							"baggerName": "Aneesa",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -6307,9 +6778,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Craig",
-                        "baggerName": "Diane",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Craig",
+							"baggerName": "Diane",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -6329,9 +6803,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Bob",
-                        "lastName": "Hardy",
-                        "baggerName": "Bob",
+                        "name": {
+							"firstName": "Bob",
+							"lastName": "Hardy",
+							"baggerName": "Bob",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
                         "breakOne": {
@@ -6351,9 +6828,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Donald",
-                        "lastName": "Glover",
-                        "baggerName": "Donald",
+                        "name": {
+							"firstName": "Donald",
+							"lastName": "Glover",
+							"baggerName": "Donald",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -6373,9 +6853,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Shneider",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Shneider",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -6395,9 +6878,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maximus",
-                        "lastName": "Johns",
-                        "baggerName": "Maximus",
+                        "name": {
+							"firstName": "Maximus",
+							"lastName": "Johns",
+							"baggerName": "Maximus",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6417,9 +6903,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kanye",
-                        "lastName": "West",
-                        "baggerName": "Kanye",
+                        "name": {
+							"firstName": "Kanye",
+							"lastName": "West",
+							"baggerName": "Kanye",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6439,9 +6928,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Metroid",
-                        "lastName": "Crawl",
-                        "baggerName": "Metroid",
+                        "name": {
+							"firstName": "Metroid",
+							"lastName": "Crawl",
+							"baggerName": "Metroid",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -6461,9 +6953,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Turner",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Turner",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6488,9 +6983,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Keeler",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Keeler",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -6515,9 +7013,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -6537,9 +7038,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mike",
-                        "lastName": "Kerr",
-                        "baggerName": "Mike",
+                        "name": {
+							"firstName": "Mike",
+							"lastName": "Kerr",
+							"baggerName": "Mike",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -6559,9 +7063,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ophelia",
-                        "lastName": "Oneill",
-                        "baggerName": "Ophelia",
+                        "name": {
+							"firstName": "Ophelia",
+							"lastName": "Oneill",
+							"baggerName": "Ophelia",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -6581,9 +7088,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Matt",
-                        "lastName": "Helders",
-                        "baggerName": "Matt",
+                        "name": {
+							"firstName": "Matt",
+							"lastName": "Helders",
+							"baggerName": "Matt",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6608,9 +7118,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Zach",
-                        "lastName": "Rocha",
-                        "baggerName": "Zach",
+                        "name": {
+							"firstName": "Zach",
+							"lastName": "Rocha",
+							"baggerName": "Zach",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -6635,9 +7148,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Daniel",
-                        "lastName": "Kessler",
-                        "baggerName": "Daniel",
+                        "name": {
+							"firstName": "Daniel",
+							"lastName": "Kessler",
+							"baggerName": "Daniel",
+							"isEditable": false
+						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -6657,9 +7173,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ben",
-                        "lastName": "Thatcher",
-                        "baggerName": "Ben",
+                        "name": {
+							"firstName": "Ben",
+							"lastName": "Thatcher",
+							"baggerName": "Ben",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -6684,9 +7203,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Michael",
-                        "lastName": "Balzary",
-                        "baggerName": "Michael",
+                        "name": {
+							"firstName": "Michael",
+							"lastName": "Balzary",
+							"baggerName": "Michael",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -6706,9 +7228,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Elliott",
-                        "lastName": "Smith",
-                        "baggerName": "Elliott",
+                        "name": {
+							"firstName": "Elliott",
+							"lastName": "Smith",
+							"baggerName": "Elliott",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -6728,9 +7253,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Franz",
-                        "lastName": "Ferdinand",
-                        "baggerName": "Franz",
+                        "name": {
+							"firstName": "Franz",
+							"lastName": "Ferdinand",
+							"baggerName": "Franz",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -7414,9 +7942,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Archie",
-                        "lastName": "Austin",
-                        "baggerName": "Archie",
+                        "name": {
+							"firstName": "Archie",
+							"lastName": "Austin",
+							"baggerName": "Archie",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -7436,9 +7967,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Sara",
-                        "lastName": "Hayer",
-                        "baggerName": "Sara",
+                        "name": {
+							"firstName": "Sara",
+							"lastName": "Hayer",
+							"baggerName": "Sara",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -7463,9 +7997,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Dean",
-                        "lastName": "Fertita",
-                        "baggerName": "Dean",
+                        "name": {
+							"firstName": "Dean",
+							"lastName": "Fertita",
+							"baggerName": "Dean",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -7485,9 +8022,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alfredo",
-                        "lastName": "Hernandez",
-                        "baggerName": "Alfredo",
+                        "name": {
+							"firstName": "Alfredo",
+							"lastName": "Hernandez",
+							"baggerName": "Alfredo",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -7507,9 +8047,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jude",
-                        "lastName": "Lazano",
-                        "baggerName": "Jude",
+                        "name": {
+							"firstName": "Jude",
+							"lastName": "Lazano",
+							"baggerName": "Jude",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -7529,9 +8072,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Dave",
-                        "lastName": "Grohl",
-                        "baggerName": "Dave",
+                        "name": {
+							"firstName": "Dave",
+							"lastName": "Grohl",
+							"baggerName": "Dave",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -7551,9 +8097,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garreth",
-                        "lastName": "Kemp",
-                        "baggerName": "Garreth",
+                        "name": {
+							"firstName": "Garreth",
+							"lastName": "Kemp",
+							"baggerName": "Garreth",
+							"isEditable": false
+						},
                         "shiftStart": "5:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -7578,9 +8127,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "Hugh",
-                        "lastName": "Stevens",
-                        "baggerName": "Hugh",
+                        "name": {
+							"firstName": "Hugh",
+							"lastName": "Stevens",
+							"baggerName": "Hugh",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -7600,9 +8152,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "John",
-                        "lastName": "Theodore",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Theodore",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -7622,9 +8177,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Wolfgang",
-                        "lastName": "Puck",
-                        "baggerName": "Wolfgang",
+                        "name": {
+							"firstName": "Wolfgang",
+							"lastName": "Puck",
+							"baggerName": "Wolfgang",
+							"isEditable": false
+						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:30p",
                         "breakOne": {
@@ -7644,9 +8202,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Victoria",
-                        "lastName": "Beckham",
-                        "baggerName": "Victoria",
+                        "name": {
+							"firstName": "Victoria",
+							"lastName": "Beckham",
+							"baggerName": "Victoria",
+							"isEditable": false
+						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -7666,9 +8227,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "John",
-                        "lastName": "Halo",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Halo",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -7688,9 +8252,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kenny",
-                        "lastName": "Palmer",
-                        "baggerName": "Kenny",
+                        "name": {
+							"firstName": "Kenny",
+							"lastName": "Palmer",
+							"baggerName": "Kenny",
+							"isEditable": false
+						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -7715,9 +8282,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Aneesa",
-                        "lastName": "Roach",
-                        "baggerName": "Aneesa",
+                        "name": {
+							"firstName": "Aneesa",
+							"lastName": "Roach",
+							"baggerName": "Aneesa",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -7737,9 +8307,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Juliette",
-                        "lastName": "Bean",
-                        "baggerName": "Juliette",
+                        "name": {
+							"firstName": "Juliette",
+							"lastName": "Bean",
+							"baggerName": "Juliette",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -7759,9 +8332,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Bob",
-                        "lastName": "Hardy",
-                        "baggerName": "Bob",
+                        "name": {
+							"firstName": "Bob",
+							"lastName": "Hardy",
+							"baggerName": "Bob",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
                         "breakOne": {
@@ -7781,9 +8357,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leona",
-                        "lastName": "Hoffman",
-                        "baggerName": "Leona",
+                        "name": {
+							"firstName": "Leona",
+							"lastName": "Hoffman",
+							"baggerName": "Leona",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -7803,9 +8382,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Donald",
-                        "lastName": "Glover",
-                        "baggerName": "Donald",
+                        "name": {
+							"firstName": "Donald",
+							"lastName": "Glover",
+							"baggerName": "Donald",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -7825,9 +8407,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Natasha",
-                        "lastName": "Shneider",
-                        "baggerName": "Natasha",
+                        "name": {
+							"firstName": "Natasha",
+							"lastName": "Shneider",
+							"baggerName": "Natasha",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -7847,9 +8432,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Maximus",
-                        "lastName": "Johns",
-                        "baggerName": "Maximus",
+                        "name": {
+							"firstName": "Maximus",
+							"lastName": "Johns",
+							"baggerName": "Maximus",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -7869,9 +8457,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kanye",
-                        "lastName": "West",
-                        "baggerName": "Kanye",
+                        "name": {
+							"firstName": "Kanye",
+							"lastName": "West",
+							"baggerName": "Kanye",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -7891,9 +8482,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Garza",
-                        "baggerName": "Diane",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Garza",
+							"baggerName": "Diane",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -7913,9 +8507,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Able",
-                        "lastName": "Williams",
-                        "baggerName": "Able",
+                        "name": {
+							"firstName": "Able",
+							"lastName": "Williams",
+							"baggerName": "Able",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -7935,9 +8532,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mayer",
-                        "lastName": "Howel",
-                        "baggerName": "Mayer",
+                        "name": {
+							"firstName": "Mayer",
+							"lastName": "Howel",
+							"baggerName": "Mayer",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -7962,9 +8562,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Preston",
-                        "lastName": "Clark",
-                        "baggerName": "Preston",
+                        "name": {
+							"firstName": "Preston",
+							"lastName": "Clark",
+							"baggerName": "Preston",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -7989,9 +8592,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Sauna",
-                        "lastName": "Campbell",
-                        "baggerName": "Sauna",
+                        "name": {
+							"firstName": "Sauna",
+							"lastName": "Campbell",
+							"baggerName": "Sauna",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -8011,9 +8617,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ophelia",
-                        "lastName": "Oneill",
-                        "baggerName": "Ophelia",
+                        "name": {
+							"firstName": "Ophelia",
+							"lastName": "Oneill",
+							"baggerName": "Ophelia",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -8033,9 +8642,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garfield",
-                        "lastName": "Acosta",
-                        "baggerName": "Garfield",
+                        "name": {
+							"firstName": "Garfield",
+							"lastName": "Acosta",
+							"baggerName": "Garfield",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -8055,9 +8667,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Chris",
-                        "lastName": "Baio",
-                        "baggerName": "Chris",
+                        "name": {
+							"firstName": "Chris",
+							"lastName": "Baio",
+							"baggerName": "Chris",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -8077,9 +8692,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Paul",
-                        "lastName": "Banks",
-                        "baggerName": "Paul",
+                        "name": {
+							"firstName": "Paul",
+							"lastName": "Banks",
+							"baggerName": "Paul",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -8104,9 +8722,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Tyler",
-                        "lastName": "Okonma",
-                        "baggerName": "Tyler",
+                        "name": {
+							"firstName": "Tyler",
+							"lastName": "Okonma",
+							"baggerName": "Tyler",
+							"isEditable": false
+						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -8131,9 +8752,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Daniel",
-                        "lastName": "Kessler",
-                        "baggerName": "Daniel",
+                        "name": {
+							"firstName": "Daniel",
+							"lastName": "Kessler",
+							"baggerName": "Daniel",
+							"isEditable": false
+						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -8153,9 +8777,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Samuel",
-                        "lastName": "Fogerino",
-                        "baggerName": "Samuel",
+                        "name": {
+							"firstName": "Samuel",
+							"lastName": "Fogerino",
+							"baggerName": "Samuel",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -8180,9 +8807,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Michael",
-                        "lastName": "Balzary",
-                        "baggerName": "Michael",
+                        "name": {
+							"firstName": "Michael",
+							"lastName": "Balzary",
+							"baggerName": "Michael",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -8202,9 +8832,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Franz",
-                        "lastName": "Ferdinand",
-                        "baggerName": "Franz",
+                        "name": {
+							"firstName": "Franz",
+							"lastName": "Ferdinand",
+							"baggerName": "Franz",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -8224,9 +8857,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Elliott",
-                        "lastName": "Smith",
-                        "baggerName": "Elliott",
+                        "name": {
+							"firstName": "Elliott",
+							"lastName": "Smith",
+							"baggerName": "Elliott",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -8246,9 +8882,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Josh",
-                        "lastName": "Homme",
-                        "baggerName": "Josh",
+                        "name": {
+							"firstName": "Josh",
+							"lastName": "Homme",
+							"baggerName": "Josh",
+							"isEditable": false
+						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -8932,9 +9571,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Call Ups",
                 "shifts": [
                     {
-                        "firstName": "Sara",
-                        "lastName": "Hayer",
-                        "baggerName": "Sara",
+                        "name": {
+							"firstName": "Sara",
+							"lastName": "Hayer",
+							"baggerName": "Sara",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -8954,9 +9596,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Valeria",
-                        "lastName": "Morales",
-                        "baggerName": "Valeria",
+                        "name": {
+							"firstName": "Valeria",
+							"lastName": "Morales",
+							"baggerName": "Valeria",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
                         "breakOne": {
@@ -8981,9 +9626,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End SCO Cashier",
                 "shifts": [
                     {
-                        "firstName": "Dean",
-                        "lastName": "Fertita",
-                        "baggerName": "Dean",
+                        "name": {
+							"firstName": "Dean",
+							"lastName": "Fertita",
+							"baggerName": "Dean",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9003,9 +9651,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Nick",
-                        "lastName": "Oliveri",
-                        "baggerName": "Nick",
+                        "name": {
+							"firstName": "Nick",
+							"lastName": "Oliveri",
+							"baggerName": "Nick",
+							"isEditable": false
+						},
                         "shiftStart": "9:30a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9025,9 +9676,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Janet",
-                        "lastName": "Peterson",
-                        "baggerName": "Janet",
+                        "name": {
+							"firstName": "Janet",
+							"lastName": "Peterson",
+							"baggerName": "Janet",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -9047,9 +9701,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Jude",
-                        "lastName": "Lazano",
-                        "baggerName": "Jude",
+                        "name": {
+							"firstName": "Jude",
+							"lastName": "Lazano",
+							"baggerName": "Jude",
+							"isEditable": false
+						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
                         "breakOne": {
@@ -9069,9 +9726,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Hollie",
-                        "lastName": "McKenzie",
-                        "baggerName": "Hollie",
+                        "name": {
+							"firstName": "Hollie",
+							"lastName": "McKenzie",
+							"baggerName": "Hollie",
+							"isEditable": false
+						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
                         "breakOne": {
@@ -9096,9 +9756,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Cashier",
                 "shifts": [
                     {
-                        "firstName": "John",
-                        "lastName": "Theodore",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Theodore",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -9118,9 +9781,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mark",
-                        "lastName": "Lanegan",
-                        "baggerName": "Mark",
+                        "name": {
+							"firstName": "Mark",
+							"lastName": "Lanegan",
+							"baggerName": "Mark",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9140,9 +9806,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Gene",
-                        "lastName": "Trautmann",
-                        "baggerName": "Gene",
+                        "name": {
+							"firstName": "Gene",
+							"lastName": "Trautmann",
+							"baggerName": "Gene",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -9162,9 +9831,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alfredo",
-                        "lastName": "Hernandez",
-                        "baggerName": "Alfredo",
+                        "name": {
+							"firstName": "Alfredo",
+							"lastName": "Hernandez",
+							"baggerName": "Alfredo",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -9184,9 +9856,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "John",
-                        "lastName": "Halo",
-                        "baggerName": "John",
+                        "name": {
+							"firstName": "John",
+							"lastName": "Halo",
+							"baggerName": "John",
+							"isEditable": false
+						},
                         "shiftStart": "10:30a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -9206,9 +9881,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Victoria",
-                        "lastName": "Beckham",
-                        "baggerName": "Victoria",
+                        "name": {
+							"firstName": "Victoria",
+							"lastName": "Beckham",
+							"baggerName": "Victoria",
+							"isEditable": false
+						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -9228,9 +9906,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Joey",
-                        "lastName": "Castillo",
-                        "baggerName": "Joey",
+                        "name": {
+							"firstName": "Joey",
+							"lastName": "Castillo",
+							"baggerName": "Joey",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -9250,9 +9931,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Walter",
-                        "lastName": "Boyer",
-                        "baggerName": "Walter",
+                        "name": {
+							"firstName": "Walter",
+							"lastName": "Boyer",
+							"baggerName": "Walter",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -9277,9 +9961,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Courtesy Clerk",
                 "shifts": [
                     {
-                        "firstName": "Aneesa",
-                        "lastName": "Roach",
-                        "baggerName": "Aneesa",
+                        "name": {
+							"firstName": "Aneesa",
+							"lastName": "Roach",
+							"baggerName": "Aneesa",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9299,9 +9986,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Juliette",
-                        "lastName": "Bean",
-                        "baggerName": "Juliette",
+                        "name": {
+							"firstName": "Juliette",
+							"lastName": "Bean",
+							"baggerName": "Juliette",
+							"isEditable": false
+						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
                         "breakOne": {
@@ -9321,9 +10011,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Karol",
-                        "lastName": "Blakenship",
-                        "baggerName": "Karol",
+                        "name": {
+							"firstName": "Karol",
+							"lastName": "Blakenship",
+							"baggerName": "Karol",
+							"isEditable": false
+						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
                         "breakOne": {
@@ -9343,9 +10036,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Ezra",
-                        "lastName": "Koenig",
-                        "baggerName": "Ezra",
+                        "name": {
+							"firstName": "Ezra",
+							"lastName": "Koenig",
+							"baggerName": "Ezra",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -9365,9 +10061,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Turner",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Turner",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "9:30a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9387,9 +10086,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Leona",
-                        "lastName": "Hoffman",
-                        "baggerName": "Leona",
+                        "name": {
+							"firstName": "Leona",
+							"lastName": "Hoffman",
+							"baggerName": "Leona",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -9409,9 +10111,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Kanye",
-                        "lastName": "West",
-                        "baggerName": "Kanye",
+                        "name": {
+							"firstName": "Kanye",
+							"lastName": "West",
+							"baggerName": "Kanye",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -9431,9 +10136,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Metroid",
-                        "lastName": "Crawl",
-                        "baggerName": "Metroid",
+                        "name": {
+							"firstName": "Metroid",
+							"lastName": "Crawl",
+							"baggerName": "Metroid",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
                         "breakOne": {
@@ -9453,9 +10161,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Diane",
-                        "lastName": "Garza",
-                        "baggerName": "Diane",
+                        "name": {
+							"firstName": "Diane",
+							"lastName": "Garza",
+							"baggerName": "Diane",
+							"isEditable": false
+						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -9480,9 +10191,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End File Maint",
                 "shifts": [
                     {
-                        "firstName": "Jesse",
-                        "lastName": "Keeler",
-                        "baggerName": "Jesse",
+                        "name": {
+							"firstName": "Jesse",
+							"lastName": "Keeler",
+							"baggerName": "Jesse",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -9502,9 +10216,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Preston",
-                        "lastName": "Clark",
-                        "baggerName": "Preston",
+                        "name": {
+							"firstName": "Preston",
+							"lastName": "Clark",
+							"baggerName": "Preston",
+							"isEditable": false
+						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
                         "breakOne": {
@@ -9529,9 +10246,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Service Desk",
                 "shifts": [
                     {
-                        "firstName": "Sauna",
-                        "lastName": "Campbell",
-                        "baggerName": "Sauna",
+                        "name": {
+							"firstName": "Sauna",
+							"lastName": "Campbell",
+							"baggerName": "Sauna",
+							"isEditable": false
+						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
                         "breakOne": {
@@ -9551,9 +10271,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Mike",
-                        "lastName": "Kerr",
-                        "baggerName": "Mike",
+                        "name": {
+							"firstName": "Mike",
+							"lastName": "Kerr",
+							"baggerName": "Mike",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
                         "breakOne": {
@@ -9573,9 +10296,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Garfield",
-                        "lastName": "Acosta",
-                        "baggerName": "Garfield",
+                        "name": {
+							"firstName": "Garfield",
+							"lastName": "Acosta",
+							"baggerName": "Garfield",
+							"isEditable": false
+						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
                         "breakOne": {
@@ -9600,9 +10326,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Liquor Clerk",
                 "shifts": [
                     {
-                        "firstName": "Josh",
-                        "lastName": "Homme",
-                        "baggerName": "Josh",
+                        "name": {
+							"firstName": "Josh",
+							"lastName": "Homme",
+							"baggerName": "Josh",
+							"isEditable": false
+						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -9622,9 +10351,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Chris",
-                        "lastName": "Baio",
-                        "baggerName": "Chris",
+                        "name": {
+							"firstName": "Chris",
+							"lastName": "Baio",
+							"baggerName": "Chris",
+							"isEditable": false
+						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -9644,9 +10376,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Alex",
-                        "lastName": "Kapranos",
-                        "baggerName": "Alex",
+                        "name": {
+							"firstName": "Alex",
+							"lastName": "Kapranos",
+							"baggerName": "Alex",
+							"isEditable": false
+						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
                         "breakOne": {
@@ -9671,9 +10406,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Front End Supervisor",
                 "shifts": [
                     {
-                        "firstName": "Tyler",
-                        "lastName": "Okonma",
-                        "baggerName": "Tyler",
+                        "name": {
+							"firstName": "Tyler",
+							"lastName": "Okonma",
+							"baggerName": "Tyler",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
@@ -9698,9 +10436,12 @@ export const expectedOutput: IWeekdayBO[] = [
                 "name": "Fuel Clerk",
                 "shifts": [
                     {
-                        "firstName": "Daniel",
-                        "lastName": "Kessler",
-                        "baggerName": "Daniel",
+                        "name": {
+							"firstName": "Daniel",
+							"lastName": "Kessler",
+							"baggerName": "Daniel",
+							"isEditable": false
+						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
                         "breakOne": {
@@ -9720,9 +10461,12 @@ export const expectedOutput: IWeekdayBO[] = [
                         "edit": false
                     },
                     {
-                        "firstName": "Samuel",
-                        "lastName": "Fogerino",
-                        "baggerName": "Samuel",
+                        "name": {
+							"firstName": "Samuel",
+							"lastName": "Fogerino",
+							"baggerName": "Samuel",
+							"isEditable": false
+						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
                         "breakOne": {
