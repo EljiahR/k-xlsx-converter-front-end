@@ -15,9 +15,9 @@ const IndividualShifts = ({
         className={styles["person"]}
         key={
           positionName +
-          person.name.firstName +
           person.employeeId +
-          person["shiftStart"]
+          person.shiftStart +
+          person.shiftEnd
         }
       >
         <div className={styles["blank-cell"]}></div>
