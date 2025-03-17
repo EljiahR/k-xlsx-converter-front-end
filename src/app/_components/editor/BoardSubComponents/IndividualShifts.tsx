@@ -2,6 +2,8 @@ import styles from "@/styles/IndividualShifts.module.css";
 import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
 import { Breaks } from "./Breaks";
 import IndividualName from "./IndividualShiftsSubComponents/IndividualName";
+import { useAppDispatch } from "src/app/_lib/redux/hooks";
+import { deleteEmployee } from "src/app/_lib/redux/shiftsSlice";
 
 const IndividualShifts = ({
   people,
@@ -9,6 +11,7 @@ const IndividualShifts = ({
   section,
   inputReference
 }: IndividualShiftsProps) => {
+  const dispatch = useAppDispatch();
   const shifts = people.map((person) => {
     return (
       <div
@@ -20,7 +23,14 @@ const IndividualShifts = ({
           person.shiftEnd
         }
       >
-        <div className={styles["blank-cell"]}></div>
+        <div className={styles["blank-cell"]}>
+          <button 
+            className={styles["delete-btn"]}
+            onClick={() => dispatch(deleteEmployee({employee: person, jobPosition: positionName}))}
+          >
+            Delete
+          </button>
+        </div>
         <IndividualName person={person} jobPosition={positionName} inputReference={inputReference} />
         <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
         <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
