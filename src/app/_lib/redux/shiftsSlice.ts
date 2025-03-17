@@ -34,9 +34,9 @@ export const shiftsSlice = createSlice({
         setNewShifts: (state, action: PayloadAction<IWeekdayBO[]>) => {
             state.value = action.payload;
         },
-        addToBreak: (state, action: PayloadAction<{ e: KeyboardEvent<HTMLInputElement>, employee: IEmployeeBO, jobPosition: string, breakType: string, section: string }>) => {
-            const { e, employee, jobPosition, breakType, section } = action.payload;
-            if ((e.key != "ArrowUp" && e.key != "ArrowDown") && e.currentTarget.value == "") {
+        addToBreak: (state, action: PayloadAction<{ keyDown: string, currentTarget: string, employee: IEmployeeBO, jobPosition: string, breakType: string, section: string }>) => {
+            const { keyDown, currentTarget, employee, jobPosition, breakType, section } = action.payload;
+            if ((keyDown != "ArrowUp" && keyDown != "ArrowDown") || currentTarget == "") {
                 return;
             }
             
@@ -50,11 +50,12 @@ export const shiftsSlice = createSlice({
                 console.log("No person")
                 return;
             }
-
-            const newTime = addMinutesToBreak(personToEdit[breakType].time, e.key == "ArrowUp" ? 15 : -15);
             
+            const newTime = addMinutesToBreak(personToEdit[breakType].time, keyDown == "ArrowUp" ? 15 : -15);
+            console.log(newTime);
+
             if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) && timeIsLaterThan(personToEdit.shiftEnd, newTime)) {
-                personToEdit[breakType].time = addMinutesToBreak(personToEdit[breakType].time, newTime)
+                personToEdit[breakType].time = newTime;
                 state.selectedTime = {
                     time: newTime,
                     section,
@@ -134,7 +135,6 @@ export const shiftsSlice = createSlice({
             const timeMinus15 = moment(getDatesFromBreaks(time, -15)).format("LT");
 
             personToEdit[breakType].editable = isEditable;
-            console.log(personToEdit[breakType].editable)
             state.selectedTime = { time, section, time15, timeMinus15 };
         },
         toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string }>) => {

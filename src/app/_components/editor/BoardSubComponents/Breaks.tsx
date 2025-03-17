@@ -48,7 +48,7 @@ export const Breaks = ({
           }
           onChange={(e) => dispatch(changeBreak({employee: person, jobPosition: positionName, breakType, minutesToChangeTo: e.target.value}))}
           onKeyDown={(e) =>
-            dispatch(addToBreak({e, employee: person, jobPosition: positionName, breakType, section}))
+            dispatch(addToBreak({keyDown: e.key, currentTarget: e.currentTarget.value, employee: person, jobPosition: positionName, breakType, section}))
           }
           ref={inputReference}
         />
