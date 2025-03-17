@@ -67,3 +67,14 @@ p.lunch:empty {
   align-self: center;
   margin-left: 5px;
 }
+
+/* Delete button styling */
+.delete-btn {
+  
+  font-size: 10px;
+  visibility: hidden;
+}
+
+.person:hover > .delete-btn, .delete-btn:hover, .blank-cell:hover > .delete-btn {
+  visibility: visible;
+}
