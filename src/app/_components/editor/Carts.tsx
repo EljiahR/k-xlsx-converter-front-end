@@ -38,7 +38,7 @@ const Carts = () => {
   );
 
   let bagger: IEmployeeBO = baggerList.shifts.find(
-    (person) => person.baggerName == selectedBagger,
+    (person) => person.name.baggerName == selectedBagger,
   );
   if (bagger) {
     let [start] = reformatTimes(bagger.shiftStart);
