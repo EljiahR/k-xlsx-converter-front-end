@@ -7,7 +7,6 @@ import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpe
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
-import { FocusEvent, KeyboardEvent } from "react";
 
 const initialState: ShiftsState = {
     value: null,
@@ -33,6 +32,18 @@ export const shiftsSlice = createSlice({
         },
         setNewShifts: (state, action: PayloadAction<IWeekdayBO[]>) => {
             state.value = action.payload;
+        },
+        deleteEmployee: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string}>) => {
+            const {employee, jobPosition } = action.payload;
+            
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
+            if (!job) return;
+
+            job.shifts = job.shifts.filter(s => {
+                return employee.employeeId != "0" && employee.employeeId != "" && employee.employeeId != null ?
+                    employee.employeeId != s.employeeId :
+                    employee.name.firstName != s.name.firstName && employee.name.lastName != s.name.lastName
+            });
         },
         addToBreak: (state, action: PayloadAction<{ keyDown: string, currentTarget: string, employee: IEmployeeBO, jobPosition: string, breakType: string, section: string }>) => {
             const { keyDown, currentTarget, employee, jobPosition, breakType, section } = action.payload;
@@ -182,7 +193,7 @@ export const shiftsSlice = createSlice({
             carts[index].sort(sortEmptyToEnd);
             carts[targetIndex].sort(sortEmptyToEnd);
         },
-        setDay: (state, action :PayloadAction<number>) => {
+        setDay: (state, action: PayloadAction<number>) => {
             state.day = action.payload;
         },
         setSelectedTime: (state, action: PayloadAction<ISelectedTime>) => {
@@ -197,6 +208,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, deleteEmployee, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;
