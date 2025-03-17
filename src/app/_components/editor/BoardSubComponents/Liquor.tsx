@@ -1,14 +1,20 @@
 import styles from "@/styles/Liquor.module.css";
+import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
 
-const Liquor = ({ people, positionName }) => {
+interface Props {
+  people: IEmployeeBO[],
+  positionName: string
+}
+
+const Liquor = ({ people, positionName }: Props) => {
   const shifts = people.map((person) => {
     return (
       <div
         className={styles.person}
-        key={positionName + person.firstName + person.lastName}
+        key={positionName + person.name.firstName + person.name.lastName}
       >
         <p className="person-name">
-          {person.firstName + " " + person.lastName}
+          {person.name.firstName + " " + person.name.lastName}
         </p>
         <p className="start time">{person.shiftStart}</p>
         <p className="end time">{person.shiftEnd}</p>
