@@ -1,9 +1,10 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
-import { Breaks } from "./Breaks";
+import { Breaks } from "./IndividualShiftsSubComponents/Breaks";
 import IndividualName from "./IndividualShiftsSubComponents/IndividualName";
 import { useAppDispatch } from "src/app/_lib/redux/hooks";
 import { deleteEmployee } from "src/app/_lib/redux/shiftsSlice";
+import ShiftTime from "./IndividualShiftsSubComponents/ShiftTime";
 
 const IndividualShifts = ({
   people,
@@ -19,8 +20,8 @@ const IndividualShifts = ({
         key={
           positionName +
           person.employeeId +
-          person.shiftStart +
-          person.shiftEnd
+          person.shiftStart.time +
+          person.shiftEnd.time
         }
       >
         <div className={styles["blank-cell"]}>
@@ -32,8 +33,8 @@ const IndividualShifts = ({
           </button>
         </div>
         <IndividualName person={person} jobPosition={positionName} inputReference={inputReference} />
-        <p className={`start ${styles["time"]}`}>{person.shiftStart.time}</p>
-        <p className={`end ${styles["time"]}`}>{person.shiftEnd.time}</p>
+        <ShiftTime person={person} isStart={true} />
+        <ShiftTime person={person} isStart={false} />
         <Breaks
           person={person}
           positionName={positionName}

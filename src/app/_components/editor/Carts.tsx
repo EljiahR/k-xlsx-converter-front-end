@@ -41,8 +41,8 @@ const Carts = () => {
     (person) => person.name.baggerName == selectedBagger,
   );
   if (bagger) {
-    let [start] = reformatTimes(bagger.shiftStart);
-    let end = startToBreakAddMinutes(bagger.shiftEnd, -30);
+    let [start] = reformatTimes(bagger.shiftStart.time);
+    let end = startToBreakAddMinutes(bagger.shiftEnd.time, -30);
     baggerCartInfo.start = start;
     baggerCartInfo.end = end;
 

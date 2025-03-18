@@ -64,7 +64,7 @@ export const shiftsSlice = createSlice({
             
             const newTime = addMinutesToBreak(personToEdit[breakType].time, keyDown == "ArrowUp" ? 15 : -15);
 
-            if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) && timeIsLaterThan(personToEdit.shiftEnd, newTime)) {
+            if (timeIsLaterThan(newTime, personToEdit.shiftStart.time, true) && timeIsLaterThan(personToEdit.shiftEnd.time, newTime)) {
                 personToEdit[breakType].time = newTime;
                 state.selectedTime = {
                     time: newTime,

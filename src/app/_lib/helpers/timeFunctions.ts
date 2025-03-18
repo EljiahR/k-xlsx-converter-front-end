@@ -13,32 +13,35 @@ Date.prototype.addMinutes = function (m: number): Date {
   return this;
 };
 
-export const getDatesFromTimes = (...timesToChange) => {
+export const getDatesFromTimes = (...timesToChange: string[]) => {
   let fixedTimes = [];
   timesToChange.forEach((time) => {
     if (time == "") {
       fixedTimes.push(time);
     } else {
-      let [timeHours, timeMinutes] = time.split(":");
+      let [timeHoursText, timeMinutesText] = time.split(":");
       let timeSuffix;
       if (/[ap]$/.test) {
         timeSuffix = time.charAt(time.length - 1);
       } else {
         timeSuffix = time.charAt(time.length - 2).toLowerCase();
       }
-
-      if (timeHours < 12 && timeSuffix === "p") {
-        timeHours = parseInt(timeHours) + 12;
-      } else {
-        timeHours = parseInt(timeHours);
-      }
-
+      let timeHours = parseInt(timeHoursText);
+      let timeMinutes;
       try {
-        timeMinutes = parseInt(timeMinutes.charAt(0) + timeMinutes.charAt(1));
+        timeMinutes = parseInt(timeMinutesText.charAt(0) + timeMinutesText.charAt(1));
       } catch (e) {
         console.log("Wrong time format, should be (H:MM AM/PM)")
         return;
       }
+
+      if (timeHours < 12 && timeSuffix === "p") {
+        timeHours = timeHours + 12;
+      } else {
+        timeHours = timeHours;
+      }
+
+      
 
       let timeToDate = new Date(null, null, null, timeHours, timeMinutes);
       fixedTimes.push(timeToDate);
@@ -48,21 +51,23 @@ export const getDatesFromTimes = (...timesToChange) => {
   return fixedTimes;
 };
 
-export const getDatesFromBreaks = (breakToFix, minutesToAdd = 0) => {
+export const getDatesFromBreaks = (breakToFix: string, minutesToAdd = 0) => {
   if (breakToFix == "") {
     return breakToFix;
   } else {
-    let [timeHours, timeMinutes] = breakToFix.split(":");
+    let [timeHoursText, timeMinutesText] = breakToFix.split(":");
+    let timeHours = parseInt(timeHoursText);
+    let timeMinutes = parseInt(timeMinutesText.charAt(0) + timeMinutesText.charAt(1));
     let timeSuffix;
 
     timeSuffix = breakToFix.slice(breakToFix.length - 2);
 
     if (timeHours < 12 && timeSuffix === "PM") {
-      timeHours = parseInt(timeHours) + 12;
+      timeHours = timeHours + 12;
     } else {
-      timeHours = parseInt(timeHours);
+      timeHours = timeHours;
     }
-    timeMinutes = parseInt(timeMinutes.charAt(0) + timeMinutes.charAt(1));
+    
 
     let timeToDate = new Date(null, null, null, timeHours, timeMinutes);
     timeToDate.addMinutes(minutesToAdd);
@@ -70,7 +75,7 @@ export const getDatesFromBreaks = (breakToFix, minutesToAdd = 0) => {
   }
 };
 
-export const reformatTimes = (...times) => {
+export const reformatTimes = (...times: string[]) => {
   const fixedTimes = [];
   times.forEach((time) => {
     if (/a$/.test(time)) {
@@ -88,7 +93,7 @@ export const reformatTimes = (...times) => {
   return fixedTimes;
 };
 
-export const startToBreakAddMinutes = (time, minutesToAdd) => {
+export const startToBreakAddMinutes = (time: string, minutesToAdd: number) => {
   let [date] = getDatesFromTimes(time);
   date.addMinutes(minutesToAdd);
   let result = moment(date).format("LT");
@@ -96,7 +101,7 @@ export const startToBreakAddMinutes = (time, minutesToAdd) => {
   return result;
 };
 
-export const timeIsLaterThan = (time1, time2, isStartTime = false) => {
+export const timeIsLaterThan = (time1: string, time2: string, isStartTime = false) => {
   const date1 = /[AP]M$/.test(time1)
     ? getDatesFromBreaks(time1)
     : getDatesFromTimes(time1)[0];
@@ -107,11 +112,11 @@ export const timeIsLaterThan = (time1, time2, isStartTime = false) => {
   return date1 > date2;
 };
 
-export const timeIsWithin = (startTime, endTime, targetTime) => {
+export const timeIsWithin = (startTime: string, endTime: string, targetTime: string) => {
     return timeIsLaterThan(targetTime, startTime, true) && timeIsLaterThan(endTime, targetTime);
 }
 
-export const addMinutesToBreak = (thisBreak, minutes) => {
+export const addMinutesToBreak = (thisBreak: string, minutes: number) => {
   let date = getDatesFromBreaks(thisBreak, minutes);
   return moment(date).format("LT");
 };
