@@ -187,6 +187,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, deleteEmployee, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, deleteEmployee, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger, toggleShiftEdit } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;
