@@ -32,8 +32,8 @@ const IndividualShifts = ({
           </button>
         </div>
         <IndividualName person={person} jobPosition={positionName} inputReference={inputReference} />
-        <p className={`start ${styles["time"]}`}>{person.shiftStart}</p>
-        <p className={`end ${styles["time"]}`}>{person.shiftEnd}</p>
+        <p className={`start ${styles["time"]}`}>{person.shiftStart.time}</p>
+        <p className={`end ${styles["time"]}`}>{person.shiftEnd.time}</p>
         <Breaks
           person={person}
           positionName={positionName}

@@ -17,9 +17,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Rohan",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -42,9 +48,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Archie",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -67,9 +79,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Eliza",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -92,9 +110,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Valeria",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -122,9 +146,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hugh",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -147,9 +177,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Janet",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -172,9 +208,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jude",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -197,9 +239,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -222,9 +270,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garreth",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:15 PM"
                         },
@@ -252,9 +306,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Lucia",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -277,9 +337,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Adal",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -302,9 +368,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:30 AM"
                         },
@@ -327,9 +399,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maariah",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -352,9 +430,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Uzair",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -377,9 +461,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Walter",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -402,9 +492,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "11:30a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:30a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:30 PM"
                         },
@@ -427,9 +523,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jack",
 							"isEditable": false
 						},
-                        "shiftStart": "12:30p",
-                        "shiftEnd": "6:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:30 PM"
                         },
@@ -452,9 +554,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Victoria",
 							"isEditable": false
 						},
-                        "shiftStart": "12:30p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:30 PM"
                         },
@@ -477,9 +585,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Wolfgang",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -502,9 +616,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kenny",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -532,9 +652,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Raheem",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -557,9 +683,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Josh",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -587,9 +719,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Aneesa",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -612,9 +750,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Juliette",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -641,9 +785,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sadie",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -666,9 +816,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Abletonen",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -695,9 +851,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Karol",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -720,9 +882,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mayer",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -745,9 +913,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Leonardo",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -774,9 +948,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maximus",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -799,9 +979,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Metroid",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -824,9 +1010,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -849,9 +1041,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Elissameth",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -883,9 +1081,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Preston",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -913,9 +1117,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Tyler",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -938,9 +1148,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garfield",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -963,9 +1179,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ophelia",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -988,9 +1210,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -1018,9 +1246,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sauna",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -1048,9 +1282,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Daniel",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -1073,9 +1313,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Samuel",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -1762,9 +2008,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Rohan",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -1787,9 +2039,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Valeria",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -1817,9 +2075,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dean",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -1842,9 +2106,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sebastian",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -1867,9 +2137,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "3:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:15 PM"
                         },
@@ -1897,9 +2173,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hugh",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -1922,9 +2204,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -1947,9 +2235,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alfredo",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -1972,9 +2266,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Raheem",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:30 PM"
                         },
@@ -1997,9 +2297,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Nick",
 							"isEditable": false
 						},
-                        "shiftStart": "2:15p",
-                        "shiftEnd": "5:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2022,9 +2328,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mark",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "6:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2047,9 +2359,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Gene",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:45 PM"
                         },
@@ -2072,9 +2390,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dave",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 PM"
                         },
@@ -2097,9 +2421,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Joey",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "10:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:15 PM"
                         },
@@ -2122,9 +2452,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -2152,9 +2488,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alain",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -2177,9 +2519,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane C",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -2202,9 +2550,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Juliette",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -2227,9 +2581,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -2252,9 +2612,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Donald",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -2277,9 +2643,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kanye",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -2302,9 +2674,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Metroid",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -2327,9 +2705,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane G",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -2352,9 +2736,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Able",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -2377,9 +2767,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:00 PM"
                         },
@@ -2407,9 +2803,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -2432,9 +2834,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Preston",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -2462,9 +2870,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Tyler",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -2487,9 +2901,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -2512,9 +2932,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mike",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -2537,9 +2963,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garfield",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -2562,9 +2994,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sauna",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -2592,9 +3030,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Matt",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2617,9 +3061,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ben",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2647,9 +3097,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Elliott",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2672,9 +3128,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Franz",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -2697,9 +3159,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -3386,9 +3854,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Rohan",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -3411,9 +3885,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Archie",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -3436,9 +3916,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Valeria",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -3466,9 +3952,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dean",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -3491,9 +3983,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -3516,9 +4014,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garreth",
 							"isEditable": false
 						},
-                        "shiftStart": "5:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:15 PM"
                         },
@@ -3546,9 +4050,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hugh",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -3571,9 +4081,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dave",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -3596,9 +4112,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Wolfgang",
 							"isEditable": false
 						},
-                        "shiftStart": "3:30p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:30 PM"
                         },
@@ -3621,9 +4143,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maariah",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -3646,9 +4174,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -3676,9 +4210,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alain",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -3701,9 +4241,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -3726,9 +4272,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Bob",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -3751,9 +4303,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "3:00 PM"
                         },
@@ -3776,9 +4334,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Leona",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -3801,9 +4365,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kanye",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -3826,9 +4396,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Metroid",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -3851,9 +4427,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:00 PM"
                         },
@@ -3881,9 +4463,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -3911,9 +4499,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Zach",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -3936,9 +4530,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -3961,9 +4561,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ophelia",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:30 PM"
                         },
@@ -3986,9 +4592,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Matt",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:30 PM"
                         },
@@ -4016,9 +4628,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mike",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4041,9 +4659,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ben",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4071,9 +4695,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Tyler",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -4101,9 +4731,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Michael",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4126,9 +4762,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Franz",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4151,9 +4793,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Josh",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4176,9 +4824,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4865,9 +5519,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Archie",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4890,9 +5550,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sara",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -4920,9 +5586,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hugh",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -4945,9 +5617,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Adal",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -4970,9 +5648,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "3:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:15 PM"
                         },
@@ -4995,9 +5679,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Chad",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:00 PM"
                         },
@@ -5025,9 +5715,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -5050,9 +5746,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alfredo",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -5075,9 +5777,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Wolfgang",
 							"isEditable": false
 						},
-                        "shiftStart": "3:30p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:30 PM"
                         },
@@ -5100,9 +5808,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Victoria",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -5125,9 +5839,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Gene",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:45 PM"
                         },
@@ -5150,9 +5870,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kenny",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -5180,9 +5906,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Aneesa",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -5205,9 +5937,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alain",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -5230,9 +5968,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -5255,9 +5999,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Donald",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -5280,9 +6030,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane C",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -5305,9 +6061,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Leona",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -5330,9 +6092,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane G",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -5355,9 +6123,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Able",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -5380,9 +6154,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ezra",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -5410,9 +6190,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -5435,9 +6221,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Preston",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -5465,9 +6257,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -5490,9 +6288,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garfield",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -5515,9 +6319,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Chris",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -5540,9 +6350,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mike",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -5570,9 +6386,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Matt",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -5600,9 +6422,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Daniel",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -5625,9 +6453,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Samuel",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -5655,9 +6489,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Michael",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -5680,9 +6520,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Elliott",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -5705,9 +6551,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Josh",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -6394,9 +7246,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Rohan",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -6419,9 +7277,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Archie",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -6444,9 +7308,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Valeria",
 							"isEditable": false
 						},
-                        "shiftStart": "4:30p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -6474,9 +7344,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dean",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -6499,9 +7375,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Justin",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -6524,9 +7406,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Adal",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -6549,9 +7437,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "3:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:15 PM"
                         },
@@ -6579,9 +7473,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -6604,9 +7504,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alfredo",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -6629,9 +7535,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Nick",
 							"isEditable": false
 						},
-                        "shiftStart": "2:15p",
-                        "shiftEnd": "5:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -6654,9 +7566,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maariah",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -6679,9 +7597,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Gene",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -6704,9 +7628,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Troy",
 							"isEditable": false
 						},
-                        "shiftStart": "5:30p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:45 PM"
                         },
@@ -6729,9 +7659,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -6759,9 +7695,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Aneesa",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -6784,9 +7726,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -6809,9 +7757,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Bob",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -6834,9 +7788,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Donald",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -6859,9 +7819,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "3:00 PM"
                         },
@@ -6884,9 +7850,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maximus",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -6909,9 +7881,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kanye",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -6934,9 +7912,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Metroid",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -6959,9 +7943,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:00 PM"
                         },
@@ -6989,9 +7979,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -7019,9 +8015,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -7044,9 +8046,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mike",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -7069,9 +8077,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ophelia",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:30 PM"
                         },
@@ -7094,9 +8108,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Matt",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:30 PM"
                         },
@@ -7124,9 +8144,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Zach",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -7154,9 +8180,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Daniel",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7179,9 +8211,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ben",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7209,9 +8247,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Michael",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7234,9 +8278,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Elliott",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7259,9 +8309,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Franz",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7948,9 +9004,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Archie",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -7973,9 +9035,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sara",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8003,9 +9071,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dean",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -8028,9 +9102,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alfredo",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -8053,9 +9133,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jude",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 PM"
                         },
@@ -8078,9 +9164,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dave",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 PM"
                         },
@@ -8103,9 +9195,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garreth",
 							"isEditable": false
 						},
-                        "shiftStart": "5:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:15 PM"
                         },
@@ -8133,9 +9231,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hugh",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -8158,9 +9262,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -8183,9 +9293,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Wolfgang",
 							"isEditable": false
 						},
-                        "shiftStart": "3:30p",
-                        "shiftEnd": "10:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:30 PM"
                         },
@@ -8208,9 +9324,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Victoria",
 							"isEditable": false
 						},
-                        "shiftStart": "3:30p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:30 PM"
                         },
@@ -8233,9 +9355,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8258,9 +9386,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kenny",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "8:30 PM"
                         },
@@ -8288,9 +9422,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Aneesa",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -8313,9 +9453,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Juliette",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -8338,9 +9484,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Bob",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:30p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:30p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -8363,9 +9515,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Leona",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -8388,9 +9546,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Donald",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -8413,9 +9577,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Natasha",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "3:00 PM"
                         },
@@ -8438,9 +9608,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Maximus",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -8463,9 +9639,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kanye",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -8488,9 +9670,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -8513,9 +9701,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Able",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -8538,9 +9732,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mayer",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8568,9 +9768,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Preston",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -8598,9 +9804,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sauna",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -8623,9 +9835,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ophelia",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -8648,9 +9866,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garfield",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -8673,9 +9897,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Chris",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "4:00 PM"
                         },
@@ -8698,9 +9928,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Paul",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -8728,9 +9964,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Tyler",
 							"isEditable": false
 						},
-                        "shiftStart": "10:00a",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "1:00 PM"
                         },
@@ -8758,9 +10000,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Daniel",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8783,9 +10031,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Samuel",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8813,9 +10067,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Michael",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8838,9 +10098,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Franz",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8863,9 +10129,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Elliott",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -8888,9 +10160,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Josh",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -9577,9 +10855,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sara",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -9602,9 +10886,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Valeria",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "8:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "8:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -9632,9 +10922,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Dean",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -9657,9 +10953,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Nick",
 							"isEditable": false
 						},
-                        "shiftStart": "9:30a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:30a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:45 AM"
                         },
@@ -9682,9 +10984,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Janet",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -9707,9 +11015,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jude",
 							"isEditable": false
 						},
-                        "shiftStart": "12:00p",
-                        "shiftEnd": "6:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "6:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -9732,9 +11046,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Hollie",
 							"isEditable": false
 						},
-                        "shiftStart": "3:15p",
-                        "shiftEnd": "11:15p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:15p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:15p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:15 PM"
                         },
@@ -9762,9 +11082,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -9787,9 +11113,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mark",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -9812,9 +11144,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Gene",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -9837,9 +11175,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alfredo",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -9862,9 +11206,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "John",
 							"isEditable": false
 						},
-                        "shiftStart": "10:30a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "10:30a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:30 PM"
                         },
@@ -9887,9 +11237,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Victoria",
 							"isEditable": false
 						},
-                        "shiftStart": "12:30p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "12:30p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:30 PM"
                         },
@@ -9912,9 +11268,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Joey",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -9937,9 +11299,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Walter",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -9967,9 +11335,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Aneesa",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -9992,9 +11366,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Juliette",
 							"isEditable": false
 						},
-                        "shiftStart": "7:00a",
-                        "shiftEnd": "3:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "7:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "10:00 AM"
                         },
@@ -10017,9 +11397,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Karol",
 							"isEditable": false
 						},
-                        "shiftStart": "8:00a",
-                        "shiftEnd": "4:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "8:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:00 AM"
                         },
@@ -10042,9 +11428,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Ezra",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -10067,9 +11459,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "9:30a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:30a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "11:45 AM"
                         },
@@ -10092,9 +11490,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Leona",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -10117,9 +11521,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Kanye",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -10142,9 +11552,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Metroid",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "11:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "11:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "6:00 PM"
                         },
@@ -10167,9 +11583,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Diane",
 							"isEditable": false
 						},
-                        "shiftStart": "3:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "3:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -10197,9 +11619,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Jesse",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -10222,9 +11650,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Preston",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00a",
-                        "shiftEnd": "12:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "12:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "7:00 AM"
                         },
@@ -10252,9 +11686,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Sauna",
 							"isEditable": false
 						},
-                        "shiftStart": "6:00a",
-                        "shiftEnd": "2:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "6:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "9:00 AM"
                         },
@@ -10277,9 +11717,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Mike",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "5:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "5:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "12:00 PM"
                         },
@@ -10302,9 +11748,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Garfield",
 							"isEditable": false
 						},
-                        "shiftStart": "11:00a",
-                        "shiftEnd": "7:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "11:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "7:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "2:00 PM"
                         },
@@ -10332,9 +11784,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Josh",
 							"isEditable": false
 						},
-                        "shiftStart": "9:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "9:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -10357,9 +11815,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Chris",
 							"isEditable": false
 						},
-                        "shiftStart": "1:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -10382,9 +11846,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Alex",
 							"isEditable": false
 						},
-                        "shiftStart": "4:00p",
-                        "shiftEnd": "9:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "4:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "9:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -10412,9 +11882,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Tyler",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": "5:00 PM"
                         },
@@ -10442,9 +11918,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Daniel",
 							"isEditable": false
 						},
-                        "shiftStart": "5:00a",
-                        "shiftEnd": "1:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "5:00a",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "1:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },
@@ -10467,9 +11949,15 @@ export const expectedOutput: IWeekdayBO[] = [
 							"baggerName": "Samuel",
 							"isEditable": false
 						},
-                        "shiftStart": "2:00p",
-                        "shiftEnd": "10:00p",
-                        "breakOne": {
+                        "shiftStart": {
+							"time": "2:00p",
+							"isEditable": false
+						},
+						"shiftEnd": {
+							"time": "10:00p",
+							"isEditable": false
+						},
+						"breakOne": {
                             "editable": false,
                             "time": ""
                         },

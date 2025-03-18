@@ -19,8 +19,8 @@ const CallUps = ({ positionName, people }: Props) => {
         <p className="person-name">
           {person.name.firstName + " " + person.name.lastName}
         </p>
-        <p className="start time">{person.shiftStart}</p>
-        <p className="end time">{person.shiftEnd}</p>
+        <p className="start time">{person.shiftStart.time}</p>
+        <p className="end time">{person.shiftEnd.time}</p>
       </div>
     );
   });
