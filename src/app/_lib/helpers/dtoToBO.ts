@@ -11,8 +11,14 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       isEditable: false
     },
     edit: false,
-    shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
-    shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
+    shiftStart: {
+      time: moment(shift.shiftStart).format("h:mma").slice(0, -1),
+      isEditable: false
+    },
+    shiftEnd: {
+      time: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
+      isEditable: false
+    },
     breakOne: {
       editable: false,
       time: shift.breakOne ? moment(shift.breakOne).format("h:mm A") : "",

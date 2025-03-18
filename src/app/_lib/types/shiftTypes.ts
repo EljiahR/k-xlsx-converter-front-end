@@ -36,14 +36,19 @@ export interface IEmployeeName {
     isEditable: boolean;
 }
 
+export interface IShift {
+    time: string;
+    isEditable: boolean;
+}
+
 export interface IEmployeeBO
     extends Omit<
         IEmployeeDTO,
         "firstName" | "lastName" | "baggerName" | "shiftStart" | "shiftEnd" | "breakOne" | "lunch" | "breakTwo" | "subshift"
     > {
     name: IEmployeeName;
-    shiftStart: string;
-    shiftEnd: string;
+    shiftStart: IShift;
+    shiftEnd: IShift;
     breakOne: IBreak;
     lunch: IBreak;
     breakTwo: IBreak;
