@@ -7,6 +7,7 @@ import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpe
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
+import { findPerson } from "./reduxHelpers";
 
 const initialState: ShiftsState = {
     value: null,
@@ -51,16 +52,8 @@ export const shiftsSlice = createSlice({
                 return;
             }
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) return;
-
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
-            if (!personToEdit){
-                console.log("No person")
-                return;
-            }
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
+            if (!personToEdit) return;
             
             const newTime = addMinutesToBreak(personToEdit[breakType].time, keyDown == "ArrowUp" ? 15 : -15);
 
@@ -81,28 +74,15 @@ export const shiftsSlice = createSlice({
         changeBreak: (state, action: PayloadAction<{ employee: IEmployeeBO, jobPosition: string, breakType: string, minutesToChangeTo: string }>) => {
             const { employee, jobPosition, breakType, minutesToChangeTo } = action.payload;
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) return;
-
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
-            if (!personToEdit){
-                console.log("No person")
-                return;
-            }
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
+            if (!personToEdit) return;
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
         changeName: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, newValue: string, isFirstName: boolean}>) => {
             const {employee, jobPosition, newValue, isFirstName } = action.payload;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
-            if (!job) return;
-
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId) :
-                job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName);
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
             if (!personToEdit) return;
 
             if (isFirstName) {
@@ -114,12 +94,7 @@ export const shiftsSlice = createSlice({
         toggleNameEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
             const {employee, jobPosition, isEditable } = action.payload;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
-            if (!job) return;
-
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId) :
-                job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName);
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
             if (!personToEdit) return;
 
             personToEdit.name.isEditable = isEditable;
@@ -129,12 +104,7 @@ export const shiftsSlice = createSlice({
             const {isChild, employee, jobPosition, isEditable } = action.payload;
             if (isChild) return;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
-            if (!job) return;
-
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId) :
-                job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName);
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
             if (!personToEdit) return;
 
             personToEdit.name.isEditable = isEditable;
@@ -143,19 +113,9 @@ export const shiftsSlice = createSlice({
         toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, section: string, isEditable: boolean}>) => {
             const { employee, jobPosition, breakType, section, isEditable } = action.payload;
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
-            if (!job) {
-                console.log("No job")
-                return;
-            }
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
+            if (!personToEdit) return;
 
-            const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
-                job.shifts.find(s => s.employeeId == employee.employeeId)
-                : job.shifts.find(s => s.name.firstName == employee.name.firstName && s.name.lastName == employee.name.lastName)
-            if (!personToEdit){
-                console.log("No person")
-                return
-            }
             const time = employee[breakType].time;
             const time15 = breakType == "lunch" ? moment(getDatesFromBreaks(time, 15)).format("LT") : time;
                 
@@ -195,6 +155,13 @@ export const shiftsSlice = createSlice({
         },
         setDay: (state, action: PayloadAction<number>) => {
             state.day = action.payload;
+            state.selectedTime = {
+                time: "",
+                section: "",
+                time15: "",
+                timeMinus15: "",
+            };
+            state.selectedBagger = "";
         },
         setSelectedTime: (state, action: PayloadAction<ISelectedTime>) => {
             state.selectedTime = action.payload;
@@ -204,6 +171,18 @@ export const shiftsSlice = createSlice({
         },
         clearSelectedBagger: (state) => {
             state.selectedBagger = "";
+        },
+        toggleShiftEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, isStart: boolean, isEditable: boolean}>) => {
+            const { employee, jobPosition, isStart, isEditable } = action.payload;
+
+            const personToEdit = findPerson(state.value, state.day, employee, jobPosition);
+            if (!personToEdit) return;
+
+            if (isStart) {
+                personToEdit.shiftStart.isEditable = isEditable;
+            } else {
+                personToEdit.shiftEnd.isEditable = isEditable;
+            }
         }
     }
 });
