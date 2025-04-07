@@ -1,10 +1,9 @@
-.restrooms {
+.restrooms-grid {
   display: grid;
   grid-template-columns: 1;
-  grid-template-rows: repeat(32, 20px);
+  grid-template-rows: repeat(6, 20px);
   border: 1px solid black;
   width: 40%;
-  height: 674px;
   font-size: 12px;
 }
 

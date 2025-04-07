@@ -145,8 +145,7 @@ const Carts = () => {
             );
           })}
         </div>
-        {/* Depreciated as of 4/7/25 */}
-        {/*<Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />*/}
+        <Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />
       </div>
       <div id="footer"></div>
     </div>
