@@ -86,15 +86,17 @@ const Carts = () => {
 
   return (
     <div id={styles["cart-sheet"]}>
-      <div id="headers">
-        <h2>Parking Lot & Restroom Cleaning Schedule</h2>
-        <h4>{shifts[currentDay].date}</h4>
+      <div id={styles["headers"]}>
+        <h3>Lot, Lobby, Restroom Schedule</h3>
+        <h3>Date: {shifts[currentDay].date}</h3>
       </div>
       <div id={styles["main"]}>
+        <div id={styles["lot-header"]}>Lot and Lobby</div>
         <div id={styles.lot}>
-          <div id={styles["lot-header"]}>Parking Lot Schedule</div>
-          <div id="lot-time-label">Time</div>
-          <div id={styles["lot-associate-label"]}>Associate Name</div>
+          <div className={styles["lot-time-label"]}>Time</div>
+          <div className={styles["lot-associate-label"]}>Associate</div>
+          <div id={styles["second-time-label"]} className={styles["lot-time-label"]}>Time</div>
+          <div className={styles["lot-associate-label"]}>Associate</div>
           {lotTimes.map((time, index) => {
             return (
               <React.Fragment key={`${time}${index}`}>
@@ -116,6 +118,10 @@ const Carts = () => {
                         ? styles["shift-highlight"]
                         /* : styles["utility-highlight"] */
                       : "" 
+                  } ${
+                    time.includes(":3") 
+                    ? styles["right-time"]
+                    : ""
                   }`}
                   id={time}
                 >

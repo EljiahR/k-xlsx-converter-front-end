@@ -1,11 +1,36 @@
-.restrooms {
+#restrooms-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restrooms-grid {
   display: grid;
   grid-template-columns: 1;
-  grid-template-rows: repeat(32, 20px);
+  grid-template-rows: repeat(7, 30px);
   border: 1px solid black;
-  width: 40%;
-  height: 674px;
+  border-bottom: none;
+  width: 90%;
   font-size: 12px;
+}
+
+.associate-header {
+  font-size: medium;
+}
+
+.time-header {
+  border-right: 1px solid black;
+  font-size: small;
+}
+
+.header {
+  height: 100%;
+  width: 100%;
+  font-weight: bold;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .restrooms > * {
@@ -24,11 +49,14 @@
   grid-template-columns: 1fr 4fr;
   justify-content: center;
   align-items: center;
-  
+  border-bottom: 1px solid black;
 }
 .time {
-  border-right:1px solid black;
+  border-right: 1px solid black;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dark {
