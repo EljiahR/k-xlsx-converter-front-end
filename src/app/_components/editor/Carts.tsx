@@ -98,6 +98,7 @@ const Carts = () => {
           <div id={styles["second-time-label"]} className={styles["lot-time-label"]}>Time</div>
           <div className={styles["lot-associate-label"]}>Associate</div>
           {lotTimes.map((time, index) => {
+            if (index > 5)
             return (
               <React.Fragment key={`${time}${index}`}>
                 <div
