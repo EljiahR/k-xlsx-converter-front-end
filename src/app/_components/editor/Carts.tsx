@@ -87,14 +87,16 @@ const Carts = () => {
   return (
     <div id={styles["cart-sheet"]}>
       <div id="headers">
-        <h2>Parking Lot & Restroom Cleaning Schedule</h2>
-        <h4>{shifts[currentDay].date}</h4>
+        <h2>Lot, Lobby, Restroom Schedule</h2>
+        <h4>Date: {shifts[currentDay].date}</h4>
       </div>
       <div id={styles["main"]}>
+        <div id={styles["lot-header"]}>Lot and Lobby</div>
         <div id={styles.lot}>
-          <div id={styles["lot-header"]}>Parking Lot Schedule</div>
           <div id="lot-time-label">Time</div>
-          <div id={styles["lot-associate-label"]}>Associate Name</div>
+          <div id={styles["lot-associate-label"]}>Associate</div>
+          <div id="lot-time-label">Time</div>
+          <div id={styles["lot-associate-label"]}>Associate</div>
           {lotTimes.map((time, index) => {
             return (
               <React.Fragment key={`${time}${index}`}>
@@ -143,7 +145,8 @@ const Carts = () => {
             );
           })}
         </div>
-        <Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />
+        {/* Depreciated as of 4/7/25 */}
+        {/*<Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />*/}
       </div>
       <div id="footer"></div>
     </div>

@@ -1,5 +1,4 @@
 #cart-sheet{
-  border: 1px solid #65c1fb;
   width: 100%;
   height: 100%;
   padding: 20px
@@ -8,17 +7,18 @@
 #main{
   width:100%;
   display: flex;
+  flex-direction: column;
   gap: 20px
 }
 
 #lot {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(39, 20px);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(15, 20px);
   
   border: 1px solid black;
   border-bottom: none;
-  width: 60%
+  width: 90%
 }
 
 #lot > * {
@@ -35,15 +35,13 @@
 }
 
 #lot-header {
-  grid-column: 1 / 6;
-  grid-row: 1 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 #lot-associate-label {
-  grid-column: 2 / 6;
+  grid-column-end: span 4;
 }
 
 .cart-time {
