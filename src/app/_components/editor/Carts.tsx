@@ -93,10 +93,10 @@ const Carts = () => {
       <div id={styles["main"]}>
         <div id={styles["lot-header"]}>Lot and Lobby</div>
         <div id={styles.lot}>
-          <div id="lot-time-label">Time</div>
-          <div id={styles["lot-associate-label"]}>Associate</div>
-          <div id="lot-time-label">Time</div>
-          <div id={styles["lot-associate-label"]}>Associate</div>
+          <div className={styles["lot-time-label"]}>Time</div>
+          <div className={styles["lot-associate-label"]}>Associate</div>
+          <div id={styles["second-time-label"]} className={styles["lot-time-label"]}>Time</div>
+          <div className={styles["lot-associate-label"]}>Associate</div>
           {lotTimes.map((time, index) => {
             return (
               <React.Fragment key={`${time}${index}`}>
@@ -118,6 +118,10 @@ const Carts = () => {
                         ? styles["shift-highlight"]
                         /* : styles["utility-highlight"] */
                       : "" 
+                  } ${
+                    time.includes(":3") 
+                    ? styles["right-time"]
+                    : ""
                   }`}
                   id={time}
                 >

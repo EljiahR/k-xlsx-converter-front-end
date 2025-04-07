@@ -12,14 +12,14 @@ const Restrooms = ({utilityClerks}: RestroomProps) => {
 
 
   return (
-    <div id="restrooms">
+    <div id={styles["restrooms-div"]}>
       <div className={styles["double-full-slot"]}>
         <h3>Restroom</h3>
       </div>
       <div className={styles["restrooms-grid"]}>
       <div className={styles.slot}>
-        <div className={styles.header}>Time</div>
-        <div className={styles.header}>Associate</div>
+        <div className={`${styles.header} ${styles["time-header"]}`}>Time</div>
+        <div className={`${styles.header} ${styles["associate-header"]}`}>Associate</div>
       </div>
         {utilityTimes.map((time) => {
           return (

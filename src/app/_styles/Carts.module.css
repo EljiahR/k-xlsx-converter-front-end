@@ -1,7 +1,7 @@
 #cart-sheet{
   width: 100%;
   height: 100%;
-  padding: 20px
+  padding: 20px;
 }
 
 #main{
@@ -14,16 +14,13 @@
 #lot {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(15, 20px);
-  
+  grid-template-rows: repeat(15, 30px);
   border: 1px solid black;
   border-bottom: none;
-  width: 90%
+  width: 100%
 }
 
 #lot > * {
-  
-  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,16 +37,37 @@
   justify-content: center;
   font-weight: bold;
 }
-#lot-associate-label {
+
+.lot-time-label {
+  border-right: 1px solid black;
+  font-size: small;
+  font-weight: bold;
+}
+
+#second-time-label {
+  border-left: 1px solid black;
+}
+
+.lot-associate-label {
   grid-column-end: span 4;
+  font-weight: bold;
+  font-size: medium;
 }
 
 .cart-time {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 12px;
   border-right: 1px solid black
+}
+
+.right-time {
+  border-left: 1px solid black;
+}
+
+.bagger-slot {
+  font-size: 14px;
 }
 
 .shift-highlight {
