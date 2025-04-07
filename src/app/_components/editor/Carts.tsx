@@ -86,9 +86,9 @@ const Carts = () => {
 
   return (
     <div id={styles["cart-sheet"]}>
-      <div id="headers">
-        <h2>Lot, Lobby, Restroom Schedule</h2>
-        <h4>Date: {shifts[currentDay].date}</h4>
+      <div id={styles["headers"]}>
+        <h3>Lot, Lobby, Restroom Schedule</h3>
+        <h3>Date: {shifts[currentDay].date}</h3>
       </div>
       <div id={styles["main"]}>
         <div id={styles["lot-header"]}>Lot and Lobby</div>
