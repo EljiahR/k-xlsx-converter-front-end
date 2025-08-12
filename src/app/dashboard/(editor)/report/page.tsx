@@ -1,6 +1,5 @@
 "use client";
-import "@/styles/globals.css";
-import styles from "@/styles/Report.module.css";
+import styles from "../../../_styles/Report.module.css";
 // Template object for reseting the shifts state
 import initialShifts from "../../../_lib/test/shiftsObject";
 // Importing components
@@ -8,15 +7,12 @@ import Board from "../../../_components/editor/Board";
 import Carts from "../../../_components/editor/Carts";
 import Loading from "../../../_components/Loading";
 import NavBar from "../../../_components/NavBar";
-// Importing functions and hooks
-//import html2canvas from "html2canvas";
 import { toJpeg } from "html-to-image";
 import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
-import {starterPDF, refreshPDF} from "src/app/_lib/helpers/defaultPDF";
-
-import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { setAsTest, setNewShifts, setShiftsNull, setDay } from "src/app/_lib/redux/shiftsSlice";
+import {starterPDF, refreshPDF} from "../../../_lib/helpers/defaultPDF";
+import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
+import { setAsTest, setNewShifts, setShiftsNull, setDay } from "../../../_lib/redux/shiftsSlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
