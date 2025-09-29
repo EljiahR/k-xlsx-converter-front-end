@@ -4,7 +4,7 @@ input.highlight, p.highlight {
 
 .person {
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px 17px 17px 17px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px 35px;
   gap: 1px;
   margin-top: 1px;
   border-right: 1px solid black;

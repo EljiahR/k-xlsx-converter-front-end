@@ -51,9 +51,11 @@ const IndividualShifts = ({
         />
         {!positionName.includes("Fuel") && (
           <>
-          <div className={styles["fresh-start"]}></div>
-          <div className={styles["fresh-start"]}></div>
-          <div className={styles["fresh-start"]}></div>
+          <div className={styles["ffo"]}>
+            <div className={styles["ffo-inner"]}></div>
+            <div className={styles["ffo-middle"]}></div>
+            <div className={styles["ffo-inner"]}></div>
+          </div>
           </>
           
         )}
