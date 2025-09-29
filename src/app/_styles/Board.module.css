@@ -27,11 +27,12 @@
   background-color: rgb(10, 117, 193);
   color: white;
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 15px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 17px 17px 17px;
   border: 1px solid black;
   border-bottom: none;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 #labels > * {
   padding: 2px;
@@ -60,7 +61,7 @@
 
 
 #side-section{
-  margin-left: 30px;
+  margin-left: 66px;
 }
 
 #birthdays, #holidays {
@@ -76,4 +77,9 @@
 }
 #fresh-start-label{
   color: black;
+}
+
+.optional-section{
+  height: 120px;
+  margin-top: 30px;
 }

@@ -25,6 +25,8 @@ const Board = () => {
           <h6>Lunch</h6>
           <h6>Break</h6>
           <h6 id={styles["fresh-start-label"]}>FS</h6>
+          <h6 id={styles["fresh-start-label"]}>FC</h6>
+          <h6 id={styles["fresh-start-label"]}>O</h6>
         </div>
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
@@ -183,6 +185,12 @@ const Board = () => {
               positionName="liquor"
             />
           </div>
+        </div>
+        <div className={styles["optional-section"]}>
+          <h2 className="side-header">Fuel Replenishment</h2>
+        </div>
+        <div className={styles["optional-section"]}>
+          <h2 className="side-header">Management</h2>
         </div>
       </div>
     </>

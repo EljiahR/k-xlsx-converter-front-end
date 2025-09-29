@@ -4,7 +4,7 @@ input.highlight, p.highlight {
 
 .person {
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px 15px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 42px 17px 17px 17px;
   gap: 1px;
   margin-top: 1px;
   border-right: 1px solid black;
@@ -65,5 +65,5 @@ p.lunch:empty {
   height: 12px;
   width: 12px;
   align-self: center;
-  margin-left: 5px;
+  margin-left: 2px;
 }

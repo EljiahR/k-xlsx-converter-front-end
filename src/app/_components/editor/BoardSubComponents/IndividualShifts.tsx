@@ -50,7 +50,12 @@ const IndividualShifts = ({
           inputReference={inputReference}
         />
         {!positionName.includes("Fuel") && (
+          <>
           <div className={styles["fresh-start"]}></div>
+          <div className={styles["fresh-start"]}></div>
+          <div className={styles["fresh-start"]}></div>
+          </>
+          
         )}
       </div>
     );
