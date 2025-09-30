@@ -25,8 +25,8 @@ const Board = () => {
           <h6>Lunch</h6>
           <h6>Break</h6>
           <div id={styles["fresh-start-labels"]}>
-            <h6 className={styles["fresh-start-label"]}>FS</h6>
             <h6 className={styles["fresh-start-label"]}>FC</h6>
+            <h6 className={styles["fresh-start-label"]}>FS</h6>
             <h6 className={styles["fresh-start-label"]}>O</h6>
           </div>
         </div>
