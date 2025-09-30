@@ -67,3 +67,25 @@ p.lunch:empty {
   align-self: center;
   margin-left: 2px;
 }
+
+.ffo {
+  display: flex;
+  flex-direction: row;
+  width: 54px;
+  border: 1px solid black;
+  margin-left: 5px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.ffo-middle {
+  width: 18px;
+  height: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.ffo-inner {
+  width: 18px;
+  height: 100%;
+}

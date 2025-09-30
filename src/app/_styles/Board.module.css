@@ -27,7 +27,7 @@
   background-color: rgb(10, 117, 193);
   color: white;
   display: grid;
-  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 35px;
+  grid-template-columns: 50px 120px 55px 55px 50px 50px 50px 54px;
   border: 1px solid black;
   border-bottom: none;
   position: relative;
@@ -75,8 +75,21 @@
   padding: 0px;
   justify-content: right;
 }
-#fresh-start-label{
+
+
+.fresh-start-label {
   color: black;
+  text-align: center;
+  width: 16px;
+}
+
+#fresh-start-labels {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-left: 4px;
+  padding: 0px;
 }
 
 .optional-section{
