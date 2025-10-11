@@ -26,6 +26,7 @@ const Report = () => {
     const input = document.getElementById(id);
     
     input.classList.add("printable");
+    input.classList.add(styles.printable);
     await toJpeg(input, { backgroundColor: "white" }).then((dataUrl) => {
       /*
         const a = document.createElement('a');
@@ -51,6 +52,7 @@ const Report = () => {
       }
 
       input.classList.remove("printable");
+      input.classList.remove(styles.printable);
       //pdf.save("download.pdf");
     });
   };

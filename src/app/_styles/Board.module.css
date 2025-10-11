@@ -64,6 +64,8 @@
   margin-left: 66px;
 }
 
+
+
 #birthdays, #holidays {
   max-width: 238px;
 }
@@ -95,4 +97,8 @@
 .optional-section{
   height: 120px;
   margin-top: 30px;
+}
+
+.side-header-small {
+
 }

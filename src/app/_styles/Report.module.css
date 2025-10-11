@@ -4,5 +4,9 @@
   width: 816px;
   min-height: 1056px;
   padding: 20px;
-  padding-top: 5px;
+  
+}
+
+.sheet.printable {
+  padding-top: 90px;
 }

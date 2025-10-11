@@ -189,10 +189,10 @@ const Board = () => {
           </div>
         </div>
         <div className={styles["optional-section"]}>
-          <h2 className="side-header">Fuel Replenishment</h2>
+          <h2 className="side-header">Management</h2>
         </div>
         <div className={styles["optional-section"]}>
-          <h2 className="side-header">Management</h2>
+          <h3 className="side-header-small">Fuel Replenishment</h3>
         </div>
       </div>
     </>
