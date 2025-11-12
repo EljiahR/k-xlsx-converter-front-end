@@ -95,6 +95,6 @@ p.lunch:empty {
   font-size: x-small;
 }
 
-.person:hover > * > .delete-btn {
+*:not(.printable) > * > * >.person:hover > * > .delete-btn {
   visibility: visible;
 }
