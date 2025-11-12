@@ -89,3 +89,12 @@ p.lunch:empty {
   width: 18px;
   height: 100%;
 }
+
+.delete-btn {
+  visibility: hidden;
+  font-size: x-small;
+}
+
+.person:hover > * > .delete-btn {
+  visibility: visible;
+}

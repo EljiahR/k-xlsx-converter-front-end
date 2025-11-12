@@ -193,10 +193,16 @@ export const shiftsSlice = createSlice({
         },
         clearSelectedBagger: (state) => {
             state.selectedBagger = "";
+        },
+        deleteShift: (state, action: PayloadAction<{employeeId: string, firstName: string, jobPosition: string}>) => {
+            const position = state.value[state.day].jobPositions.find(j => j.name == action.payload.jobPosition);
+            if (position) {
+                position.shifts = position.shifts.filter(e => !(e.employeeId == action.payload.employeeId && e.name.firstName == action.payload.firstName));
+            }
         }
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;
