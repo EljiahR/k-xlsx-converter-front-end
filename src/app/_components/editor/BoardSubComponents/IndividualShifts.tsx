@@ -49,9 +49,9 @@ const IndividualShifts = ({
         />
         {!positionName.includes("Fuel") ? (
           <div className={styles["ffo"]}>
-            <div className={styles["ffo-inner"]}></div>
+            <div className={styles["ffo-left"]}></div>
             <div className={styles["ffo-middle"]}></div>
-            <div className={styles["ffo-inner"]}></div>
+            <div className={styles["ffo-right"]}></div>
           </div>          
         ) : (
           <div className={styles["no-outline"]}></div>

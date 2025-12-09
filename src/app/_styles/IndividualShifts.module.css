@@ -10,7 +10,6 @@ input.highlight, p.highlight {
   border-right: 1px solid black;
   font-size: .80rem;
   text-align: left;
-  z-index: 1;
 }
 
 .blank-row {
@@ -28,7 +27,11 @@ input.highlight, p.highlight {
 .person-name {
   font-size: 0.75rem;
   text-align: left;
-  
+  padding-left: 2px;
+  padding-right: 2px;
+  white-space: nowrap;
+  align-self: center;
+  line-height: 1.25rem;
 }
 
 .time {
@@ -45,7 +48,6 @@ input.highlight, p.highlight {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
 }
 
 p.break:empty,
@@ -74,24 +76,34 @@ p.lunch:empty {
 .ffo {
   display: flex;
   flex-direction: row;
-  width: 54px;
-  
+  width: 100%;
   justify-self: center;
-  padding: 0px;
+  padding: 2px;
   box-sizing: border-box;
   outline: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .ffo-middle {
-  width: 18px;
-  height: 100%;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
 }
 
-.ffo-inner {
+.ffo-left, .ffo-right {
   width: 18px;
-  height: 100%;
+  height: 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.ffo-left {
+  border-left: 1px solid black;
+}
+
+.ffo-right {
+  border-right: 1px solid black;
 }
 
 .delete-btn {

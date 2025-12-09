@@ -35,7 +35,7 @@ const Board = () => {
           (shift) => shift.name === "Front End Supervisor",
         ) && (
           <>
-            <div className={styles["title-header"]}>Front End Supervisors</div>
+            <div id={styles["first-title-header"]} className={styles["title-header"]}>Front End Supervisors</div>
             <div className={styles["no-outline"]}></div>
 
             <IndividualShifts

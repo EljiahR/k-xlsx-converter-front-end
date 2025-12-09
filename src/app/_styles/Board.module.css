@@ -1,28 +1,56 @@
 #report{
   max-height: 100%;
   display: grid;
-  grid-template-columns: 40px 150px 50px 47px 48px 47px 42px 60px;
-  
+  grid-template-columns: 40px 1fr 50px 47px 48px 47px 42px 60px;
+  background: linear-gradient(
+    to left,
+    white 60px,
+    black 0%
+  );
+  gap: 1px;
+  padding-left: 1px;
+  padding-bottom: 1px;
 }
 
 .report * {
   background-color: white;
-  outline: 1px solid;
   height: 20px;
   margin: 0;
 }
 
+#report > h6 {
+  background-color: rgb(10, 117, 193);
+  outline: 1px solid rgb(10, 117, 193);
+  color: white;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  padding: 0px;
+  line-height: 1rem;
+}
+
 #date {
-  margin-bottom: 2px;
-  margin-top: 10px;
+  background-color: white;
   text-align: left;
   grid-column: 1 / -1;
   outline: none;
+  margin-left: -1px;
 }
 
 #fs-labels {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-self: center;
+  padding: 2px;
+  box-sizing: border-box;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#fs-labels > h6 {
+  line-height: 1rem;
 }
 
 .no-outline {
@@ -30,8 +58,16 @@
 }
 
 .title-header {
+  width: 100%;
   grid-column: 1 / -2;
+  background-color: rgb(217, 217, 217);
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .front-end-content {
   background-color: black;
@@ -50,7 +86,6 @@
   grid-template-columns: 40px 150px 50px 47px 48px 47px 42px 60px;
   gap: 1px;
   border: 1px solid black;
-  border-bottom: none;
   position: relative;
   z-index: 1;
   text-align: center;
@@ -104,7 +139,8 @@
 .fresh-start-label {
   color: black;
   text-align: center;
-  width: 16px;
+  width: 20px;
+  outline: none;
 }
 
 #fresh-start-labels {
