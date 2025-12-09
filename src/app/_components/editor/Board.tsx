@@ -14,135 +14,124 @@ const Board = () => {
 
   return (
     <>
-      <div id={styles["report"]}>
+      <div id={styles["report"]} className={styles["report"]}>
         <h5 id={styles["date"]}>{shifts[currentDay].date}</h5>
-        <div id={styles["labels"]}>
-          <h6>Tasks</h6>
-          <h6>Name</h6>
-          <h6>Start</h6>
-          <h6>End</h6>
-          <h6>Break</h6>
-          <h6>Lunch</h6>
-          <h6>Break</h6>
-          <div id={styles["fresh-start-labels"]}>
-            <h6 className={styles["fresh-start-label"]}>FC</h6>
-            <h6 className={styles["fresh-start-label"]}>FS</h6>
-            <h6 className={styles["fresh-start-label"]}>O</h6>
-          </div>
+        <h6>Tasks</h6>
+        <h6>Name</h6>
+        <h6>Start</h6>
+        <h6>End</h6>
+        <h6>Break</h6>
+        <h6>Lunch</h6>
+        <h6>Break</h6>
+        <div id={styles["fs-labels"]}>
+          <h6 className={styles["fresh-start-label"]}>FC</h6>
+          <h6 className={styles["fresh-start-label"]}>FS</h6>
+          <h6 className={styles["fresh-start-label"]}>O</h6>
         </div>
+        
+
+        
         {shifts[currentDay].jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
         ) && (
           <>
-            <div className={styles["front-end-header"]}>
-              <div className="blank-cell"></div>
-              <div className="header-title">Front End Supervisors</div>
-            </div>
-            <div className={styles["front-end-content"]}>
-              <IndividualShifts
-                people={
-                  shifts[currentDay].jobPositions.find(
-                    (shift) => shift.name === "Front End Supervisor",
-                  ).shifts
-                }
-                positionName="Front End Supervisor"
-                section="desk"
-                inputReference={inputReference}
-              />
-              <BlankRow />
-              <BlankRow />
-            </div>
+            <div className={styles["title-header"]}>Front End Supervisors</div>
+            <div className={styles["no-outline"]}></div>
+
+            <IndividualShifts
+              people={
+                shifts[currentDay].jobPositions.find(
+                  (shift) => shift.name === "Front End Supervisor",
+                ).shifts
+              }
+              positionName="Front End Supervisor"
+              section="desk"
+              inputReference={inputReference}
+            />
+            <BlankRow />
+            <BlankRow />
+        
           </>
         )}
 
-        <div className={styles["front-end-header"]}>
-          <div className="blank-cell"></div>
-          <div className="header-title">Front End Cashiers</div>
-        </div>
-        <div className={styles["front-end-content"]}>
-          <IndividualShifts
-            people={
-              shifts[currentDay].jobPositions.find(
-                (shift) => shift.name === "Front End Cashier",
-              ).shifts
-            }
-            positionName="Front End Cashier"
-            section="cashier"
-            inputReference={inputReference}
-          />
-          <BlankRow />
-          <BlankRow />
-        </div>
-        <div className={styles["front-end-header"]}>
-          <div className="blank-cell"></div>
-          <div className="header-title">Self-Checkout</div>
-        </div>
-        <div className={styles["front-end-content"]}>
-          <IndividualShifts
-            people={
-              shifts[currentDay].jobPositions.find(
-                (shift) => shift.name === "Front End SCO Cashier",
-              ).shifts
-            }
-            positionName="Front End SCO Cashier"
-            section="cashier"
-            inputReference={inputReference}
-          />
-          <BlankRow />
-          <BlankRow />
-        </div>
-        <div className={styles["front-end-header"]}>
-          <div className="blank-cell"></div>
-          <div className="header-title">Courtesy Clerks</div>
-        </div>
-        <div className={styles["front-end-content"]}>
-          <IndividualShifts
-            people={
-              shifts[currentDay].jobPositions.find(
-                (shift) => shift.name === "Front End Courtesy Clerk",
-              ).shifts
-            }
-            positionName="Front End Courtesy Clerk"
-            section="bagger"
-            inputReference={inputReference}
-          />
-          <BlankRow />
-          <BlankRow />
-        </div>
-        <div className={styles["front-end-header"]}>
-          <div className="blank-cell"></div>
-          <div className="header-title">Service Desk</div>
-        </div>
-        <div className={styles["front-end-content"]}>
-          <IndividualShifts
-            people={
-              shifts[currentDay].jobPositions.find(
-                (shift) => shift.name === "Front End Service Desk",
-              ).shifts
-            }
-            positionName="Front End Service Desk"
-            section="desk"
-            inputReference={inputReference}
-          />
-          <BlankRow />
-          <BlankRow />
-        </div>
-        <div className={styles["front-end-header"]}>
-          <div className="blank-cell"></div>
-          <div className="header-title">Fuel Center</div>
-        </div>
-        <div id={styles["fuel"]} className={styles["front-end-content"]}>
-          <IndividualShifts
-            people={
-              shifts[currentDay].jobPositions.find(
-                (shift) => shift.name === "Fuel Clerk",
-              ).shifts
-            }
-            positionName="Fuel Clerk"
-            section="desk"
-            inputReference={inputReference}
-          />
-        </div>
+        <div className={styles["title-header"]}>Front End Cashiers</div>
+        <div className={styles["no-outline"]}></div>
+
+        <IndividualShifts
+          people={
+            shifts[currentDay].jobPositions.find(
+              (shift) => shift.name === "Front End Cashier",
+            ).shifts
+          }
+          positionName="Front End Cashier"
+          section="cashier"
+          inputReference={inputReference}
+        />
+        <BlankRow />
+        <BlankRow />
+
+        <div className={styles["title-header"]}>Self-Checkout</div>
+        <div className={styles["no-outline"]}></div>
+
+        <IndividualShifts
+          people={
+            shifts[currentDay].jobPositions.find(
+              (shift) => shift.name === "Front End SCO Cashier",
+            ).shifts
+          }
+          positionName="Front End SCO Cashier"
+          section="cashier"
+          inputReference={inputReference}
+        />
+        <BlankRow />
+        <BlankRow />
+
+        <div className={styles["title-header"]}>Courtesy Clerks</div>
+        <div className={styles["no-outline"]}></div>
+
+        <IndividualShifts
+          people={
+            shifts[currentDay].jobPositions.find(
+              (shift) => shift.name === "Front End Courtesy Clerk",
+            ).shifts
+          }
+          positionName="Front End Courtesy Clerk"
+          section="bagger"
+          inputReference={inputReference}
+        />
+        <BlankRow />
+        <BlankRow />
+
+        <div className={styles["title-header"]}>Service Desk</div>
+        <div className={styles["no-outline"]}></div>
+      
+        <IndividualShifts
+          people={
+            shifts[currentDay].jobPositions.find(
+              (shift) => shift.name === "Front End Service Desk",
+            ).shifts
+          }
+          positionName="Front End Service Desk"
+          section="desk"
+          inputReference={inputReference}
+        />
+        <BlankRow />
+        <BlankRow />
+
+        <div className={styles["title-header"]}>Fuel Center</div>
+        <div className={styles["no-outline"]}></div>
+
+        <IndividualShifts
+          people={
+            shifts[currentDay].jobPositions.find(
+              (shift) => shift.name === "Fuel Clerk",
+            ).shifts
+          }
+          positionName="Fuel Clerk"
+          section="desk"
+          inputReference={inputReference}
+        />
+
       </div>
       <div id={styles["side-section"]}>
         {shifts[currentDay].birthdays.length > 0 && (

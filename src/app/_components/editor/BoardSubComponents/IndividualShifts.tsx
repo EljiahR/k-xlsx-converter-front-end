@@ -15,15 +15,7 @@ const IndividualShifts = ({
 
   const shifts = people.map((person) => {
     return (
-      <div
-        className={styles["person"]}
-        key={
-          positionName +
-          person.employeeId +
-          person.shiftStart +
-          person.shiftEnd
-        }
-      >
+      <>
         <div className={styles["blank-cell"]}>
           <button className={styles["delete-btn"]} onClick={() => dispatch(deleteShift({employeeId: person.employeeId, firstName: person.name.firstName, jobPosition: positionName }))}>Delete</button>
         </div>
@@ -55,17 +47,16 @@ const IndividualShifts = ({
           section={section}
           inputReference={inputReference}
         />
-        {!positionName.includes("Fuel") && (
-          <>
+        {!positionName.includes("Fuel") ? (
           <div className={styles["ffo"]}>
             <div className={styles["ffo-inner"]}></div>
             <div className={styles["ffo-middle"]}></div>
             <div className={styles["ffo-inner"]}></div>
-          </div>
-          </>
-          
+          </div>          
+        ) : (
+          <div className={styles["no-outline"]}></div>
         )}
-      </div>
+      </>
     );
   });
   return shifts;
