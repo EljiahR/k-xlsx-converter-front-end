@@ -9,7 +9,7 @@ input.highlight, p.highlight {
   gap: 1px;
   margin-top: 1px;
   border-right: 1px solid black;
-  font-size: .80rem;
+  font-size: 12px;
   text-align: left;
 }
 

@@ -1,7 +1,9 @@
-#report{
+#report {
   max-height: 100%;
+  height: fit-content;
   display: grid;
   grid-template-columns: 40px 1fr 50px 47px 48px 47px 42px 60px;
+  grid-auto-rows: 20px;
   background: linear-gradient(
     to left,
     white 60px,
@@ -10,6 +12,7 @@
   gap: 1px;
   padding-left: 1px;
   padding-bottom: 1px;
+  box-sizing: border-box;
 }
 
 .report * {
