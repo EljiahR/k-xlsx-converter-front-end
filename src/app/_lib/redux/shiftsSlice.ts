@@ -188,6 +188,14 @@ export const shiftsSlice = createSlice({
         setSelectedTime: (state, action: PayloadAction<ISelectedTime>) => {
             state.selectedTime = action.payload;
         },
+        clearSelectedTime: (state) => {
+            state.selectedTime = {
+                time: "",
+                section: "",
+                time15: "",
+                timeMinus15: "",
+            };
+        },
         setSelectedBagger: (state, action: PayloadAction<string>) => {
             state.selectedBagger = action.payload;
         },
@@ -203,6 +211,6 @@ export const shiftsSlice = createSlice({
     }
 });
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

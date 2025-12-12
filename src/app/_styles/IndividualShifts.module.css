@@ -107,7 +107,7 @@ p.lunch:empty {
   visibility: hidden;
   font-size: x-small;
 }
-
-*:not(.printable) > * > * >.person:hover > * > .delete-btn {
+ 
+.blank-cell:hover .delete-btn {
   visibility: visible;
 }

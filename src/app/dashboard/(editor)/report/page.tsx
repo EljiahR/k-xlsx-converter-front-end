@@ -12,7 +12,7 @@ import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
 import {starterPDF, refreshPDF} from "../../../_lib/helpers/defaultPDF";
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
-import { setAsTest, setNewShifts, setShiftsNull, setDay } from "../../../_lib/redux/shiftsSlice";
+import { setAsTest, setNewShifts, setShiftsNull, setDay, clearSelectedTime } from "../../../_lib/redux/shiftsSlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -23,6 +23,7 @@ const Report = () => {
   let pdf = starterPDF;
 
   const convertDivToPDF = async (id) => {
+    dispatch(clearSelectedTime());
     const input = document.getElementById(id);
     
     input.classList.add("printable");
