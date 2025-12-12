@@ -12,10 +12,6 @@ input.highlight, p.highlight {
   text-align: left;
 }
 
-.blank-row {
-  height: 15px !important;
-}
-
 .person > * {
   background-color: white;
 

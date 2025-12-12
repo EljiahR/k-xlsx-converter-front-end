@@ -7,9 +7,9 @@ const BlankRow = () => {
       <p className={styles["person-name"]}></p>
       <p className={`${styles["start"]} ${styles["time"]}`}></p>
       <p className={`${styles["end"]} ${styles["time"]}`}></p>
-      <p className={styles["break"]}></p>
-      <p className={styles["lunch"]}></p>
-      <p className={styles["break"]}></p>
+      <p></p>
+      <p></p>
+      <p></p>
       <div className={styles["no-outline"]}></div>
     </>
   );
