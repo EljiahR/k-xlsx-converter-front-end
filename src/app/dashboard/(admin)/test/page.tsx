@@ -1,8 +1,8 @@
 "use client"
 
 import "@/styles/globals.css";
-import Add from "src/app/_components/admin/Add";
-import Edit from "src/app/_components/admin/Edit";
+import Add from "../../../_components/admin/Add";
+import Edit from "../../../_components/admin/Edit";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

@@ -1,31 +1,54 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
-    "baseUrl": ".",
     "skipLibCheck": true,
     "strict": false,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "paths": {
-      "@/components/*": ["/src/app/_components/*"],
-      "@/lib/*": ["/src/app/_lib/*"],
-      "@/styles/*": ["/src/app/_styles/*"],
-      "@/admin/*": ["/src/app/dashboard/(admin)/*"]
+      "@/components/*": [
+        "/src/app/_components/*"
+      ],
+      "@/lib/*": [
+        "/src/app/_lib/*"
+      ],
+      "@/styles/*": [
+        "/src/app/_styles/*"
+      ],
+      "@/admin/*": [
+        "/src/app/dashboard/(admin)/*"
+      ]
     },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "types": ["vite"]
+    "types": [
+      "vite"
+    ],
+    "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "vitest.config.mts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "vitest.config.mts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

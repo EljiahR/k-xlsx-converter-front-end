@@ -1,6 +1,6 @@
-import instance from "src/app/_lib/axiosBase";
+import instance from "../../_lib/axiosBase";
 import { useEffect, useState } from "react";
-import useTitle from "src/app/_lib/useTitle";
+import useTitle from "../../_lib/useTitle";
 
 interface EmployeeInfo {
   firstName: string;

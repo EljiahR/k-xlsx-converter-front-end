@@ -1,5 +1,5 @@
-import ProtectedRoute from "src/app/_components/ProtectedRoute"
-import EmployeePage from "src/app/_components/admin/EmployeesPage"
+import ProtectedRoute from "../../../_components/ProtectedRoute"
+import EmployeePage from "../../../_components/admin/EmployeesPage"
 
 const Employees = () => {
     return (

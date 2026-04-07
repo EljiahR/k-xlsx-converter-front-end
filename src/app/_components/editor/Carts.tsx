@@ -8,12 +8,12 @@ import {
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
 import React, { useRef } from "react";
-import { BaggerCartInfo, OnDragType, OnDropType } from "src/app/_lib/types/cartTypes";
-import { IEmployeeBO, IJobPositionBO } from "src/app/_lib/types/shiftTypes";
+import { BaggerCartInfo, OnDragType, OnDropType } from "../../_lib/types/cartTypes";
+import { IEmployeeBO, IJobPositionBO } from "../../_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
-import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { dragCartSlot, setSelectedBagger } from "src/app/_lib/redux/shiftsSlice";
-import { CartSlotDragAction } from "src/app/_lib/redux/reduxTypes";
+import { useAppDispatch, useAppSelector } from "../../_lib/redux/hooks";
+import { dragCartSlot, setSelectedBagger } from "../../_lib/redux/shiftsSlice";
+import { CartSlotDragAction } from "../../_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
 

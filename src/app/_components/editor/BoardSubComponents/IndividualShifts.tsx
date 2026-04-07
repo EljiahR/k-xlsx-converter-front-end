@@ -1,9 +1,10 @@
 import styles from "@/styles/IndividualShifts.module.css";
-import { IndividualShiftsProps } from "src/app/_lib/types/boardTypes";
+import { IndividualShiftsProps } from "../../../_lib/types/boardTypes";
 import { Breaks } from "./Breaks";
 import IndividualName from "./IndividualShiftsSubComponents/IndividualName";
-import { useAppDispatch } from "src/app/_lib/redux/hooks";
-import { deleteShift } from "src/app/_lib/redux/shiftsSlice";
+import { useAppDispatch } from "../../../_lib/redux/hooks";
+import { deleteShift } from "../../../_lib/redux/shiftsSlice";
+import React from "react";
 
 const IndividualShifts = ({
   people,
@@ -15,7 +16,7 @@ const IndividualShifts = ({
 
   const shifts = people.map((person) => {
     return (
-      <>
+      <React.Fragment key={person.employeeId + person.name.baggerName + person.shiftStart}>
         <div className={styles["blank-cell"]}>
           <button className={styles["delete-btn"]} onClick={() => dispatch(deleteShift({employeeId: person.employeeId, firstName: person.name.firstName, jobPosition: positionName }))}>Delete</button>
         </div>
@@ -56,7 +57,7 @@ const IndividualShifts = ({
         ) : (
           <div className={styles["no-outline"]}></div>
         )}
-      </>
+      </React.Fragment>
     );
   });
   return shifts;

@@ -1,11 +1,11 @@
-import checkCartErrors from "src/app/_lib/helpers/checkCartErrors";
+import checkCartErrors from "../../../_lib/helpers/checkCartErrors";
 import styles from "@/styles/Carts.module.css";
 import { useEffect } from "react";
-import { addMinutesToBreak } from "src/app/_lib/helpers/timeFunctions";
-import { BaggerInfo, CartSlotProps } from "src/app/_lib/types/cartTypes";
-import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
-import { editCartSlot, toggleCartSlotEdit } from "src/app/_lib/redux/shiftsSlice";
-import { useAppDispatch } from "src/app/_lib/redux/hooks";
+import { addMinutesToBreak } from "../../../_lib/helpers/timeFunctions";
+import { BaggerInfo, CartSlotProps } from "../../../_lib/types/cartTypes";
+import { IEmployeeBO } from "../../../_lib/types/shiftTypes";
+import { editCartSlot, toggleCartSlotEdit } from "../../../_lib/redux/shiftsSlice";
+import { useAppDispatch } from "../../../_lib/redux/hooks";
 
 const CartSlot = ({
   index,

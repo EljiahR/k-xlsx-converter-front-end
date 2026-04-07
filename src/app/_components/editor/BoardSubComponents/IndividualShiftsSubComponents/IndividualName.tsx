@@ -1,8 +1,8 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { MutableRefObject, useEffect } from "react";
-import { useAppDispatch } from "src/app/_lib/redux/hooks";
-import { changeName, toggleNameEdit, toggleNameEditBlur } from "src/app/_lib/redux/shiftsSlice";
-import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
+import { useAppDispatch } from "../../../../_lib/redux/hooks";
+import { changeName, toggleNameEdit, toggleNameEditBlur } from "../../../../_lib/redux/shiftsSlice";
+import { IEmployeeBO } from "../../../../_lib/types/shiftTypes";
 
 interface Props {
     person: IEmployeeBO,

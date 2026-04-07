@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC, FormEvent, useEffect, useState } from "react";
-import instance from "src/app/_lib/axiosBase";
+import instance from "../../../_lib/axiosBase";
 
 const Login: FC = () => {
     const router = useRouter();

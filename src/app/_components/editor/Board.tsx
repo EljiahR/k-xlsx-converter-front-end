@@ -3,8 +3,8 @@ import BlankRow from "./BoardSubComponents/BlankRow";
 import CallUps from "./BoardSubComponents/CallUps";
 import IndividualShifts from "./BoardSubComponents/IndividualShifts";
 import Liquor from "./BoardSubComponents/Liquor";
-import { joinWithLast } from "src/app/_lib/helpers/formatFunctions";
-import { useAppSelector } from "src/app/_lib/redux/hooks";
+import { joinWithLast } from "../../_lib/helpers/formatFunctions";
+import { useAppSelector } from "../../_lib/redux/hooks";
 import { useRef } from "react";
 
 const Board = () => {

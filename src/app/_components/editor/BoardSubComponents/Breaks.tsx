@@ -1,8 +1,8 @@
 import styles from "@/styles/IndividualShifts.module.css";
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "src/app/_lib/redux/hooks";
-import { addToBreak, changeBreak, toggleBreakEdit } from "src/app/_lib/redux/shiftsSlice";
-import { BreaksProps } from "src/app/_lib/types/boardTypes";
+import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
+import { addToBreak, changeBreak, toggleBreakEdit } from "../../../_lib/redux/shiftsSlice";
+import { BreaksProps } from "../../../_lib/types/boardTypes";
 
 export const Breaks = ({
     person,

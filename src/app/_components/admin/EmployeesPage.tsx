@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Add from "./Add";
 import Edit from "./Edit";
-import instance from "src/app/_lib/axiosBase";
+import instance from "../../_lib/axiosBase";
 
 const EmployeesPage = ({ authorizedStores }) => {
   const router = useRouter();

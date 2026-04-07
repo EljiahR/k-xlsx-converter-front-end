@@ -1,5 +1,5 @@
 import styles from "@/styles/Liquor.module.css";
-import { IEmployeeBO } from "src/app/_lib/types/shiftTypes";
+import { IEmployeeBO } from "../../../_lib/types/shiftTypes";
 
 interface Props {
   people: IEmployeeBO[],

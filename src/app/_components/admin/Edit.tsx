@@ -1,8 +1,8 @@
-import instance from "src/app/_lib/axiosBase";
-import testEmployees from "src/app/_lib/test/testEmployeesBO";
+import instance from "../../_lib/axiosBase";
+import testEmployees from "../../_lib/test/testEmployeesBO";
 import EmployeeDivs from "./EmployeeDivs";
 import { useEffect, useMemo, useState } from "react";
-import useTitle from "src/app/_lib/useTitle";
+// import useTitle from "../../_lib/useTitle";
 
 const Edit = ({ selectedStore }) => {
   const [loading, setLoading] = useState(false);
