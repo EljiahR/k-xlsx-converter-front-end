@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "@/styles/NavBar.module.css";
 import { useState } from "react";
+import { generatePdf } from "../_lib/helpers/pdfGenerator";
+import { useAppSelector } from "../_lib/redux/hooks";
 
 const NavBar = ({
   printPdf,
@@ -12,6 +14,12 @@ const NavBar = ({
   shifts
 }) => {
   const [defaultToReport, setDefaultToReport] = useState(true);
+  const currentDay = useAppSelector((state) => state.shifts.day);
+
+
+  const handlePdfGenerator = () => {
+    generatePdf(shifts[currentDay]);
+  }
   
   return (
     <div id={styles["navbar"]}>
@@ -44,6 +52,7 @@ const NavBar = ({
                 <button onClick={() => printPdf("carts")}>Print</button>
               </>
             )}
+            <button>Pdf Generator</button>
           </div>
         )}
       </div>

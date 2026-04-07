@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import {starterPDF, refreshPDF} from "../../../_lib/helpers/defaultPDF";
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
 import { setAsTest, setNewShifts, setShiftsNull, setDay, clearSelectedTime } from "../../../_lib/redux/shiftsSlice";
+import { generatePdf } from "../../../_lib/helpers/pdfGenerator";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
