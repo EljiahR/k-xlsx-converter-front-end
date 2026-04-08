@@ -1,6 +1,6 @@
 import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
-import autoTable from "jspdf-autotable";
+import autoTable, { Styles } from "jspdf-autotable";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -16,10 +16,14 @@ const columns = [
 
 const emptyString = ""
 const emptyRow = {name: emptyString, start: emptyString, end: emptyString, break1: emptyString, lunch: emptyString, break2: emptyString, fc: emptyString, fs: emptyString, o: emptyString}
+const subtitleStyles: Partial<Styles> = {
+    halign: "center",
+    fillColor: "#d9d9d9"
+};
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
-    const daily = new jsPDF("p", "in", [8.5, 11]);
+    const daily = new jsPDF();
 
     const supervisors = weekday.jobPositions.find((j) => j.name == "Front End Supervisor")
         .shifts.map(convertJobPositionToRow);
@@ -45,45 +49,60 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         .shifts.map(convertJobPositionToRow);
 
     daily.setFontSize(16);
-    daily.text("Sales Report - Q1 2026", 14, 15);
+    daily.setTextColor("black");
+    daily.text(weekday.date, 10, 10);
     
     autoTable(daily, {
         startY: 20,
+        styles: {
+            lineWidth: 0.5,
+            lineColor: [0, 0, 0],
+            cellWidth: "auto",
+            cellPadding: 1
+        },
+        bodyStyles: {
+            fontSize: 8
+        },
         columns,
         body: [
             [{
                 content: "Front End Supervisors",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...supervisors,
             [{
                 content: "Front End Cashiers",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...cashiers,
             [{
                 content: "Self-Checkout",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...scos,
             [{
                 content: "Courtesy Clerks",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...baggers,
             [{
                 content: "Service Desk",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...desk,
             [{
                 content: "Fuel Center",
-                colSpan: 7
+                colSpan: 9,
+                styles: subtitleStyles
             }], 
             ...fuel,
         ]
     });
-
     // daily.output("dataurlnewwindow");
     daily.save("pdfjsnewwindow");
 };
