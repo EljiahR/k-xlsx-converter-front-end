@@ -28,6 +28,7 @@ const NavBar = ({
       </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
       <button onClick={handleTestShifts}>Use Test File</button>
+      <button onClick={handlePdfGenerator}>Pdf Generator</button>
       <div>
         {shifts && (
           <div id="report-controls">
@@ -52,7 +53,6 @@ const NavBar = ({
                 <button onClick={() => printPdf("carts")}>Print</button>
               </>
             )}
-            <button>Pdf Generator</button>
           </div>
         )}
       </div>
