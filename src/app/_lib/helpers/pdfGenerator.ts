@@ -18,7 +18,8 @@ const emptyString = ""
 const emptyRow = {name: emptyString, start: emptyString, end: emptyString, break1: emptyString, lunch: emptyString, break2: emptyString, fc: emptyString, fs: emptyString, o: emptyString}
 const subtitleStyles: Partial<Styles> = {
     halign: "center",
-    fillColor: "#d9d9d9"
+    fillColor: "#d9d9d9",
+    fontSize: 8
 };
 
 export const generatePdf = (weekday: IWeekdayBO) => {
@@ -55,7 +56,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     autoTable(daily, {
         startY: 20,
         styles: {
-            lineWidth: 0.5,
+            lineWidth: 0.1,
             lineColor: [0, 0, 0],
             cellWidth: "auto",
             cellPadding: 1
@@ -64,6 +65,22 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             fontSize: 8
         },
         columns,
+        headStyles: {
+            fontSize: 7,
+            lineWidth: 0,
+            halign: "center"
+        },
+        columnStyles: {
+            "name": { cellWidth: 30},
+            "start": { cellWidth: 13},
+            "end": { cellWidth: 13},
+            "break1": { cellWidth: 13, halign: "center" },
+            "lunch": { cellWidth: 13, halign: "center" },
+            "break2": { cellWidth: 13, halign: "center" },
+            "fc": { cellWidth: 5},
+            "fs": { cellWidth: 5},
+            "o": { cellWidth: 5},
+        },
         body: [
             [{
                 content: "Front End Supervisors",
@@ -112,9 +129,9 @@ const convertJobPositionToRow = (s: IEmployeeBO) => {
         name: s.name.firstName + " " + s.name.lastName, 
         start: s.shiftStart, 
         end: s.shiftEnd, 
-        break1: s.breakOne.time, 
-        lunch: s.lunch.time, 
-        break2: s.breakTwo.time,
+        break1: s.breakOne.time.replace(/\s[AP]M/g, "").replace(/:00/g, ""), 
+        lunch: s.lunch.time.replace(/\s[AP]M/g, "").replace(/:00/g, ""), 
+        break2: s.breakTwo.time.replace(/\s[AP]M/g, "").replace(/:00/g, ""),
         fc: emptyString,
         fs: emptyString,
         o: emptyString
