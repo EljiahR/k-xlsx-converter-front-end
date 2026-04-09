@@ -49,12 +49,13 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     const fuel = weekday.jobPositions.find((j) => j.name == "Fuel Clerk")
         .shifts.map(convertJobPositionToRow);
 
-    daily.setFontSize(16);
+    daily.setFontSize(8);
     daily.setTextColor("black");
-    daily.text(weekday.date, 10, 10);
+    daily.text(weekday.date, 5, 10);
     
     autoTable(daily, {
-        startY: 20,
+        margin: 5,
+        startY: 12,
         styles: {
             lineWidth: 0.1,
             lineColor: [0, 0, 0],
@@ -71,7 +72,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             halign: "center"
         },
         columnStyles: {
-            "name": { cellWidth: 30},
+            "name": { cellWidth: 32},
             "start": { cellWidth: 13},
             "end": { cellWidth: 13},
             "break1": { cellWidth: 13, halign: "center" },
@@ -120,6 +121,13 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             ...fuel,
         ]
     });
+
+    autoTable(daily, {
+        margin: 130,
+        startY: 12,
+        head: [["HEAD"]],
+        headStyles: { lineWidth: 0.1, lineColor: "black", cellWidth: 75 }
+    })
     // daily.output("dataurlnewwindow");
     daily.save("pdfjsnewwindow");
 };
