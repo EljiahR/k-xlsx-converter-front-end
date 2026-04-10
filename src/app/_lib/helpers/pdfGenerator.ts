@@ -1,6 +1,7 @@
 import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import autoTable, { Styles } from "jspdf-autotable";
+import { joinWithLast } from "./formatFunctions";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -122,9 +123,23 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         ]
     });
 
+    let rightY = 12;
+
+    if (weekday.birthdays.length > 0) {
+        const birthdays = "Happy Birthday " + joinWithLast(weekday.birthdays, ',', 'and');
+        daily.text(birthdays, 130, rightY);
+        rightY += 5 * (birthdays.length % 2 + 1);
+    }
+
+    if (weekday.holidays.length > 0) {
+        const holidays = "Happy " + joinWithLast(weekday.holidays, ',', 'and');
+        daily.text(holidays, 130, rightY);
+        rightY += 5 * (holidays.length % 2 + 1);
+    }
+
     autoTable(daily, {
         margin: 130,
-        startY: 12,
+        startY: rightY,
         head: [["HEAD"]],
         headStyles: { lineWidth: 0.1, lineColor: "black", cellWidth: 75 }
     })
