@@ -5,6 +5,7 @@ import { joinWithLast } from "./formatFunctions";
 import { content } from "html2canvas/dist/types/css/property-descriptors/content";
 import { lotTimes, utilityTimes } from "../lotTimes";
 import path from "path";
+import { getDatesFromTimes } from "./timeFunctions";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -252,7 +253,19 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     daily.addPage(); // Backside blank
     daily.addPage();
-    // signing list here
+    // grabbing all register operators
+    const registerOperators: IEmployeeBO[] = [];
+    weekday.jobPositions.forEach((p) => {
+        if (p.name != "Front End Courtesy Clerk" && p.name != "Call Ups") {
+            // Okay look, I know I could write something to push everything in order, but why should I
+            registerOperators.push(...p.shifts);
+        }
+    });
+    registerOperators.sort((a, b) => {
+        const [aTime, bTime] = getDatesFromTimes([a, b]);
+        return aTime - bTime;
+    });
+
     daily.addPage();
     const policyImage = new Image();
     policyImage.src = path.resolve("/cash-scam-policy.png");
