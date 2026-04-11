@@ -161,44 +161,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             "fs": { cellWidth: 5},
             "o": { cellWidth: 5},
         },
-        body: [
-            [{
-                content: "Front End Supervisors",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...supervisors,
-            [{
-                content: "Front End Cashiers",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...cashiers,
-            [{
-                content: "Self-Checkout",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...scos,
-            [{
-                content: "Courtesy Clerks",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...baggers,
-            [{
-                content: "Service Desk",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...desk,
-            [{
-                content: "Fuel Center",
-                colSpan: 9,
-                styles: subtitleStyles
-            }], 
-            ...fuel,
-        ]
+        body: dailyBody    
     });
 
     const rightSide: RowInput[] = [];
