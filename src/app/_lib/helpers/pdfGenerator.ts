@@ -42,29 +42,91 @@ const cartHeaderStyles: Partial<Styles> = {
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
     const daily = new jsPDF();
+    const dailyBody = [];
 
     const supervisors = weekday.jobPositions.find((j) => j.name == "Front End Supervisor")
-        .shifts.map(convertJobPositionToRow);
-    supervisors.push(emptyRow, emptyRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    if (supervisors.length > 0) {
+        supervisors.push(emptyRow, emptyRow)
+        dailyBody.push(
+            [{
+                content: "Front End Supervisors",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...supervisors
+        );
+    }
 
     const cashiers = weekday.jobPositions.find((j) => j.name == "Front End Cashier")
-        .shifts.map(convertJobPositionToRow);
-    cashiers.push(emptyRow, emptyRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    if (cashiers.length > 0) {
+        cashiers.push(emptyRow, emptyRow)
+        dailyBody.push(
+            [{
+                content: "Front End Cashiers",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...cashiers
+        );
+    }
 
     const scos = weekday.jobPositions.find((j) => j.name == "Front End SCO Cashier")
-        .shifts.map(convertJobPositionToRow);
-    scos.push(emptyRow, emptyRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    if (scos.length > 0) {
+        scos.push(emptyRow, emptyRow)
+        dailyBody.push(
+            [{
+                content: "Self-Checkout",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...scos
+        );
+    }
 
     const baggers = weekday.jobPositions.find((j) => j.name == "Front End Courtesy Clerk")
-        .shifts.map(convertJobPositionToRow);
-    baggers.push(emptyRow, emptyRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    if (baggers.length > 0) {
+        baggers.push(emptyRow, emptyRow)
+        dailyBody.push(
+            [{
+                content: "Courtesy Clerks",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...baggers
+        );
+    }
 
     const desk = weekday.jobPositions.find((j) => j.name == "Front End Service Desk")
-        .shifts.map(convertJobPositionToRow);
-    desk.push(emptyRow, emptyRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    if (desk.length > 0) {
+        desk.push(emptyRow, emptyRow)
+        dailyBody.push(
+            [{
+                content: "Service Desk",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...desk
+        );
+    }
 
     const fuel = weekday.jobPositions.find((j) => j.name == "Fuel Clerk")
-        .shifts.map(convertJobPositionToRow);
+        ?.shifts.map(convertJobPositionToRow) ?? [];
+    
+    if (fuel.length > 0) {
+        dailyBody.push(
+            [{
+                content: "Fuel Center",
+                colSpan: 9,
+                styles: subtitleStyles
+            }],
+            ...fuel
+        );
+    }
 
     daily.setFontSize(8);
     daily.setTextColor("black");
@@ -160,24 +222,24 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     }
 
     const callups = weekday.jobPositions.find((p) => p.name == "Call Ups")
-        .shifts.map((s) => {
+        ?.shifts.map((s) => {
             return {
                 pos: s.originalPosition.split(" ")[0].replace("Front", "File") + ": ", 
                 name: s.name.firstName + " " + s.name.lastName, 
                 start: s.shiftStart, 
                 end: s.shiftEnd
             }
-        });
+        }) ?? [];
 
     const liquor = weekday.jobPositions.find((p) => p.name == "Liquor Clerk")
-        .shifts.map((s) => {
+        ?.shifts.map((s) => {
             return {
                 pos: emptyString, 
                 name: s.name.firstName + " " + s.name.lastName, 
                 start: s.shiftStart, 
                 end: s.shiftEnd
             }
-        });
+        }) ?? [];
 
     autoTable(daily, {
         alternateRowStyles: { fillColor: null },

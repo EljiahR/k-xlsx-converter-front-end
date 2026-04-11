@@ -5,7 +5,6 @@ import { generatePdf } from "../_lib/helpers/pdfGenerator";
 import { useAppSelector } from "../_lib/redux/hooks";
 
 const NavBar = ({
-  printPdf,
   handleCurrentDay,
   handleFileInput,
   handleTestShifts,
@@ -28,7 +27,6 @@ const NavBar = ({
       </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
       <button onClick={handleTestShifts}>Use Test File</button>
-      <button onClick={handlePdfGenerator}>Pdf Generator</button>
       <div>
         {shifts && (
           <div id="report-controls">
@@ -44,13 +42,13 @@ const NavBar = ({
             {page === "Board" && (
               <>
                 <button onClick={() => handlePage("Carts")}>Carts</button>
-                <button onClick={() => printPdf("board")}>Print</button>
+                <button onClick={handlePdfGenerator}>Print</button>
               </>
             )}
             {page === "Carts" && (
               <>
                 <button onClick={() => handlePage("Board")}>Report</button>
-                <button onClick={() => printPdf("carts")}>Print</button>
+                <button onClick={handlePdfGenerator}>Print</button>
               </>
             )}
           </div>
