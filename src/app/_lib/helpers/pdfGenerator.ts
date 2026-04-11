@@ -209,7 +209,42 @@ export const generatePdf = (weekday: IWeekdayBO) => {
                 colSpan: 4
             }]
         ]
-    })
+    });
+
+    daily.addPage();
+    const carts = new jsPDF();
+
+    carts.text("Lot, Lobby, Restroom Schedule", 10, 10);
+    carts.text("Date: " + weekday.date, 10, 20);
+    carts.setLineWidth(2);
+    carts.line(10, 30, 200, 30);
+    carts.text("Lot and Lobby", 10, 40);
+
+    autoTable(carts, {
+        columns: [
+            { header: "time1", dataKey: "time1" },
+            { header: "associate1", dataKey: "associate1"},
+            { header: "associate2", dataKey: "associate2"},
+            { header: "associate3", dataKey: "associate3"},
+            { header: "associate4", dataKey: "associate4"},
+            { header: "time2", dataKey: "time2" },
+            { header: "associate5", dataKey: "associate5"},
+            { header: "associate6", dataKey: "associate6"},
+            { header: "associate7", dataKey: "associate7"},
+            { header: "associate8", dataKey: "associate8"},
+        ]
+    });
+
+    const cartsAsImage = carts.output("datauristring");
+    daily.addPage();
+
+    const height = daily.internal.pageSize.getHeight();
+    const width = daily.internal.pageSize.getWidth();
+    daily.addImage(cartsAsImage, "JPEG", 0, 0, width, height);
+    daily.addPage();
+    daily.addPage();
+    daily.addImage(cartsAsImage, "JPEG", 0, 0, width, height);
+
     // daily.output("dataurlnewwindow");
     daily.save("pdfjsnewwindow");
 };
