@@ -1,6 +1,6 @@
 import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
-import autoTable, { RowInput, Styles } from "jspdf-autotable";
+import autoTable, { Color, RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
 import { content } from "html2canvas/dist/types/css/property-descriptors/content";
 import { lotTimes, utilityTimes } from "../lotTimes";
@@ -30,10 +30,14 @@ const rightSubtitleStyles: Partial<Styles> = {
     fontSize: 14
 };
 
+const blackLine: Color = [0, 0, 0];
+
 const cartHeaderStyles: Partial<Styles> = {
     lineWidth: 0.1,
-    lineColor: [0, 0, 0]
+    lineColor: blackLine,
+    fontStyle: "bold"
 };
+
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
@@ -71,7 +75,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         startY: 12,
         styles: {
             lineWidth: 0.1,
-            lineColor: [0, 0, 0],
+            lineColor: blackLine,
             cellWidth: "auto",
             cellPadding: 1
         },
@@ -141,7 +145,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         const birthdays = "Happy Birthday " + joinWithLast([...weekday.birthdays], ', ', ' and ');
         rightSide.push([{
             content: birthdays,
-            colSpan: 4
+            colSpan: 4,
+            styles: { fontSize: 14 }
         }], [])
     }
 
@@ -149,7 +154,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         const holidays = "Happy " + joinWithLast([...weekday.holidays], ', ', ' and ');
         rightSide.push([{
             content: holidays,
-            colSpan: 4
+            colSpan: 4,
+            styles: { fontSize: 14 }
         }], [])
     }
 
@@ -174,6 +180,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         });
 
     autoTable(daily, {
+        alternateRowStyles: { fillColor: null },
         margin: 123,
         startY: 12,
         styles: { halign: "center" },
@@ -209,7 +216,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
                 colSpan: 4,
                 styles: rightSubtitleStyles
             }],
-            [],[],[],[],
+            [],[],[],
             [{
                 content: "Fuel Replenishment",
                 colSpan: 4
@@ -303,40 +310,24 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
 
         autoTable(daily, {
+            alternateRowStyles: { fillColor: null },
             startY: 50,
             margin: 5,
             columns: cartShiftColumns,
-            headStyles: { cellWidth: 20 },
+            headStyles: { cellWidth: 20, fillColor: null, textColor: "black" },
             columnStyles: {
-                time1: { cellWidth: 19, lineWidth: 0.1, lineColor: [0, 0, 0] },
-                time2: { cellWidth: 19, lineWidth: 0.1, lineColor: [0, 0, 0] },
-                associate1: { lineWidth: { left: 0.1 }, lineColor: [0, 0, 0] },
-                associate5: { lineWidth: { left: 0.1 }, lineColor: [0, 0, 0] },
-                associate8: { lineWidth: { right: 0.1 }, lineColor: [0, 0, 0] }
+                time1: { cellWidth: 19 },
+                time2: { cellWidth: 19 },
             },
             showHead: "never",
-            styles: { halign: "center", fontSize: 10, cellPadding: [2, 1] },
+            styles: { halign: "center", fontSize: 10, cellPadding: [2, 1], lineWidth: { top: 0.1, bottom: 0.1}, lineColor: blackLine },
             didParseCell: (data) => {
-                if (data.row.index == 1 && data.column.index != 0 && data.column.index != 5) {
-                    data.cell.styles.lineColor = [0, 0, 0];
-                    if (data.column.index == 1 || data.column.index == 6) {
-                        data.cell.styles.lineWidth = { top: 0.1, left: 0.1 };
-                    } else if (data.column.index == 9) {
-                        data.cell.styles.lineWidth = { top: 0.1, right: 0.1 }
-                    } else {
-                        data.cell.styles.lineWidth = { top: 0.1 };
-                    }
-                    
-                    
-                } else if (data.row.index == 14 && data.column.index != 0 && data.column.index != 5) {
-                    data.cell.styles.lineColor = [0, 0, 0];
-                    if (data.column.index == 1 || data.column.index == 6) {
-                        data.cell.styles.lineWidth = { bottom: 0.1, left: 0.1 };
-                    } else if (data.column.index == 9) {
-                        data.cell.styles.lineWidth = { bottom: 0.1, right: 0.1 }
-                    } else {
-                        data.cell.styles.lineWidth = { bottom: 0.1 };
-                    }
+                if (data.column.index == 0 || data.column.index == 5 || data.row.index == 0) {
+                    data.cell.styles.lineWidth = { top: 0.1, bottom: 0.1, left: 0.1, right: 0.1 }
+                } else if (data.column.index == 1 || data.column.index == 6) {
+                    data.cell.styles.lineWidth = { top: 0.1, bottom: 0.1, left: 0.1}
+                } else if (data.column.index == 4 || data.column.index == 9) {
+                    data.cell.styles.lineWidth = { top: 0.1, bottom: 0.1, right: 0.1}
                 }
             },
             body: [
@@ -348,13 +339,18 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         daily.text(restroomText, (width - restroomTextWidth) / 2, 200);
 
         autoTable(daily, {
+            alternateRowStyles: { fillColor: null },
             margin: 5,
             startY: 210,
-            styles: { lineWidth: 0.1, lineColor: [0, 0, 0], halign: "center" },
+            styles: { lineWidth: 0.1, lineColor: blackLine, halign: "center" },
             columns: [
                 { header: "Time", dataKey: "time"},
                 { header: "Associate", dataKey: "associate" }
             ],
+            headStyles: {
+                fillColor: null,
+                textColor: "black"
+            },
             columnStyles: {
                 time: { cellWidth: 19 }
             },
