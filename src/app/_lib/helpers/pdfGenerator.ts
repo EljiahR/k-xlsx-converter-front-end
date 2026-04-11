@@ -3,6 +3,7 @@ import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import autoTable, { RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
 import { content } from "html2canvas/dist/types/css/property-descriptors/content";
+import { lotTimes, utilityTimes } from "../lotTimes";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -27,6 +28,11 @@ const subtitleStyles: Partial<Styles> = {
 const rightSubtitleStyles: Partial<Styles> = {
     halign: "center",
     fontSize: 14
+};
+
+const cartHeaderStyles: Partial<Styles> = {
+    lineWidth: 0.1,
+    lineColor: [0, 0, 0]
 };
 
 export const generatePdf = (weekday: IWeekdayBO) => {
@@ -211,39 +217,151 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         ]
     });
 
-    daily.addPage();
-    const carts = new jsPDF();
+    daily.setFontSize(14)
+    
+    const width = daily.internal.pageSize.getWidth();
+    const cartsTitle = "Lot, Lobby, Restroom Schedule";
+    const cartsTitleWidth = daily.getTextWidth(cartsTitle);
+    const dateText = "Date: " + weekday.date;
+    const dateTextWidth = daily.getTextWidth(dateText);
+    const lotLobbyText = "Lot and Lobby";
+    const lotLobbyTextWidth = daily.getTextWidth(lotLobbyText);
+    const cartShiftLines = [];
+    for (let i = 6; i < lotTimes.length; i += 2) {
+        cartShiftLines.push({
+            time1: lotTimes[i],
+            associate1: weekday.carts[i][0].name,
+            associate2: weekday.carts[i][1].name,
+            associate3: weekday.carts[i][2].name,
+            associate4: weekday.carts[i][3].name,
+            time2: lotTimes[i + 1],
+            associate5: weekday.carts[i + 1][0].name,
+            associate6: weekday.carts[i + 1][1].name,
+            associate7: weekday.carts[i + 1][2].name,
+            associate8: weekday.carts[i + 1][3].name,
+        });
+    }
 
-    carts.text("Lot, Lobby, Restroom Schedule", 10, 10);
-    carts.text("Date: " + weekday.date, 10, 20);
-    carts.setLineWidth(2);
-    carts.line(10, 30, 200, 30);
-    carts.text("Lot and Lobby", 10, 40);
+    const cartShiftColumns = [
+        { header: "time1", dataKey: "time1" },
+        { header: "associate1", dataKey: "associate1" },
+        { header: "associate2", dataKey: "associate2" },
+        { header: "associate3", dataKey: "associate3" },
+        { header: "associate4", dataKey: "associate4" },
+        { header: "time2", dataKey: "time2" },
+        { header: "associate5", dataKey: "associate5" },
+        { header: "associate6", dataKey: "associate6" },
+        { header: "associate7", dataKey: "associate7" },
+        { header: "associate8", dataKey: "associate8" },
+    ];
 
-    autoTable(carts, {
-        columns: [
-            { header: "time1", dataKey: "time1" },
-            { header: "associate1", dataKey: "associate1"},
-            { header: "associate2", dataKey: "associate2"},
-            { header: "associate3", dataKey: "associate3"},
-            { header: "associate4", dataKey: "associate4"},
-            { header: "time2", dataKey: "time2" },
-            { header: "associate5", dataKey: "associate5"},
-            { header: "associate6", dataKey: "associate6"},
-            { header: "associate7", dataKey: "associate7"},
-            { header: "associate8", dataKey: "associate8"},
-        ]
+    const cartShiftBody = [
+        {
+            content: "Time",
+            styles: cartHeaderStyles
+        },
+        {
+            content: "Associate",
+            colSpan: 4,
+            styles: cartHeaderStyles
+        },
+        {
+            content: "Time",
+            styles: cartHeaderStyles
+        },
+        {
+            content: "Associate",
+            colSpan: 4,
+            styles: cartHeaderStyles
+        }
+    ];
+
+    const restroomText = "Restroom";
+    const restroomTextWidth = daily.getTextWidth(restroomText);
+
+    const restroomTable = [];
+    utilityTimes.forEach((time) => {
+        restroomTable.push({
+            time,
+            associate: emptyString
+        });
     });
 
-    const cartsAsImage = carts.output("datauristring");
     daily.addPage();
 
-    const height = daily.internal.pageSize.getHeight();
-    const width = daily.internal.pageSize.getWidth();
-    daily.addImage(cartsAsImage, "JPEG", 0, 0, width, height);
-    daily.addPage();
-    daily.addPage();
-    daily.addImage(cartsAsImage, "JPEG", 0, 0, width, height);
+    // I cant for the love of god get this package to duplicate a pageBreaks
+    for (let j = 0; j < 2; j++) {
+        daily.addPage();
+        
+        daily.text(cartsTitle, width - (cartsTitleWidth + 10), 10);
+        
+        daily.text(dateText, width - (dateTextWidth + 10), 20);
+        daily.setLineWidth(1);
+        daily.line(10, 30, 200, 30);
+
+        daily.text("Lot and Lobby", (width - lotLobbyTextWidth) / 2, 40);
+
+
+        autoTable(daily, {
+            startY: 50,
+            margin: 5,
+            columns: cartShiftColumns,
+            headStyles: { cellWidth: 20 },
+            columnStyles: {
+                time1: { cellWidth: 19, lineWidth: 0.1, lineColor: [0, 0, 0] },
+                time2: { cellWidth: 19, lineWidth: 0.1, lineColor: [0, 0, 0] },
+                associate1: { lineWidth: { left: 0.1 }, lineColor: [0, 0, 0] },
+                associate5: { lineWidth: { left: 0.1 }, lineColor: [0, 0, 0] },
+                associate8: { lineWidth: { right: 0.1 }, lineColor: [0, 0, 0] }
+            },
+            showHead: "never",
+            styles: { halign: "center", fontSize: 10, cellPadding: [2, 1] },
+            didParseCell: (data) => {
+                if (data.row.index == 1 && data.column.index != 0 && data.column.index != 5) {
+                    data.cell.styles.lineColor = [0, 0, 0];
+                    if (data.column.index == 1 || data.column.index == 6) {
+                        data.cell.styles.lineWidth = { top: 0.1, left: 0.1 };
+                    } else if (data.column.index == 9) {
+                        data.cell.styles.lineWidth = { top: 0.1, right: 0.1 }
+                    } else {
+                        data.cell.styles.lineWidth = { top: 0.1 };
+                    }
+                    
+                    
+                } else if (data.row.index == 14 && data.column.index != 0 && data.column.index != 5) {
+                    data.cell.styles.lineColor = [0, 0, 0];
+                    if (data.column.index == 1 || data.column.index == 6) {
+                        data.cell.styles.lineWidth = { bottom: 0.1, left: 0.1 };
+                    } else if (data.column.index == 9) {
+                        data.cell.styles.lineWidth = { bottom: 0.1, right: 0.1 }
+                    } else {
+                        data.cell.styles.lineWidth = { bottom: 0.1 };
+                    }
+                }
+            },
+            body: [
+                cartShiftBody,
+                ...cartShiftLines
+            ]
+        });
+
+        daily.text(restroomText, (width - restroomTextWidth) / 2, 200);
+
+        autoTable(daily, {
+            margin: 5,
+            startY: 210,
+            styles: { lineWidth: 0.1, lineColor: [0, 0, 0], halign: "center" },
+            columns: [
+                { header: "Time", dataKey: "time"},
+                { header: "Associate", dataKey: "associate" }
+            ],
+            columnStyles: {
+                time: { cellWidth: 19 }
+            },
+            body: restroomTable
+        });
+        daily.addPage();
+    }
 
     // daily.output("dataurlnewwindow");
     daily.save("pdfjsnewwindow");
