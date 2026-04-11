@@ -4,6 +4,7 @@ import autoTable, { Color, RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
 import { content } from "html2canvas/dist/types/css/property-descriptors/content";
 import { lotTimes, utilityTimes } from "../lotTimes";
+import path from "path";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -249,6 +250,15 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         ]
     });
 
+    daily.addPage(); // Backside blank
+    daily.addPage();
+    // signing list here
+    daily.addPage();
+    const policyImage = new Image();
+    policyImage.src = path.resolve("/cash-scam-policy.png");
+    console.log(policyImage.src)
+    daily.addImage(policyImage, "PNG", 1, 1, 220, 300);
+
     daily.setFontSize(14)
     
     const width = daily.internal.pageSize.getWidth();
@@ -319,7 +329,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         });
     });
 
-    daily.addPage();
+    // daily.addPage();
 
     // I cant for the love of god get this package to duplicate a pageBreaks
     for (let j = 0; j < 2; j++) {
