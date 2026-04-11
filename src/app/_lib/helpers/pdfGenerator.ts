@@ -1,7 +1,8 @@
 import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
-import autoTable, { Styles } from "jspdf-autotable";
+import autoTable, { RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
+import { content } from "html2canvas/dist/types/css/property-descriptors/content";
 
 const columns = [
     { header: "Name", dataKey: "name" },
@@ -21,6 +22,11 @@ const subtitleStyles: Partial<Styles> = {
     halign: "center",
     fillColor: "#d9d9d9",
     fontSize: 8
+};
+
+const rightSubtitleStyles: Partial<Styles> = {
+    halign: "center",
+    fontSize: 14
 };
 
 export const generatePdf = (weekday: IWeekdayBO) => {
@@ -123,25 +129,86 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         ]
     });
 
-    let rightY = 12;
+    const rightSide: RowInput[] = [];
 
     if (weekday.birthdays.length > 0) {
-        const birthdays = "Happy Birthday " + joinWithLast(weekday.birthdays, ',', 'and');
-        daily.text(birthdays, 130, rightY);
-        rightY += 5 * (birthdays.length % 2 + 1);
+        const birthdays = "Happy Birthday " + joinWithLast([...weekday.birthdays], ', ', ' and ');
+        rightSide.push([{
+            content: birthdays,
+            colSpan: 4
+        }], [])
     }
 
     if (weekday.holidays.length > 0) {
-        const holidays = "Happy " + joinWithLast(weekday.holidays, ',', 'and');
-        daily.text(holidays, 130, rightY);
-        rightY += 5 * (holidays.length % 2 + 1);
+        const holidays = "Happy " + joinWithLast([...weekday.holidays], ', ', ' and ');
+        rightSide.push([{
+            content: holidays,
+            colSpan: 4
+        }], [])
     }
 
+    const callups = weekday.jobPositions.find((p) => p.name == "Call Ups")
+        .shifts.map((s) => {
+            return {
+                pos: s.originalPosition.split(" ")[0].replace("Front", "File") + ": ", 
+                name: s.name.firstName + " " + s.name.lastName, 
+                start: s.shiftStart, 
+                end: s.shiftEnd
+            }
+        });
+
+    const liquor = weekday.jobPositions.find((p) => p.name == "Liquor Clerk")
+        .shifts.map((s) => {
+            return {
+                pos: emptyString, 
+                name: s.name.firstName + " " + s.name.lastName, 
+                start: s.shiftStart, 
+                end: s.shiftEnd
+            }
+        });
+
     autoTable(daily, {
-        margin: 130,
-        startY: rightY,
-        head: [["HEAD"]],
-        headStyles: { lineWidth: 0.1, lineColor: "black", cellWidth: 75 }
+        margin: 123,
+        startY: 12,
+        styles: { halign: "center" },
+        columns: [
+            { header: "pos", dataKey: "pos"},
+            { header: "name", dataKey: "name"},
+            { header: "start", dataKey: "start"},
+            { header: "end", dataKey: "end"}
+        ],
+        columnStyles: {
+            pos: { cellWidth: 20 },
+            name: { cellWidth: 35 },
+            start: { cellWidth: 15 },
+            end: { cellWidth: 15 }            
+        },
+        showHead: "never",
+        body: [
+            ...rightSide,
+            [{
+                content: "Call Ups and Misc.",
+                colSpan: 4,
+                styles: rightSubtitleStyles
+            }],
+            ...callups, [],
+            [{
+                content: "Liquor",
+                colSpan: 4,
+                styles: rightSubtitleStyles
+            }],
+            ...liquor, [],
+            [{
+                content: "Management",
+                colSpan: 4,
+                styles: rightSubtitleStyles
+            }],
+            [],[],[],[],
+            [{
+                content: "Fuel Replenishment",
+                colSpan: 4
+            }]
+        ]
     })
     // daily.output("dataurlnewwindow");
     daily.save("pdfjsnewwindow");
