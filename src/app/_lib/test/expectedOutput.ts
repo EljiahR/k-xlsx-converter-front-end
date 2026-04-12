@@ -870,6 +870,64 @@ export const expectedOutput: IWeekdayBO[] = [
                             "originalPosition": "Front End Utility Clerk"
                         },
                         "edit": false
+                    },
+                    {
+                        "name": {
+							"firstName": "Tom",
+							"lastName": "Tom",
+							"baggerName": "T",
+							"isEditable": false
+						},
+                        "shiftStart": "3:00p",
+                        "shiftEnd": "7:00p",
+                        "breakOne": {
+                            "editable": false,
+                            "time": "5:00 PM"
+                        },
+                        "lunch": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "breakTwo": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "originalPosition": "Front End Courtesy Clerk",
+                        "subshift": {
+                            "shiftStart": "3:00p",
+                            "shiftEnd": "7:00p",
+                            "originalPosition": "Front End Utility Clerk"
+                        },
+                        "edit": false
+                    },
+                    {
+                        "name": {
+							"firstName": "Berenety",
+							"lastName": " Ban Bavenswaay",
+							"baggerName": "ElissBavenameth",
+							"isEditable": false
+						},
+                        "shiftStart": "3:00p",
+                        "shiftEnd": "7:00p",
+                        "breakOne": {
+                            "editable": false,
+                            "time": "5:00 PM"
+                        },
+                        "lunch": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "breakTwo": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "originalPosition": "Front End Courtesy Clerk",
+                        "subshift": {
+                            "shiftStart": "3:00p",
+                            "shiftEnd": "7:00p",
+                            "originalPosition": "Front End Utility Clerk"
+                        },
+                        "edit": false
                     }
                 ]
             },
@@ -1050,6 +1108,31 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
+                        "breakOne": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "lunch": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "breakTwo": {
+                            "editable": false,
+                            "time": ""
+                        },
+                        "originalPosition": "Fuel Clerk",
+                        "subshift": null,
+                        "edit": false
+                    },
+                    {
+                        "name": {
+							"firstName": "Danial",
+							"lastName": "Kessler",
+							"baggerName": "Danial",
+							"isEditable": false
+						},
+                        "shiftStart": "10:00a",
+                        "shiftEnd": "6:00p",
                         "breakOne": {
                             "editable": false,
                             "time": ""

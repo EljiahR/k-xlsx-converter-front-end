@@ -42,7 +42,7 @@ const cartHeaderStyles: Partial<Styles> = {
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
-    const daily = new jsPDF();
+    let daily = new jsPDF();
     const dailyBody = [];
 
     const supervisors = weekday.jobPositions.find((j) => j.name == "Front End Supervisor")
@@ -129,42 +129,60 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         );
     }
 
-    daily.setFontSize(8);
-    daily.setTextColor("black");
-    daily.text(weekday.date, 5, 10);
     
-    autoTable(daily, {
-        margin: 5,
-        startY: 12,
-        styles: {
-            lineWidth: 0.1,
-            lineColor: blackLine,
-            cellWidth: "auto",
-            cellPadding: 1
-        },
-        bodyStyles: {
-            fontSize: 8
-        },
-        columns,
-        headStyles: {
-            fontSize: 7,
-            lineWidth: 0,
-            halign: "center"
-        },
-        columnStyles: {
-            "name": { cellWidth: 32},
-            "start": { cellWidth: 13},
-            "end": { cellWidth: 13},
-            "break1": { cellWidth: 13, halign: "center" },
-            "lunch": { cellWidth: 13, halign: "center" },
-            "break2": { cellWidth: 13, halign: "center" },
-            "fc": { cellWidth: 5},
-            "fs": { cellWidth: 5},
-            "o": { cellWidth: 5},
-        },
-        body: dailyBody    
-    });
+    
+    let reportBodyFontSize = 10;
+    const minimumFontSize = 6
+    let reportLoopFlag = false;
 
+    do {
+        reportLoopFlag = false;
+        console.log("Font size: " + reportBodyFontSize);
+        daily.setFontSize(reportBodyFontSize);
+        daily.setTextColor("black");
+        daily.text(weekday.date, 5, 10);
+        
+        autoTable(daily, {
+            margin: 5,
+            startY: 12,
+            styles: {
+                lineWidth: 0.1,
+                lineColor: blackLine,
+                cellWidth: "auto",
+                cellPadding: 1
+            },
+            bodyStyles: {
+                fontSize: reportBodyFontSize
+            },
+            columns,
+            headStyles: {
+                fontSize: 7,
+                lineWidth: 0,
+                halign: "center"
+            },
+            columnStyles: {
+                "name": { cellWidth: 32},
+                "start": { cellWidth: 13},
+                "end": { cellWidth: 13},
+                "break1": { cellWidth: 13, halign: "center" },
+                "lunch": { cellWidth: 13, halign: "center" },
+                "break2": { cellWidth: 13, halign: "center" },
+                "fc": { cellWidth: 5},
+                "fs": { cellWidth: 5},
+                "o": { cellWidth: 5},
+            },
+            body: dailyBody    
+        });
+
+        if (daily.getNumberOfPages() > 1 && reportBodyFontSize >= minimumFontSize) {
+            console.log("Too many pages, restarting with smaller font")
+            daily = new jsPDF();
+            reportBodyFontSize -= 1;
+            reportLoopFlag = true;
+        }
+
+    } while (reportLoopFlag && reportBodyFontSize >= minimumFontSize)
+    
     const rightSide: RowInput[] = [];
 
     if (weekday.birthdays.length > 0) {
