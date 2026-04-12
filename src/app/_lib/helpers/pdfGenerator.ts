@@ -171,7 +171,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
                 "fs": { cellWidth: 5},
                 "o": { cellWidth: 5},
             },
-            body: dailyBody    
+            body: dailyBody,
+            // check for blank breaks 
         });
 
         if (daily.getNumberOfPages() > 1 && reportBodyFontSize >= minimumFontSize) {
