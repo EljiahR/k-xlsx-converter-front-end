@@ -10,7 +10,7 @@ import NavBar from "../../../_components/NavBar";
 import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
-import { setAsTest, setNewShifts, setShiftsNull, setDay, clearSelectedTime } from "../../../_lib/redux/shiftsSlice";
+import { setAsTest, setNewShifts, setShiftsNull, setDay } from "../../../_lib/redux/shiftsSlice";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -23,7 +23,7 @@ const Report = () => {
     setPage(nextPage);
   }
 
-  const handleFileInput = async (e) => {
+  const handleFileInput = async () => {
     setIsLoading(true);
     try {
       const input = document.getElementById("input") as HTMLInputElement;

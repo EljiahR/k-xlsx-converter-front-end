@@ -40,9 +40,6 @@ const cartHeaderStyles: Partial<Styles> = {
     fontStyle: "bold"
 };
 
-const policyImage = new Image();
-    policyImage.src = path.resolve("/cash-scam-policy.png");
-
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
     const daily = new jsPDF();
@@ -303,6 +300,9 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     daily.addPage();
     
+    const policyImage = new Image();
+    policyImage.src = path.resolve("/cash-scam-policy.png");
+    
     daily.addImage(policyImage, "PNG", 1, 1, 220, 300);
 
     
@@ -441,7 +441,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     }
 
     // daily.output("dataurlnewwindow");
-    daily.save("pdfjsnewwindow");
+    daily.save(weekday.date);
 };
 
 const convertJobPositionToRow = (s: IEmployeeBO) => {
