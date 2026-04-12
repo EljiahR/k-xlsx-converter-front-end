@@ -2,7 +2,6 @@ import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import autoTable, { Color, RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
-import { content } from "html2canvas/dist/types/css/property-descriptors/content";
 import { lotTimes, utilityTimes } from "../lotTimes";
 import path from "path";
 import { getDatesFromTimes } from "./timeFunctions";
@@ -20,6 +19,7 @@ const columns = [
 ];
 
 const emptyString = ""
+const emptyArray = [];
 const emptyRow = {name: emptyString, start: emptyString, end: emptyString, break1: emptyString, lunch: emptyString, break2: emptyString, fc: emptyString, fs: emptyString, o: emptyString}
 const subtitleStyles: Partial<Styles> = {
     halign: "center",
@@ -40,6 +40,8 @@ const cartHeaderStyles: Partial<Styles> = {
     fontStyle: "bold"
 };
 
+const policyImage = new Image();
+    policyImage.src = path.resolve("/cash-scam-policy.png");
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
@@ -262,17 +264,48 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         }
     });
     registerOperators.sort((a, b) => {
-        const [aTime, bTime] = getDatesFromTimes([a, b]);
+        const [aTime, bTime] = getDatesFromTimes(a.shiftStart, b.shiftStart);
         return aTime - bTime;
     });
 
+    // dare I loop yet a 3rd time?
+    const operatorNames = registerOperators.map((o) => {
+        return [
+            o.name.firstName + " " + o.name.lastName,
+            emptyString,
+            emptyString
+        ]
+    })
+
+    const blankRows = 50 - operatorNames.length;
+    for (let i = 0 ; i < blankRows; i++) {
+        operatorNames.push(emptyArray);
+    };
+
+    daily.setFontSize(8)
+    daily.text(weekday.date, 5, 5);
+    daily.setFontSize(14)
+
+    autoTable(daily, {
+        startY: 10,
+        margin: 5,
+        styles: { fontSize: 8, lineColor: blackLine, lineWidth: 0.1, cellPadding: 1, valign: "bottom" },
+        head: [["Associate Name", "Policy Reviewed", "Associate Signature"]],
+        headStyles: { fontSize: 10 },
+        columnStyles: {
+            1: { cellWidth: 18 }
+        },
+        body: [
+            ...operatorNames,
+            { content: "HELLO?"}
+        ]
+    });
+
     daily.addPage();
-    const policyImage = new Image();
-    policyImage.src = path.resolve("/cash-scam-policy.png");
-    console.log(policyImage.src)
+    
     daily.addImage(policyImage, "PNG", 1, 1, 220, 300);
 
-    daily.setFontSize(14)
+    
     
     const width = daily.internal.pageSize.getWidth();
     const cartsTitle = "Lot, Lobby, Restroom Schedule";
