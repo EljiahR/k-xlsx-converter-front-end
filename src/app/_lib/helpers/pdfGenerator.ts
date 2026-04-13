@@ -6,17 +6,12 @@ import { lotTimes, utilityTimes } from "../lotTimes";
 import path from "path";
 import { getDatesFromTimes } from "./timeFunctions";
 
-const columns = [
-    { header: "Name", dataKey: "name" },
-    { header: "Start", dataKey: "start" },
-    { header: "End", dataKey: "end" },
-    { header: "Break", dataKey: "break1" },
-    { header: "Lunch", dataKey: "lunch" },
-    { header: "Break", dataKey: "break2" },
-    { header: "FC", dataKey: "fc"},
-    { header: "FS", dataKey: "fs"},
-    { header: "O", dataKey: "o"},
-    { header: "CS", dataKey: "cs"}
+const reportHeader = [
+    { 
+        name: "Name", start: "Start", end: "End", 
+        break1: "Break", lunch: "Lunch", break2: "Break", 
+        fc: "FC", fs: "FS", o: "O", cs: "CS"
+    }
 ];
 
 const emptyString = ""
@@ -137,6 +132,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     
     let reportBodyFontSize = 10;
     const minimumFontSize = 6
+    let nameColWidth = 36;
     let reportLoopFlag = false;
 
     do {
@@ -159,23 +155,23 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             bodyStyles: {
                 fontSize: reportBodyFontSize
             },
-            columns,
+            head: reportHeader,
             headStyles: {
-                fontSize: 6,
+                fontSize: 7,
                 lineWidth: 0,
                 halign: "center"
             },
             columnStyles: {
-                "name": { cellWidth: 32 },
-                "start": { cellWidth: 13 },
-                "end": { cellWidth: 13 },
-                "break1": { cellWidth: 13, halign: "center" },
-                "lunch": { cellWidth: 13, halign: "center" },
-                "break2": { cellWidth: 13, halign: "center" },
-                "fc": { cellWidth: 5 },
-                "fs": { cellWidth: 5 },
-                "o": { cellWidth: 5 },
-                "cs": { cellWidth: 5 }
+                name: { cellWidth: nameColWidth },
+                start: { cellWidth: 13 },
+                end: { cellWidth: 13 },
+                break1: { cellWidth: 13, halign: "center" },
+                lunch: { cellWidth: 13, halign: "center" },
+                break2: { cellWidth: 13, halign: "center" },
+                fc: { cellWidth: 4, fontSize: 1 },
+                fs: { cellWidth: 4, fontSize: 1 },
+                o: { cellWidth: 4, fontSize: 1 },
+                cs: { cellWidth: 4, fontSize: 1 }
             },
             body: dailyBody,
             didParseCell: (data) => {
@@ -188,7 +184,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         if (daily.getNumberOfPages() > 1 && reportBodyFontSize >= minimumFontSize) {
             console.log("Too many pages, restarting with smaller font")
             daily = new jsPDF();
-            reportBodyFontSize -= 1;
+            reportBodyFontSize--;
+            nameColWidth--;
             reportLoopFlag = true;
         }
 
