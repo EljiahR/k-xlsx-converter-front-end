@@ -16,11 +16,12 @@ const columns = [
     { header: "FC", dataKey: "fc"},
     { header: "FS", dataKey: "fs"},
     { header: "O", dataKey: "o"},
+    { header: "CS", dataKey: "cs"}
 ];
 
 const emptyString = ""
 const emptyArray = [];
-const emptyRow = {name: emptyString, start: emptyString, end: emptyString, break1: emptyString, lunch: emptyString, break2: emptyString, fc: emptyString, fs: emptyString, o: emptyString}
+const emptyRow = {name: emptyString, start: emptyString, end: emptyString, break1: emptyString, lunch: emptyString, break2: emptyString, fc: emptyString, fs: emptyString, o: emptyString, cs: emptyString}
 const subtitleStyles: Partial<Styles> = {
     halign: "center",
     fillColor: "#d9d9d9",
@@ -33,12 +34,15 @@ const rightSubtitleStyles: Partial<Styles> = {
 };
 
 const blackLine: Color = [0, 0, 0];
+const greyFill: Color = [200, 200, 200];
 
 const cartHeaderStyles: Partial<Styles> = {
     lineWidth: 0.1,
     lineColor: blackLine,
     fontStyle: "bold"
 };
+
+const numberOfReportCols = 10;
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
@@ -52,7 +56,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Front End Supervisors",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...supervisors
@@ -66,7 +70,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Front End Cashiers",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...cashiers
@@ -80,7 +84,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Self-Checkout",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...scos
@@ -94,7 +98,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Courtesy Clerks",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...baggers
@@ -108,7 +112,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Service Desk",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...desk
@@ -122,7 +126,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         dailyBody.push(
             [{
                 content: "Fuel Center",
-                colSpan: 9,
+                colSpan: numberOfReportCols,
                 styles: subtitleStyles
             }],
             ...fuel
@@ -143,6 +147,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         daily.text(weekday.date, 5, 10);
         
         autoTable(daily, {
+            alternateRowStyles: { fillColor: null },
             margin: 5,
             startY: 12,
             styles: {
@@ -156,23 +161,28 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             },
             columns,
             headStyles: {
-                fontSize: 7,
+                fontSize: 6,
                 lineWidth: 0,
                 halign: "center"
             },
             columnStyles: {
-                "name": { cellWidth: 32},
-                "start": { cellWidth: 13},
-                "end": { cellWidth: 13},
+                "name": { cellWidth: 32 },
+                "start": { cellWidth: 13 },
+                "end": { cellWidth: 13 },
                 "break1": { cellWidth: 13, halign: "center" },
                 "lunch": { cellWidth: 13, halign: "center" },
                 "break2": { cellWidth: 13, halign: "center" },
-                "fc": { cellWidth: 5},
-                "fs": { cellWidth: 5},
-                "o": { cellWidth: 5},
+                "fc": { cellWidth: 5 },
+                "fs": { cellWidth: 5 },
+                "o": { cellWidth: 5 },
+                "cs": { cellWidth: 5 }
             },
             body: dailyBody,
-            // check for blank breaks 
+            didParseCell: (data) => {
+                if ((data.column.index == 3 || data.column.index == 4 || data.column.index == 5) && data.cell.raw == emptyString && data.table.body[data.row.index].cells[0].raw != emptyString) {
+                    data.cell.styles.fillColor = greyFill;
+                }
+            } 
         });
 
         if (daily.getNumberOfPages() > 1 && reportBodyFontSize >= minimumFontSize) {
@@ -473,6 +483,7 @@ const convertJobPositionToRow = (s: IEmployeeBO) => {
         break2: s.breakTwo.time.replace(/\s[AP]M/g, "").replace(/:00/g, ""),
         fc: emptyString,
         fs: emptyString,
-        o: emptyString
+        o: emptyString,
+        cs: emptyString
     };
 }
