@@ -1,0 +1,61 @@
+#loading-container {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(231, 229, 229, 0.466);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading-main {
+	height: 50px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.bar-container {
+	width: 7px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+
+.bar {
+	border-radius: 5px;
+	animation-name: shrinkAndGrow;
+	animation-duration: 750ms;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.bar-container:nth-child(6) {
+	animation-delay: 0ms;
+}
+
+.bar-container:nth-child(5) > .bar {
+	animation-delay: -150ms;
+}
+
+.bar-container:nth-child(4) > .bar {
+	animation-delay: -300ms;
+}
+
+.bar-container:nth-child(3) > .bar {
+	animation-delay: -450ms;
+}
+
+.bar-container:nth-child(2) > .bar {
+	animation-delay: -600ms;
+}
+
+.bar-container:nth-child(1) > .bar {
+	animation-delay: -750ms;
+}
+
+@keyframes shrinkAndGrow {
+	from { height: 50px; background-color: #ebeb16; width: 5px; }
+	to { height: 10px; background-color: #f6f67c; width: 7px; }
+}
