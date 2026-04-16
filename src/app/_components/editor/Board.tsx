@@ -6,41 +6,21 @@ import Liquor from "./BoardSubComponents/Liquor";
 import { joinWithLast } from "../../_lib/helpers/formatFunctions";
 import { useAppSelector } from "../../_lib/redux/hooks";
 import { useRef } from "react";
+import { selectCurrentDayShifts } from "../../_lib/redux/shiftsSlice";
 
 const Board = () => {
-  const shifts = useAppSelector((state) => state.shifts.value);
-  const currentDay = useAppSelector((state) => state.shifts.day);
+  const shifts = useAppSelector(selectCurrentDayShifts);
   const inputReference = useRef(null);
 
   return (
-    <>
-      <div id={styles["report"]} className={styles["report"]}>
-        <h5 id={styles["date"]}>{shifts[currentDay].date}</h5>
-        <h6>Tasks</h6>
-        <h6>Name</h6>
-        <h6>Start</h6>
-        <h6>End</h6>
-        <h6>Break</h6>
-        <h6>Lunch</h6>
-        <h6>Break</h6>
-        <div id={styles["fs-labels"]}>
-          <h6 className={styles["fresh-start-label"]}>FC</h6>
-          <h6 className={styles["fresh-start-label"]}>FS</h6>
-          <h6 className={styles["fresh-start-label"]}>O</h6>
-        </div>
-        
-
-        
-        {shifts[currentDay].jobPositions.find(
+    <div>
+      <div>
+        {shifts.jobPositions.find(
           (shift) => shift.name === "Front End Supervisor",
         ) && (
-          <>
-            <div id={styles["first-title-header"]} className={styles["title-header"]}>Front End Supervisors</div>
-            <div className={styles["no-outline"]}></div>
-
             <IndividualShifts
               people={
-                shifts[currentDay].jobPositions.find(
+                shifts.jobPositions.find(
                   (shift) => shift.name === "Front End Supervisor",
                 ).shifts
               }
@@ -48,18 +28,11 @@ const Board = () => {
               section="desk"
               inputReference={inputReference}
             />
-            <BlankRow />
-            <BlankRow />
-        
-          </>
         )}
-
-        <div className={styles["title-header"]}>Front End Cashiers</div>
-        <div className={styles["no-outline"]}></div>
 
         <IndividualShifts
           people={
-            shifts[currentDay].jobPositions.find(
+            shifts.jobPositions.find(
               (shift) => shift.name === "Front End Cashier",
             ).shifts
           }
@@ -67,15 +40,10 @@ const Board = () => {
           section="cashier"
           inputReference={inputReference}
         />
-        <BlankRow />
-        <BlankRow />
-
-        <div className={styles["title-header"]}>Self-Checkout</div>
-        <div className={styles["no-outline"]}></div>
 
         <IndividualShifts
           people={
-            shifts[currentDay].jobPositions.find(
+            shifts.jobPositions.find(
               (shift) => shift.name === "Front End SCO Cashier",
             ).shifts
           }
@@ -83,15 +51,10 @@ const Board = () => {
           section="cashier"
           inputReference={inputReference}
         />
-        <BlankRow />
-        <BlankRow />
-
-        <div className={styles["title-header"]}>Courtesy Clerks</div>
-        <div className={styles["no-outline"]}></div>
 
         <IndividualShifts
           people={
-            shifts[currentDay].jobPositions.find(
+            shifts.jobPositions.find(
               (shift) => shift.name === "Front End Courtesy Clerk",
             ).shifts
           }
@@ -99,15 +62,10 @@ const Board = () => {
           section="bagger"
           inputReference={inputReference}
         />
-        <BlankRow />
-        <BlankRow />
-
-        <div className={styles["title-header"]}>Service Desk</div>
-        <div className={styles["no-outline"]}></div>
       
         <IndividualShifts
           people={
-            shifts[currentDay].jobPositions.find(
+            shifts.jobPositions.find(
               (shift) => shift.name === "Front End Service Desk",
             ).shifts
           }
@@ -115,15 +73,10 @@ const Board = () => {
           section="desk"
           inputReference={inputReference}
         />
-        <BlankRow />
-        <BlankRow />
-
-        <div className={styles["title-header"]}>Fuel Center</div>
-        <div className={styles["no-outline"]}></div>
 
         <IndividualShifts
           people={
-            shifts[currentDay].jobPositions.find(
+            shifts.jobPositions.find(
               (shift) => shift.name === "Fuel Clerk",
             ).shifts
           }
@@ -134,17 +87,17 @@ const Board = () => {
 
       </div>
       <div id={styles["side-section"]}>
-        {shifts[currentDay].birthdays.length > 0 && (
+        {shifts.birthdays.length > 0 && (
           <div id={styles["birthdays"]}>
-            <h2>Happy Birthday {joinWithLast([...shifts[currentDay].birthdays],", ", " and ")}!</h2>
+            <h2>Happy Birthday {joinWithLast([...shifts.birthdays],", ", " and ")}!</h2>
           </div>
         )}
-        {shifts[currentDay].holidays.length > 0 && (
+        {shifts.holidays.length > 0 && (
           <div id={styles["holidays"]}>
-            <h2>Happy {joinWithLast([...shifts[currentDay].holidays],", ", " and ")}!</h2>
+            <h2>Happy {joinWithLast([...shifts.holidays],", ", " and ")}!</h2>
           </div>
         )}
-        {shifts[currentDay].jobPositions.find(
+        {shifts.jobPositions.find(
           (shift) => shift.name === "Call Ups",
         ) && (
           
@@ -153,7 +106,7 @@ const Board = () => {
               <div id="call-ups-section">
                 <CallUps
                   people={
-                    shifts[currentDay].jobPositions.find(
+                    shifts.jobPositions.find(
                       (shift) => shift.name === "Call Ups",
                     ).shifts
                   }
@@ -169,7 +122,7 @@ const Board = () => {
           <div id={styles["liquor-section"]}>
             <Liquor
               people={
-                shifts[currentDay].jobPositions.find(
+                shifts.jobPositions.find(
                   (shift) => shift.name === "Liquor Clerk",
                 ).shifts
               }
@@ -177,14 +130,8 @@ const Board = () => {
             />
           </div>
         </div>
-        <div className={styles["optional-section"]}>
-          <h2 className="side-header">Management</h2>
-        </div>
-        <div className={styles["optional-section"]}>
-          <h3 className="side-header-small">Fuel Replenishment</h3>
-        </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Board;

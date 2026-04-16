@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
@@ -8,6 +8,7 @@ import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
 import { FocusEvent, KeyboardEvent } from "react";
+import { RootState } from "./store";
 
 const initialState: ShiftsState = {
     value: null,
@@ -210,6 +211,14 @@ export const shiftsSlice = createSlice({
         }
     }
 });
+
+const selectCurrentDay = (state: RootState) => state.shifts.day;
+const selectShifts = (state: RootState) => state.shifts.value;
+
+export const selectCurrentDayShifts = createSelector(
+    [selectCurrentDay, selectShifts],
+    (currentDay, shifts) => shifts[currentDay]
+);
 
 export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
 

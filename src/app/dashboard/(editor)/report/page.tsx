@@ -57,7 +57,6 @@ const Report = () => {
     document.title = "Report";
   }, []);
 
-  // REDUX: setNewShifts
   useEffect(() => {
     const newShiftsFunc = async () => {
       try {
@@ -90,9 +89,7 @@ const Report = () => {
 
       {isLoading && <Loading />}
       {shifts && page === "Board" && (
-        <div id="board" className={styles.sheet}>
-          <Board />
-        </div>
+        <Board />
       )}
       {shifts && page === "Carts" && (
         <div id="carts" className={styles.sheet}>
