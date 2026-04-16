@@ -3,7 +3,7 @@ import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import { cloneDeep } from "lodash"
 import { expectedOutput } from "../test/expectedOutput";
 import { ShiftsState } from "./reduxTypes";
-import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpers/timeFunctions";
+import { addMinutesToBreak, employeeShiftSort, getDatesFromBreaks, timeIsLaterThan } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
@@ -257,6 +257,16 @@ export const selectCurrentDayCallUps = createSelector(
 export const selectCurrentDayLiquor = createSelector(
     [selectCurrentDayShifts],
     (shifts) => shifts.jobPositions.find(j => j.name == "Liquor Clerk")?.shifts ?? []
+);
+
+export const selectCurrentDayRegisters = createSelector(
+    [selectCurrentDayCashiers, selectCurrentDaySCOs],
+    (cashiers, scos) => [...cashiers, ...scos].sort(employeeShiftSort)
+);
+
+export const selectCurrentDayAllDesk = createSelector(
+    [selectCurrentDayDesk, selectCurrentDaySupervisors],
+    (desk, supervisors) => [...desk, ...supervisors].sort(employeeShiftSort)
 );
 
 export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;

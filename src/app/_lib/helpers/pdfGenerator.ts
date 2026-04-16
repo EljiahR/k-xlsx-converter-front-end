@@ -4,7 +4,7 @@ import autoTable, { Color, RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
 import { lotTimes, utilityTimes } from "../lotTimes";
 import path from "path";
-import { getDatesFromTimes } from "./timeFunctions";
+import { employeeShiftSort, getDatesFromTimes } from "./timeFunctions";
 
 const reportHeader = [
     { 
@@ -286,10 +286,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             registerOperators.push(...p.shifts);
         }
     });
-    registerOperators.sort((a, b) => {
-        const [aTime, bTime] = getDatesFromTimes(a.shiftStart, b.shiftStart);
-        return aTime - bTime;
-    });
+    registerOperators.sort(employeeShiftSort);
 
     // dare I loop yet a 3rd time?
     const operatorNames = registerOperators.map((o) => {

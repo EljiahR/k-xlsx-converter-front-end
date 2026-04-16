@@ -3,81 +3,58 @@ import CallUps from "./BoardSubComponents/CallUps";
 import IndividualShifts from "./BoardSubComponents/IndividualShifts";
 import Liquor from "./BoardSubComponents/Liquor";
 import { useAppSelector } from "../../_lib/redux/hooks";
-import { useRef } from "react";
-import { selectCurrentDayBaggers, selectCurrentDayCallUps, selectCurrentDayCashiers, selectCurrentDayDesk, selectCurrentDayFuel, selectCurrentDayLiquor, selectCurrentDaySCOs, selectCurrentDayShifts, selectCurrentDaySupervisors } from "../../_lib/redux/shiftsSlice";
+import { selectCurrentDayAllDesk, selectCurrentDayBaggers, selectCurrentDayCallUps, selectCurrentDayFuel, selectCurrentDayLiquor, selectCurrentDayRegisters } from "../../_lib/redux/shiftsSlice";
 
 const Board = () => {
-  const supervisors = useAppSelector(selectCurrentDaySupervisors);
-  const cashiers = useAppSelector(selectCurrentDayCashiers);
-  const scos = useAppSelector(selectCurrentDaySCOs);
+  const registers = useAppSelector(selectCurrentDayRegisters)
   const baggers = useAppSelector(selectCurrentDayBaggers);
-  const desk = useAppSelector(selectCurrentDayDesk)
+  const desk = useAppSelector(selectCurrentDayAllDesk)
   const fuel = useAppSelector(selectCurrentDayFuel);
   const callUps = useAppSelector(selectCurrentDayCallUps);
   const liquor = useAppSelector(selectCurrentDayLiquor);
 
-  const inputReference = useRef(null);
-
   return (
     <div id="board">
-      <div>
-        {supervisors && (
-            <IndividualShifts
-              people={supervisors}
-              positionName="Front End Supervisor"
-              section="desk"
-              inputReference={inputReference}
-            />
-        )}
-
+      <div id="register">
         <IndividualShifts
-          people={cashiers}
-          positionName="Front End Cashier"
-          section="cashier"
-          inputReference={inputReference}
+            people={registers}
+            positionName="Cashiers and Scos"
+            section="register"
         />
-
-        <IndividualShifts
-          people={scos}
-          positionName="Front End SCO Cashier"
-          section="cashier"
-          inputReference={inputReference}
-        />
-
+      </div>
+      <div id="baggers">
         <IndividualShifts
           people={baggers}
           positionName="Front End Courtesy Clerk"
           section="bagger"
-          inputReference={inputReference}
         />
-      
+      </div>
+      <div id="desk">
         <IndividualShifts
           people={desk}
           positionName="Front End Service Desk"
           section="desk"
-          inputReference={inputReference}
         />
+      </div>  
 
-        <IndividualShifts
-          people={fuel}
-          positionName="Fuel Clerk"
-          section="desk"
-          inputReference={inputReference}
-        />
+      <IndividualShifts
+        people={fuel}
+        positionName="Fuel Clerk"
+        section="desk"
+      />
 
-      </div>
-      <div id={styles["side-section"]}>
-        {callUps && (
-            <CallUps
-                  people={callUps}
-                  positionName="callup"
-            />
-        )}
-        <Liquor
-          people={liquor}
-          positionName="liquor"
-        />
-      </div>
+      
+      {callUps && (
+          <CallUps
+                people={callUps}
+                positionName="callup"
+          />
+      )}
+      <Liquor
+        people={liquor}
+        positionName="liquor"
+      />
+      
     </div>
   );
 };

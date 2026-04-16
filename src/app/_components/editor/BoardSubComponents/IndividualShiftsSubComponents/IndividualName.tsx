@@ -1,5 +1,4 @@
 import styles from "@/styles/IndividualShifts.module.css";
-import { MutableRefObject, useEffect } from "react";
 import { useAppDispatch } from "../../../../_lib/redux/hooks";
 import { changeName, toggleNameEdit, toggleNameEditBlur } from "../../../../_lib/redux/shiftsSlice";
 import { IEmployeeBO } from "../../../../_lib/types/shiftTypes";
@@ -7,15 +6,10 @@ import { IEmployeeBO } from "../../../../_lib/types/shiftTypes";
 interface Props {
     person: IEmployeeBO,
     jobPosition: string,
-    inputReference: MutableRefObject<any>
 }
 
-const IndividualName = ({person, jobPosition, inputReference}: Props) => {
+const IndividualName = ({person, jobPosition}: Props) => {
     const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        if (person.name.isEditable && inputReference.current) inputReference.current.select();
-    }, [person.name.isEditable])
 
     return (
         person.name.isEditable ?
@@ -26,7 +20,6 @@ const IndividualName = ({person, jobPosition, inputReference}: Props) => {
                     key={person.employeeId + person.name.lastName}
                     value={person.name.firstName} 
                     onChange={(e) => dispatch(changeName({employee: person, jobPosition, newValue: e.target.value, isFirstName: true}))}
-                    ref={inputReference}
                 />
                 <input
                     key={person.employeeId + person.name.firstName}

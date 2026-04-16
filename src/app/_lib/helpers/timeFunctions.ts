@@ -1,4 +1,5 @@
 import moment from "moment";
+import { IEmployeeBO } from "../types/shiftTypes";
 
 //converts start and end times to date objects
 declare global {
@@ -114,4 +115,9 @@ export const timeIsWithin = (startTime, endTime, targetTime) => {
 export const addMinutesToBreak = (thisBreak, minutes) => {
   let date = getDatesFromBreaks(thisBreak, minutes);
   return moment(date).format("LT");
+};
+
+export const employeeShiftSort = (a: IEmployeeBO, b: IEmployeeBO) => {
+    const [aTime, bTime] = getDatesFromTimes(a.shiftStart, b.shiftStart);
+    return aTime - bTime;
 };
