@@ -1,10 +1,14 @@
-import { KeyboardEvent, MutableRefObject } from "react";
 import { IEmployeeBO } from "./shiftTypes";
 
 // Props
 export interface IndividualShiftsProps {
   people: IEmployeeBO[];
   positionName: string;
+  section: string;
+}
+
+export interface IndividualShiftProps {
+  person: IEmployeeBO;
   section: string;
 }
 

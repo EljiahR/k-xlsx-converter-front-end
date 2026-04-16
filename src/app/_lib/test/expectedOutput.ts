@@ -19,18 +19,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -44,18 +35,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -69,18 +51,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -94,18 +67,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -124,18 +88,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -149,18 +104,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -174,18 +120,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -199,18 +136,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -224,18 +152,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "6:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -254,18 +173,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -279,18 +189,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -304,18 +205,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:30 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "11:30 AM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -329,18 +221,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -354,18 +237,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -379,18 +253,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -404,18 +269,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:30a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:30 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -429,18 +285,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "6:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:30 PM"
-                        },
+                        "breakOne": "2:30 PM",
+                        "lunch": "",
+                        "breakTwo": "4:30 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -454,18 +301,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "4:30 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "2:30 PM",
+                        "lunch": "4:30 PM",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -479,18 +317,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "6:00 PM",
+                        "breakTwo": "8:30 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -504,18 +333,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -534,18 +354,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -559,18 +370,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -589,18 +391,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -614,18 +407,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "11:00a",
@@ -643,18 +427,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -668,18 +443,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:30 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "3:00 PM",
+                        "breakTwo": "5:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "11:00a",
@@ -697,18 +463,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -722,18 +479,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -747,18 +495,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
@@ -776,18 +515,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -801,18 +531,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -826,18 +547,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -851,18 +563,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
@@ -880,18 +583,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
@@ -909,18 +603,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
@@ -943,18 +628,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -973,18 +649,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -998,18 +665,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -1023,18 +681,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -1048,18 +697,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -1078,18 +718,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -1108,18 +739,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -1133,18 +755,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -1158,18 +771,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -1847,18 +1451,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -1872,18 +1467,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -1902,18 +1488,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -1927,18 +1504,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -1952,18 +1520,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "6:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -1982,18 +1541,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2007,18 +1557,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2032,18 +1573,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2057,18 +1589,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "1:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2082,18 +1605,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:15p",
                         "shiftEnd": "5:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2107,18 +1621,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "6:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2132,18 +1637,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:45 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:45 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2157,18 +1653,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2182,18 +1669,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:15 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2207,18 +1685,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -2237,18 +1706,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2262,18 +1722,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2287,18 +1738,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2312,18 +1754,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2337,18 +1770,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2362,18 +1786,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2387,18 +1802,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2412,18 +1818,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2437,18 +1834,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2462,18 +1850,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -2492,18 +1871,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -2517,18 +1887,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -2547,18 +1908,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -2572,18 +1924,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -2597,18 +1940,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -2622,18 +1956,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -2647,18 +1972,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -2677,18 +1993,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -2702,18 +2009,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -2732,18 +2030,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -2757,18 +2046,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -2782,18 +2062,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -3471,18 +2742,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -3496,18 +2758,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -3521,18 +2774,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -3551,18 +2795,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -3576,18 +2811,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -3601,18 +2827,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "7:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -3631,18 +2848,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -3656,18 +2864,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -3681,18 +2880,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:30 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -3706,18 +2896,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -3731,18 +2912,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -3761,18 +2933,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3786,18 +2949,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3811,18 +2965,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "12:00 PM",
+                        "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3836,18 +2981,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
+                        "breakOne": "3:00 PM",
+                        "lunch": "",
+                        "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3861,18 +2997,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3886,18 +3013,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3911,18 +3029,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3936,18 +3045,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -3966,18 +3066,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -3996,18 +3087,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -4021,18 +3103,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -4046,18 +3119,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -4071,18 +3135,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -4101,18 +3156,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -4126,18 +3172,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -4156,18 +3193,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -4186,18 +3214,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -4211,18 +3230,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -4236,18 +3246,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -4261,18 +3262,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -4950,18 +3942,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -4975,18 +3958,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -5005,18 +3979,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -5030,18 +3995,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "6:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -5055,18 +4011,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "6:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -5080,18 +4027,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -5110,18 +4048,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5135,18 +4064,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5160,18 +4080,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:30 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5185,18 +4096,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5210,18 +4112,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:45 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:45 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5235,18 +4128,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -5265,18 +4149,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5290,18 +4165,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5315,18 +4181,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5340,18 +4197,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5365,18 +4213,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5390,18 +4229,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5415,18 +4245,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5440,18 +4261,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5465,18 +4277,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -5495,18 +4298,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -5520,18 +4314,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -5550,18 +4335,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -5575,18 +4351,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -5600,18 +4367,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -5625,18 +4383,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -5655,18 +4404,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -5685,18 +4425,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -5710,18 +4441,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -5740,18 +4462,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -5765,18 +4478,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -5790,18 +4494,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -6479,18 +5174,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -6504,18 +5190,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -6529,18 +5206,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:30p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -6559,18 +5227,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -6584,18 +5243,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -6609,18 +5259,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "6:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -6634,18 +5275,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "6:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -6664,18 +5296,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6689,18 +5312,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6714,18 +5328,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:15p",
                         "shiftEnd": "5:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6739,18 +5344,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6764,18 +5360,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6789,18 +5376,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:30p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:45 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:45 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6814,18 +5392,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -6844,18 +5413,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6869,18 +5429,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6894,18 +5445,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "12:00 PM",
+                        "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6919,18 +5461,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6944,18 +5477,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
+                        "breakOne": "3:00 PM",
+                        "lunch": "",
+                        "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6969,18 +5493,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -6994,18 +5509,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -7019,18 +5525,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -7044,18 +5541,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -7074,18 +5562,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -7104,18 +5583,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -7129,18 +5599,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -7154,18 +5615,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -7179,18 +5631,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -7209,18 +5652,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -7239,18 +5673,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -7264,18 +5689,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -7294,18 +5710,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -7319,18 +5726,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -7344,18 +5742,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -8033,18 +6422,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -8058,18 +6438,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -8088,18 +6459,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -8113,18 +6475,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -8138,18 +6491,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -8163,18 +6507,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "7:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -8188,18 +6523,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "7:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -8218,18 +6544,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8243,18 +6560,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8268,18 +6576,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
+                        "breakOne": "5:30 PM",
+                        "lunch": "",
+                        "breakTwo": "8:30 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8293,18 +6592,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:30p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:30 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8318,18 +6608,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8343,18 +6624,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "8:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "8:30 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -8373,18 +6645,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8398,18 +6661,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8423,18 +6677,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:30p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "12:00 PM",
+                        "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8448,18 +6693,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8473,18 +6709,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8498,18 +6725,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
+                        "breakOne": "3:00 PM",
+                        "lunch": "",
+                        "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8523,18 +6741,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8548,18 +6757,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8573,18 +6773,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8598,18 +6789,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8623,18 +6805,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -8653,18 +6826,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -8683,18 +6847,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -8708,18 +6863,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -8733,18 +6879,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -8758,18 +6895,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "4:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -8783,18 +6911,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -8813,18 +6932,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:00a",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "1:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -8843,18 +6953,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -8868,18 +6969,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -8898,18 +6990,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -8923,18 +7006,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -8948,18 +7022,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -8973,18 +7038,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -9662,18 +7718,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Floral Clerk",
                         "subshift": null,
                         "edit": false
@@ -9687,18 +7734,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "8:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
@@ -9717,18 +7755,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -9742,18 +7771,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:30a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:45 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "11:45 AM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -9767,18 +7787,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -9792,18 +7803,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:00p",
                         "shiftEnd": "6:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "4:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -9817,18 +7819,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:15p",
                         "shiftEnd": "11:15p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:15 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:15 PM"
-                        },
+                        "breakOne": "6:15 PM",
+                        "lunch": "",
+                        "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
@@ -9847,18 +7840,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9872,18 +7856,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9897,18 +7872,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9922,18 +7888,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9947,18 +7904,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "10:30a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "12:30 PM",
+                        "lunch": "2:30 PM",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9972,18 +7920,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "12:30p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:30 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": "4:30 PM"
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "2:30 PM",
+                        "lunch": "4:30 PM",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -9997,18 +7936,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -10022,18 +7952,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Cashier",
                         "subshift": null,
                         "edit": false
@@ -10052,18 +7973,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10077,18 +7989,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "7:00a",
                         "shiftEnd": "3:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "1:00 PM"
-                        },
+                        "breakOne": "10:00 AM",
+                        "lunch": "",
+                        "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10102,18 +8005,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "8:00a",
                         "shiftEnd": "4:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
+                        "breakOne": "11:00 AM",
+                        "lunch": "",
+                        "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10127,18 +8021,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10152,18 +8037,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:30a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "11:45 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "11:45 AM",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10177,18 +8053,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10202,18 +8069,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10227,18 +8085,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "11:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "6:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "9:00 PM"
-                        },
+                        "breakOne": "6:00 PM",
+                        "lunch": "",
+                        "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10252,18 +8101,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "3:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "7:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
@@ -10282,18 +8122,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -10307,18 +8138,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00a",
                         "shiftEnd": "12:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "7:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "10:00 AM"
-                        },
+                        "breakOne": "7:00 AM",
+                        "lunch": "",
+                        "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
                         "subshift": null,
                         "edit": false
@@ -10337,18 +8159,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "6:00a",
                         "shiftEnd": "2:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "9:00 AM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
+                        "breakOne": "9:00 AM",
+                        "lunch": "",
+                        "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -10362,18 +8175,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "5:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "12:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "3:00 PM"
-                        },
+                        "breakOne": "12:00 PM",
+                        "lunch": "",
+                        "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -10387,18 +8191,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "11:00a",
                         "shiftEnd": "7:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "2:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
+                        "breakOne": "2:00 PM",
+                        "lunch": "",
+                        "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
@@ -10417,18 +8212,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "9:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -10442,18 +8228,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "1:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -10467,18 +8244,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "4:00p",
                         "shiftEnd": "9:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
@@ -10497,18 +8265,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": "5:00 PM"
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": "8:00 PM"
-                        },
+                        "breakOne": "5:00 PM",
+                        "lunch": "",
+                        "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
@@ -10527,18 +8286,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "5:00a",
                         "shiftEnd": "1:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
@@ -10552,18 +8302,9 @@ export const expectedOutput: IWeekdayBO[] = [
 						},
                         "shiftStart": "2:00p",
                         "shiftEnd": "10:00p",
-                        "breakOne": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "lunch": {
-                            "editable": false,
-                            "time": ""
-                        },
-                        "breakTwo": {
-                            "editable": false,
-                            "time": ""
-                        },
+                        "breakOne": "",
+                        "lunch": "",
+                        "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
                         "subshift": null,
                         "edit": false

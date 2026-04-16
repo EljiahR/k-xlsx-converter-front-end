@@ -13,6 +13,8 @@ const IndividualShifts = ({
 }: IndividualShiftsProps) => {
   const dispatch = useAppDispatch();
 
+  
+
   const shifts = people.map((person) => {
     return (
       <React.Fragment key={person.employeeId + person.name.baggerName + person.shiftStart}>

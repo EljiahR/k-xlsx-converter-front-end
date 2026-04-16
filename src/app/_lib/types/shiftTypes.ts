@@ -1,8 +1,3 @@
-export interface IBreak {
-    time: string;
-    editable: boolean;
-}
-
 export interface SubshiftDTO {
     shiftStart: Date;
     shiftEnd: Date;
@@ -44,9 +39,9 @@ export interface IEmployeeBO
     name: IEmployeeName;
     shiftStart: string;
     shiftEnd: string;
-    breakOne: IBreak;
-    lunch: IBreak;
-    breakTwo: IBreak;
+    breakOne: string;
+    lunch: string;
+    breakTwo: string;
     edit: boolean;
     subshift?: SubshiftBO 
 }

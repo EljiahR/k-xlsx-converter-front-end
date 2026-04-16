@@ -13,18 +13,9 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
     edit: false,
     shiftStart: moment(shift.shiftStart).format("h:mma").slice(0, -1),
     shiftEnd: moment(shift.shiftEnd).format("h:mma").slice(0, -1),
-    breakOne: {
-      editable: false,
-      time: shift.breakOne ? moment(shift.breakOne).format("h:mm A") : "",
-    },
-    lunch: {
-      editable: false,
-      time: shift.lunch ? moment(shift.lunch).format("h:mm A") : "",
-    },
-    breakTwo: {
-      editable: false,
-      time: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
-    },
+    breakOne: shift.breakOne ? moment(shift.breakOne).format("h:mm A") : "",
+    lunch: shift.lunch ? moment(shift.lunch).format("h:mm A") : "",
+    breakTwo: shift.breakTwo ? moment(shift.breakTwo).format("h:mm A") : "",
     originalPosition: shift.originalPosition ?? "",
     subshift: shift.subshift == null ? null : {
       shiftStart: moment(shift.subshift.shiftStart).format("h:mma").slice(0, -1),
