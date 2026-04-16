@@ -7,7 +7,6 @@ import { addMinutesToBreak, getDatesFromBreaks, timeIsLaterThan } from "../helpe
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
 import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
-import { FocusEvent, KeyboardEvent } from "react";
 import { RootState } from "./store";
 
 const initialState: ShiftsState = {
@@ -218,6 +217,46 @@ const selectShifts = (state: RootState) => state.shifts.value;
 export const selectCurrentDayShifts = createSelector(
     [selectCurrentDay, selectShifts],
     (currentDay, shifts) => shifts[currentDay]
+);
+
+export const selectCurrentDaySupervisors = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Front End Supervisor")?.shifts ?? []
+);
+
+export const selectCurrentDayCashiers = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Front End Cashier")?.shifts ?? []
+);
+
+export const selectCurrentDaySCOs = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Front End SCO Cashier")?.shifts ?? []
+);
+
+export const selectCurrentDayBaggers = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Front End Courtesy Clerk")?.shifts ?? []
+);
+
+export const selectCurrentDayDesk = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Front End Service Desk")?.shifts ?? []
+);
+
+export const selectCurrentDayFuel = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Fuel Clerk")?.shifts ?? []
+);
+
+export const selectCurrentDayCallUps = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Call Ups")?.shifts ?? []
+);
+
+export const selectCurrentDayLiquor = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.jobPositions.find(j => j.name == "Liquor Clerk")?.shifts ?? []
 );
 
 export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
