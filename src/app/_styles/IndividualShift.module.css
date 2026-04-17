@@ -1,0 +1,18 @@
+
+
+.person-name {
+    display: flex;
+}
+
+.person-name > .shift-input {
+    width: 50%;
+}
+
+.shift-input {
+    field-sizing: content;
+    min-width: 60px;
+}
+
+.shift-gap {
+    margin-right: 5px;
+}

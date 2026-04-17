@@ -3,17 +3,17 @@ import { IndividualShiftProps } from "../../../_lib/types/boardTypes";
 
 const IndividualShift = ({person, section}: IndividualShiftProps) => {
     return (
-        <div className={styles["person"]}>
-            <div className={styles["person-name"]}>
-                <input type="text" value={person.name.firstName} />
-                <input type="text" value={person.name.lastName} />
+        <>
+            <div className={styles["person-name"]  + " " + styles["shift-gap"]}>
+                <input type="text" value={person.name.firstName} className={styles["shift-input"]} tabIndex={-1} />
+                <input type="text" value={person.name.lastName} className={styles["shift-input"]} tabIndex={-1} />
             </div>
-            <input type="text" value={person.shiftStart} />
-            <input type="text" value={person.shiftEnd} />
-            <input type="text" value={person.breakOne} />
-            <input type="text" value={person.lunch} />
-            <input type="text" value={person.breakTwo} />
-        </div>
+            <input type="text" value={person.shiftStart} className={styles["shift-input"]  + " " + styles["no-index"]} tabIndex={-1} />
+            <input type="text" value={person.shiftEnd} className={styles["shift-input"] + " " + styles["shift-gap"]} tabIndex={-1} />
+            <input type="text" value={person.breakOne} className={styles["shift-input"]} tabIndex={(person.breakOne.trim() == "" ? -1 : 0)} />
+            <input type="text" value={person.lunch} className={styles["shift-input"]} tabIndex={(person.lunch.trim() == "" ? -1 : 0)} />
+            <input type="text" value={person.breakTwo} className={styles["shift-input"]} tabIndex={(person.breakTwo.trim() == "" ? -1 : 0)} />
+        </>
     )
 }
 

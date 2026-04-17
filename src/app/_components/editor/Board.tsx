@@ -16,7 +16,7 @@ const Board = () => {
   const liquor = useAppSelector(selectCurrentDayLiquor);
 
   return (
-    <div id="board">
+    <div id={styles["board"]}>
       <BoardSection people={registers} section="register" sectionSpelledOut="Cashiers and Sco" />
       <BoardSection people={baggers} section="baggers" sectionSpelledOut="Baggers" />
       <BoardSection people={desk} section="desk" sectionSpelledOut="Desk" />
