@@ -34,13 +34,13 @@ export const shiftsSlice = createSlice({
         setNewShifts: (state, action: PayloadAction<IWeekdayBO[]>) => {
             state.value = action.payload;
         },
-        addToBreak: (state, action: PayloadAction<{ keyDown: string, currentTarget: string, employee: IEmployeeBO, jobPosition: string, breakType: string, section: string }>) => {
-            const { keyDown, currentTarget, employee, jobPosition, breakType, section } = action.payload;
+        addToBreak: (state, action: PayloadAction<{ keyDown: string, currentTarget: string, employee: IEmployeeBO, breakType: string, section: string }>) => {
+            const { keyDown, currentTarget, employee, breakType, section } = action.payload;
             if ((keyDown != "ArrowUp" && keyDown != "ArrowDown") || currentTarget == "") {
                 return;
             }
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position)
             if (!job) return;
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
@@ -67,10 +67,10 @@ export const shiftsSlice = createSlice({
             }
 
         },
-        changeBreak: (state, action: PayloadAction<{ employee: IEmployeeBO, jobPosition: string, breakType: string, minutesToChangeTo: string }>) => {
-            const { employee, jobPosition, breakType, minutesToChangeTo } = action.payload;
+        changeBreak: (state, action: PayloadAction<{ employee: IEmployeeBO, breakType: string, minutesToChangeTo: string }>) => {
+            const { employee, breakType, minutesToChangeTo } = action.payload;
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position)
             if (!job) return;
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
@@ -83,10 +83,10 @@ export const shiftsSlice = createSlice({
             
             personToEdit[breakType].time = minutesToChangeTo;
         },
-        changeName: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, newValue: string, isFirstName: boolean}>) => {
-            const {employee, jobPosition, newValue, isFirstName } = action.payload;
+        changeName: (state, action: PayloadAction<{employee: IEmployeeBO, newValue: string, isFirstName: boolean}>) => {
+            const { employee, newValue, isFirstName } = action.payload;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position);
             if (!job) return;
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
@@ -100,10 +100,10 @@ export const shiftsSlice = createSlice({
                 personToEdit.name.lastName = newValue;
             }
         },
-        toggleNameEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
-            const {employee, jobPosition, isEditable } = action.payload;
+        toggleNameEdit: (state, action: PayloadAction<{employee: IEmployeeBO, isEditable: boolean}>) => {
+            const {employee, isEditable } = action.payload;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position);
             if (!job) return;
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
@@ -114,11 +114,11 @@ export const shiftsSlice = createSlice({
             personToEdit.name.isEditable = isEditable;
             
         },
-        toggleNameEditBlur: (state, action: PayloadAction<{isChild: boolean, employee: IEmployeeBO, jobPosition: string, isEditable: boolean}>) => {
-            const {isChild, employee, jobPosition, isEditable } = action.payload;
+        toggleNameEditBlur: (state, action: PayloadAction<{isChild: boolean, employee: IEmployeeBO, isEditable: boolean}>) => {
+            const {isChild, employee, isEditable } = action.payload;
             if (isChild) return;
 
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition);
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position);
             if (!job) return;
 
             const personToEdit = employee.employeeId != "" && employee.employeeId != null && employee.employeeId != "0" ?
@@ -129,10 +129,10 @@ export const shiftsSlice = createSlice({
             personToEdit.name.isEditable = isEditable;
             
         },
-        toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, jobPosition: string, breakType: string, section: string, isEditable: boolean}>) => {
-            const { employee, jobPosition, breakType, section, isEditable } = action.payload;
+        toggleBreakEdit: (state, action: PayloadAction<{employee: IEmployeeBO, breakType: string, section: string, isEditable: boolean}>) => {
+            const { employee, breakType, section, isEditable } = action.payload;
             
-            const job = state.value[state.day]?.jobPositions.find(j => j.name == jobPosition)
+            const job = state.value[state.day]?.jobPositions.find(j => j.name == employee.position)
             if (!job) {
                 console.log("No job")
                 return;

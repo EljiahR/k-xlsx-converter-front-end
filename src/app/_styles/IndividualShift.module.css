@@ -16,3 +16,7 @@
 .shift-gap {
     margin-right: 5px;
 }
+
+.selected-time {
+    background-color: yellow;
+}

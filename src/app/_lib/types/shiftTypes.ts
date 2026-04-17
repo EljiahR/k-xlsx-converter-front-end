@@ -43,7 +43,8 @@ export interface IEmployeeBO
     lunch: string;
     breakTwo: string;
     edit: boolean;
-    subshift?: SubshiftBO 
+    subshift?: SubshiftBO;
+    position: string;
 }
 
 export interface IJobPositionDTO {

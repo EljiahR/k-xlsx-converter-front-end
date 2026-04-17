@@ -1,7 +1,7 @@
 import moment from "moment";
 import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobPositionDTO, IWeekdayBO, IWeekdayDTO } from "../types/shiftTypes";
 
-const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
+const shiftsDTOToBO = (shifts: IEmployeeDTO[], position: string): IEmployeeBO[] => {
   return shifts.map((shift) => ({
     ...shift,
     name: {
@@ -21,7 +21,8 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[]): IEmployeeBO[] => {
       shiftStart: moment(shift.subshift.shiftStart).format("h:mma").slice(0, -1),
       shiftEnd: moment(shift.subshift.shiftEnd).format("h:mma").slice(0, -1),
       originalPosition: shift.subshift.originalPosition
-    }
+    },
+    position
   }));
 };
 
@@ -30,7 +31,7 @@ const formatJobPositions = (
 ): IJobPositionBO[] => {
   return jobPositions.map((jobPosition) => ({
     ...jobPosition,
-    shifts: shiftsDTOToBO(jobPosition.shifts),
+    shifts: shiftsDTOToBO(jobPosition.shifts, jobPosition.name),
   }));
 };
 
