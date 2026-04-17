@@ -1,5 +1,6 @@
 import moment from "moment";
 import { IEmployeeBO } from "../types/shiftTypes";
+import { ISelectedTime } from "../types/boardTypes";
 
 //converts start and end times to date objects
 declare global {
@@ -120,4 +121,8 @@ export const addMinutesToBreak = (thisBreak, minutes) => {
 export const employeeShiftSort = (a: IEmployeeBO, b: IEmployeeBO) => {
     const [aTime, bTime] = getDatesFromTimes(a.shiftStart, b.shiftStart);
     return aTime - bTime;
+};
+
+export const checkTimeOverlap = (timeToCheck: string, selectedTime: ISelectedTime) => {
+  return timeToCheck == selectedTime.time || timeToCheck == selectedTime.time15 || timeToCheck == selectedTime.timeMinus15;
 };
