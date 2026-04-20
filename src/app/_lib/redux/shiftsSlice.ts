@@ -50,11 +50,10 @@ export const shiftsSlice = createSlice({
                 console.log("No person")
                 return;
             }
-            
-            const newTime = addMinutesToBreak(personToEdit[breakType].time, keyDown == "ArrowUp" ? 15 : -15);
+            const newTime = addMinutesToBreak(personToEdit[breakType], keyDown == "ArrowUp" ? 15 : -15);
 
             if (timeIsLaterThan(newTime, personToEdit.shiftStart, true) && timeIsLaterThan(personToEdit.shiftEnd, newTime)) {
-                personToEdit[breakType].time = newTime;
+                personToEdit[breakType] = newTime;
                 state.selectedTime = {
                     time: newTime,
                     section,
@@ -81,7 +80,7 @@ export const shiftsSlice = createSlice({
                 return;
             }
             
-            personToEdit[breakType].time = minutesToChangeTo;
+            personToEdit[breakType] = minutesToChangeTo;
         },
         changeName: (state, action: PayloadAction<{employee: IEmployeeBO, newValue: string, isFirstName: boolean}>) => {
             const { employee, newValue, isFirstName } = action.payload;

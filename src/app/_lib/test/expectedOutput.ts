@@ -23,6 +23,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -39,6 +40,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     },
@@ -55,6 +57,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -71,6 +74,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     }
@@ -92,6 +96,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -108,6 +113,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -124,6 +130,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -140,6 +147,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -156,6 +164,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -177,6 +186,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -193,6 +203,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -209,6 +220,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -225,6 +237,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -241,6 +254,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -257,6 +271,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -273,6 +288,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -289,6 +305,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:30 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -305,6 +322,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "4:30 PM",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -321,6 +339,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "6:00 PM",
                         "breakTwo": "8:30 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -337,6 +356,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -358,6 +378,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -374,6 +395,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -395,6 +417,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -411,6 +434,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "11:00a",
                             "shiftEnd": "3:00p",
@@ -431,6 +455,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -447,6 +472,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "3:00 PM",
                         "breakTwo": "5:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "11:00a",
                             "shiftEnd": "7:15p",
@@ -467,6 +493,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -483,6 +510,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -499,6 +527,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
                             "shiftEnd": "8:45p",
@@ -519,6 +548,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -535,6 +565,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -551,6 +582,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -567,6 +599,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
                             "shiftEnd": "7:00p",
@@ -587,6 +620,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
                             "shiftEnd": "7:00p",
@@ -607,6 +641,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": {
                             "shiftStart": "3:00p",
                             "shiftEnd": "7:00p",
@@ -632,6 +667,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -653,6 +689,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -669,6 +706,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -685,6 +723,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -701,6 +740,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -722,6 +762,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -743,6 +784,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -759,6 +801,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -775,6 +818,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -1455,6 +1499,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1471,6 +1516,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     }
@@ -1492,6 +1538,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1508,6 +1555,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1524,6 +1572,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -1545,6 +1594,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1561,6 +1611,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1577,6 +1628,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1593,6 +1645,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1609,6 +1662,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1625,6 +1679,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1641,6 +1696,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1657,6 +1713,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1673,6 +1730,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -1689,6 +1747,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -1710,6 +1769,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1726,6 +1786,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1742,6 +1803,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1758,6 +1820,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1774,6 +1837,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1790,6 +1854,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1806,6 +1871,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1822,6 +1888,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1838,6 +1905,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1854,6 +1922,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -1875,6 +1944,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     },
@@ -1891,6 +1961,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -1912,6 +1983,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1928,6 +2000,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1944,6 +2017,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1960,6 +2034,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -1976,6 +2051,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -1997,6 +2073,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2013,6 +2090,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -2034,6 +2112,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2050,6 +2129,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2066,6 +2146,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -2746,6 +2827,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2762,6 +2844,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     },
@@ -2778,6 +2861,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     }
@@ -2799,6 +2883,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2815,6 +2900,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2831,6 +2917,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -2852,6 +2939,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2868,6 +2956,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2884,6 +2973,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2900,6 +2990,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -2916,6 +3007,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -2937,6 +3029,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2953,6 +3046,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2969,6 +3063,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "12:00 PM",
                         "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -2985,6 +3080,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3001,6 +3097,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3017,6 +3114,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3033,6 +3131,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3049,6 +3148,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -3070,6 +3170,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -3091,6 +3192,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3107,6 +3209,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3123,6 +3226,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3139,6 +3243,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -3160,6 +3265,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3176,6 +3282,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -3197,6 +3304,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -3218,6 +3326,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3234,6 +3343,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3250,6 +3360,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -3266,6 +3377,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -3946,6 +4058,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     },
@@ -3962,6 +4075,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -3983,6 +4097,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -3999,6 +4114,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "6:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4015,6 +4131,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4031,6 +4148,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -4052,6 +4170,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4068,6 +4187,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4084,6 +4204,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4100,6 +4221,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4116,6 +4238,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -4132,6 +4255,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -4153,6 +4277,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4169,6 +4294,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4185,6 +4311,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4201,6 +4328,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4217,6 +4345,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4233,6 +4362,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4249,6 +4379,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4265,6 +4396,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4281,6 +4413,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -4302,6 +4435,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     },
@@ -4318,6 +4452,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -4339,6 +4474,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4355,6 +4491,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4371,6 +4508,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4387,6 +4525,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -4408,6 +4547,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -4429,6 +4569,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4445,6 +4586,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -4466,6 +4608,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4482,6 +4625,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -4498,6 +4642,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -5178,6 +5323,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5194,6 +5340,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     },
@@ -5210,6 +5357,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     }
@@ -5231,6 +5379,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5247,6 +5396,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5263,6 +5413,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "6:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5279,6 +5430,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -5300,6 +5452,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5316,6 +5469,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5332,6 +5486,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5348,6 +5503,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5364,6 +5520,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5380,6 +5537,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -5396,6 +5554,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -5417,6 +5576,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5433,6 +5593,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5449,6 +5610,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "12:00 PM",
                         "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5465,6 +5627,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5481,6 +5644,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5497,6 +5661,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5513,6 +5678,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5529,6 +5695,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5545,6 +5712,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -5566,6 +5734,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -5587,6 +5756,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5603,6 +5773,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5619,6 +5790,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5635,6 +5807,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -5656,6 +5829,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -5677,6 +5851,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5693,6 +5868,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -5714,6 +5890,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5730,6 +5907,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -5746,6 +5924,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -6426,6 +6605,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     },
@@ -6442,6 +6622,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -6463,6 +6644,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6479,6 +6661,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6495,6 +6678,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6511,6 +6695,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6527,6 +6712,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -6548,6 +6734,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6564,6 +6751,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6580,6 +6768,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:30 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6596,6 +6785,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6612,6 +6802,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -6628,6 +6819,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -6649,6 +6841,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6665,6 +6858,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6681,6 +6875,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "12:00 PM",
                         "breakTwo": "2:30 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6697,6 +6892,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6713,6 +6909,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6729,6 +6926,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "6:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6745,6 +6943,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6761,6 +6960,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6777,6 +6977,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6793,6 +6994,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6809,6 +7011,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -6830,6 +7033,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -6851,6 +7055,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6867,6 +7072,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6883,6 +7089,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6899,6 +7106,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6915,6 +7123,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -6936,6 +7145,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -6957,6 +7167,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -6973,6 +7184,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -6994,6 +7206,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -7010,6 +7223,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -7026,6 +7240,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -7042,6 +7257,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -7722,6 +7938,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Floral Clerk",
+                        "position": "Floral Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -7738,6 +7955,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Apparel Stocker",
+                        "position": "Apparel Stocker",
                         "subshift": null,
                         "edit": false
                     }
@@ -7759,6 +7977,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7775,6 +7994,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7791,6 +8011,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7807,6 +8028,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "4:00 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7823,6 +8045,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:15 PM",
                         "originalPosition": "Front End SCO Cashier",
+                        "position": "Front End SCO Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -7844,6 +8067,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7860,6 +8084,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7876,6 +8101,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7892,6 +8118,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7908,6 +8135,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "2:30 PM",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7924,6 +8152,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "4:30 PM",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7940,6 +8169,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     },
@@ -7956,6 +8186,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Cashier",
+                        "position": "Front End Cashier",
                         "subshift": null,
                         "edit": false
                     }
@@ -7977,6 +8208,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -7993,6 +8225,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "1:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8009,6 +8242,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "2:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8025,6 +8259,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8041,6 +8276,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8057,6 +8293,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8073,6 +8310,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8089,6 +8327,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "9:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8105,6 +8344,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "7:00 PM",
                         "originalPosition": "Front End Courtesy Clerk",
+                        "position": "Front End Courtesy Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -8126,6 +8366,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     },
@@ -8142,6 +8383,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "10:00 AM",
                         "originalPosition": "Front End File Maint",
+                        "position": "Front End File Maint",
                         "subshift": null,
                         "edit": false
                     }
@@ -8163,6 +8405,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "12:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8179,6 +8422,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "3:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8195,6 +8439,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "5:00 PM",
                         "originalPosition": "Front End Service Desk",
+                        "position": "Front End Service Desk",
                         "subshift": null,
                         "edit": false
                     }
@@ -8216,6 +8461,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8232,6 +8478,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8248,6 +8495,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Liquor Clerk",
+                        "position": "Liquor Clerk",
                         "subshift": null,
                         "edit": false
                     }
@@ -8269,6 +8517,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "8:00 PM",
                         "originalPosition": "Front End Supervisor",
+                        "position": "Front End Supervisor",
                         "subshift": null,
                         "edit": false
                     }
@@ -8290,6 +8539,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     },
@@ -8306,6 +8556,7 @@ export const expectedOutput: IWeekdayBO[] = [
                         "lunch": "",
                         "breakTwo": "",
                         "originalPosition": "Fuel Clerk",
+                        "position": "Fuel Clerk",
                         "subshift": null,
                         "edit": false
                     }

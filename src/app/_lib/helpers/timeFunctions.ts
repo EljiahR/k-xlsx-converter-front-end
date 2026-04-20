@@ -123,6 +123,6 @@ export const employeeShiftSort = (a: IEmployeeBO, b: IEmployeeBO) => {
     return aTime - bTime;
 };
 
-export const checkTimeOverlap = (timeToCheck: string, selectedTime: ISelectedTime) => {
-  return timeToCheck == selectedTime.time || timeToCheck == selectedTime.time15 || timeToCheck == selectedTime.timeMinus15;
+export const checkTimeOverlap = (timeToCheck: string, selectedTime: ISelectedTime, breakType: string = "break") => {
+  return timeToCheck == selectedTime.time || timeToCheck == selectedTime.time15 || (breakType == "lunch" && timeToCheck == selectedTime.timeMinus15);
 };
