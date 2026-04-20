@@ -46,18 +46,18 @@ const Carts = () => {
     baggerCartInfo.start = start;
     baggerCartInfo.end = end;
 
-    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne.time)
-      ? addMinutesToBreak(bagger.breakOne.time, -15)
-      : bagger.breakOne.time;
-    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch.time)
-      ? addMinutesToBreak(bagger.lunch.time, -15)
-      : bagger.lunch.time;
-    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch.time)
-      ? addMinutesToBreak(bagger.lunch.time, 15)
-      : bagger.lunch.time;
-    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo.time)
-      ? addMinutesToBreak(bagger.breakTwo.time, -15)
-      : bagger.breakTwo.time;
+    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne)
+      ? addMinutesToBreak(bagger.breakOne, -15)
+      : bagger.breakOne;
+    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch)
+      ? addMinutesToBreak(bagger.lunch, -15)
+      : bagger.lunch;
+    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch)
+      ? addMinutesToBreak(bagger.lunch, 15)
+      : bagger.lunch;
+    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo)
+      ? addMinutesToBreak(bagger.breakTwo, -15)
+      : bagger.breakTwo;
     baggerCartInfo.subShift = bagger.subshift;
   }
 

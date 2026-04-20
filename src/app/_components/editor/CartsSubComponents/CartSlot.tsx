@@ -34,18 +34,18 @@ const CartSlot = ({
     (bagger) => bagger.name.baggerName == name,
   );
   if (thisBagger) {
-    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne.time)
-      ? addMinutesToBreak(thisBagger.breakOne.time, -15)
-      : thisBagger.breakOne.time;
-    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch.time)
-      ? addMinutesToBreak(thisBagger.lunch.time, -15)
-      : thisBagger.lunch.time;
-    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch.time)
-      ? addMinutesToBreak(thisBagger.lunch.time, 15)
-      : thisBagger.lunch.time;
-    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo.time)
-      ? addMinutesToBreak(thisBagger.breakTwo.time, -15)
-      : thisBagger.breakTwo.time;
+    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne)
+      ? addMinutesToBreak(thisBagger.breakOne, -15)
+      : thisBagger.breakOne;
+    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch)
+      ? addMinutesToBreak(thisBagger.lunch, -15)
+      : thisBagger.lunch;
+    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch)
+      ? addMinutesToBreak(thisBagger.lunch, 15)
+      : thisBagger.lunch;
+    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo)
+      ? addMinutesToBreak(thisBagger.breakTwo, -15)
+      : thisBagger.breakTwo;
     baggerInfo.subShift = thisBagger.subshift;
   }
   //yes I copied this from individualShifts

@@ -1,7 +1,4 @@
 import styles from "@/styles/Board.module.css";
-import CallUps from "./BoardSubComponents/CallUps";
-import IndividualShifts from "./BoardSubComponents/IndividualShifts";
-import Liquor from "./BoardSubComponents/Liquor";
 import { useAppSelector } from "../../_lib/redux/hooks";
 import { selectCurrentDayAllDesk, selectCurrentDayBaggers, selectCurrentDayCallUps, selectCurrentDayFuel, selectCurrentDayLiquor, selectCurrentDayRegisters } from "../../_lib/redux/shiftsSlice";
 import IndividualShift from "./BoardSubComponents/IndividualShift";
