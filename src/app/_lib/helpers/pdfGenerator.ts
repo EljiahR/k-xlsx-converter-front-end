@@ -272,9 +272,21 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     // grabbing all register operators
     const registerOperators: IEmployeeBO[] = [];
     weekday.jobPositions.forEach((p) => {
-        if (p.name != "Front End Courtesy Clerk") {
+        if (p.name != "Front End Courtesy Clerk" && p.name != "Call Ups") {
             // Okay look, I know I could write something to push everything in order, but why should I
             registerOperators.push(...p.shifts);
+        } else if (p.name == "Front End Courtesy Clerk") {
+            p.shifts.forEach((s) => {
+                if (s.originalPosition != "Front End Courtesy Clerk") {
+                    registerOperators.push(s);
+                }
+            });
+        } else if (p.name == "Call Ups") {
+            p.shifts.forEach((s) => {
+                if (s.position.includes("File")) {
+                    registerOperators.push(s);
+                }
+            })
         }
     });
     registerOperators.sort(employeeShiftSort);
