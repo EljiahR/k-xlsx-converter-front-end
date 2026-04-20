@@ -9,8 +9,8 @@ const IndividualShift = ({person, section}: IndividualShiftProps) => {
     const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
     const dispatch = useAppDispatch();
 
-    const handleSelectedTimeChange = (newTime: string) => {
-        dispatch(setSelectedTime({ time: newTime, section }));
+    const handleSelectedTimeChange = (newTime: string, breakType: string) => {
+        dispatch(setSelectedTime({ time: newTime, section, breakType }));
     }
 
     const handleBreakChange = (e: ChangeEvent<HTMLInputElement>, breakType: string) => {
@@ -68,7 +68,7 @@ interface BreakProps {
     breakType: string;
     selectedTime: ISelectedTime;
     section: string;
-    handleSelectedTimeChange: (newTime: string) => void;
+    handleSelectedTimeChange: (newTime: string, breakType: string) => void;
     handleBreakChange: (e: ChangeEvent<HTMLInputElement>, breakType: string) => void;
     handleKeyDownBreakChange: (e: KeyboardEvent<HTMLInputElement>, breakType: string, currentTarget: string) => void;
 };
@@ -80,7 +80,7 @@ const Break = ({ breakValue, breakType, selectedTime, section, handleSelectedTim
             value={breakValue} 
             className={styles["shift-input"] + " " + (selectedTime.section == section && checkTimeOverlap(breakValue, selectedTime, breakType) ? styles["selected-time"] : "")} 
             tabIndex={(breakValue.trim() == "" ? -1 : 0)} 
-            onFocus={() => handleSelectedTimeChange(breakValue)}
+            onFocus={() => handleSelectedTimeChange(breakValue, breakType)}
             onChange={(e) => handleBreakChange(e, breakType)}
             onKeyDown={(e) => handleKeyDownBreakChange(e, breakType, breakValue)}
         />

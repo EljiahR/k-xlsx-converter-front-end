@@ -184,7 +184,7 @@ export const shiftsSlice = createSlice({
         setDay: (state, action :PayloadAction<number>) => {
             state.day = action.payload;
         },
-        setSelectedTime: (state, action: PayloadAction<{time: string, section: string}>) => {
+        setSelectedTime: (state, action: PayloadAction<{time: string, section: string, breakType: string}>) => {
             if (action.payload.time.trim() == "" || action.payload.section.trim() == "") {
                 state.selectedTime = {
                     time: "",
@@ -195,7 +195,7 @@ export const shiftsSlice = createSlice({
             } else {
                 state.selectedTime = {
                     time: action.payload.time,
-                    time15: addMinutesToBreak(action.payload.time, 15),
+                    time15: action.payload.breakType == "lunch" ? addMinutesToBreak(action.payload.time, 15) : action.payload.time,
                     timeMinus15: addMinutesToBreak(action.payload.time, -15),
                     section: action.payload.section
                 };
