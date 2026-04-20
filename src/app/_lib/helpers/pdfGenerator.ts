@@ -10,7 +10,7 @@ const reportHeader = [
     { 
         name: "Name", start: "Start", end: "End", 
         break1: "Break", lunch: "Lunch", break2: "Break", 
-        fc: "FC", fs: "FS", o: "O", cs: "CS"
+        fc: "FC", fs: "FS", cs: "CS", o: "O"
     }
 ];
 
@@ -130,9 +130,9 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     
     
-    let reportBodyFontSize = 10;
+    let reportBodyFontSize = 9;
     const minimumFontSize = 6
-    let nameColWidth = 36;
+    let nameColWidth = 39;
     let reportLoopFlag = false;
 
     do {
@@ -168,10 +168,10 @@ export const generatePdf = (weekday: IWeekdayBO) => {
                 break1: { cellWidth: 13, halign: "center" },
                 lunch: { cellWidth: 13, halign: "center" },
                 break2: { cellWidth: 13, halign: "center" },
-                fc: { cellWidth: 4, fontSize: 1 },
-                fs: { cellWidth: 4, fontSize: 1 },
-                o: { cellWidth: 4, fontSize: 1 },
-                cs: { cellWidth: 4, fontSize: 1 }
+                fc: { cellWidth: 5, fontSize: 1 },
+                fs: { cellWidth: 5, fontSize: 1 },
+                cs: { cellWidth: 6, fontSize: 1 },
+                o: { cellWidth: 4, fontSize: 1 }
             },
             body: dailyBody,
             didParseCell: (data) => {
@@ -214,8 +214,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     const callups = weekday.jobPositions.find((p) => p.name == "Call Ups")
         ?.shifts.map((s) => {
             return {
-                pos: s.originalPosition.split(" ")[0].replace("Front", "File") + ": ", 
-                name: s.name.firstName + " " + s.name.lastName, 
+                name: s.originalPosition.split(" ")[0].replace("Front", "File") + ": " + s.name.firstName + " " + s.name.lastName, 
                 start: s.shiftStart, 
                 end: s.shiftEnd
             }
@@ -224,8 +223,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     const liquor = weekday.jobPositions.find((p) => p.name == "Liquor Clerk")
         ?.shifts.map((s) => {
             return {
-                pos: emptyString, 
-                name: s.name.firstName + " " + s.name.lastName, 
+                name: "    " + s.name.firstName + " " + s.name.lastName, 
                 start: s.shiftStart, 
                 end: s.shiftEnd
             }
@@ -233,45 +231,38 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     autoTable(daily, {
         alternateRowStyles: { fillColor: null },
-        margin: 123,
+        margin: 130,
         startY: 12,
         styles: { halign: "center" },
         columns: [
-            { header: "pos", dataKey: "pos"},
             { header: "name", dataKey: "name"},
             { header: "start", dataKey: "start"},
             { header: "end", dataKey: "end"}
         ],
         columnStyles: {
-            pos: { cellWidth: 20 },
-            name: { cellWidth: 35 },
-            start: { cellWidth: 15 },
-            end: { cellWidth: 15 }            
+            name: { cellWidth: 45, halign: "left", fontSize: reportBodyFontSize },
+            start: { cellWidth: 15, fontSize: reportBodyFontSize },
+            end: { cellWidth: 15, fontSize: reportBodyFontSize }            
         },
         showHead: "never",
         body: [
             ...rightSide,
             [{
                 content: "Call Ups and Misc.",
-                colSpan: 4,
+                colSpan: 3,
                 styles: rightSubtitleStyles
             }],
             ...callups, [],
             [{
                 content: "Liquor",
-                colSpan: 4,
+                colSpan: 3,
                 styles: rightSubtitleStyles
             }],
             ...liquor, [],
             [{
                 content: "Management",
-                colSpan: 4,
+                colSpan: 3,
                 styles: rightSubtitleStyles
-            }],
-            [],[],[],
-            [{
-                content: "Fuel Replenishment",
-                colSpan: 4
             }]
         ]
     });
@@ -317,7 +308,6 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         },
         body: [
             ...operatorNames,
-            { content: "HELLO?"}
         ]
     });
 

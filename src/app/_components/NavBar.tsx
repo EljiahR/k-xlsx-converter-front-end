@@ -8,6 +8,7 @@ const NavBar = ({
   handleCurrentDay,
   handleFileInput,
   handleTestShifts,
+  handleJsonInput,
   page,
   handlePage,
   shifts
@@ -27,6 +28,7 @@ const NavBar = ({
       </Link>
       <input id="input" type="file" onChange={handleFileInput}></input>
       <button onClick={handleTestShifts}>Use Test File</button>
+      <button onClick={handleJsonInput}>Use Json</button>
       <div>
         {shifts && (
           <div id="report-controls">

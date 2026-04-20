@@ -11,6 +11,7 @@ import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
 import { setAsTest, setNewShifts, setShiftsNull, setDay } from "../../../_lib/redux/shiftsSlice";
+import { json } from "stream/consumers";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -41,6 +42,16 @@ const Report = () => {
 
   const handleTestShifts = () => {
     dispatch(setAsTest());
+  }
+
+  const handleJsonInput = () => {
+    const jsonString = prompt("Input json");
+    try {
+      const obj = JSON.parse(jsonString);
+      dispatch(setNewShifts(obj));
+    } catch (e) {
+      console.log("error parsing json");
+    }
   }
 
   /* 
@@ -82,6 +93,7 @@ const Report = () => {
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
         handleTestShifts={handleTestShifts}
+        handleJsonInput={handleJsonInput}
         handlePage={handlePage}
         page={page}
         shifts={shifts}
