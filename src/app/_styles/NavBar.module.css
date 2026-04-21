@@ -9,7 +9,7 @@
   top:0;
   margin: 0px;
   width: 100vw;
-  position: sticky;
+  position: fixed;
   z-index: 2
 }
 

@@ -1,34 +1,16 @@
-#cart-sheet{
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-}
-
-#headers {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  border-bottom: 2px solid black;
-}
-#headers > * {
-  margin: 10px;
-}
-
-#main{
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 10px;
+#carts {
+  max-width: 50%;
+  min-width: 400px;
+  grid-column: 2;
 }
 
 #lot {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(15, 30px);
   border: 1px solid black;
   border-bottom: none;
-  width: 100%
+  
 }
 
 #lot > * {

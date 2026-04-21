@@ -1,6 +1,6 @@
 "use client";
-import styles from "../../../_styles/Report.module.css";
 // Template object for reseting the shifts state
+import styles from "@/styles/App.module.css";
 import initialShifts from "../../../_lib/test/shiftsObject";
 // Importing components
 import Board from "../../../_components/editor/Board";
@@ -11,7 +11,6 @@ import { getEmployees } from "../../../_lib/helpers/getNewShifts";
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
 import { setAsTest, setNewShifts, setShiftsNull, setDay } from "../../../_lib/redux/shiftsSlice";
-import { json } from "stream/consumers";
 
 const Report = () => {
   const [xlsxFile, setXlsxFile] = useState(null);
@@ -88,7 +87,7 @@ const Report = () => {
   }, [xlsxFile]);
 
   return (
-    <div className="App">
+    <div className={styles["App"]}>
       <NavBar
         handleCurrentDay={handleCurrentDay}
         handleFileInput={handleFileInput}
@@ -100,13 +99,12 @@ const Report = () => {
       />
 
       {isLoading && <Loading />}
-      {shifts && page === "Board" && (
-        <Board />
-      )}
-      {shifts && page === "Carts" && (
-        <div id="carts" className={styles.sheet}>
+      {shifts && (
+        <>
+          <Board />
           <Carts />
-        </div>
+        </>
+        
       )}
     </div>
   );

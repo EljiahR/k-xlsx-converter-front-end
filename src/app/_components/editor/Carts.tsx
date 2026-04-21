@@ -1,6 +1,5 @@
 import styles from "@/styles/Carts.module.css";
 import { lotTimes } from "../../_lib/lotTimes";
-import Restrooms from "./CartsSubComponents/Restrooms";
 import {
   addMinutesToBreak,
   timeIsLaterThan,
@@ -85,75 +84,65 @@ const Carts = () => {
   };
 
   return (
-    <div id={styles["cart-sheet"]}>
-      <div id={styles["headers"]}>
-        <h3>Lot, Lobby, Restroom Schedule</h3>
-        <h3>Date: {shifts[currentDay].date}</h3>
-      </div>
-      <div id={styles["main"]}>
-        <div id={styles["lot-header"]}>Lot and Lobby</div>
-        <div id={styles.lot}>
-          <div className={styles["lot-time-label"]}>Time</div>
-          <div className={styles["lot-associate-label"]}>Associate</div>
-          <div id={styles["second-time-label"]} className={styles["lot-time-label"]}>Time</div>
-          <div className={styles["lot-associate-label"]}>Associate</div>
-          {lotTimes.map((time, index) => {
-            if (index > 5)
-            return (
-              <React.Fragment key={`${time}${index}`}>
-                <div
-                  className={`${styles["cart-time"]} ${
-                    time == baggerCartInfo.break1 ||
-                    time == baggerCartInfo.lunch1 ||
-                    time == baggerCartInfo.lunch2 ||
-                    time == baggerCartInfo.break2
-                      ? styles["break-highlight"]
-                      : ""
-                  } ${
-                    time == baggerCartInfo.start ||
-                    time == baggerCartInfo.end ||
-                    (timeIsLaterThan(time, baggerCartInfo.start) &&
-                    timeIsLaterThan(baggerCartInfo.end, time))
-                      /* ? (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart, true) &&
-                        timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time)))  */
-                        ? styles["shift-highlight"]
-                        /* : styles["utility-highlight"] */
-                      : "" 
-                  } ${
-                    time.includes(":3") 
-                    ? styles["right-time"]
+    <div id={styles["carts"]}>
+      <div id={styles.lot}>
+        <div className={styles["lot-time-label"]}>Time</div>
+        <div className={styles["lot-associate-label"]}>Associate</div>
+        {lotTimes.map((time, index) => {
+          if (index > 5)
+          return (
+            <React.Fragment key={`${time}${index}`}>
+              <div
+                className={`${styles["cart-time"]} ${
+                  time == baggerCartInfo.break1 ||
+                  time == baggerCartInfo.lunch1 ||
+                  time == baggerCartInfo.lunch2 ||
+                  time == baggerCartInfo.break2
+                    ? styles["break-highlight"]
                     : ""
-                  }`}
-                  id={time}
-                >
-                  <p>{time}</p>
-                </div>
-                {componentArray.map((i) => (
-                  <React.Fragment key={`CartSlot${index}${i}`}>
-                    <CartSlot
-                      index={index}
-                      pos={i}
-                      name={shifts[currentDay].carts[index][i].name}
-                      editable={shifts[currentDay].carts[index][i].editable}
-                      handleOnDrag={handleOnDrag}
-                      handleOnDrop={handleOnDrop}
-                      inputReference={inputReference}
-                      carts={shifts[currentDay].carts}
-                      selectedBagger={selectedBagger}
-                      time={time}
-                      baggerList={baggerList}
-                    />
-                  </React.Fragment>
-                  
-                ))}
-              </React.Fragment>
-            );
-          })}
-        </div>
-        <Restrooms utilityClerks={baggerList.shifts.filter((bagger) => bagger.subshift != null)} />
+                } ${
+                  time == baggerCartInfo.start ||
+                  time == baggerCartInfo.end ||
+                  (timeIsLaterThan(time, baggerCartInfo.start) &&
+                  timeIsLaterThan(baggerCartInfo.end, time))
+                    /* ? (baggerCartInfo.subShift == null || !(timeIsLaterThan(time, baggerCartInfo.subShift.shiftStart, true) &&
+                      timeIsLaterThan(baggerCartInfo.subShift.shiftEnd, time)))  */
+                      ? styles["shift-highlight"]
+                      /* : styles["utility-highlight"] */
+                    : "" 
+                } ${
+                  time.includes(":3") 
+                  ? styles["right-time"]
+                  : ""
+                }`}
+                id={time}
+              >
+                <p>{time}</p>
+              </div>
+              {componentArray.map((i) => (
+                <React.Fragment key={`CartSlot${index}${i}`}>
+                  <CartSlot
+                    index={index}
+                    pos={i}
+                    name={shifts[currentDay].carts[index][i].name}
+                    editable={shifts[currentDay].carts[index][i].editable}
+                    handleOnDrag={handleOnDrag}
+                    handleOnDrop={handleOnDrop}
+                    inputReference={inputReference}
+                    carts={shifts[currentDay].carts}
+                    selectedBagger={selectedBagger}
+                    time={time}
+                    baggerList={baggerList}
+                  />
+                </React.Fragment>
+                
+              ))}
+            </React.Fragment>
+          );
+        })}
       </div>
-      <div id="footer"></div>
     </div>
+    
   );
 };
 

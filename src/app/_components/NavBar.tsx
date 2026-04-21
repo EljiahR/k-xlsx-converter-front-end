@@ -32,8 +32,6 @@ const NavBar = ({
       <div>
         {shifts && (
           <div id="report-controls">
-            <label htmlFor="report-default">Swap to Report?</label>
-            <input id="report-default" type="checkbox" checked={defaultToReport} onChange={() => setDefaultToReport(!defaultToReport)} />
             <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e, defaultToReport)}>
               {shifts.map((day, index) => {
                 return (
@@ -41,18 +39,6 @@ const NavBar = ({
                 )
               })}
             </select>
-            {page === "Board" && (
-              <>
-                <button onClick={() => handlePage("Carts")}>Carts</button>
-                <button onClick={handlePdfGenerator}>Print</button>
-              </>
-            )}
-            {page === "Carts" && (
-              <>
-                <button onClick={() => handlePage("Board")}>Report</button>
-                <button onClick={handlePdfGenerator}>Print</button>
-              </>
-            )}
           </div>
         )}
       </div>
