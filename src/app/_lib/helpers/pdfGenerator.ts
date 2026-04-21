@@ -197,8 +197,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         const birthdays = "Happy Birthday " + joinWithLast([...weekday.birthdays], ', ', ' and ');
         rightSide.push([{
             content: birthdays,
-            colSpan: 4,
-            styles: { fontSize: 14 }
+            colSpan: 3,
+            styles: { fontSize: 14, halign: "center" }
         }], [])
     }
 
@@ -206,8 +206,8 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         const holidays = "Happy " + joinWithLast([...weekday.holidays], ', ', ' and ');
         rightSide.push([{
             content: holidays,
-            colSpan: 4,
-            styles: { fontSize: 14 }
+            colSpan: 3,
+            styles: { fontSize: 14, halign: "center" }
         }], [])
     }
 
@@ -283,7 +283,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             });
         } else if (p.name == "Call Ups") {
             p.shifts.forEach((s) => {
-                if (s.position.includes("File")) {
+                if (s.originalPosition.includes("File") || s.originalPosition.includes("Floral")) {
                     registerOperators.push(s);
                 }
             })
