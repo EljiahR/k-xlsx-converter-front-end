@@ -1,15 +1,17 @@
 #board {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-    grid-column: 1;
-    max-width: 50%;
+    width: fit-content;
+    justify-content: center;
 }
 
 .shifts {
     display: grid;
     grid-template-columns: repeat(6, min-content);
     row-gap: 5px;
+}
+
+.section {
+    width: fit-content;
 }
