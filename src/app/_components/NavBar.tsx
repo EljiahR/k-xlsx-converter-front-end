@@ -9,11 +9,8 @@ const NavBar = ({
   handleFileInput,
   handleTestShifts,
   handleJsonInput,
-  page,
-  handlePage,
   shifts
 }) => {
-  const [defaultToReport, setDefaultToReport] = useState(true);
   const currentDay = useAppSelector((state) => state.shifts.day);
 
 
@@ -32,7 +29,7 @@ const NavBar = ({
       <div>
         {shifts && (
           <div id="report-controls">
-            <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e, defaultToReport)}>
+            <select name="weekdays" id="weekdays" onChange={(e) => handleCurrentDay(e)}>
               {shifts.map((day, index) => {
                 return (
                   <option key={day.date} value={index}>{day.day}</option>

@@ -1,6 +1,5 @@
 import instance from "../../_lib/axiosBase";
 import { useEffect, useState } from "react";
-import useTitle from "../../_lib/useTitle";
 
 interface EmployeeInfo {
   firstName: string;

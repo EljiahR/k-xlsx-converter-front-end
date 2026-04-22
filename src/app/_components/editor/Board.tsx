@@ -1,16 +1,22 @@
 import styles from "@/styles/Board.module.css";
 import { useAppSelector } from "../../_lib/redux/hooks";
-import { selectCurrentDayAllDesk, selectCurrentDayBaggers, selectCurrentDayCallUps, selectCurrentDayFuel, selectCurrentDayLiquor, selectCurrentDayRegisters } from "../../_lib/redux/shiftsSlice";
+import { selectCurrentDate, selectCurrentDayAllDesk, selectCurrentDayBaggers, selectCurrentDayCallUps, selectCurrentDayFuel, selectCurrentDayLiquor, selectCurrentDayRegisters } from "../../_lib/redux/shiftsSlice";
 import IndividualShift from "./BoardSubComponents/IndividualShift";
 import { IEmployeeBO } from "../../_lib/types/shiftTypes";
+import { useEffect } from "react";
 
 const Board = () => {
+  const currentDate = useAppSelector(selectCurrentDate)
   const registers = useAppSelector(selectCurrentDayRegisters)
   const baggers = useAppSelector(selectCurrentDayBaggers);
   const desk = useAppSelector(selectCurrentDayAllDesk)
   const fuel = useAppSelector(selectCurrentDayFuel);
   const callUps = useAppSelector(selectCurrentDayCallUps);
   const liquor = useAppSelector(selectCurrentDayLiquor);
+
+  useEffect(() => {
+    document.title = currentDate;
+  }, [currentDate]);
 
   return (
     <div id={styles["board"]}>

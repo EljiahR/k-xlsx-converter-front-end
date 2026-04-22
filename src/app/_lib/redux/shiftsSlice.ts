@@ -283,6 +283,11 @@ export const selectCurrentDayAllDesk = createSelector(
     (desk, supervisors) => [...desk, ...supervisors].sort(employeeShiftSort)
 );
 
+export const selectCurrentDate = createSelector(
+    [selectCurrentDayShifts],
+    (shifts) => shifts.date
+);
+
 export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

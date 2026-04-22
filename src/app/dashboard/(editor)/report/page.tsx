@@ -17,11 +17,10 @@ const Report = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(null);
-  const [page, setPage] = useState("Board"); //Swap between board and carts
 
-  const handlePage = async (nextPage: string) => {
-    setPage(nextPage);
-  }
+  useEffect(() => {
+    document.title = "Report"
+  }, []);
 
   const handleFileInput = async () => {
     setIsLoading(true);
@@ -34,9 +33,8 @@ const Report = () => {
     }
   };
 
-  const handleCurrentDay = (e, defaultToReport: boolean) => {
+  const handleCurrentDay = (e) => {
     dispatch(setDay(e.target.value));
-    if (defaultToReport && page != "Board") setPage("Board");
   };
 
   const handleTestShifts = () => {
@@ -93,8 +91,6 @@ const Report = () => {
         handleFileInput={handleFileInput}
         handleTestShifts={handleTestShifts}
         handleJsonInput={handleJsonInput}
-        handlePage={handlePage}
-        page={page}
         shifts={shifts}
       />
 
