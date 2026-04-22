@@ -45,20 +45,27 @@ const CartSlot = ({
       : thisBagger.breakTwo;
     baggerInfo.subShift = thisBagger.subshift;
   }
+
+  const handleClick = (e) => {
+        if (e?.target?.select) {
+            e.target.select();
+        }
+    }
     
-    return (
-      <input
-        className={`${styles["bagger-slot"]} ${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
-        draggable="true"
-        id={`${index}:${pos}`}
-        value={name}
-        onDragStart={(e) => handleOnDrag(e, name)}
-        onDragOver={(e) => e.preventDefault()}
-        onDrop={(e) => handleOnDrop(e)}
-        onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
-        onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
-      />
-    );
+  return (
+    <input
+      className={`${styles["bagger-slot"]} ${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
+      draggable="true"
+      id={`${index}:${pos}`}
+      value={name}
+      onDragStart={(e) => handleOnDrag(e, name)}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => handleOnDrop(e)}
+      onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
+      onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
+      onClick={handleClick}
+    />
+  );
 };
 
 export default CartSlot;

@@ -3,7 +3,7 @@ import { IndividualShiftProps, ISelectedTime } from "../../../_lib/types/boardTy
 import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
 import { checkTimeOverlap } from "../../../_lib/helpers/timeFunctions";
 import { addToBreak, changeBreak, changeName, setSelectedTime } from "../../../_lib/redux/shiftsSlice";
-import { ChangeEvent, KeyboardEvent } from "react";
+import { ChangeEvent, KeyboardEvent, MouseEvent, ReactEventHandler } from "react";
 
 const IndividualShift = ({person, section}: IndividualShiftProps) => {
     const selectedTime = useAppSelector((state) => state.shifts.selectedTime);
@@ -74,6 +74,12 @@ interface BreakProps {
 };
 
 const Break = ({ breakValue, breakType, selectedTime, section, handleSelectedTimeChange, handleBreakChange, handleKeyDownBreakChange }: BreakProps) => {
+    const handleClick = (e) => {
+        if (e?.target?.select) {
+            e.target.select();
+        }
+    }
+    
     return (
         <input 
             type="text" 
@@ -83,6 +89,7 @@ const Break = ({ breakValue, breakType, selectedTime, section, handleSelectedTim
             onFocus={() => handleSelectedTimeChange(breakValue, breakType)}
             onChange={(e) => handleBreakChange(e, breakType)}
             onKeyDown={(e) => handleKeyDownBreakChange(e, breakType, breakValue)}
+            onClick={handleClick}
         />
     );
 }
