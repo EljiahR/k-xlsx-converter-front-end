@@ -1,8 +1,9 @@
 #carts {
-  max-width: 50%;
-  min-width: 400px;
-  grid-column: 2;
+  min-width: 500px;
+  max-width: 45%;
+  padding: 20px;
 }
+
 
 #lot {
   display: grid;
@@ -11,13 +12,16 @@
   border: 1px solid black;
   border-bottom: none;
   min-width: 500px;
+  max-width: 80%;
+  box-sizing: border-box;
 }
 
 #lot > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid black
+  border-bottom: 1px solid black;
+    box-sizing: border-box;
 }
 
 #lot > input {
@@ -37,10 +41,6 @@
   font-weight: bold;
 }
 
-#second-time-label {
-  border-left: 1px solid black;
-}
-
 .lot-associate-label {
   grid-column-end: span 4;
   font-weight: bold;
@@ -55,12 +55,9 @@
   border-right: 1px solid black
 }
 
-.right-time {
-  border-left: 1px solid black;
-}
-
 .bagger-slot {
   font-size: 14px;
+  border: none;
 }
 
 .shift-highlight {

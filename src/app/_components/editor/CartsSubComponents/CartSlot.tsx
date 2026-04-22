@@ -1,6 +1,5 @@
 import checkCartErrors from "../../../_lib/helpers/checkCartErrors";
 import styles from "@/styles/Carts.module.css";
-import { useEffect } from "react";
 import { addMinutesToBreak } from "../../../_lib/helpers/timeFunctions";
 import { BaggerInfo, CartSlotProps } from "../../../_lib/types/cartTypes";
 import { IEmployeeBO } from "../../../_lib/types/shiftTypes";
@@ -11,10 +10,8 @@ const CartSlot = ({
   index,
   pos,
   name,
-  editable,
   handleOnDrag,
   handleOnDrop,
-  inputReference,
   carts,
   selectedBagger,
   time,
@@ -48,48 +45,20 @@ const CartSlot = ({
       : thisBagger.breakTwo;
     baggerInfo.subShift = thisBagger.subshift;
   }
-  //yes I copied this from individualShifts
-  useEffect(() => {
-    if (carts[index][pos].editable) {
-      inputReference.current.select();
-    }
-  }, [carts[index][pos].editable]);
-  if (editable) {
-    
-      /* 
-      Want to make transform into input on tab and
-      draggable divs accessable coexist, current only 1 can
-    */
     
     return (
       <input
-        className={styles["bagger-slot"]}
+        className={`${styles["bagger-slot"]} ${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
         draggable="true"
         id={`${index}:${pos}`}
         value={name}
         onDragStart={(e) => handleOnDrag(e, name)}
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => handleOnDrop(e)}
-        onBlur={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
+        onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
         onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
-        ref={inputReference}
       />
     );
-  }
-  return (
-    <div
-      className={`${styles["bagger-slot"]} ${name == selectedBagger && selectedBagger != "" ? styles["name-highlight"] : ""} ${checkCartErrors(baggerInfo, time, carts[index], index > 0 ? carts[index - 1] : null, index < 35 ? carts[index + 1] : null)}`}
-      draggable="true"
-      id={`${index}:${pos}`}
-      onDragStart={(e) => handleOnDrag(e, name)}
-      onDragOver={(e) => e.preventDefault()}
-      onDrop={(e) => handleOnDrop(e)}
-      onClick={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
-      tabIndex={0}
-    >
-      {name}
-    </div>
-  );
 };
 
 export default CartSlot;

@@ -6,10 +6,8 @@ export interface CartSlotProps {
   index: number;
   pos: number;
   name: string;
-  editable: boolean;
   handleOnDrag: OnDragType;
   handleOnDrop: OnDropType;
-  inputReference: React.MutableRefObject<any>;
   carts: ICartShift[][];
   selectedBagger: string;
   time: string;

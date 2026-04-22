@@ -125,10 +125,8 @@ const Carts = () => {
                     index={index}
                     pos={i}
                     name={shifts[currentDay].carts[index][i].name}
-                    editable={shifts[currentDay].carts[index][i].editable}
                     handleOnDrag={handleOnDrag}
                     handleOnDrop={handleOnDrop}
-                    inputReference={inputReference}
                     carts={shifts[currentDay].carts}
                     selectedBagger={selectedBagger}
                     time={time}

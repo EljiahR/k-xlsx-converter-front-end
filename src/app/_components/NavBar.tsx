@@ -39,7 +39,9 @@ const NavBar = ({
                 )
               })}
             </select>
+            <button onClick={handlePdfGenerator}>Print</button>
           </div>
+          
         )}
       </div>
     </div>

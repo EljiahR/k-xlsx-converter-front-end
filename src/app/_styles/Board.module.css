@@ -1,8 +1,10 @@
 #board {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
-    width: fit-content;
+    min-width: 600px;
+    max-width: 45%;
     justify-content: center;
 }
 
