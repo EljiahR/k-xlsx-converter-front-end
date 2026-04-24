@@ -231,7 +231,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     autoTable(daily, {
         alternateRowStyles: { fillColor: null },
-        margin: 130,
+        margin: { left: 130},
         startY: 12,
         styles: { halign: "center" },
         columns: [
@@ -261,6 +261,12 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             ...liquor, [],
             [{
                 content: "Management",
+                colSpan: 3,
+                styles: rightSubtitleStyles
+            }],
+            [], [], [],
+            [{
+                content: "Tasks",
                 colSpan: 3,
                 styles: rightSubtitleStyles
             }]
