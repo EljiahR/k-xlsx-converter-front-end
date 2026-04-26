@@ -233,7 +233,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
 
     autoTable(daily, {
         alternateRowStyles: { fillColor: null },
-        margin: { left: 130},
+        margin: { left: 136},
         startY: reportStart,
         styles: { halign: "center" },
         columns: [
