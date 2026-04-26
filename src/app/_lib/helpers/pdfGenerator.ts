@@ -414,18 +414,18 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     for (let j = 0; j < 2; j++) {
         daily.addPage();
         
-        daily.text(cartsTitle, width - (cartsTitleWidth + 10), 10);
+        daily.text(cartsTitle, width - (cartsTitleWidth + 10), topMargin + 5);
         
-        daily.text(dateText, width - (dateTextWidth + 10), 20);
+        daily.text(dateText, width - (dateTextWidth + 10), topMargin + 15);
         daily.setLineWidth(1);
-        daily.line(10, 30, 200, 30);
+        daily.line(10, topMargin + 25, 200, topMargin + 25);
 
-        daily.text("Lot and Lobby", (width - lotLobbyTextWidth) / 2, 40);
+        daily.text("Lot and Lobby", (width - lotLobbyTextWidth) / 2, topMargin + 35);
 
 
         autoTable(daily, {
             alternateRowStyles: { fillColor: null },
-            startY: 50,
+            startY: topMargin + 40,
             margin: 5,
             columns: cartShiftColumns,
             headStyles: { cellWidth: 20, fillColor: null, textColor: "black" },
