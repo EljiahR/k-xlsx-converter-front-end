@@ -37,7 +37,9 @@ const cartHeaderStyles: Partial<Styles> = {
     fontStyle: "bold"
 };
 
-const numberOfReportCols = 10;
+const numberOfReportCols = 12;
+const topMargin = 27;
+const reportStart = topMargin + 2;
 
 export const generatePdf = (weekday: IWeekdayBO) => {
     console.log(weekday);
@@ -140,12 +142,12 @@ export const generatePdf = (weekday: IWeekdayBO) => {
         console.log("Font size: " + reportBodyFontSize);
         daily.setFontSize(reportBodyFontSize);
         daily.setTextColor("black");
-        daily.text(weekday.date, 5, 10);
+        daily.text(weekday.date, 5, topMargin);
         
         autoTable(daily, {
             alternateRowStyles: { fillColor: null },
             margin: 5,
-            startY: 12,
+            startY: reportStart,
             styles: {
                 lineWidth: 0.1,
                 lineColor: blackLine,
@@ -232,7 +234,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     autoTable(daily, {
         alternateRowStyles: { fillColor: null },
         margin: { left: 130},
-        startY: 12,
+        startY: reportStart,
         styles: { halign: "center" },
         columns: [
             { header: "name", dataKey: "name"},
