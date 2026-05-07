@@ -285,7 +285,7 @@ export const generatePdf = (weekday: IWeekdayBO) => {
             registerOperators.push(...p.shifts);
         } else if (p.name == "Front End Courtesy Clerk" || p.name == "Front End Utility Clerk") {
             p.shifts.forEach((s) => {
-                if (s.originalPosition != "Front End Courtesy Clerk" && s.originalPosition != "Front End Utility Clerk") {
+                if (s.originalPosition != "Front End Courtesy Clerk" && s.originalPosition != "Front End Utility Clerk" && s.originalPosition != "Dairy Clerk") {
                     registerOperators.push(s);
                 }
             });
