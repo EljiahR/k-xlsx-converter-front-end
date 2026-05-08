@@ -300,13 +300,19 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     registerOperators.sort(employeeShiftSort);
 
     // dare I loop yet a 3rd time?
-    const operatorNames = registerOperators.map((o) => {
-        return [
-            o.name.firstName + " " + o.name.lastName,
-            emptyString,
-            emptyString
-        ]
-    })
+    const operatorNames = [];
+    const usedOperatorNames = new Set<String>([]);
+    registerOperators.forEach((o) => {
+        const completeName = o.name.firstName + " " + o.name.lastName;
+        if (!usedOperatorNames.has(completeName)) {
+            operatorNames.push([
+                completeName,
+                emptyString,
+                emptyString
+            ]);
+            usedOperatorNames.add(completeName);
+        }
+    });
 
     const blankRows = 50 - operatorNames.length;
     for (let i = 0 ; i < blankRows; i++) {
