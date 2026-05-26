@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { ComponentType, useEffect, useState } from "react";
 import instance from "../_lib/axiosBase";
+import Loading from "./Loading";
 
 interface AuthorizedRoutes {
     authorizedStores: string[]
@@ -56,7 +57,7 @@ const ProtectedRoute = ({ component: Component } : Props) => {
     
     return (
         authenticationState == AuthenticationStates.Loading ?
-            <></> :
+            <Loading /> :
             authenticationState == AuthenticationStates.Authorized ?
                 <Component {...authorizedRoutes} /> :
                 <div>User is unauthorized for this page.</div>
