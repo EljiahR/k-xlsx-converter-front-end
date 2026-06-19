@@ -26,13 +26,14 @@ const IndividualShift = ({person, section}: IndividualShiftProps) => {
     
     return (
         <>
-            <div className={styles["person-name"]  + " " + styles["shift-gap"]}>
+            <div className={styles["person-name"]  + " " + styles["shift-gap"]} key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "name"}>
                 <input type="text" value={person.name.firstName} className={styles["shift-input"]} tabIndex={-1} readOnly />
                 <input type="text" value={person.name.lastName} className={styles["shift-input"]} tabIndex={-1} readOnly />
             </div>
-            <input type="text" value={person.shiftStart} className={styles["shift-input"]  + " " + styles["no-index"]} tabIndex={-1} readOnly />
-            <input type="text" value={person.shiftEnd} className={styles["shift-input"] + " " + styles["shift-gap"]} tabIndex={-1} readOnly />
+            <input type="text" value={person.shiftStart} className={styles["shift-input"]  + " " + styles["no-index"]} tabIndex={-1} readOnly key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "start"} />
+            <input type="text" value={person.shiftEnd} className={styles["shift-input"] + " " + styles["shift-gap"]} tabIndex={-1} readOnly key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "end"} />
             <Break 
+                key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "break1"}
                 breakValue={person.breakOne}
                 breakType="breakOne"
                 selectedTime={selectedTime}
@@ -42,6 +43,7 @@ const IndividualShift = ({person, section}: IndividualShiftProps) => {
                 handleSelectedTimeChange={handleSelectedTimeChange}
             />
             <Break 
+                key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "lunch"}
                 breakValue={person.lunch}
                 breakType="lunch"
                 selectedTime={selectedTime}
@@ -51,6 +53,7 @@ const IndividualShift = ({person, section}: IndividualShiftProps) => {
                 handleSelectedTimeChange={handleSelectedTimeChange}
             />
             <Break 
+                key={person.name.baggerName + person.name.lastName + section + person.shiftStart + "break2"}
                 breakValue={person.breakTwo}
                 breakType="breakTwo"
                 selectedTime={selectedTime}
@@ -64,6 +67,7 @@ const IndividualShift = ({person, section}: IndividualShiftProps) => {
 }
 
 interface BreakProps {
+    key: string;
     breakValue: string;
     breakType: string;
     selectedTime: ISelectedTime;
@@ -73,7 +77,7 @@ interface BreakProps {
     handleKeyDownBreakChange: (e: KeyboardEvent<HTMLInputElement>, breakType: string, currentTarget: string) => void;
 };
 
-const Break = ({ breakValue, breakType, selectedTime, section, handleSelectedTimeChange, handleBreakChange, handleKeyDownBreakChange }: BreakProps) => {
+const Break = ({ key, breakValue, breakType, selectedTime, section, handleSelectedTimeChange, handleBreakChange, handleKeyDownBreakChange }: BreakProps) => {
     const handleClick = (e) => {
         if (e?.target?.select) {
             e.target.select();
@@ -82,6 +86,7 @@ const Break = ({ breakValue, breakType, selectedTime, section, handleSelectedTim
     
     return (
         <input 
+            key={key}
             type="text" 
             value={breakValue} 
             className={styles["shift-input"] + " " + (selectedTime.section == section && checkTimeOverlap(breakValue, selectedTime, breakType) ? styles["selected-time"] : "")} 
