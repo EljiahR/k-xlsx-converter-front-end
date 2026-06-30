@@ -431,19 +431,24 @@ export const generatePdf = (weekday: IWeekdayBO, isShortCarts: boolean) => {
 
         daily.text("Lot and Lobby", (width - lotLobbyTextWidth) / 2, topMargin + 35);
 
+        const cartHeaderStyles: Partial<Styles> = { cellWidth: 20, fillColor: null, textColor: "black" };
+
+        if (isShortCarts) {
+            cartHeaderStyles.fontSize = 10;
+        }
 
         autoTable(daily, {
             alternateRowStyles: { fillColor: null },
             startY: topMargin + 40,
             margin: 5,
             columns: cartShiftColumns,
-            headStyles: { cellWidth: 20, fillColor: null, textColor: "black" },
+            headStyles: cartHeaderStyles,
             columnStyles: {
                 time1: { cellWidth: 19 },
                 time2: { cellWidth: 19 },
             },
             showHead: "never",
-            styles: { halign: "center", fontSize: 10, cellPadding: [2, 1], lineWidth: { top: 0.1, bottom: 0.1}, lineColor: blackLine },
+            styles: { halign: "center", fontSize: isShortCarts ? 8 : 10, cellPadding: [2, 1], lineWidth: { top: 0.1, bottom: 0.1}, lineColor: blackLine },
             didParseCell: (data) => {
                 if (data.column.index == 0 || data.column.index == 5 || data.row.index == 0) {
                     data.cell.styles.lineWidth = { top: 0.1, bottom: 0.1, left: 0.1, right: 0.1 }
@@ -459,26 +464,29 @@ export const generatePdf = (weekday: IWeekdayBO, isShortCarts: boolean) => {
             ]
         });
 
-        daily.text(restroomText, (width - restroomTextWidth) / 2, 200);
-
-        autoTable(daily, {
-            alternateRowStyles: { fillColor: null },
-            margin: 5,
-            startY: 210,
-            styles: { lineWidth: 0.1, lineColor: blackLine, halign: "center" },
-            columns: [
-                { header: "Time", dataKey: "time"},
-                { header: "Associate", dataKey: "associate" }
-            ],
-            headStyles: {
-                fillColor: null,
-                textColor: "black"
-            },
-            columnStyles: {
-                time: { cellWidth: 19 }
-            },
-            body: restroomTable
-        });
+        if (!isShortCarts) {
+            daily.text(restroomText, (width - restroomTextWidth) / 2, 200);
+    
+            autoTable(daily, {
+                alternateRowStyles: { fillColor: null },
+                margin: 5,
+                startY: 210,
+                styles: { lineWidth: 0.1, lineColor: blackLine, halign: "center" },
+                columns: [
+                    { header: "Time", dataKey: "time"},
+                    { header: "Associate", dataKey: "associate" }
+                ],
+                headStyles: {
+                    fillColor: null,
+                    textColor: "black"
+                },
+                columnStyles: {
+                    time: { cellWidth: 19 }
+                },
+                body: restroomTable
+            });
+        }
+        
         daily.addPage();
     }
 
