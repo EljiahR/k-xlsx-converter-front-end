@@ -12,6 +12,7 @@ export interface CartSlotProps {
   selectedBagger: string;
   time: string;
   baggerList: IJobPositionBO;
+  isShortCarts: boolean;
 }
 
 export interface RestroomProps {

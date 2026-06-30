@@ -100,7 +100,7 @@ const Carts = () => {
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>
         {selectedLotTimes.map((time, index) => {
-          if (isShortCarts || (!isShortCarts && index > 5))
+          if ((isShortCarts && index !== 53) || (!isShortCarts && index > 5))
           return (
             <React.Fragment key={`${time}${index}`}>
               <div
@@ -145,6 +145,7 @@ const Carts = () => {
                     selectedBagger={selectedBagger}
                     time={time}
                     baggerList={baggerList}
+                    isShortCarts
                   />
                 </React.Fragment>
                 :

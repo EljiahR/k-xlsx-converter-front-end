@@ -152,9 +152,9 @@ export const shiftsSlice = createSlice({
             personToEdit[breakType].editable = isEditable;
             state.selectedTime = { time, section, time15, timeMinus15 };
         },
-        toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string }>) => {
+        toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string, isShortCarts }>) => {
             const { pos, index, name } = action.payload;
-            let carts = state.value[state.day]?.carts;
+            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
             
             const wasEditable = carts[index][pos].editable;
             carts[index][pos].editable = !wasEditable;
@@ -162,9 +162,9 @@ export const shiftsSlice = createSlice({
 
             state.selectedBagger = name;
         },
-        editCartSlot: (state, action: PayloadAction<{pos: number, index: number, newValue: string}>) => {
+        editCartSlot: (state, action: PayloadAction<{pos: number, index: number, newValue: string, isShortCarts: boolean}>) => {
             const { pos, index, newValue } = action.payload;
-            let carts = state.value[state.day]?.carts;
+            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
 
             carts[index][pos].name = newValue;
             if (newValue == "") carts[index].sort(sortEmptyToEnd);

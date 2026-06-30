@@ -16,6 +16,7 @@ const CartSlot = ({
   selectedBagger,
   time,
   baggerList,
+  isShortCarts
 }: CartSlotProps) => {
   const dispatch = useAppDispatch();
   const baggerInfo: BaggerInfo = {
@@ -31,16 +32,16 @@ const CartSlot = ({
     (bagger) => bagger.name.baggerName == name,
   );
   if (thisBagger) {
-    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne)
+    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne) && isShortCarts
       ? addMinutesToBreak(thisBagger.breakOne, -15)
       : thisBagger.breakOne;
-    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch)
+    baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch) && isShortCarts
       ? addMinutesToBreak(thisBagger.lunch, -15)
       : thisBagger.lunch;
-    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch)
+    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch) && isShortCarts
       ? addMinutesToBreak(thisBagger.lunch, 15)
       : thisBagger.lunch;
-    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo)
+    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo) && isShortCarts
       ? addMinutesToBreak(thisBagger.breakTwo, -15)
       : thisBagger.breakTwo;
     baggerInfo.subShift = thisBagger.subshift;
@@ -61,8 +62,8 @@ const CartSlot = ({
       onDragStart={(e) => handleOnDrag(e, name)}
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => handleOnDrop(e)}
-      onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name}))}
-      onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value}))}
+      onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name, isShortCarts }))}
+      onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value, isShortCarts }))}
       onClick={handleClick}
     />
   );
