@@ -74,6 +74,7 @@ export interface IWeekdayDTO {
     birthdays: string[];
     jobPositions: IJobPositionDTO[];
     carts: ICartsDTO[];
+    carts15: ICartsDTO[]
     errors: Record<string, string[]>;
 }
 
