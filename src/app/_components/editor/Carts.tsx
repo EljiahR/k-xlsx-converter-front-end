@@ -6,7 +6,7 @@ import {
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BaggerCartInfo, OnDragType, OnDropType } from "../../_lib/types/cartTypes";
 import { IEmployeeBO, IJobPositionBO } from "../../_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
@@ -43,26 +43,26 @@ const Carts = () => {
   );
   if (bagger) {
     let [start] = reformatTimes(bagger.shiftStart);
-    let end = startToBreakAddMinutes(bagger.shiftEnd, -30);
+    let end = startToBreakAddMinutes(bagger.shiftEnd, isShortCarts ? -15 : -30);
     baggerCartInfo.start = start;
     baggerCartInfo.end = end;
 
-    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne)
+    baggerCartInfo.break1 = /:15|:45/.test(bagger.breakOne) && !isShortCarts
       ? addMinutesToBreak(bagger.breakOne, -15)
       : bagger.breakOne;
-    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch)
+    baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch) && !isShortCarts
       ? addMinutesToBreak(bagger.lunch, -15)
       : bagger.lunch;
-    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch)
+    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch) && !isShortCarts
       ? addMinutesToBreak(bagger.lunch, 15)
       : bagger.lunch;
-    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo)
+    baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo) && !isShortCarts
       ? addMinutesToBreak(bagger.breakTwo, -15)
       : bagger.breakTwo;
     baggerCartInfo.subShift = bagger.subshift;
   }
 
-  const inputReference = useRef(null);
+  // const inputReference = useRef(null);
 
   const handleOnDrag: OnDragType = (e, name) => {
     e.dataTransfer.setData("text", e.currentTarget.id);
