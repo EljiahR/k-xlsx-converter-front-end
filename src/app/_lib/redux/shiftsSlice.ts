@@ -5,7 +5,6 @@ import { expectedOutput } from "../test/expectedOutput";
 import { ShiftsState } from "./reduxTypes";
 import { addMinutesToBreak, employeeShiftSort, getDatesFromBreaks, timeIsLaterThan } from "../helpers/timeFunctions";
 import sortEmptyToEnd from "../helpers/sortEmptyToEnd";
-import { ISelectedTime } from "../types/boardTypes";
 import moment from "moment";
 import { RootState } from "./store";
 
@@ -18,7 +17,8 @@ const initialState: ShiftsState = {
         timeMinus15: "",
     },
     day: 0,
-    selectedBagger: ""
+    selectedBagger: "",
+    shortCarts: false
 };
 
 export const shiftsSlice = createSlice({
@@ -181,7 +181,7 @@ export const shiftsSlice = createSlice({
             carts[index].sort(sortEmptyToEnd);
             carts[targetIndex].sort(sortEmptyToEnd);
         },
-        setDay: (state, action :PayloadAction<number>) => {
+        setDay: (state, action: PayloadAction<number>) => {
             state.day = action.payload;
         },
         setSelectedTime: (state, action: PayloadAction<{time: string, section: string, breakType: string}>) => {
@@ -221,6 +221,9 @@ export const shiftsSlice = createSlice({
             if (position) {
                 position.shifts = position.shifts.filter(e => !(e.employeeId == action.payload.employeeId && e.name.firstName == action.payload.firstName));
             }
+        },
+        toggleShortCarts: (state, action: PayloadAction<boolean>) => {
+            state.shortCarts = action.payload
         }
     }
 });
@@ -288,6 +291,6 @@ export const selectCurrentDate = createSelector(
     (shifts) => shifts.date
 );
 
-export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift } = shiftsSlice.actions;
+export const { setAsTest, setShiftsNull, setNewShifts, addToBreak, changeBreak, changeName, toggleNameEdit, toggleNameEditBlur, toggleBreakEdit, toggleCartSlotEdit, editCartSlot, dragCartSlot, setDay, setSelectedTime, clearSelectedTime, setSelectedBagger, clearSelectedBagger, deleteShift, toggleShortCarts } = shiftsSlice.actions;
 
 export default shiftsSlice.reducer;

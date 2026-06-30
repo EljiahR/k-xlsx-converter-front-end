@@ -6,7 +6,8 @@ export interface ShiftsState {
     value: IWeekdayBO[],
     selectedTime: ISelectedTime,
     day: number,
-    selectedBagger: string
+    selectedBagger: string,
+    shortCarts: boolean
 }
 
 export interface CartSlotDragAction {

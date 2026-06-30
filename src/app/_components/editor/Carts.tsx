@@ -1,12 +1,12 @@
 import styles from "@/styles/Carts.module.css";
-import { lotTimes } from "../../_lib/lotTimes";
+import { lotTimes, lotTimes15 } from "../../_lib/lotTimes";
 import {
   addMinutesToBreak,
   timeIsLaterThan,
   startToBreakAddMinutes,
   reformatTimes,
 } from "../../_lib/helpers/timeFunctions";
-import React, { useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { BaggerCartInfo, OnDragType, OnDropType } from "../../_lib/types/cartTypes";
 import { IEmployeeBO, IJobPositionBO } from "../../_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
@@ -19,7 +19,9 @@ const componentArray = [0, 1, 2, 3];
 const Carts = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
   const currentDay = useAppSelector((state) => state.shifts.day);
-  const selectedBagger = useAppSelector((state) => state.shifts.selectedBagger)
+  const selectedBagger = useAppSelector((state) => state.shifts.selectedBagger);
+  const isShortCarts = useAppSelector((state) => state.shifts.shortCarts);
+  const [selectedLotTimes, setSelectedLotTimes] = useState(isShortCarts ? lotTimes15 : lotTimes);
   const dispatch = useAppDispatch();
 
   let baggerCartInfo: BaggerCartInfo = {
@@ -83,12 +85,20 @@ const Carts = () => {
     dispatch(dragCartSlot(action));
   };
 
+  useEffect(() => {
+    if (isShortCarts) {
+      setSelectedLotTimes(lotTimes15);
+    } else {
+      setSelectedLotTimes(lotTimes);
+    }
+  }, [isShortCarts]);
+
   return (
     <div id={styles["carts"]}>
       <div id={styles.lot}>
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>
-        {lotTimes.map((time, index) => {
+        {selectedLotTimes.map((time, index) => {
           if (index > 5)
           return (
             <React.Fragment key={`${time}${index}`}>
@@ -111,7 +121,8 @@ const Carts = () => {
                       /* : styles["utility-highlight"] */
                     : "" 
                 } ${
-                  time.includes(":3") 
+                  (isShortCarts && (time.includes(":15") || time.includes(":45"))) ||
+                  (!isShortCarts && time.includes(":3") )
                   ? styles["right-time"]
                   : ""
                 }`}
