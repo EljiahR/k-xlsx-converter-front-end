@@ -100,7 +100,7 @@ const Carts = () => {
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>
         {selectedLotTimes.map((time, index) => {
-          if (index > 5)
+          if (isShortCarts || (!isShortCarts && index > 5))
           return (
             <React.Fragment key={`${time}${index}`}>
               <div
@@ -131,12 +131,14 @@ const Carts = () => {
               >
                 <p>{time}</p>
               </div>
-              {componentArray.map((i) => (
+              {componentArray.map((i) => 
+                
+                ((isShortCarts && shifts[currentDay].carts15[index] !== null) || (!isShortCarts && shifts[currentDay].carts[index] !== undefined && shifts[currentDay].carts[index][i] !== null)) ?
                 <React.Fragment key={`CartSlot${index}${i}`}>
                   <CartSlot
                     index={index}
                     pos={i}
-                    name={isShortCarts ? shifts[currentDay].carts15[index][i].name : shifts[currentDay].carts[index][i].name}
+                    name={isShortCarts ? shifts[currentDay].carts15[index][i].name : shifts[currentDay].carts[index][i].name }
                     handleOnDrag={handleOnDrag}
                     handleOnDrop={handleOnDrop}
                     carts={isShortCarts ? shifts[currentDay].carts15 : shifts[currentDay].carts}
@@ -145,8 +147,9 @@ const Carts = () => {
                     baggerList={baggerList}
                   />
                 </React.Fragment>
-                
-              ))}
+                :
+                <React.Fragment />
+              )}
             </React.Fragment>
           );
         })}

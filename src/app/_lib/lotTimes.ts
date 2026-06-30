@@ -89,7 +89,6 @@ export const lotTimes15 = [
   "9:30 PM",
   "9:45 PM",
   "10:00 PM",
-  "10:15 PM",
   "10:30 PM"
 ];
 

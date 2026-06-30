@@ -2,7 +2,7 @@ import { jsPDF} from "jspdf";
 import { IEmployeeBO, IWeekdayBO } from "../types/shiftTypes";
 import autoTable, { Color, RowInput, Styles } from "jspdf-autotable";
 import { joinWithLast } from "./formatFunctions";
-import { lotTimes, utilityTimes } from "../lotTimes";
+import { lotTimes, lotTimes15, utilityTimes } from "../lotTimes";
 import path from "path";
 import { employeeShiftSort, getDatesFromTimes } from "./timeFunctions";
 
@@ -41,7 +41,7 @@ const numberOfReportCols = 12;
 const topMargin = 27;
 const reportStart = topMargin + 2;
 
-export const generatePdf = (weekday: IWeekdayBO) => {
+export const generatePdf = (weekday: IWeekdayBO, isShortCarts: boolean) => {
     console.log(weekday);
     let daily = new jsPDF();
     const dailyBody = [];
@@ -354,18 +354,21 @@ export const generatePdf = (weekday: IWeekdayBO) => {
     const lotLobbyText = "Lot and Lobby";
     const lotLobbyTextWidth = daily.getTextWidth(lotLobbyText);
     const cartShiftLines = [];
-    for (let i = 6; i < lotTimes.length; i += 2) {
+    const carts = isShortCarts ? weekday.carts15 : weekday.carts;
+    const selectedLotTimes = isShortCarts ? lotTimes15 : lotTimes;
+    for (let i = isShortCarts ? 0 : 6; i < selectedLotTimes.length; i += 2) {
+        console.log(carts[i])
         cartShiftLines.push({
-            time1: lotTimes[i],
-            associate1: weekday.carts[i][0].name,
-            associate2: weekday.carts[i][1].name,
-            associate3: weekday.carts[i][2].name,
-            associate4: weekday.carts[i][3].name,
-            time2: lotTimes[i + 1],
-            associate5: weekday.carts[i + 1][0].name,
-            associate6: weekday.carts[i + 1][1].name,
-            associate7: weekday.carts[i + 1][2].name,
-            associate8: weekday.carts[i + 1][3].name,
+            time1: selectedLotTimes[i],
+            associate1: carts[i][0].name,
+            associate2: carts[i][1].name,
+            associate3: carts[i][2].name,
+            associate4: carts[i][3].name,
+            time2: selectedLotTimes[i + 1],
+            associate5: carts[i + 1][0].name,
+            associate6: carts[i + 1][1].name,
+            associate7: carts[i + 1][2].name,
+            associate8: carts[i + 1][3].name,
         });
     }
 

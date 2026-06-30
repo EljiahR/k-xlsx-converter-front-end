@@ -22,7 +22,7 @@ const NavBar = ({
   }
 
   const handlePdfGenerator = () => {
-    generatePdf(shifts[currentDay]);
+    generatePdf(shifts[currentDay], hasShortCarts);
   }
   
   return (
