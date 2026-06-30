@@ -80,7 +80,8 @@ const Carts = () => {
       targetPos: parseInt(targetIndex[1]),
       index: parseInt(draggedIndex[0]),
       pos: parseInt(draggedIndex[1]),
-      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML
+      newValue: dragged.nodeName == "INPUT" ? dragged.value : dragged.innerHTML,
+      isShortCarts
     }
     dispatch(dragCartSlot(action));
   };
@@ -135,10 +136,10 @@ const Carts = () => {
                   <CartSlot
                     index={index}
                     pos={i}
-                    name={shifts[currentDay].carts[index][i].name}
+                    name={isShortCarts ? shifts[currentDay].carts15[index][i].name : shifts[currentDay].carts[index][i].name}
                     handleOnDrag={handleOnDrag}
                     handleOnDrop={handleOnDrop}
-                    carts={shifts[currentDay].carts}
+                    carts={isShortCarts ? shifts[currentDay].carts15 : shifts[currentDay].carts}
                     selectedBagger={selectedBagger}
                     time={time}
                     baggerList={baggerList}

@@ -169,9 +169,9 @@ export const shiftsSlice = createSlice({
             carts[index][pos].name = newValue;
             if (newValue == "") carts[index].sort(sortEmptyToEnd);
         },
-        dragCartSlot: (state, action: PayloadAction<{index: number, pos: number, newValue: string, targetIndex: number, targetPos: number}>) => {
+        dragCartSlot: (state, action: PayloadAction<{index: number, pos: number, newValue: string, targetIndex: number, targetPos: number, isShortCarts: boolean}>) => {
             const { pos, index, newValue, targetPos, targetIndex } = action.payload;
-            let carts = state.value[state.day]?.carts;
+            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
             
             carts[targetIndex][targetPos].name = newValue;
             carts[index][pos].name = "";

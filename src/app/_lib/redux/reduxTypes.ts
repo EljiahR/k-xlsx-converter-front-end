@@ -16,4 +16,5 @@ export interface CartSlotDragAction {
     newValue: string;
     targetIndex: number;
     targetPos: number;
+    isShortCarts: boolean;
 }
