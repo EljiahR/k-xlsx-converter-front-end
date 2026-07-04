@@ -65,6 +65,7 @@ export interface ICartsDTO {
 export interface ICartShift {
     name: string;
     editable: boolean;
+    id: string;
 }
 
 export interface IWeekdayDTO {

@@ -18,7 +18,7 @@ const initialState: ShiftsState = {
     },
     day: 0,
     selectedBagger: "",
-    shortCarts: false
+    isShortCarts: false
 };
 
 export const shiftsSlice = createSlice({
@@ -153,8 +153,8 @@ export const shiftsSlice = createSlice({
             state.selectedTime = { time, section, time15, timeMinus15 };
         },
         toggleCartSlotEdit: (state, action: PayloadAction<{ pos: number, index: number, name: string, isShortCarts }>) => {
-            const { pos, index, name } = action.payload;
-            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
+            const { pos, index, name, isShortCarts } = action.payload;
+            let carts = isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
             
             const wasEditable = carts[index][pos].editable;
             carts[index][pos].editable = !wasEditable;
@@ -163,15 +163,19 @@ export const shiftsSlice = createSlice({
             state.selectedBagger = name;
         },
         editCartSlot: (state, action: PayloadAction<{pos: number, index: number, newValue: string, isShortCarts: boolean}>) => {
-            const { pos, index, newValue } = action.payload;
-            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
-
-            carts[index][pos].name = newValue;
-            if (newValue == "") carts[index].sort(sortEmptyToEnd);
+            const { pos, index, newValue, isShortCarts } = action.payload;
+            console.log(isShortCarts)
+            if (isShortCarts) {
+                state.value[state.day].carts15[index][pos].name = newValue;
+                if (newValue == "") state.value[state.day].carts15[index].sort(sortEmptyToEnd);
+            } else {
+                state.value[state.day].carts[index][pos].name = newValue;
+                if (newValue == "") state.value[state.day].carts[index].sort(sortEmptyToEnd);
+            }
         },
         dragCartSlot: (state, action: PayloadAction<{index: number, pos: number, newValue: string, targetIndex: number, targetPos: number, isShortCarts: boolean}>) => {
-            const { pos, index, newValue, targetPos, targetIndex } = action.payload;
-            let carts = action.payload.isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
+            const { pos, index, newValue, targetPos, targetIndex, isShortCarts } = action.payload;
+            let carts = isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
             
             carts[targetIndex][targetPos].name = newValue;
             carts[index][pos].name = "";
@@ -223,7 +227,7 @@ export const shiftsSlice = createSlice({
             }
         },
         toggleShortCarts: (state, action: PayloadAction<boolean>) => {
-            state.shortCarts = action.payload
+            state.isShortCarts = action.payload
         }
     }
 });

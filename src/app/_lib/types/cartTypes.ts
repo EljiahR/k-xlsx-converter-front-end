@@ -6,13 +6,13 @@ export interface CartSlotProps {
   index: number;
   pos: number;
   name: string;
+  id: string;
   handleOnDrag: OnDragType;
   handleOnDrop: OnDropType;
   carts: ICartShift[][];
   selectedBagger: string;
   time: string;
   baggerList: IJobPositionBO;
-  isShortCarts: boolean;
 }
 
 export interface RestroomProps {

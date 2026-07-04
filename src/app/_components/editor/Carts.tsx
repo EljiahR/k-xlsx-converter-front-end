@@ -20,7 +20,7 @@ const Carts = () => {
   const shifts = useAppSelector((state) => state.shifts.value);
   const currentDay = useAppSelector((state) => state.shifts.day);
   const selectedBagger = useAppSelector((state) => state.shifts.selectedBagger);
-  const isShortCarts = useAppSelector((state) => state.shifts.shortCarts);
+  const isShortCarts = useAppSelector((state) => state.shifts.isShortCarts);
   const [selectedLotTimes, setSelectedLotTimes] = useState(isShortCarts ? lotTimes15 : lotTimes);
   const dispatch = useAppDispatch();
 
@@ -53,7 +53,7 @@ const Carts = () => {
     baggerCartInfo.lunch1 = /:15|:45/.test(bagger.lunch) && !isShortCarts
       ? addMinutesToBreak(bagger.lunch, -15)
       : bagger.lunch;
-    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch) && !isShortCarts
+    baggerCartInfo.lunch2 = /:15|:45/.test(bagger.lunch) || isShortCarts
       ? addMinutesToBreak(bagger.lunch, 15)
       : bagger.lunch;
     baggerCartInfo.break2 = /:15|:45/.test(bagger.breakTwo) && !isShortCarts
@@ -95,14 +95,14 @@ const Carts = () => {
   }, [isShortCarts]);
 
   return (
-    <div id={styles["carts"]}>
+    <div id={styles["carts"]} key={"cart-page"}>
       <div id={styles.lot}>
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>
         {selectedLotTimes.map((time, index) => {
           if ((isShortCarts && index !== 53) || (!isShortCarts && index > 5))
           return (
-            <React.Fragment key={`${time}${index}`}>
+            <React.Fragment key={"Fragment-" + time + "-" + (isShortCarts)}>
               <div
                 className={`${styles["cart-time"]} ${
                   time == baggerCartInfo.break1 ||
@@ -128,28 +128,29 @@ const Carts = () => {
                   : ""
                 }`}
                 id={time}
+                key={"Time-" + isShortCarts + "-" + time + "-" + index}
               >
                 <p>{time}</p>
               </div>
               {componentArray.map((i) => 
                 
                 ((isShortCarts && shifts[currentDay].carts15[index] !== null) || (!isShortCarts && shifts[currentDay].carts[index] !== undefined && shifts[currentDay].carts[index][i] !== null)) ?
-                <React.Fragment key={`CartSlot${index}${i}`}>
+
                   <CartSlot
                     index={index}
                     pos={i}
-                    name={isShortCarts ? shifts[currentDay].carts15[index][i].name : shifts[currentDay].carts[index][i].name }
+                    id={isShortCarts ? shifts[currentDay].carts15[index][i].id : shifts[currentDay].carts[index][i].id}
+                    name={isShortCarts ? shifts[currentDay].carts15[index][i].name : shifts[currentDay].carts[index][i].name}
                     handleOnDrag={handleOnDrag}
                     handleOnDrop={handleOnDrop}
                     carts={isShortCarts ? shifts[currentDay].carts15 : shifts[currentDay].carts}
                     selectedBagger={selectedBagger}
                     time={time}
                     baggerList={baggerList}
-                    isShortCarts
+                    key={"Cartslot-" + (isShortCarts) + "-" + (isShortCarts ? shifts[currentDay].carts15[index][i].id : shifts[currentDay].carts[index][i].id)}
                   />
-                </React.Fragment>
                 :
-                <React.Fragment />
+                <React.Fragment key={"Fragment"+ isShortCarts ? shifts[currentDay].carts15[index][i].id : shifts[currentDay].carts[index][i].id} />
               )}
             </React.Fragment>
           );

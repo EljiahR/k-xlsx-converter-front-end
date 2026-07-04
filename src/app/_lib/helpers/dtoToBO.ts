@@ -35,17 +35,18 @@ const formatJobPositions = (
   }));
 };
 
+let id = 0;
+
 const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
   return carts.map((x) => [
-    { name: x.baggers[0] ?? "", editable: false },
-    { name: x.baggers[1] ?? "", editable: false },
-    { name: x.baggers[2] ?? "", editable: false },
-    { name: x.baggers[3] ?? "", editable: false },
+    { name: x.baggers[0] ?? "", editable: false, id: (id++).toString() },
+    { name: x.baggers[1] ?? "", editable: false, id: (id++).toString() },
+    { name: x.baggers[2] ?? "", editable: false, id: (id++).toString() },
+    { name: x.baggers[3] ?? "", editable: false, id: (id++).toString() },
   ]);
 };
 
 const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
-  console.log()
   return weekdays.map((weekday) => ({
     ...weekday,
     date: moment(weekday.date).format("dddd M/D/YYYY"),

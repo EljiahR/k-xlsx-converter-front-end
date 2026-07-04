@@ -4,21 +4,23 @@ import { addMinutesToBreak } from "../../../_lib/helpers/timeFunctions";
 import { BaggerInfo, CartSlotProps } from "../../../_lib/types/cartTypes";
 import { IEmployeeBO } from "../../../_lib/types/shiftTypes";
 import { editCartSlot, toggleCartSlotEdit } from "../../../_lib/redux/shiftsSlice";
-import { useAppDispatch } from "../../../_lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../../_lib/redux/hooks";
+import { ChangeEvent } from "react";
 
 const CartSlot = ({
   index,
   pos,
   name,
+  id,
   handleOnDrag,
   handleOnDrop,
   carts,
   selectedBagger,
   time,
-  baggerList,
-  isShortCarts
+  baggerList
 }: CartSlotProps) => {
   const dispatch = useAppDispatch();
+  const isShortCarts = useAppSelector((state) => state.shifts.isShortCarts);
   const baggerInfo: BaggerInfo = {
     name: name,
     break1: "",
@@ -38,7 +40,7 @@ const CartSlot = ({
     baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch) && isShortCarts
       ? addMinutesToBreak(thisBagger.lunch, -15)
       : thisBagger.lunch;
-    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch) && isShortCarts
+    baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch) || isShortCarts
       ? addMinutesToBreak(thisBagger.lunch, 15)
       : thisBagger.lunch;
     baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo) && isShortCarts
@@ -48,10 +50,14 @@ const CartSlot = ({
   }
 
   const handleClick = (e) => {
-        if (e?.target?.select) {
-            e.target.select();
-        }
-    }
+      if (e?.target?.select) {
+          e.target.select();
+      }
+  }
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(editCartSlot({ pos, index, newValue: e.target.value, isShortCarts }))
+  }
     
   return (
     <input
@@ -63,7 +69,7 @@ const CartSlot = ({
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => handleOnDrop(e)}
       onFocus={() => dispatch(toggleCartSlotEdit({index, pos, name, isShortCarts }))}
-      onChange={(e) => dispatch(editCartSlot({pos, index, newValue: e.target.value, isShortCarts }))}
+      onChange={(e) => handleInput(e)}
       onClick={handleClick}
     />
   );

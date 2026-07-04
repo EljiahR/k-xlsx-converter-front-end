@@ -42,7 +42,6 @@ const topMargin = 27;
 const reportStart = topMargin + 2;
 
 export const generatePdf = (weekday: IWeekdayBO, isShortCarts: boolean) => {
-    console.log(weekday);
     let daily = new jsPDF();
     const dailyBody = [];
 
@@ -357,7 +356,21 @@ export const generatePdf = (weekday: IWeekdayBO, isShortCarts: boolean) => {
     const carts = isShortCarts ? weekday.carts15 : weekday.carts;
     const selectedLotTimes = isShortCarts ? lotTimes15 : lotTimes;
     for (let i = isShortCarts ? 0 : 6; i < selectedLotTimes.length; i += 2) {
-        console.log(carts[i])
+        if (isShortCarts && i === 52) {
+            cartShiftLines.push({
+                time1: selectedLotTimes[i],
+                associate1: carts[i][0].name,
+                associate2: carts[i][1].name,
+                associate3: carts[i][2].name,
+                associate4: carts[i][3].name,
+                time2: selectedLotTimes[i + 2],
+                associate5: carts[i + 2][0].name,
+                associate6: carts[i + 2][1].name,
+                associate7: carts[i + 2][2].name,
+                associate8: carts[i + 2][3].name,
+            });
+            break;
+        }
         cartShiftLines.push({
             time1: selectedLotTimes[i],
             associate1: carts[i][0].name,

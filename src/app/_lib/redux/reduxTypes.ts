@@ -7,7 +7,7 @@ export interface ShiftsState {
     selectedTime: ISelectedTime,
     day: number,
     selectedBagger: string,
-    shortCarts: boolean
+    isShortCarts: boolean
 }
 
 export interface CartSlotDragAction {

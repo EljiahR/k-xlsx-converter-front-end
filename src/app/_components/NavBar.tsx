@@ -13,16 +13,16 @@ const NavBar = ({
   shifts
 }) => {
   const currentDay = useAppSelector((state) => state.shifts.day);
-  const hasShortCarts = useAppSelector((state) => state.shifts.shortCarts);
+  const isShortCarts = useAppSelector((state) => state.shifts.isShortCarts);
   const dispatch = useAppDispatch();
 
   const handleShortCartsToggle = () => {
     
-    dispatch(toggleShortCarts(!hasShortCarts));
+    dispatch(toggleShortCarts(!isShortCarts));
   }
 
   const handlePdfGenerator = () => {
-    generatePdf(shifts[currentDay], hasShortCarts);
+    generatePdf(shifts[currentDay], isShortCarts);
   }
   
   return (
@@ -34,7 +34,7 @@ const NavBar = ({
       <button onClick={handleTestShifts}>Use Test File</button>
       <button onClick={handleJsonInput}>Use Json</button>
       <div>
-        <input id="shortcarts" type="checkbox" checked={hasShortCarts} onChange={handleShortCartsToggle} />
+        <input id="shortcarts" type="checkbox" checked={isShortCarts} onChange={handleShortCartsToggle} />
         <label htmlFor="shortcarts">Use 15m Carts</label>
       </div>
       <div>
