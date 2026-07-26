@@ -1,9 +1,12 @@
 import moment from "moment";
 import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobPositionDTO, IWeekdayBO, IWeekdayDTO } from "../types/shiftTypes";
 
+let shiftId = 0;
+
 const shiftsDTOToBO = (shifts: IEmployeeDTO[], position: string): IEmployeeBO[] => {
+  console.log("current shiftId: " + shiftId);
   return shifts.map((shift) => ({
-    ...shift,
+    employeeId: (shiftId++).toString(),
     name: {
       firstName: shift.firstName,
       lastName: shift.lastName,
@@ -29,24 +32,27 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[], position: string): IEmployeeBO[] 
 const formatJobPositions = (
   jobPositions: IJobPositionDTO[],
 ): IJobPositionBO[] => {
+  console.log("Formatting job position...")
   return jobPositions.map((jobPosition) => ({
     ...jobPosition,
     shifts: shiftsDTOToBO(jobPosition.shifts, jobPosition.name),
   }));
 };
 
-let id = 0;
+let cartId = 0;
 
 const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
+  console.log("Formatting carts...")
   return carts.map((x) => [
-    { name: x.baggers[0] ?? "", editable: false, id: (id++).toString() },
-    { name: x.baggers[1] ?? "", editable: false, id: (id++).toString() },
-    { name: x.baggers[2] ?? "", editable: false, id: (id++).toString() },
-    { name: x.baggers[3] ?? "", editable: false, id: (id++).toString() },
+    { name: x.baggers[0] ?? "", editable: false, id: (cartId++).toString() },
+    { name: x.baggers[1] ?? "", editable: false, id: (cartId++).toString() },
+    { name: x.baggers[2] ?? "", editable: false, id: (cartId++).toString() },
+    { name: x.baggers[3] ?? "", editable: false, id: (cartId++).toString() },
   ]);
 };
 
 const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
+  console.log("Formatting week...")
   return weekdays.map((weekday) => ({
     ...weekday,
     date: moment(weekday.date).format("dddd M/D/YYYY"),

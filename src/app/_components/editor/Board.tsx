@@ -43,7 +43,7 @@ const BoardSection = ({people, section, sectionSpelledOut}: BoardSectionProps) =
         <h2>{sectionSpelledOut}</h2>
         <div className={styles["shifts"]}>
           {people.map((person) => 
-            <IndividualShift person={person} section={section} key={person.employeeId + person.name.firstName + person.name.lastName + section} />
+            <IndividualShift person={person} section={section} key={person.employeeId + person.name.firstName + person.name.lastName + section + person.shiftStart} />
           )}
         </div>
       </div>

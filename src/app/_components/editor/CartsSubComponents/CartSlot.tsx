@@ -34,7 +34,7 @@ const CartSlot = ({
     (bagger) => bagger.name.baggerName == name,
   );
   if (thisBagger) {
-    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne) && isShortCarts
+    baggerInfo.break1 = /:15|:45/.test(thisBagger.breakOne) && !isShortCarts
       ? addMinutesToBreak(thisBagger.breakOne, -15)
       : thisBagger.breakOne;
     baggerInfo.lunch1 = /:15|:45/.test(thisBagger.lunch) && isShortCarts
@@ -43,7 +43,7 @@ const CartSlot = ({
     baggerInfo.lunch2 = /:15|:45/.test(thisBagger.lunch) || isShortCarts
       ? addMinutesToBreak(thisBagger.lunch, 15)
       : thisBagger.lunch;
-    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo) && isShortCarts
+    baggerInfo.break2 = /:15|:45/.test(thisBagger.breakTwo) && !isShortCarts
       ? addMinutesToBreak(thisBagger.breakTwo, -15)
       : thisBagger.breakTwo;
     baggerInfo.subShift = thisBagger.subshift;

@@ -19,8 +19,8 @@ export const getEmployees = async (xlsxFile) => {
   }
 
   const newShifts = response.data;
-  console.log(newShifts);
+  // console.log(newShifts);
   const formattedShifts = formatWeek(newShifts);
-
+  console.log(formattedShifts);
   return formattedShifts;
 };
