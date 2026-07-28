@@ -165,46 +165,34 @@ export const shiftsSlice = createSlice({
         editCartSlot: (state, action: PayloadAction<{pos: number, index: number, newValue: string, isShortCarts: boolean}>) => {
             const { pos, index, newValue, isShortCarts } = action.payload;
             if (isShortCarts) {
-                state.value[state.day].previouscarts15 = [
-                    ...state.value[state.day].previouscarts15,
-                    [...state.value[state.day].carts15]
-                ];
+                state.value[state.day].previouscarts15.push(JSON.parse(JSON.stringify(state.value[state.day].carts15)));
 
                 state.value[state.day].carts15[index][pos].name = newValue;
                 if (newValue == "") state.value[state.day].carts15[index].sort(sortEmptyToEnd);
             } else {
-                state.value[state.day].previouscarts15 = [
-                    ...state.value[state.day].previouscarts,
-                    [...state.value[state.day].carts]
-                ];
+                state.value[state.day].previouscarts.push(JSON.parse(JSON.stringify(state.value[state.day].carts)));
                 
                 state.value[state.day].carts[index][pos].name = newValue;
                 if (newValue == "") state.value[state.day].carts[index].sort(sortEmptyToEnd);
             }
-
-
         },
         dragCartSlot: (state, action: PayloadAction<{index: number, pos: number, newValue: string, targetIndex: number, targetPos: number, isShortCarts: boolean}>) => {
             const { pos, index, newValue, targetPos, targetIndex, isShortCarts } = action.payload;
             let carts = isShortCarts ? state.value[state.day]?.carts15 : state.value[state.day]?.carts;
             
-            if (carts[targetIndex][targetPos].name != "") {
+            if (carts[targetIndex][targetPos].name === "") {
+                if (isShortCarts) {
+                    state.value[state.day].previouscarts15.push(JSON.parse(JSON.stringify(state.value[state.day].carts15)));
+                } else {
+                    state.value[state.day].previouscarts.push(JSON.parse(JSON.stringify(state.value[state.day].carts)));
+                }
+                
                 carts[targetIndex][targetPos].name = newValue;
                 carts[index][pos].name = "";
                 if (carts[index][pos].editable) {
                     carts[index][pos].editable = false; 
                 }
-                if (isShortCarts) {
-                    state.value[state.day].previouscarts15 = [
-                        ...state.value[state.day].previouscarts15,
-                        [...carts]
-                    ];
-                } else {
-                    state.value[state.day].previouscarts = [
-                        ...state.value[state.day].previouscarts,
-                        [...carts]
-                    ];
-                }
+                
     
                 carts[index].sort(sortEmptyToEnd);
                 carts[targetIndex].sort(sortEmptyToEnd);
@@ -213,11 +201,9 @@ export const shiftsSlice = createSlice({
         undoCartChange: (state, action: PayloadAction<{ isShortCarts: boolean }>) => {
             const { isShortCarts } = action.payload;
             if (isShortCarts && state.value[state.day].previouscarts15.length > 0) {
-                state.value[state.day].carts15 = [...state.value[state.day].previouscarts15[state.value[state.day].previouscarts15.length - 1]]
-                state.value[state.day].previouscarts15 = [...state.value[state.day].previouscarts15.slice(0, -1)];
+                state.value[state.day].carts15 = state.value[state.day].previouscarts15.pop();
             } else if (state.value[state.day].previouscarts.length > 0) {
-                state.value[state.day].carts = [...state.value[state.day].previouscarts[state.value[state.day].previouscarts.length - 1]]
-                state.value[state.day].previouscarts = [...state.value[state.day].previouscarts.slice(0, -1)];
+                state.value[state.day].carts = state.value[state.day].previouscarts.pop();
             }
         },
         setDay: (state, action: PayloadAction<number>) => {

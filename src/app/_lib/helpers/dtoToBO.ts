@@ -4,7 +4,6 @@ import { ICartsDTO, ICartShift, IEmployeeBO, IEmployeeDTO, IJobPositionBO, IJobP
 let shiftId = 0;
 
 const shiftsDTOToBO = (shifts: IEmployeeDTO[], position: string): IEmployeeBO[] => {
-  console.log("current shiftId: " + shiftId);
   return shifts.map((shift) => ({
     employeeId: (shiftId++).toString(),
     name: {
@@ -32,7 +31,6 @@ const shiftsDTOToBO = (shifts: IEmployeeDTO[], position: string): IEmployeeBO[] 
 const formatJobPositions = (
   jobPositions: IJobPositionDTO[],
 ): IJobPositionBO[] => {
-  console.log("Formatting job position...")
   return jobPositions.map((jobPosition) => ({
     ...jobPosition,
     shifts: shiftsDTOToBO(jobPosition.shifts, jobPosition.name),
@@ -42,7 +40,6 @@ const formatJobPositions = (
 let cartId = 0;
 
 const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
-  console.log("Formatting carts...")
   return carts.map((x) => [
     { name: x.baggers[0] ?? "", editable: false, id: (cartId++).toString() },
     { name: x.baggers[1] ?? "", editable: false, id: (cartId++).toString() },
@@ -52,16 +49,21 @@ const formatCarts = (carts: ICartsDTO[]): ICartShift[][] => {
 };
 
 const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
-  console.log("Formatting week...")
-  return weekdays.map((weekday) => ({
-    ...weekday,
-    date: moment(weekday.date).format("dddd M/D/YYYY"),
-    jobPositions: formatJobPositions(weekday.jobPositions),
-    carts: formatCarts(weekday.carts),
-    previouscarts: [],
-    carts15: formatCarts(weekday.carts15),
-    previouscarts15: []
-  }));
+  
+  
+  return weekdays.map((weekday) => {
+    const carts = formatCarts(weekday.carts);
+    const carts15 = formatCarts(weekday.carts15);
+    
+    return ({
+      ...weekday,
+      date: moment(weekday.date).format("dddd M/D/YYYY"),
+      jobPositions: formatJobPositions(weekday.jobPositions),
+      carts,
+      previouscarts: [],
+      carts15,
+      previouscarts15: []
+  })});
 };
 
 export default formatWeek;

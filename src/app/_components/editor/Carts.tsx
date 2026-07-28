@@ -86,6 +86,10 @@ const Carts = () => {
     dispatch(dragCartSlot(action));
   };
 
+  const handleUndoButton = () => {
+    dispatch(undoCartChange({isShortCarts}))
+  };
+
   useEffect(() => {
     if (isShortCarts) {
       setSelectedLotTimes(lotTimes15);
@@ -96,7 +100,7 @@ const Carts = () => {
 
   return (
     <div id={styles["carts"]} key={"cart-page"}>
-      <button onClick={() => dispatch(undoCartChange({isShortCarts}))}>Undo</button>
+      <button onClick={handleUndoButton}>Undo</button>
       <div id={styles.lot}>
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>
