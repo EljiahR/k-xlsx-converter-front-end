@@ -11,7 +11,7 @@ import { BaggerCartInfo, OnDragType, OnDropType } from "../../_lib/types/cartTyp
 import { IEmployeeBO, IJobPositionBO } from "../../_lib/types/shiftTypes";
 import CartSlot from "./CartsSubComponents/CartSlot";
 import { useAppDispatch, useAppSelector } from "../../_lib/redux/hooks";
-import { dragCartSlot, setSelectedBagger } from "../../_lib/redux/shiftsSlice";
+import { dragCartSlot, setSelectedBagger, undoCartChange } from "../../_lib/redux/shiftsSlice";
 import { CartSlotDragAction } from "../../_lib/redux/reduxTypes";
 
 const componentArray = [0, 1, 2, 3];
@@ -96,6 +96,7 @@ const Carts = () => {
 
   return (
     <div id={styles["carts"]} key={"cart-page"}>
+      <button onClick={() => dispatch(undoCartChange({isShortCarts}))}>Undo</button>
       <div id={styles.lot}>
         <div className={styles["lot-time-label"]}>Time</div>
         <div className={styles["lot-associate-label"]}>Associate</div>

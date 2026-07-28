@@ -58,7 +58,9 @@ const formatWeek = (weekdays: IWeekdayDTO[]): IWeekdayBO[] => {
     date: moment(weekday.date).format("dddd M/D/YYYY"),
     jobPositions: formatJobPositions(weekday.jobPositions),
     carts: formatCarts(weekday.carts),
-    carts15: formatCarts(weekday.carts15)
+    previouscarts: [],
+    carts15: formatCarts(weekday.carts15),
+    previouscarts15: []
   }));
 };
 

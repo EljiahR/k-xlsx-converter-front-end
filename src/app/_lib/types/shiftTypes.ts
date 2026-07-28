@@ -86,6 +86,8 @@ export interface IWeekdayBO {
     birthdays: string[];
     jobPositions: IJobPositionBO[];
     carts: ICartShift[][];
+    previouscarts: ICartShift[][][];
     carts15: ICartShift[][];
+    previouscarts15: ICartShift[][][];
     errors: Record<string, string[]>;
 }
