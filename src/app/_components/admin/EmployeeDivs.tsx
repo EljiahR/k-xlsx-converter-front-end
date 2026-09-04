@@ -83,22 +83,23 @@ const EmployeeDivs = ({
                 }
             />
             </label>
-            <label htmlFor="birthday">
-            Birthdate:
+            <label htmlFor="isAdult">
+            Is an adult?:
             <input
-                type="date"
-                id="birthday"
-                name="birthday"
-                placeholder={employee["birthday"]}
-                value={
-                employeeEdit.hasOwnProperty("birthday")
-                    ? employeeEdit["birthday"].split("T")[0]
-                    : employee["birthday"] != null ?
-                        employee["birthday"].split("T")[0] :
-                        null
+                type="checkbox"
+                name="isAdult"
+                id="isAdult"
+                checked={
+                employeeEdit.hasOwnProperty("isAdult")
+                    ? employeeEdit["isAdult"]
+                    : employee["isAdult"]
                 }
                 onChange={(e) =>
-                handleEditChange(e, employee.employeeId, "birthday")
+                handleEditChange(
+                    e,
+                    employee.employeeId,
+                    "isAdult",
+                )
                 }
             />
             </label>

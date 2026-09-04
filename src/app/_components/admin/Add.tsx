@@ -5,26 +5,28 @@ interface EmployeeInfo {
   firstName: string;
     lastName: string;
     preferredFirstName: string;
-    birthday: Date;
+    birthday: Date | null;
     preferredNumberOfBreaks: Number;
     getsLunchAsAdult: boolean;
     positionOverride: string;
     isCallUp: boolean;
     division: string;
     storeNumber: string;
+    isAdult: boolean;
 }
 
 const EmployeeInfoStarter: EmployeeInfo = {
   firstName: "",
   lastName: "",
   preferredFirstName: "",
-  birthday: new Date(),
+  birthday: null,
   preferredNumberOfBreaks: 2,
   getsLunchAsAdult: false,
   positionOverride: "",
   isCallUp: true,
   division: "",
-  storeNumber: ""
+  storeNumber: "",
+  isAdult: true
 }
 
 const Add = ({ selectedStore }) => {
@@ -44,8 +46,6 @@ const Add = ({ selectedStore }) => {
   }
 
   const resetForm = () => {
-    const birthdayDiv = document.getElementById("birthday") as HTMLInputElement;
-    birthdayDiv.value = ""
     setNewEmployeeInfo({...EmployeeInfoStarter});
   }
   
@@ -113,13 +113,14 @@ const Add = ({ selectedStore }) => {
             onChange={(e) => handleFormChange("preferredFirstName", e.target.value)}
            />
         </label>
-        <label htmlFor="birthday">
-          Birthday:
+        <label htmlFor="isAdult">
+          Is an adult?:
           <input 
-            type="date" 
-            name="birthday" 
-            id="birthday"
-            onChange={(e) => handleFormChange("birthday", new Date(e.target.value))} 
+            type="checkbox" 
+            name="isAdult" 
+            id="isAdult"
+            checked={newEmployeeInfo["isAdult"]} 
+            onChange={(e) => handleFormChange("isAdult", !newEmployeeInfo["isAdult"])} 
           />
         </label>
         <div id="break-preference-div">
