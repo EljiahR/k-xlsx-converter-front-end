@@ -1,4 +1,3 @@
-import moment from "moment";
 import styles from "@/styles/Edit.module.css";
 import { IEmployeeBO } from "../../_lib/types/shiftTypes";
 
@@ -251,9 +250,12 @@ const EmployeeDivs = ({
             <p>
             Break Preference: {employee["preferredNumberOfBreaks"]}
             </p>
-            <p>Lunch Override: {employee["getsLunchAsAdult"]}</p>
-            <p>Position Override: {employee["positionOverride"]}</p>
-            <p>Bathroom Order: {employee["bathroomOrder"]}</p>
+            {employee["positionOverride"] !== "" && employee["positionOverride"] !== null && 
+                <p>Position Override: {employee["positionOverride"]}</p>
+            }
+            {employee["bathroomOrder"] > 0 &&
+                <p>Bathroom Order: {employee["bathroomOrder"]}</p>
+            }
             {employee["isACallUp"] ? 
             <p>Call Up</p>
             : null}
